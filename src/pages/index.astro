@@ -1,3 +1,5 @@
+---
+import Layout from "@/layouts/Layout.astro";
 import { ComfortGallery } from "@/components/ComfortGallery";
 import { FloatingCallButton } from "@/components/FloatingCallButton";
 import { HeroSection } from "@/components/HeroSection";
@@ -7,21 +9,18 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { StatsBanner } from "@/components/StatsBanner";
 import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
+---
 
-export default function Home() {
-  return (
-    <>
-      <SiteHeader />
-      <main className="flex-1">
-        <HeroSection />
-        <StatsBanner />
-        <TestimonialsCarousel />
-        <ServicesSection />
-        <ComfortGallery />
-        <InstagramStrip />
-      </main>
-      <SiteFooter />
-      <FloatingCallButton />
-    </>
-  );
-}
+<Layout>
+  <SiteHeader client:load />
+  <main class="flex-1">
+    <HeroSection />
+    <StatsBanner />
+    <TestimonialsCarousel client:load />
+    <ServicesSection />
+    <ComfortGallery client:load />
+    <InstagramStrip />
+  </main>
+  <SiteFooter />
+  <FloatingCallButton />
+</Layout>

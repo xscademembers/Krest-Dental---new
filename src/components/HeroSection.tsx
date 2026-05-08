@@ -1,5 +1,3 @@
-import Image from "next/image";
-import Link from "next/link";
 import type { SVGProps } from "react";
 import { HERO } from "@/lib/krest-content";
 
@@ -9,7 +7,7 @@ export function HeroSection() {
       aria-label="Hero — Dr. Suneeta Veramachaneni"
       className="relative overflow-hidden bg-cream pb-20 pt-12 lg:pb-28 lg:pt-16"
     >
-      <Image
+      <img
         src={HERO.backdropOrnament}
         alt=""
         aria-hidden="true"
@@ -33,7 +31,7 @@ export function HeroSection() {
             <p className="mt-6 max-w-[560px] font-display text-[15px] leading-[1.65] text-ink sm:text-[16px] lg:text-[16.5px]">
               {HERO.description}
             </p>
-            <Link
+            <a
               href="/contact"
               className="mt-7 inline-flex h-11 items-center gap-3 rounded-full bg-copper pl-5 pr-1.5 font-display text-[14px] tracking-wide text-white transition-all duration-200 hover:bg-copper/90"
             >
@@ -41,18 +39,20 @@ export function HeroSection() {
               <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-copper">
                 <SimpleArrow className="h-3 w-3" />
               </span>
-            </Link>
+            </a>
           </div>
 
           <div className="relative mx-auto w-full max-w-[480px]">
             <div className="relative z-10 aspect-[4/5] w-full overflow-hidden rounded-[28px] shadow-[0_18px_40px_-22px_rgba(0,0,0,0.35)] lg:rounded-[36px]">
-              <Image
+              <img
                 src={HERO.doctorPortrait}
                 alt="Dr. Suneeta Veeramachaneni — Cosmetic Dentist & Implantologist at Krest Dental, Vizag"
-                fill
-                sizes="(max-width: 1024px) 90vw, 480px"
-                className="object-cover"
-                priority
+                className="absolute inset-0 h-full w-full object-cover"
+                width={480}
+                height={600}
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
               />
             </div>
           </div>
@@ -69,12 +69,14 @@ export function HeroSection() {
               </p>
             </blockquote>
             <figcaption className="mt-3">
-              <Image
+              <img
                 src={HERO.signature}
                 alt="Dr. Suneeta — signature"
                 width={211}
                 height={82}
                 className="mx-auto h-auto w-[150px] lg:mx-0"
+                loading="lazy"
+                decoding="async"
               />
             </figcaption>
           </figure>

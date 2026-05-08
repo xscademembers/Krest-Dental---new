@@ -1,4 +1,3 @@
-import Link from "next/link";
 import {
   FacebookIcon,
   InstagramIcon,
@@ -38,7 +37,7 @@ export function SiteFooter() {
               const Icon = socialIcon[s.label];
               return (
                 <li key={s.label}>
-                  <Link
+                  <a
                     href={s.href}
                     aria-label={s.label}
                     target="_blank"
@@ -46,7 +45,7 @@ export function SiteFooter() {
                     className="transition-colors hover:text-copper"
                   >
                     <Icon className="h-[18px] w-[18px]" />
-                  </Link>
+                  </a>
                 </li>
               );
             })}
@@ -58,12 +57,12 @@ export function SiteFooter() {
           <ul className="mt-4 flex flex-col gap-2">
             {FOOTER_NAV.map((item) => (
               <li key={item.label}>
-                <Link
+                <a
                   href={item.href}
                   className="font-body text-[14px] text-ink transition-colors hover:text-copper"
                 >
                   {item.label}
-                </Link>
+                </a>
               </li>
             ))}
           </ul>

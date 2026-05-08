@@ -15,11 +15,11 @@
   --color-ink: var(--krest-ink);
   --color-pink: var(--krest-pink);
 
-  /* Fonts */
-  --font-sans: var(--font-display), "EB Garamond", ui-serif, Georgia, serif;
-  --font-display: var(--font-display), "EB Garamond", ui-serif, Georgia, serif;
-  --font-heading: var(--font-heading-alt), "Inknut Antiqua", ui-serif, Georgia, serif;
-  --font-accent: var(--font-accent), "Marmelad", ui-sans-serif, system-ui, sans-serif;
+  /* Fonts (loaded via Layout.astro Google Fonts link) */
+  --font-sans: "EB Garamond", ui-serif, Georgia, serif;
+  --font-display: "EB Garamond", ui-serif, Georgia, serif;
+  --font-heading: "Inknut Antiqua", ui-serif, Georgia, serif;
+  --font-accent: "Marmelad", ui-sans-serif, system-ui, sans-serif;
   --font-body: "Arial", "Helvetica", sans-serif;
 
   /* shadcn defaults retained for primitive components */
@@ -165,4 +165,48 @@ html.lenis body {
 }
 .lenis.lenis-stopped {
   overflow: clip;
+}
+
+/* Contact split card — Krest palette (same tokens as landing) */
+.contact-split-panel {
+  background-color: var(--krest-copper);
+  color: var(--primary-foreground);
+}
+.contact-split-panel a {
+  color: var(--primary-foreground);
+}
+.contact-split-panel a:hover {
+  opacity: 0.92;
+}
+.contact-field {
+  background-color: var(--krest-cream);
+  border: 1px solid color-mix(in oklch, var(--krest-copper) 18%, var(--border));
+  border-radius: 0.5rem;
+  color: var(--krest-ink);
+}
+.contact-field::placeholder {
+  color: var(--krest-taupe);
+  opacity: 0.8;
+}
+.contact-field:focus {
+  outline: none;
+  border-color: var(--krest-copper);
+  box-shadow: 0 0 0 3px color-mix(in oklch, var(--krest-copper) 28%, transparent);
+}
+.contact-field:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+.contact-submit {
+  background-color: var(--krest-copper);
+  color: var(--primary-foreground);
+  border-radius: 0.75rem;
+  box-shadow: 0 12px 28px -10px color-mix(in oklch, var(--krest-copper) 52%, transparent);
+}
+.contact-submit:hover:not(:disabled) {
+  filter: brightness(1.05);
+}
+.contact-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }

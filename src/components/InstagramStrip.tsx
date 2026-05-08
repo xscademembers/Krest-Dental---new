@@ -1,5 +1,3 @@
-import Image from "next/image";
-import Link from "next/link";
 import { INSTAGRAM_POSTS } from "@/lib/krest-content";
 
 const INSTAGRAM_URL = "https://www.instagram.com/krestdental/";
@@ -16,34 +14,36 @@ export function InstagramStrip() {
             Follow Us on Instagram
           </h2>
           <p className="mt-2 font-accent text-[18px] tracking-wide text-taupe">
-            <Link
+            <a
               href={INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="transition-colors hover:text-copper"
             >
               @Krestdental
-            </Link>
+            </a>
           </p>
         </div>
         <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 lg:gap-4">
           {INSTAGRAM_POSTS.map((post, idx) => (
             <li key={post.src}>
-              <Link
+              <a
                 href={INSTAGRAM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative block aspect-[4/3] overflow-hidden rounded-md ring-1 ring-copper/10"
               >
-                <Image
+                <img
                   src={post.src}
                   alt={post.alt}
-                  fill
-                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  priority={idx < 4}
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  width={400}
+                  height={300}
+                  loading={idx < 4 ? "eager" : "lazy"}
+                  decoding="async"
+                  fetchPriority={idx < 4 ? "high" : undefined}
                 />
-              </Link>
+              </a>
             </li>
           ))}
         </ul>

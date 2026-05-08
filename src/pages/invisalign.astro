@@ -1,0 +1,27 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { FloatingCallButton } from "@/components/FloatingCallButton";
+import { InvisalignMain } from "@/components/InvisalignMain";
+import { SiteFooter } from "@/components/SiteFooter";
+import { SiteHeader } from "@/components/SiteHeader";
+
+const canonical = "https://www.krest.dental/invisalign";
+const title = "Invisalign in Vizag | Krest Dental";
+const description =
+  "Get Invisalign clear aligners in Visakhapatnam at Krest Dental. Explore treatment steps, cost factors, candidacy, and smile transformation options.";
+const keywords = [
+  "invisalign",
+  "invisalign vizag",
+  "clear aligners visakhapatnam",
+  "invisible braces",
+  "invisalign cost",
+  "invisalign treatment",
+];
+---
+
+<Layout {title} {description} {canonical} ogType="article" {keywords}>
+  <SiteHeader client:load />
+  <InvisalignMain />
+  <SiteFooter />
+  <FloatingCallButton />
+</Layout>

@@ -1,0 +1,171 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { FloatingCallButton } from "@/components/FloatingCallButton";
+import { SiteFooter } from "@/components/SiteFooter";
+import { SiteHeader } from "@/components/SiteHeader";
+import { ABOUT_HERO, ABOUT_VISION_MISSION, EMAIL, PHONE_DISPLAY, PHONE_TEL } from "@/lib/krest-content";
+
+const canonical = "https://www.krest.dental/about-us";
+const title = "About Us | Krest Dental Vizag";
+const description =
+  "Meet Dr. Suneeta Veeramachaneni and discover Krest Dental Care in Visakhapatnam — world-class cosmetic dentistry, implants, and comprehensive care since 2014.";
+const keywords = [
+  "krest dental about",
+  "dr suneeta veeramachaneni",
+  "cosmetic dentist vizag",
+  "dental clinic visakhapatnam",
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Dentist",
+  name: "Krest Dental",
+  description,
+  telephone: PHONE_DISPLAY,
+  email: EMAIL,
+  url: canonical,
+  founder: {
+    "@type": "Person",
+    name: "Dr. Suneeta Veeramachaneni",
+    jobTitle: "Cosmetic Dentist & Implantologist",
+  },
+  foundingDate: "2014",
+};
+---
+
+<Layout {title} {description} {canonical} {keywords}>
+  <SiteHeader client:load />
+  <main class="flex-1 bg-cream">
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+    <!-- Hero: two stacked split rows — bg ~#F4F0E8 (about reference) -->
+    <div class="bg-[#F4F0E8]">
+      <section
+        class="about-hero mx-auto max-w-[1240px] px-[25px] pb-14 pt-12 lg:pb-20 lg:pt-16"
+        aria-label="About Krest Dental Care"
+      >
+      <div
+        id="dr-suneeta"
+        class="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14 xl:gap-16"
+      >
+        <div class="order-1">
+          <!-- Portrait frame: 4/5 + top-weighted cover = chest-up crop like reference -->
+          <div
+            class="relative aspect-[4/5] w-full max-w-[520px] overflow-hidden rounded-[12px] shadow-[0_20px_50px_-28px_rgba(0,0,0,0.35)] sm:mx-auto sm:max-w-[480px] lg:mx-0 lg:max-w-none lg:rounded-[14px]"
+          >
+            <img
+              src={ABOUT_HERO.portraitSrc}
+              alt={ABOUT_HERO.portraitAlt}
+              width={574}
+              height={697}
+              class="absolute inset-0 h-full w-full object-cover object-[50%_12%]"
+              loading="eager"
+              decoding="async"
+              fetchpriority="high"
+            />
+          </div>
+        </div>
+        <div class="order-2 text-left">
+          <h1
+            class="font-display text-[36px] font-normal leading-[1.12] tracking-[-0.02em] text-copper sm:text-[42px] lg:text-[46px]"
+          >
+            {ABOUT_HERO.establishedHeading}
+          </h1>
+          <div class="mt-8 space-y-6">
+            {ABOUT_HERO.bioParagraphs.map((text) => (
+              <p class="font-display text-[16px] font-normal leading-[1.7] text-ink sm:text-[17px]">{text}</p>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-16 grid grid-cols-1 items-center gap-10 lg:mt-20 lg:grid-cols-2 lg:gap-14 xl:gap-16">
+        <div class="text-left">
+          <div class="space-y-6">
+            {ABOUT_HERO.clinicParagraphs.map((text) => (
+              <p class="font-display text-[16px] font-normal leading-[1.7] text-ink sm:text-[17px]">{text}</p>
+            ))}
+          </div>
+        </div>
+        <div>
+          <div
+            class="overflow-hidden rounded-[12px] shadow-[0_20px_50px_-28px_rgba(0,0,0,0.35)] lg:rounded-[14px]"
+          >
+            <img
+              src={ABOUT_HERO.receptionSrc}
+              alt={ABOUT_HERO.receptionAlt}
+              width={589}
+              height={412}
+              class="aspect-[589/412] w-full object-cover object-center"
+              loading="lazy"
+              decoding="async"
+              referrerpolicy="no-referrer"
+            />
+          </div>
+        </div>
+      </div>
+      </section>
+    </div>
+
+    <section
+      class="bg-[#f2e9e1] py-14 lg:py-20"
+      aria-labelledby="about-vision-mission-heading"
+    >
+      <div class="mx-auto max-w-[1240px] px-[25px]">
+        <h2 id="about-vision-mission-heading" class="sr-only">
+          Our vision and mission
+        </h2>
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8 lg:gap-10">
+          <article
+            class="flex h-full min-h-[280px] flex-col items-center justify-center rounded-[48px] bg-white px-8 py-12 text-center shadow-[0_12px_42px_-22px_rgba(0,0,0,0.14)] sm:min-h-0 sm:px-10 sm:py-14 lg:rounded-[50px] lg:px-12 lg:py-16"
+          >
+            <h3
+              class="font-display text-[28px] font-normal leading-tight text-[#a37e6d] sm:text-[32px] lg:text-[34px]"
+            >
+              {ABOUT_VISION_MISSION.vision.title}
+            </h3>
+            <p class="mt-6 max-w-[52ch] font-display text-[16px] font-normal leading-[1.75] text-ink sm:text-[17px]">
+              {ABOUT_VISION_MISSION.vision.text}
+            </p>
+          </article>
+          <article
+            class="flex h-full min-h-[280px] flex-col items-center justify-center rounded-[48px] bg-white px-8 py-12 text-center shadow-[0_12px_42px_-22px_rgba(0,0,0,0.14)] sm:min-h-0 sm:px-10 sm:py-14 lg:rounded-[50px] lg:px-12 lg:py-16"
+          >
+            <h3
+              class="font-display text-[28px] font-normal leading-tight text-[#a37e6d] sm:text-[32px] lg:text-[34px]"
+            >
+              {ABOUT_VISION_MISSION.mission.title}
+            </h3>
+            <p class="mt-6 max-w-[52ch] font-display text-[16px] font-normal leading-[1.75] text-ink sm:text-[17px]">
+              {ABOUT_VISION_MISSION.mission.text}
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-t border-copper/15 bg-white py-12 lg:py-16">
+      <div class="mx-auto max-w-[1240px] px-[25px] text-center">
+        <p class="font-display text-[18px] text-taupe sm:text-[20px]">
+          Questions or ready to book?
+        </p>
+        <div class="mt-5 flex flex-wrap items-center justify-center gap-4">
+          <a
+            href={PHONE_TEL}
+            class="inline-flex h-11 items-center rounded-full border border-copper bg-copper px-6 font-display text-[15px] text-white transition hover:bg-copper/90"
+          >
+            Call {PHONE_DISPLAY}
+          </a>
+          <a
+            href="/contact"
+            class="inline-flex h-11 items-center rounded-full border border-copper/40 bg-transparent px-6 font-display text-[15px] text-copper transition hover:bg-cream"
+          >
+            Contact us
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <SiteFooter />
+  <FloatingCallButton />
+</Layout>

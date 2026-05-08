@@ -170,6 +170,38 @@ export const INSTAGRAM_POSTS: GalleryImage[] = [
   { src: "/images/instagram/post-08.jpg", alt: "Krest Dental Instagram post" },
 ];
 
+/** About page hero — copy aligned with krest.dental/about-us */
+export const ABOUT_HERO = {
+  portraitSrc: "/images/about/established-portrait.jpg", /* DSC08634_edited (2139b1_68472ba674d34d209f9c0d89dfd78284~mv2) */
+  portraitAlt:
+    "Dr. Suneeta Veeramachaneni — Cosmetic and Aesthetic Dentist and Implantologist at Krest Dental Care, Visakhapatnam",
+  /** Host on Wix CDN so the image loads without committing `public/images/about/` (folder often untracked). JPEG fill only — no enc_avif. */
+  receptionSrc:
+    "https://static.wixstatic.com/media/2139b1_623b9e88c9ad41c084c945121d516cd8~mv2.jpg/v1/fill/w_1400,h_980,al_c,q_85,usm_0.66_1.00_0.01/IMG_0889.jpg",
+  receptionAlt: "Krest Dental Care clinic reception and front desk",
+  establishedHeading: "Established in 2014",
+  bioParagraphs: [
+    "Dr. Suneeta Veeramachaneni is a distinguished Cosmetic and Aesthetic Dentist and Implantologist with over 23 years of expertise transforming smiles. Driven by her vision to bring world-class dental care to India, she founded Krest Dental Care a center of excellence where advanced technology and compassionate care come together seamlessly.",
+    "Dr. Suneeta completed her Bachelor of Dental Surgery (BDS) at Manipal University, before earning her Doctor of Dental Surgery (DDS) from the prestigious University of California, San Francisco (UCSF). During her time at UCSF, she was honored as the top of her class, standing out among a globally diverse group of dental professionals. Following her graduation in 2005, she practiced for over eight years in San Francisco, earning a stellar reputation as a leading cosmetic dentist and implantologist. In 2013, she returned to India with a mission to establish Krest Dental Care and elevate the standard of dental care in Visakhapatnam.",
+  ],
+  clinicParagraphs: [
+    "At Krest Dental Care, patients benefit from a comprehensive range of dental services, including Teeth Whitening, Implants, Orthodontics & Invisalign, Cosmetic Dentistry, Smile Makeovers, Full-Mouth Reconstructions, Oral Surgery, Veneers, Crowns, Bridges & Dentures, Restorations & Root Canals, Gum Treatments, Pediatric Dentistry, and Preventive Care.",
+    "Our clinic is outfitted with state-of-the-art technology, reflecting our unwavering commitment to excellence and patient safety. We maintain stringent sterilization protocols and feature plush, high-end dental chairs for ultimate comfort. Our advanced tools include precision lasers, digital orthopantomograms (OPG), digital X-rays, Zoom teeth whitening systems, 3D navigation systems for implants, and cutting-edge digital scanners for 3D impressions ensuring the highest accuracy and best outcomes.",
+    "Dr. Suneeta’s dedication to continual innovation and personalized care has made Krest Dental Care a trusted destination for those seeking comprehensive, advanced, and truly world-class dental treatments in Visakhapatnam.",
+  ],
+} as const;
+
+export const ABOUT_VISION_MISSION = {
+  vision: {
+    title: "Our Vision",
+    text: "To transform lives by creating confident, healthy smiles through world-class, patient-centered dental care, setting new standards of excellence in Visakhapatnam and beyond.",
+  },
+  mission: {
+    title: "Our Mission",
+    text: "To deliver advanced, comprehensive, and compassionate dental solutions tailored to each individual. We combine cutting-edge technology, global expertise, and a deeply personalized approach to restore function, enhance aesthetics, and build lasting trust empowering every patient to smile with confidence.",
+  },
+} as const;
+
 export const HERO = {
   doctorPortrait: "/images/hero/dr-suneeta-portrait.jpg",
   signature: "/images/hero/dr-suneeta-signature.png",

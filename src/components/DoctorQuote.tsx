@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { HERO } from "@/lib/krest-content";
 
 export function DoctorQuote() {
@@ -9,12 +8,14 @@ export function DoctorQuote() {
     >
       <div className="mx-auto grid max-w-[1100px] grid-cols-1 items-center gap-10 px-6 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16 lg:px-12">
         <div className="relative mx-auto aspect-[7/8] w-full max-w-[360px] overflow-hidden">
-          <Image
+          <img
             src={HERO.doctorPortrait}
             alt="Portrait of Dr. Suneeta Veeramachaneni"
-            fill
-            sizes="(max-width: 1024px) 80vw, 360px"
-            className="object-cover"
+            className="absolute inset-0 h-full w-full object-cover"
+            width={360}
+            height={420}
+            loading="lazy"
+            decoding="async"
           />
         </div>
         <figure className="text-center lg:text-left">
@@ -24,12 +25,14 @@ export function DoctorQuote() {
             </p>
           </blockquote>
           <figcaption className="mt-8">
-            <Image
+            <img
               src={HERO.signature}
               alt="Dr. Suneeta signature"
               width={211}
               height={82}
               className="mx-auto h-auto w-[180px] lg:mx-0"
+              loading="lazy"
+              decoding="async"
             />
           </figcaption>
         </figure>

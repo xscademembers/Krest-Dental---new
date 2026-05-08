@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 import {
   ChevronDownIcon,
@@ -40,7 +39,7 @@ export function SiteHeader() {
               const Icon = socialIcon[s.label];
               return (
                 <li key={s.label}>
-                  <Link
+                  <a
                     href={s.href}
                     aria-label={s.label}
                     target="_blank"
@@ -48,7 +47,7 @@ export function SiteHeader() {
                     className="flex h-7 w-7 items-center justify-center rounded-full bg-white text-copper transition-transform hover:scale-105"
                   >
                     <Icon className="h-3.5 w-3.5" />
-                  </Link>
+                  </a>
                 </li>
               );
             })}
@@ -89,7 +88,7 @@ export function SiteHeader() {
                       : ""
                   }`}
                 >
-                  <Link
+                  <a
                     href={item.href}
                     className="inline-flex items-center gap-2 font-display text-[16px] text-ink transition-colors hover:text-copper"
                   >
@@ -97,17 +96,17 @@ export function SiteHeader() {
                     {item.children && (
                       <ChevronDownIcon className="h-2.5 w-2.5 transition-transform group-hover:rotate-180" />
                     )}
-                  </Link>
+                  </a>
                   {item.children && (
                     <ul className="invisible absolute left-1/2 top-full z-40 mt-3 min-w-[200px] -translate-x-1/2 rounded-md border border-copper/15 bg-white py-2 opacity-0 shadow-lg transition-all group-hover:visible group-hover:opacity-100">
                       {item.children.map((child) => (
                         <li key={child.label}>
-                          <Link
+                          <a
                             href={child.href}
                             className="block px-4 py-2 font-display text-[15px] text-ink transition-colors hover:bg-cream hover:text-copper"
                           >
                             {child.label}
-                          </Link>
+                          </a>
                         </li>
                       ))}
                     </ul>
@@ -117,12 +116,12 @@ export function SiteHeader() {
             </ul>
           </nav>
 
-          <Link
+          <a
             href="/contact"
             className="hidden h-11 items-center justify-center rounded-full border border-copper px-6 font-display text-[15px] italic text-copper transition-colors hover:bg-copper hover:text-white lg:inline-flex"
           >
             Book Appointment
-          </Link>
+          </a>
 
           <button
             type="button"
@@ -146,13 +145,13 @@ export function SiteHeader() {
             {NAV_ITEMS.map((item) => (
               <li key={item.label} className="px-[25px] py-4">
                 <div className="flex items-center justify-between">
-                  <Link
+                  <a
                     href={item.href}
                     onClick={() => setOpen(false)}
                     className="font-display text-xl text-ink"
                   >
                     {item.label}
-                  </Link>
+                  </a>
                   {item.children && (
                     <button
                       type="button"
@@ -176,13 +175,13 @@ export function SiteHeader() {
                   <ul className="mt-3 flex flex-col gap-2 pl-2">
                     {item.children.map((child) => (
                       <li key={child.label}>
-                        <Link
+                        <a
                           href={child.href}
                           onClick={() => setOpen(false)}
                           className="font-display text-[15px] text-taupe"
                         >
                           {child.label}
-                        </Link>
+                        </a>
                       </li>
                     ))}
                   </ul>
@@ -190,13 +189,13 @@ export function SiteHeader() {
               </li>
             ))}
             <li className="px-[25px] py-5">
-              <Link
+              <a
                 href="/contact"
                 onClick={() => setOpen(false)}
                 className="inline-flex h-11 items-center justify-center rounded-full border border-copper px-6 font-display text-[15px] italic text-copper"
               >
                 Book Appointment
-              </Link>
+              </a>
             </li>
           </ul>
         </div>

@@ -1,0 +1,430 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { FloatingCallButton } from "@/components/FloatingCallButton";
+import { SiteFooter } from "@/components/SiteFooter";
+import { SiteHeader } from "@/components/SiteHeader";
+import { ADDRESS, EMAIL, HOURS, PHONE_DISPLAY, PHONE_TEL, SOCIALS } from "@/lib/krest-content";
+
+const canonical = "https://www.krest.dental/contact";
+const title = "Contact Us | Krest Dental Vizag";
+const description =
+  "Reach Krest Dental in Visakhapatnam — book a consultation for implants, Invisalign, smile makeovers, and general dentistry. Call, WhatsApp, email, or visit our MVP Colony clinic.";
+const keywords = [
+  "krest dental contact",
+  "dentist visakhapatnam appointment",
+  "dental clinic mvp colony",
+  "book dental consultation vizag",
+];
+
+const mapsSearchUrl =
+  "https://www.google.com/maps/search/?api=1&query=Krest+Dental+MVP+Colony+Visakhapatnam";
+
+const mapEmbedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(
+  "Krest Dental Care MVP Colony Visakhapatnam 530017",
+)}&output=embed`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Dentist",
+  name: "Krest Dental",
+  telephone: "+91 95738 84525",
+  email: EMAIL,
+  url: canonical,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "3rd Floor, Door No 2-48-21, MVP Colony",
+    addressLocality: "Visakhapatnam",
+    postalCode: "530017",
+    addressCountry: "IN",
+  },
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    opens: "09:00",
+    closes: "19:30",
+  },
+};
+
+/** Web3Forms: https://web3forms.com — set PUBLIC_WEB3FORMS_ACCESS_KEY in .env (see .env.example). */
+const web3AccessKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY ?? "";
+const siteUrl = (import.meta.env.PUBLIC_SITE_URL ?? "https://www.krest.dental").replace(/\/$/, "");
+const formRedirectUrl = `${siteUrl}/contact?success=1`;
+---
+
+<Layout {title} {description} {canonical} {keywords}>
+  <SiteHeader client:load />
+  <main class="flex-1 bg-cream">
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+    <section class="mx-auto max-w-[1140px] px-[25px] pb-6 pt-12 text-center lg:pt-16">
+      <p class="font-accent text-[11px] uppercase tracking-[0.28em] text-copper">Get in touch</p>
+      <h1 class="mt-3 font-display text-[40px] font-normal leading-tight text-ink sm:text-[52px]">
+        We’d love to hear from you
+      </h1>
+    </section>
+
+    <section class="mx-auto max-w-[1140px] px-[25px] pb-16 lg:pb-24">
+      <div
+        id="form-success"
+        class="mx-auto mb-10 hidden rounded-[24px] border border-copper/20 bg-[#F3E9E4] px-8 py-10 text-center shadow-lg"
+        role="status"
+      >
+        <p class="font-display text-[24px] text-ink">Thank you — we received your message.</p>
+        <p class="mt-2 font-body text-[16px] text-taupe">Our team will contact you shortly.</p>
+      </div>
+
+      <div
+        id="contact-split-card"
+        class="overflow-hidden rounded-[28px] shadow-[0_24px_60px_-24px_rgba(0,0,0,0.28)] lg:rounded-[32px]"
+      >
+        <div class="grid grid-cols-1 items-stretch lg:grid-cols-2">
+          <!-- Left: terracotta panel (colors from globals — guaranteed contrast) -->
+          <div
+            class="contact-split-panel flex flex-col p-10 sm:p-12 lg:min-h-[560px] lg:p-14 lg:pr-12"
+          >
+            <div>
+              <h2 class="font-display text-[34px] font-normal leading-[1.15] text-white sm:text-[40px]">
+                Start Your Journey
+              </h2>
+              <p class="mt-5 max-w-[440px] font-body text-[15px] leading-relaxed text-white/95">
+                We are here to answer your questions and help you schedule your first consultation with Dr. Suneeta
+                Veeramachaneni at Krest Dental.
+              </p>
+
+              <ul class="mt-10 space-y-8">
+              <li class="flex gap-4">
+                <span class="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/15">
+                  <svg
+                    class="h-5 w-5 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    />
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
+                </span>
+                <div>
+                  <p class="font-body text-[12px] font-semibold uppercase tracking-[0.14em] text-white">
+                    Our Clinic
+                  </p>
+                  <p class="mt-1.5 font-body text-[15px] leading-relaxed text-white">
+                    {ADDRESS.name}, {ADDRESS.lines.join(", ")}
+                  </p>
+                </div>
+              </li>
+
+              <li class="flex gap-4">
+                <span class="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/15">
+                  <svg
+                    class="h-5 w-5 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1.02 1.02 0 00-1.02.24l-2.2 2.2a15.045 15.045 0 01-6.59-6.59l2.2-2.21c.28-.28.36-.67.25-1.02A11.36 11.36 0 018.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z"
+                    />
+                  </svg>
+                </span>
+                <div>
+                  <p class="font-body text-[12px] font-semibold uppercase tracking-[0.14em] text-white">Call Us</p>
+                  <p class="mt-1.5">
+                    <a
+                      href={PHONE_TEL}
+                      class="font-body text-[16px] underline decoration-white/50 underline-offset-[3px] transition hover:decoration-white"
+                    >
+                      {PHONE_DISPLAY}
+                    </a>
+                  </p>
+                </div>
+              </li>
+
+              <li class="flex gap-4">
+                <span class="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/15">
+                  <svg
+                    class="h-5 w-5 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                  </svg>
+                </span>
+                <div>
+                  <p class="font-body text-[12px] font-semibold uppercase tracking-[0.14em] text-white">Email</p>
+                  <p class="mt-1.5">
+                    <a
+                      href={`mailto:${EMAIL}`}
+                      class="break-all font-body text-[16px] underline decoration-white/50 underline-offset-[3px] transition hover:decoration-white"
+                    >
+                      {EMAIL}
+                    </a>
+                  </p>
+                </div>
+              </li>
+
+              <li class="flex gap-4">
+                <span class="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/15">
+                  <svg
+                    class="h-5 w-5 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </span>
+                <div>
+                  <p class="font-body text-[12px] font-semibold uppercase tracking-[0.14em] text-white">
+                    Consultation Hours
+                  </p>
+                  <div class="mt-1.5 space-y-1 font-body text-[15px] leading-relaxed text-white">
+                    {HOURS.map((row) => (
+                      <p>
+                        <span class="font-semibold">{row.day}:</span> {row.time}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+              </li>
+            </ul>
+            </div>
+
+            <div class="mt-12 lg:mt-auto lg:pt-8">
+              <ul class="flex flex-wrap gap-3">
+              {SOCIALS.map((s) => (
+                <li>
+                  <a
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={s.label}
+                    class="flex h-11 w-11 items-center justify-center rounded-full bg-white/15 text-white ring-1 ring-white/20 transition hover:bg-white/25"
+                  >
+                    {s.label === "Facebook" && (
+                      <svg class="h-[18px] w-[18px]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692V11.07h3.128V8.412c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.795.143v3.24h-1.918c-1.504 0-1.795.715-1.795 1.762v2.31h3.587l-.467 3.622h-3.12V24h6.116c.733 0 1.325-.593 1.325-1.325V1.325C24 .593 23.408 0 22.675 0z" />
+                      </svg>
+                    )}
+                    {s.label === "Instagram" && (
+                      <svg class="h-[18px] w-[18px]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162 0 3.403 2.759 6.163 6.162 6.163 3.403 0 6.162-2.759 6.162-6.163 0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                      </svg>
+                    )}
+                    {s.label === "YouTube" && (
+                      <svg class="h-[18px] w-[18px]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                      </svg>
+                    )}
+                  </a>
+                </li>
+              ))}
+            </ul>
+
+              <p class="mt-6">
+              <a
+                href={mapsSearchUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex font-body text-[14px] text-white underline decoration-white/45 underline-offset-[4px] transition hover:decoration-white"
+              >
+                Open in Google Maps →
+              </a>
+            </p>
+            </div>
+          </div>
+
+          <!-- Right: form panel -->
+          <div class="flex min-h-full flex-col bg-white p-10 sm:p-12 lg:p-14 lg:pl-12">
+            <h2 class="font-display text-[30px] font-normal leading-tight text-ink sm:text-[34px]">
+              Send Us a Message
+            </h2>
+
+            <form class="relative mt-8 space-y-5" action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value={web3AccessKey} />
+              <input type="hidden" name="subject" value="Krest Dental — New lead (contact form)" />
+              <input type="hidden" name="from_name" value="Krest Website" />
+              <input type="hidden" name="redirect" value={formRedirectUrl} />
+
+              <input type="hidden" name="utm_source" value="" />
+              <input type="hidden" name="utm_medium" value="" />
+              <input type="hidden" name="utm_campaign" value="" />
+              <input type="hidden" name="utm_term" value="" />
+              <input type="hidden" name="utm_content" value="" />
+              <input type="hidden" name="gclid" value="" />
+              <input type="hidden" name="fbclid" value="" />
+
+              <input
+                type="text"
+                name="botcheck"
+                class="absolute -left-[9999px] h-px w-px opacity-0"
+                tabindex="-1"
+                autocomplete="off"
+                aria-hidden="true"
+              />
+
+              <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                <div>
+                  <label
+                    for="lead-name"
+                    class="font-body text-[11px] font-semibold uppercase tracking-[0.14em] text-taupe"
+                  >
+                    Full name
+                  </label>
+                  <input
+                    id="lead-name"
+                    name="name"
+                    type="text"
+                    required
+                    autocomplete="name"
+                    placeholder="Jane Doe"
+                    class="contact-field mt-2 w-full px-4 py-3.5 font-body text-[16px]"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="lead-phone"
+                    class="font-body text-[11px] font-semibold uppercase tracking-[0.14em] text-taupe"
+                  >
+                    Phone number
+                  </label>
+                  <input
+                    id="lead-phone"
+                    name="phone"
+                    type="tel"
+                    required
+                    autocomplete="tel"
+                    placeholder="+91 …"
+                    class="contact-field mt-2 w-full px-4 py-3.5 font-body text-[16px]"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label
+                  for="lead-email"
+                  class="font-body text-[11px] font-semibold uppercase tracking-[0.14em] text-taupe"
+                >
+                  Email
+                </label>
+                <input
+                  id="lead-email"
+                  name="email"
+                  type="email"
+                  required
+                  autocomplete="email"
+                  placeholder="you@example.com"
+                  class="contact-field mt-2 w-full px-4 py-3.5 font-body text-[16px]"
+                />
+              </div>
+
+              <div>
+                <label
+                  for="lead-interest"
+                  class="font-body text-[11px] font-semibold uppercase tracking-[0.14em] text-taupe"
+                >
+                  Interested treatment
+                </label>
+                <select
+                  id="lead-interest"
+                  name="interest"
+                  class="contact-field mt-2 w-full cursor-pointer px-4 py-3.5 font-body text-[16px]"
+                >
+                  <option value="">Select a treatment</option>
+                  <option value="Dental implants">Dental implants</option>
+                  <option value="Invisalign / aligners">Invisalign / aligners</option>
+                  <option value="Cosmetic / smile makeover">Cosmetic / smile makeover</option>
+                  <option value="General dentistry">General dentistry</option>
+                  <option value="Other / not sure">Other / not sure</option>
+                </select>
+              </div>
+
+              <div>
+                <label
+                  for="lead-message"
+                  class="font-body text-[11px] font-semibold uppercase tracking-[0.14em] text-taupe"
+                >
+                  Your message
+                </label>
+                <textarea
+                  id="lead-message"
+                  name="message"
+                  rows={4}
+                  placeholder="Tell us your goals..."
+                  class="contact-field mt-2 min-h-[120px] w-full resize-y px-4 py-3.5 font-body text-[16px]"
+                />
+              </div>
+
+              <p class="font-body text-[13px] leading-relaxed text-taupe">
+                By sending this inquiry, you agree we may contact you about your request.
+              </p>
+
+              <button type="submit" class="contact-submit mt-2 w-full py-4 font-body text-[15px] font-semibold">
+                Send Inquiry
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-t border-copper/15 bg-cream py-14 lg:py-20">
+      <div class="mx-auto max-w-[1180px] px-[25px]">
+        <h2 class="text-center font-display text-[36px] text-copper sm:text-[44px]">Visit us</h2>
+        <p class="mx-auto mt-4 max-w-[720px] text-center text-[17px] leading-8 text-taupe">
+          Conveniently located in MVP Colony. Use the map link above for directions, or call ahead — we’ll help you
+          plan your arrival and appointment time.
+        </p>
+        <div class="mt-10 overflow-hidden rounded-[20px] border border-copper/20 bg-[#F3E9E4]">
+          <iframe
+            title="Krest Dental — map location"
+            src={mapEmbedUrl}
+            class="aspect-[16/9] min-h-[280px] w-full border-0 sm:min-h-[360px]"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+          />
+        </div>
+      </div>
+    </section>
+
+    <script is:inline>
+      (function () {
+        var q = new URLSearchParams(window.location.search);
+        if (q.get("success") === "1") {
+          var ok = document.getElementById("form-success");
+          if (ok) ok.classList.remove("hidden");
+          var card = document.getElementById("contact-split-card");
+          if (card) card.classList.add("hidden");
+        }
+        ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "fbclid"].forEach(
+          function (k) {
+            var v = q.get(k);
+            if (!v) return;
+            var inp = document.querySelector('input[name="' + k + '"]');
+            if (inp) inp.value = v;
+          },
+        );
+      })();
+    </script>
+  </main>
+  <SiteFooter />
+  <FloatingCallButton />
+</Layout>

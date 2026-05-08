@@ -1,42 +1,4 @@
-import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
-import { FloatingCallButton } from "@/components/FloatingCallButton";
-import { SiteFooter } from "@/components/SiteFooter";
-import { SiteHeader } from "@/components/SiteHeader";
-
 const pageUrl = "https://www.krest.dental/invisalign";
-
-export const metadata: Metadata = {
-  title: "Invisalign in Vizag | Krest Dental",
-  description:
-    "Get Invisalign clear aligners in Visakhapatnam at Krest Dental. Explore treatment steps, cost factors, candidacy, and smile transformation options.",
-  keywords: [
-    "invisalign",
-    "invisalign vizag",
-    "clear aligners visakhapatnam",
-    "invisible braces",
-    "invisalign cost",
-    "invisalign treatment",
-  ],
-  alternates: { canonical: pageUrl },
-  openGraph: {
-    title: "Invisalign in Vizag | Krest Dental",
-    description:
-      "Advanced Invisalign treatment with digital planning, comfortable aligners, and predictable smile outcomes at Krest Dental.",
-    url: pageUrl,
-    siteName: "Krest Dental",
-    type: "article",
-    images: [{ url: "/seo/og-image.png", width: 2500, height: 1330 }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Invisalign in Vizag | Krest Dental",
-    description:
-      "Straighten your smile with Invisalign clear aligners at Krest Dental.",
-    images: ["/seo/og-image.png"],
-  },
-};
 
 const faqs = [
   {
@@ -81,7 +43,7 @@ const faqs = [
   },
 ];
 
-export default function InvisalignPage() {
+export function InvisalignMain() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -125,8 +87,6 @@ export default function InvisalignPage() {
   };
 
   return (
-    <>
-      <SiteHeader />
       <main className="flex-1 bg-cream">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
@@ -147,12 +107,12 @@ export default function InvisalignPage() {
               smile correction in everyday life.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
-              <Link
+              <a
                 href="/contact"
                 className="inline-flex h-12 items-center rounded-full bg-copper px-7 font-display text-white shadow-[0_8px_20px_-10px_rgba(159,100,73,0.65)]"
               >
                 Book Consultation
-              </Link>
+              </a>
               <span className="inline-flex h-12 items-center rounded-full border border-copper/20 bg-white/60 px-5 font-display text-[15px] text-ink">
                 <span className="mr-2 inline-flex h-5 w-5 items-center justify-center rounded-full border border-copper/30 text-[11px] text-copper">
                   ⏱
@@ -170,13 +130,15 @@ export default function InvisalignPage() {
 
           <div className="relative mx-auto w-full max-w-[520px]">
             <div className="relative aspect-[4/5] overflow-hidden rounded-[36px] border-[6px] border-white shadow-[0_26px_50px_-28px_rgba(0,0,0,0.45)]">
-              <Image
+              <img
                 src="/images/hero/dr-suneeta-portrait.jpg"
                 alt="Invisalign consultation and smile planning at Krest Dental"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 90vw, 520px"
-                priority
+                className="absolute inset-0 h-full w-full object-cover"
+                width={520}
+                height={650}
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent" />
               <div className="absolute inset-x-0 top-1/2 flex -translate-y-1/2 justify-center">
@@ -218,7 +180,7 @@ export default function InvisalignPage() {
                 Clear aligners do more than straighten teeth — they improve smile
                 harmony, bite function, and confidence in a discreet way.
               </p>
-              <Link
+              <a
                 href="/contact"
                 className="mt-8 inline-flex h-12 items-center gap-3 rounded-full bg-copper px-7 font-display text-white shadow-[0_8px_20px_-10px_rgba(159,100,73,0.65)]"
               >
@@ -228,7 +190,7 @@ export default function InvisalignPage() {
                     <path d="M8 5v14l11-7z" />
                   </svg>
                 </span>
-              </Link>
+              </a>
             </div>
 
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
@@ -405,7 +367,7 @@ export default function InvisalignPage() {
                 supervision. We combine esthetic understanding, functional bite analysis, and patient-focused support
                 to achieve confident smile outcomes.
               </p>
-              <Link
+              <a
                 href="/contact"
                 className="mt-8 inline-flex h-12 items-center gap-3 rounded-full bg-copper px-7 font-display text-white shadow-[0_8px_20px_-10px_rgba(159,100,73,0.65)]"
               >
@@ -415,7 +377,7 @@ export default function InvisalignPage() {
                     <path d="M8 5v14l11-7z" />
                   </svg>
                 </span>
-              </Link>
+              </a>
             </div>
 
             <div className="grid gap-5 sm:grid-cols-2">
@@ -553,9 +515,9 @@ export default function InvisalignPage() {
               lifestyle.
             </p>
             <div className="mt-7 flex flex-wrap justify-center gap-4">
-              <Link href="/contact" className="inline-flex h-11 items-center rounded-full bg-copper px-6 font-display text-white">
+              <a href="/contact" className="inline-flex h-11 items-center rounded-full bg-copper px-6 font-display text-white">
                 Book Consultation
-              </Link>
+              </a>
               <a href="tel:9573884525" className="inline-flex h-11 items-center rounded-full border border-copper px-6 font-display text-copper">
                 Call / WhatsApp
               </a>
@@ -563,9 +525,6 @@ export default function InvisalignPage() {
           </div>
         </section>
       </main>
-      <SiteFooter />
-      <FloatingCallButton />
-    </>
   );
 }
 

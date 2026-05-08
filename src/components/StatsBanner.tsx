@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { STATS } from "@/lib/krest-content";
 
 export function StatsBanner() {
@@ -33,12 +32,12 @@ export function StatsBanner() {
         </ul>
 
         <div className="mt-12 flex justify-center lg:mt-14">
-          <Link
+          <a
             href="/about-us"
             className="inline-flex h-11 items-center justify-center rounded-full border border-copper bg-white px-7 font-display text-[14px] italic text-copper transition-colors hover:bg-copper hover:text-white"
           >
             Our Story
-          </Link>
+          </a>
         </div>
       </div>
     </section>

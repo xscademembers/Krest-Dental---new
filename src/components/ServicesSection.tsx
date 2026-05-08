@@ -1,5 +1,3 @@
-import Image from "next/image";
-import Link from "next/link";
 import { ArrowRightIcon } from "@/components/icons";
 import { SERVICES } from "@/lib/krest-content";
 import type { Service } from "@/types/krest";
@@ -43,13 +41,15 @@ function ServiceCard({ service }: { service: Service }) {
           aria-hidden="true"
           className="absolute inset-0 rounded-full bg-[#EFD9D0]"
         />
-        <Image
+        <img
           src={service.image}
           alt={`${service.title} illustration`}
           width={240}
           height={240}
-          sizes="(max-width: 1024px) 220px, 240px"
           className="relative h-[58%] w-auto object-contain"
+          loading="lazy"
+          decoding="async"
+          sizes="(max-width: 1024px) 220px, 240px"
         />
       </div>
 
@@ -65,7 +65,7 @@ function ServiceCard({ service }: { service: Service }) {
         <p className="mt-4 font-display text-[15px] leading-[1.6] text-taupe sm:text-[16px] lg:text-[17px]">
           {service.description}
         </p>
-        <Link
+        <a
           href={service.link}
           className="mt-6 inline-flex h-[40px] items-center gap-3 rounded-full bg-copper pl-5 pr-2 font-display text-[14px] tracking-wide text-white transition-all duration-300 hover:bg-copper/90"
         >
@@ -73,7 +73,7 @@ function ServiceCard({ service }: { service: Service }) {
           <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/15">
             <ArrowRightIcon className="h-3 w-3 -rotate-180" />
           </span>
-        </Link>
+        </a>
       </div>
     </article>
   );

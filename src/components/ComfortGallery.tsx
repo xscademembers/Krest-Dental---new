@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@/components/icons";
 import { GALLERY } from "@/lib/krest-content";
@@ -29,16 +28,18 @@ export function ComfortGallery() {
         <div className="relative">
           <div className="relative mx-auto aspect-[16/9] w-full max-w-[1100px] overflow-hidden rounded-[8px]">
             {GALLERY.map((image, idx) => (
-              <Image
+              <img
                 key={image.src}
                 src={image.src}
                 alt={image.alt}
-                fill
-                sizes="(max-width: 1024px) 95vw, 1100px"
-                className={`object-cover transition-opacity duration-700 ${
+                className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
                   idx === active ? "opacity-100" : "opacity-0"
                 }`}
-                priority={idx === 0}
+                width={1100}
+                height={619}
+                loading={idx === 0 ? "eager" : "lazy"}
+                decoding="async"
+                fetchPriority={idx === 0 ? "high" : undefined}
               />
             ))}
           </div>

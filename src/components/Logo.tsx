@@ -1,8 +1,6 @@
-import Link from "next/link";
-
 export function Logo({ className = "" }: { className?: string }) {
   return (
-    <Link
+    <a
       href="/"
       aria-label="Krest Dental — Home"
       className={`inline-flex items-center gap-3 text-ink ${className}`}
@@ -15,6 +13,6 @@ export function Logo({ className = "" }: { className?: string }) {
         <span className="text-[11px] sm:text-[12px]">DENTAL</span>
         <span className="text-[11px] sm:text-[12px]">CARE</span>
       </span>
-    </Link>
+    </a>
   );
 }
