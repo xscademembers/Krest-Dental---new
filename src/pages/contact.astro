@@ -47,9 +47,7 @@ const jsonLd = {
   },
 };
 
-/** Leads are POSTed to our own /api/leads endpoint (stored in MongoDB, viewable in /admin/dashboard). */
-const siteUrl = (import.meta.env.PUBLIC_SITE_URL ?? "https://www.krest.dental").replace(/\/$/, "");
-const formRedirectUrl = `${siteUrl}/contact?success=1`;
+/** Leads POST to /api/leads; after success the API redirects to /contact?success=1 on the same host (see getPublicOrigin). */
 ---
 
 <Layout {title} {description} {canonical} {keywords}>
@@ -259,7 +257,6 @@ const formRedirectUrl = `${siteUrl}/contact?success=1`;
             </h2>
 
             <form id="lead-form" class="relative mt-8 space-y-5" action="/api/leads" method="POST">
-              <input type="hidden" name="redirect" value={formRedirectUrl} />
 
               <input type="hidden" name="utm_source" value="" />
               <input type="hidden" name="utm_medium" value="" />

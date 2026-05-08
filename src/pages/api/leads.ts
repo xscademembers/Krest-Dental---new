@@ -24,6 +24,18 @@ async function readPayload(request: Request): Promise<Record<string, string>> {
   return out;
 }
 
+/**
+ * Public browser origin (scheme + host) for post-submit redirects.
+ * Uses proxy headers on Vercel so we never send users to a stale PUBLIC_SITE_URL
+ * baked into prerendered HTML (e.g. old domain while testing on *.vercel.app).
+ */
+function getPublicOrigin(request: Request): string {
+  const host = request.headers.get("x-forwarded-host")?.split(",")[0]?.trim();
+  const proto = request.headers.get("x-forwarded-proto")?.split(",")[0]?.trim();
+  if (host && proto) return `${proto}://${host}`;
+  return new URL(request.url).origin;
+}
+
 export const POST: APIRoute = async ({ request, clientAddress }) => {
   let data: Record<string, string>;
   try {
@@ -97,8 +109,10 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
     });
   }
 
-  const redirect = data.redirect && /^https?:\/\//i.test(data.redirect) ? data.redirect : "/contact?success=1";
-  return new Response(null, { status: 303, headers: { Location: redirect } });
+  // Always thank-you on the same host the user actually used (ignore client "redirect" — it was
+  // often baked from PUBLIC_SITE_URL at prerender time and points at an old / wrong domain).
+  const successUrl = `${getPublicOrigin(request)}/contact?success=1`;
+  return new Response(null, { status: 303, headers: { Location: successUrl } });
 };
 
 export const GET: APIRoute = () =>
