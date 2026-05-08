@@ -33,3 +33,14 @@ export type GalleryImage = {
   src: string;
   alt: string;
 };
+
+export type BlogPost = {
+  slug: string;
+  title: string;
+  excerpt: string;
+  date: string;
+  readingTime: string;
+  category: string;
+  cover: { src: string; alt: string };
+  body: string[];
+};

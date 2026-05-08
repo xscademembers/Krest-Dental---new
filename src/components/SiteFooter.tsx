@@ -23,6 +23,7 @@ const FOOTER_NAV = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about-us" },
   { label: "Services", href: "/our-services" },
+  { label: "Blogs", href: "/blogs" },
   { label: "Contact Us", href: "/contact" },
 ];
 

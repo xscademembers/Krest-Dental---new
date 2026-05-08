@@ -5,6 +5,8 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { ABOUT_HERO, ABOUT_VISION_MISSION, EMAIL, PHONE_DISPLAY, PHONE_TEL } from "@/lib/krest-content";
 
+export const prerender = true;
+
 const canonical = "https://www.krest.dental/about-us";
 const title = "About Us | Krest Dental Vizag";
 const description =
@@ -38,8 +40,8 @@ const jsonLd = {
   <main class="flex-1 bg-cream">
     <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
-    <!-- Hero: two stacked split rows — bg ~#F4F0E8 (about reference) -->
-    <div class="bg-[#F4F0E8]">
+    <!-- Hero: two stacked split rows — section bg #F4EAE7 -->
+    <div class="bg-[#F4EAE7]">
       <section
         class="about-hero mx-auto max-w-[1240px] px-[25px] pb-14 pt-12 lg:pb-20 lg:pt-16"
         aria-label="About Krest Dental Care"
@@ -108,7 +110,7 @@ const jsonLd = {
     </div>
 
     <section
-      class="bg-[#f2e9e1] py-14 lg:py-20"
+      class="bg-[#F4EAE7] py-14 lg:py-20"
       aria-labelledby="about-vision-mission-heading"
     >
       <div class="mx-auto max-w-[1240px] px-[25px]">

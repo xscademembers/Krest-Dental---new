@@ -1,4 +1,5 @@
 import type {
+  BlogPost,
   GalleryImage,
   NavItem,
   Service,
@@ -21,6 +22,7 @@ export const NAV_ITEMS: NavItem[] = [
       { label: "Implants", href: "/implants" },
     ],
   },
+  { label: "Blogs", href: "/blogs" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -168,6 +170,108 @@ export const INSTAGRAM_POSTS: GalleryImage[] = [
   { src: "/images/instagram/post-06.jpg", alt: "Krest Dental Instagram post" },
   { src: "/images/instagram/post-07.jpg", alt: "Krest Dental Instagram post" },
   { src: "/images/instagram/post-08.jpg", alt: "Krest Dental Instagram post" },
+];
+
+export const BLOG_POSTS: BlogPost[] = [
+  {
+    slug: "what-to-expect-at-your-first-visit",
+    title: "What to expect at your first visit to Krest Dental",
+    excerpt:
+      "A walkthrough of what happens from the moment you arrive — paperwork, oral examination, imaging, and how we plan your treatment together.",
+    date: "2025-09-12",
+    readingTime: "4 min read",
+    category: "Patient Guide",
+    cover: { src: "/images/gallery/clinic-03.jpg", alt: "Krest Dental waiting area" },
+    body: [
+      "Your first visit is a chance for us to understand your goals and for you to get comfortable with our team. After a brief check-in, we sit with you to discuss what brought you in — pain, an aesthetic concern, a routine cleaning, or something more involved like implants or aligners.",
+      "Next is a full clinical examination. We check your gums, existing restorations, bite, and soft tissues. Where helpful, we capture digital X-rays and 3D scans on the spot so we can show you exactly what is happening inside your mouth.",
+      "Once we have the full picture, Dr. Suneeta walks you through the findings using your scans on a screen. We then build a phased treatment plan — usually with a couple of options — along with timelines and transparent pricing. You leave the visit knowing what is recommended, what is optional, and what is urgent.",
+      "Most first appointments take 45 to 60 minutes. If you would like to share previous reports or X-rays, please bring them along; it helps us tailor the plan and avoid repeat imaging.",
+    ],
+  },
+  {
+    slug: "implants-vs-bridges",
+    title: "Implants vs. bridges: how to choose what is right for you",
+    excerpt:
+      "Both restore missing teeth, but they age differently and demand different long-term care. Here is how we help patients decide.",
+    date: "2025-08-02",
+    readingTime: "5 min read",
+    category: "Implants",
+    cover: { src: "/images/services/implants.png", alt: "Krest Dental — implants overview" },
+    body: [
+      "When a tooth is lost, two of the most common replacement options are a dental implant and a fixed bridge. Both restore function and aesthetics, but they take different paths to get there.",
+      "An implant replaces the root with a titanium post anchored in the jaw, then a custom crown is placed on top. Because the post stimulates the bone, the surrounding ridge stays healthier over time. The neighbouring teeth are left untouched.",
+      "A bridge instead uses the two adjacent teeth as anchors. The middle tooth is suspended between them. It is a faster, lower-cost path that suits patients who want to avoid surgery, and it can look excellent in skilled hands. The trade-off is that the anchor teeth need to be reshaped, and the bone underneath the missing tooth slowly resorbs.",
+      "We usually recommend implants when the neighbouring teeth are healthy, when bone volume is good, and when the patient wants the most long-lasting solution. Bridges remain a strong option when the adjacent teeth already need crowns, or when surgery is not preferred.",
+    ],
+  },
+  {
+    slug: "invisalign-or-braces",
+    title: "Invisalign or braces? A practical guide for adults",
+    excerpt:
+      "Aligners are not always the answer, and braces are not always the slow option. Here is how we match the appliance to the case.",
+    date: "2025-06-18",
+    readingTime: "4 min read",
+    category: "Orthodontics",
+    cover: { src: "/images/services/invisalign.png", alt: "Krest Dental — Invisalign overview" },
+    body: [
+      "Most adult patients ask the same question on day one: should I go with Invisalign or traditional braces? The honest answer is that it depends on the bite, the goal, and the lifestyle.",
+      "Invisalign suits mild to moderate crowding, spacing, and many bite issues. It is removable, almost invisible, and easy to keep clean. It works best for patients who can commit to wearing aligners 20 to 22 hours a day.",
+      "Braces still have an edge for complex movements — large rotations, severe crowding, or significant bite corrections. Modern brackets are smaller and more comfortable than they used to be, and they remove the discipline of wearing trays.",
+      "At the consultation we capture a 3D scan and run a digital simulation. You get to see the projected outcome before any treatment begins, which makes the choice between Invisalign and braces much more informed.",
+    ],
+  },
+  {
+    slug: "how-we-keep-the-clinic-spotless",
+    title: "Behind the scenes: how we keep the clinic spotless",
+    excerpt:
+      "Sterilisation, water lines, surface protocols, and the small habits that protect every patient who walks in.",
+    date: "2025-04-21",
+    readingTime: "3 min read",
+    category: "Inside Krest",
+    cover: { src: "/images/gallery/clinic-05.jpg", alt: "Krest Dental consultation area" },
+    body: [
+      "Behind every smooth appointment is a strict, repeatable cleaning routine. Every instrument that touches a patient is single-use, autoclaved at high temperature and pressure, or chemically disinfected to a clinical standard.",
+      "Operatory surfaces — chair, lights, handpiece holders, screens — are wiped down between patients with hospital-grade disinfectant. Plastic barriers cover high-contact items so the underlying surface stays clean for the entire day.",
+      "Water lines are flushed and treated regularly to keep them free of biofilm. Air filtration runs continuously, and the team follows a hand-hygiene routine that is logged and audited each week.",
+      "None of this is glamorous, but it is what makes a calm, predictable visit possible. We take it seriously so you do not have to think about it.",
+    ],
+  },
+  {
+    slug: "pediatric-dental-care-tips",
+    title: "Five small habits that protect your child’s teeth",
+    excerpt:
+      "Practical, evidence-based ideas for parents — what to do, what to skip, and when to bring your child in.",
+    date: "2025-03-09",
+    readingTime: "3 min read",
+    category: "Pediatric",
+    cover: { src: "/images/gallery/clinic-07.jpg", alt: "Krest Dental — pediatric care area" },
+    body: [
+      "Children rarely complain about their teeth until something already hurts, so prevention is the most useful thing parents can do. Five habits cover most of what matters.",
+      "First, brush with the child until age seven. Their fine motor control is not ready before that, no matter how confident they look. Use a soft brush and a smear of fluoride toothpaste.",
+      "Second, treat juices and sticky snacks as occasional rather than daily. Frequency hurts more than amount — a sip every 20 minutes is far worse for the enamel than the same drink in one sitting.",
+      "Third, check for grooves on the back molars when the permanent ones erupt. A simple sealant placed early prevents most childhood cavities.",
+      "Fourth, schedule the first dental visit by age one or within six months of the first tooth, even if everything looks fine. A short, friendly visit teaches them the chair is not a scary place.",
+      "Fifth, model the behaviour. Children copy what they see at home — brushing twice a day, flossing, and showing up for check-ups together is more powerful than any reminder.",
+    ],
+  },
+  {
+    slug: "smile-makeover-process",
+    title: "How a smile makeover actually works, step by step",
+    excerpt:
+      "From the first photographs to the final polish — what a cosmetic plan looks like at Krest, and how long each phase takes.",
+    date: "2025-01-14",
+    readingTime: "6 min read",
+    category: "Cosmetic",
+    cover: { src: "/images/services/aesthetic.png", alt: "Krest Dental — aesthetic / cosmetic dentistry" },
+    body: [
+      "A smile makeover is rarely one procedure. It is a sequence of small, carefully ordered steps that move from diagnostic work to a tested preview before any tooth is touched.",
+      "Phase one is records. We capture clinical photos, full-face video, a digital scan, and where useful a CBCT. These together let us study the lips, gum line, midline, and tooth proportions side by side.",
+      "Phase two is the digital design. We mock up the new smile on screen and 3D-print a temporary version that you wear for a few days. This is the moment to say what you like and what you do not — changes here are essentially free.",
+      "Phase three is the clinical work itself: whitening if needed, gum re-contouring if needed, and finally veneers, crowns, or bonding done one quadrant at a time. We protect tooth structure aggressively and keep restorations as conservative as the design allows.",
+      "Phase four is review. We see you a week later, polish edges, refine contacts, and confirm comfort. A smile makeover ages well only when this final phase is taken seriously.",
+    ],
+  },
 ];
 
 /** About page hero — copy aligned with krest.dental/about-us */

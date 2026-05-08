@@ -5,6 +5,8 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { ADDRESS, EMAIL, HOURS, PHONE_DISPLAY, PHONE_TEL, SOCIALS } from "@/lib/krest-content";
 
+export const prerender = true;
+
 const canonical = "https://www.krest.dental/contact";
 const title = "Contact Us | Krest Dental Vizag";
 const description =
@@ -45,8 +47,7 @@ const jsonLd = {
   },
 };
 
-/** Web3Forms: https://web3forms.com — set PUBLIC_WEB3FORMS_ACCESS_KEY in .env (see .env.example). */
-const web3AccessKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY ?? "";
+/** Leads are POSTed to our own /api/leads endpoint (stored in MongoDB, viewable in /admin/dashboard). */
 const siteUrl = (import.meta.env.PUBLIC_SITE_URL ?? "https://www.krest.dental").replace(/\/$/, "");
 const formRedirectUrl = `${siteUrl}/contact?success=1`;
 ---
@@ -257,10 +258,7 @@ const formRedirectUrl = `${siteUrl}/contact?success=1`;
               Send Us a Message
             </h2>
 
-            <form class="relative mt-8 space-y-5" action="https://api.web3forms.com/submit" method="POST">
-              <input type="hidden" name="access_key" value={web3AccessKey} />
-              <input type="hidden" name="subject" value="Krest Dental — New lead (contact form)" />
-              <input type="hidden" name="from_name" value="Krest Website" />
+            <form id="lead-form" class="relative mt-8 space-y-5" action="/api/leads" method="POST">
               <input type="hidden" name="redirect" value={formRedirectUrl} />
 
               <input type="hidden" name="utm_source" value="" />

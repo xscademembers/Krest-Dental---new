@@ -1,0 +1,79 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { getAdminUser } from "@/lib/admin-auth";
+
+export const prerender = false;
+
+if (getAdminUser(Astro.cookies)) {
+  return Astro.redirect("/admin/dashboard", 303);
+}
+
+const error = Astro.url.searchParams.get("error") === "1";
+const title = "Admin sign in | Krest Dental";
+const description = "Restricted area. Authorized staff only.";
+---
+
+<Layout {title} {description}>
+  <main class="flex min-h-screen items-center justify-center bg-cream px-[25px] py-16">
+    <div class="w-full max-w-[420px] rounded-[20px] border border-copper/15 bg-white p-8 shadow-[0_22px_60px_-32px_rgba(0,0,0,0.25)] sm:p-10">
+      <a href="/" class="font-accent text-[12px] uppercase tracking-[0.2em] text-copper">
+        ← Back to site
+      </a>
+      <h1 class="mt-4 font-display text-[28px] font-normal leading-tight text-ink sm:text-[32px]">
+        Admin sign in
+      </h1>
+      <p class="mt-2 font-body text-[14px] leading-relaxed text-taupe">
+        Enter your credentials to view incoming contact form leads.
+      </p>
+
+      {error && (
+        <div
+          role="alert"
+          class="mt-6 rounded-md border border-red-300 bg-red-50 px-4 py-3 font-body text-[14px] text-red-800"
+        >
+          Username or password is incorrect.
+        </div>
+      )}
+
+      <form method="POST" action="/api/admin/login" class="mt-6 space-y-5">
+        <div>
+          <label
+            for="admin-username"
+            class="font-body text-[11px] font-semibold uppercase tracking-[0.14em] text-taupe"
+          >
+            Username
+          </label>
+          <input
+            id="admin-username"
+            name="username"
+            type="text"
+            required
+            autocomplete="username"
+            class="contact-field mt-2 w-full px-4 py-3.5 font-body text-[16px]"
+          />
+        </div>
+
+        <div>
+          <label
+            for="admin-password"
+            class="font-body text-[11px] font-semibold uppercase tracking-[0.14em] text-taupe"
+          >
+            Password
+          </label>
+          <input
+            id="admin-password"
+            name="password"
+            type="password"
+            required
+            autocomplete="current-password"
+            class="contact-field mt-2 w-full px-4 py-3.5 font-body text-[16px]"
+          />
+        </div>
+
+        <button type="submit" class="contact-submit mt-2 w-full py-4 font-body text-[15px] font-semibold">
+          Sign in
+        </button>
+      </form>
+    </div>
+  </main>
+</Layout>

@@ -1,0 +1,196 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { getAdminUser } from "@/lib/admin-auth";
+import { LEADS_COLLECTION, getCollection, type LeadDoc } from "@/lib/mongodb";
+
+export const prerender = false;
+
+const user = getAdminUser(Astro.cookies);
+if (!user) {
+  return Astro.redirect("/admin", 303);
+}
+
+let leads: (LeadDoc & { _id: import("mongodb").ObjectId })[] = [];
+let dbError: string | null = null;
+
+try {
+  const col = await getCollection<LeadDoc>(LEADS_COLLECTION);
+  leads = (await col
+    .find({})
+    .sort({ createdAt: -1 })
+    .limit(500)
+    .toArray()) as (LeadDoc & { _id: import("mongodb").ObjectId })[];
+} catch (err) {
+  console.error("[admin/dashboard] mongo error", err);
+  dbError = err instanceof Error ? err.message : "Could not load leads.";
+}
+
+const fmtDate = new Intl.DateTimeFormat("en-IN", {
+  day: "2-digit",
+  month: "short",
+  year: "numeric",
+  hour: "2-digit",
+  minute: "2-digit",
+  hour12: true,
+});
+
+const title = "Leads · Admin | Krest Dental";
+---
+
+<Layout {title} description="Admin dashboard for contact form leads.">
+  <main class="min-h-screen bg-cream pb-20">
+    <header class="border-b border-copper/15 bg-white">
+      <div class="mx-auto flex max-w-[1280px] flex-wrap items-center justify-between gap-4 px-[25px] py-5">
+        <div>
+          <p class="font-accent text-[11px] uppercase tracking-[0.2em] text-copper">
+            Krest Dental · Admin
+          </p>
+          <h1 class="mt-1 font-display text-[24px] font-normal leading-tight text-ink sm:text-[28px]">
+            Contact form leads
+          </h1>
+        </div>
+        <div class="flex items-center gap-4">
+          <span class="font-body text-[13px] text-taupe">
+            Signed in as <strong class="text-ink">{user}</strong>
+          </span>
+          <a
+            href="/api/admin/logout"
+            class="inline-flex h-10 items-center rounded-full border border-copper px-5 font-display text-[14px] text-copper transition hover:bg-copper hover:text-white"
+          >
+            Sign out
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <section class="mx-auto mt-10 max-w-[1280px] px-[25px]">
+      <div class="flex flex-wrap items-center justify-between gap-4">
+        <p class="font-body text-[14px] text-taupe">
+          {leads.length} {leads.length === 1 ? "lead" : "leads"} (most recent first, up to 500).
+        </p>
+        <button
+          id="refresh-btn"
+          type="button"
+          onclick="window.location.reload()"
+          class="inline-flex h-10 items-center rounded-full border border-copper/40 bg-white px-5 font-display text-[14px] text-copper transition hover:bg-cream"
+        >
+          Refresh
+        </button>
+      </div>
+
+      {dbError && (
+        <div
+          role="alert"
+          class="mt-6 rounded-md border border-red-300 bg-red-50 px-4 py-3 font-body text-[14px] text-red-800"
+        >
+          <strong class="font-semibold">Database error:</strong> {dbError}
+          {dbError.includes("querySrv") && (
+            <p class="mt-2 text-[13px] text-red-800">
+              This is usually a <strong>DNS</strong> problem on your machine (Windows often fails SRV lookups for{" "}
+              <code class="font-mono">mongodb+srv</code>). The dev server now tries Google DNS automatically; restart{" "}
+              <code class="font-mono">npm run dev</code> and refresh. If it persists, add{" "}
+              <code class="font-mono">MONGODB_DNS_SERVERS=8.8.8.8,1.1.1.1</code> to{" "}
+              <code class="font-mono">.env</code>.
+            </p>
+          )}
+          <p class="mt-2 text-[13px] text-red-700">
+            Also confirm <code class="font-mono">MONGODB_URI</code> in <code class="font-mono">.env</code> matches Atlas
+            and that your IP (or <code class="font-mono">0.0.0.0/0</code> for testing) is allowed under MongoDB Atlas →
+            Network Access.
+          </p>
+        </div>
+      )}
+
+      <div class="mt-6 overflow-hidden rounded-[16px] border border-copper/15 bg-white shadow-[0_18px_50px_-32px_rgba(0,0,0,0.18)]">
+        <div class="overflow-x-auto">
+          <table class="w-full min-w-[960px] border-collapse text-left font-body text-[14px] text-ink">
+            <thead class="bg-cream text-[12px] uppercase tracking-[0.12em] text-taupe">
+              <tr>
+                <th class="px-4 py-3 font-semibold">Received</th>
+                <th class="px-4 py-3 font-semibold">Name</th>
+                <th class="px-4 py-3 font-semibold">Phone</th>
+                <th class="px-4 py-3 font-semibold">Email</th>
+                <th class="px-4 py-3 font-semibold">Interest</th>
+                <th class="px-4 py-3 font-semibold">Message</th>
+                <th class="px-4 py-3 font-semibold">Source</th>
+                <th class="px-4 py-3 font-semibold text-right">Actions</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-copper/10">
+              {leads.length === 0 && !dbError && (
+                <tr>
+                  <td colspan="8" class="px-4 py-10 text-center text-taupe">
+                    No leads yet. Submissions from <a href="/contact" class="text-copper underline">/contact</a> will appear here in real time.
+                  </td>
+                </tr>
+              )}
+              {leads.map((lead) => (
+                <tr id={`lead-${lead._id.toString()}`} class="align-top">
+                  <td class="whitespace-nowrap px-4 py-3 text-taupe">
+                    {fmtDate.format(lead.createdAt)}
+                  </td>
+                  <td class="px-4 py-3 font-semibold text-ink">{lead.name}</td>
+                  <td class="px-4 py-3">
+                    <a href={`tel:${lead.phone}`} class="text-copper hover:underline">
+                      {lead.phone}
+                    </a>
+                  </td>
+                  <td class="px-4 py-3">
+                    <a
+                      href={`mailto:${lead.email}`}
+                      class="text-copper hover:underline break-all"
+                    >
+                      {lead.email}
+                    </a>
+                  </td>
+                  <td class="px-4 py-3 text-taupe">{lead.interest || "—"}</td>
+                  <td class="max-w-[320px] px-4 py-3 text-ink">
+                    <span class="line-clamp-3 whitespace-pre-wrap" title={lead.message ?? ""}>
+                      {lead.message || "—"}
+                    </span>
+                  </td>
+                  <td class="px-4 py-3 text-[12px] text-taupe">
+                    {lead.utm?.source ? `${lead.utm.source}${lead.utm.campaign ? ` · ${lead.utm.campaign}` : ""}` : "Direct"}
+                  </td>
+                  <td class="px-4 py-3 text-right">
+                    <button
+                      type="button"
+                      data-lead-delete={lead._id.toString()}
+                      class="inline-flex items-center rounded-full border border-red-200 bg-red-50 px-3 py-1.5 font-body text-[12px] font-semibold text-red-700 transition hover:bg-red-100"
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <script is:inline>
+      document.addEventListener("click", async (event) => {
+        const target = event.target;
+        if (!(target instanceof HTMLElement)) return;
+        const btn = target.closest("[data-lead-delete]");
+        if (!btn) return;
+        const id = btn.getAttribute("data-lead-delete");
+        if (!id) return;
+        if (!confirm("Delete this lead permanently?")) return;
+        btn.setAttribute("disabled", "true");
+        btn.textContent = "Deleting...";
+        try {
+          const res = await fetch(`/api/admin/leads/${id}`, { method: "DELETE" });
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          const row = document.getElementById(`lead-${id}`);
+          if (row) row.remove();
+        } catch (err) {
+          alert("Could not delete this lead. " + (err && err.message ? err.message : ""));
+          btn.removeAttribute("disabled");
+          btn.textContent = "Delete";
+        }
+      });
+    </script>
+  </main>
+</Layout>
