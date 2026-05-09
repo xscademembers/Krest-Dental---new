@@ -60,7 +60,7 @@ export function HeroSection() {
 
         <div className="mt-12 grid grid-cols-1 items-center gap-6 lg:mt-16 lg:grid-cols-2 lg:gap-12">
           <div className="hidden lg:flex lg:items-center">
-            <DecorativeFlourish className="h-24 w-auto text-ink/85" />
+            <QuoteLoopFlourish className="h-44 w-auto text-ink/90" />
           </div>
           <figure className="text-center lg:text-left">
             <blockquote>
@@ -104,22 +104,30 @@ function SimpleArrow(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-function DecorativeFlourish(props: SVGProps<SVGSVGElement>) {
+function QuoteLoopFlourish(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
-      viewBox="0 0 240 80"
+      viewBox="0 0 420 180"
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.4"
+      strokeWidth="2.2"
       strokeLinecap="round"
       strokeLinejoin="round"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
       {...props}
     >
-      <path d="M10 60 C 20 30, 40 20, 60 30 C 80 40, 70 65, 90 65 C 110 65, 110 30, 130 30 C 150 30, 150 65, 170 65 C 190 65, 200 40, 220 40" />
-      <path d="M64 50 c -2 8, 6 12, 12 8" opacity="0.7" />
-      <circle cx="225" cy="40" r="2" fill="currentColor" />
+      <path
+        d="M 58 88
+           C 58 144, 94 176, 154 176
+           C 232 176, 286 134, 316 76
+           C 336 36, 312 8, 278 12
+           C 246 16, 234 50, 258 72
+           C 286 98, 330 104, 364 84
+           C 394 66, 412 38, 414 14"
+        vectorEffect="non-scaling-stroke"
+      />
     </svg>
   );
 }
+

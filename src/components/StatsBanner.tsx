@@ -15,7 +15,7 @@ export function StatsBanner() {
           {STATS.map((stat) => (
             <li
               key={stat.label}
-              className="rounded-[28px] bg-[#F2DDD3] px-7 py-9 lg:px-8 lg:py-10"
+              className="rounded-[28px] bg-[#F4EAE6] px-7 py-9 lg:px-8 lg:py-10"
             >
               <p className="font-display text-[36px] font-normal leading-none tracking-tight text-ink sm:text-[40px] lg:text-[44px]">
                 {stat.value}
