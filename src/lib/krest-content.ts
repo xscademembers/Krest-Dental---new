@@ -12,7 +12,7 @@ export const NAV_ITEMS: NavItem[] = [
   {
     label: "About Us",
     href: "/about-us",
-    children: [{ label: "Dr. Suneeta", href: "/about-us#dr-suneeta" }],
+    children: [{ label: "Dr. Suneeta", href: "/drsuneeta" }],
   },
   {
     label: "Our Services",
@@ -293,6 +293,54 @@ export const ABOUT_HERO = {
     "Our clinic is outfitted with state-of-the-art technology, reflecting our unwavering commitment to excellence and patient safety. We maintain stringent sterilization protocols and feature plush, high-end dental chairs for ultimate comfort. Our advanced tools include precision lasers, digital orthopantomograms (OPG), digital X-rays, Zoom teeth whitening systems, 3D navigation systems for implants, and cutting-edge digital scanners for 3D impressions ensuring the highest accuracy and best outcomes.",
     "Dr. Suneeta’s dedication to continual innovation and personalized care has made Krest Dental Care a trusted destination for those seeking comprehensive, advanced, and truly world-class dental treatments in Visakhapatnam.",
   ],
+} as const;
+
+/** Dr. Suneeta dedicated page — krest.dental/drsuneeta */
+export const DR_SUNEETA_PAGE = {
+  portraitSrc: "/images/dr-suneeta/dsc08627.jpg",
+  portraitAlt:
+    "Dr. Suneeta Veramachaneni — Cosmetic Dentist and Implantologist at Krest Dental",
+  name: "Dr. Suneeta Veramachaneni",
+  title: "Cosmetic Dentist & Implantologist",
+  journeyHeading: "Dr Suneeta Journey",
+  milestones: [
+    {
+      id: "bds",
+      text: "Bachelor of Dental Surgery (BDS) at Manipal - 2000",
+      lines: [
+        "Bachelor of Dental Surgery",
+        "(BDS) at Manipal - 2000",
+      ],
+    },
+    {
+      id: "dds",
+      text: "Doctor of Dental Surgery (DDS) at University of California - 2005",
+      lines: [
+        "Doctor of Dental Surgery",
+        "(DDS) at University of",
+        "California - 2005",
+      ],
+    },
+    {
+      id: "sf",
+      text: "Practiced dentistry in San Francisco for over 8 years",
+      lines: ["Practiced dentistry in", "San Francisco for over 8 years"],
+    },
+    {
+      id: "india",
+      text: "Return to India in 2013",
+      lines: ["Return to India in 2013"],
+    },
+    {
+      id: "krest",
+      text: "Established KREST Dental - 2014",
+      lines: ["Established KREST", "Dental - 2014"],
+    },
+  ],
+  ourStoryHeading: "Our Story",
+  ourStoryText:
+    "Dr. Suneeta Veeramachaneni, a top-ranked graduate from UCSF, launched Krest Dental Care in Visakhapatnam after practicing in San Francisco for 8+ years. Krest offers advanced dental services, including implants, orthodontics, and smile makeovers, using cutting-edge technology like digital X-rays, lasers, and stringent sterilization standards for top-tier patient care.",
+  statsHeading: "Success in Numbers",
 } as const;
 
 export const ABOUT_VISION_MISSION = {

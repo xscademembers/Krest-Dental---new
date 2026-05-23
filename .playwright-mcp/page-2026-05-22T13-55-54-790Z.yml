@@ -1,0 +1,250 @@
+- generic [ref=e3]:
+  - region "top of page" [active]
+  - button "Skip to Main Content"
+  - generic [ref=e10]:
+    - group:
+      - banner:
+        - generic [ref=e11]:
+          - generic [ref=e15]:
+            - group:
+              - navigation "Site" [ref=e19]:
+                - button "Menu" [ref=e21] [cursor=pointer]:
+                  - img [ref=e25]
+              - link [ref=e29] [cursor=pointer]:
+                - /url: https://www.krest.dental
+                - img [ref=e31]
+          - generic [ref=e49]:
+            - group:
+              - navigation "Site" [ref=e53]:
+                - list [ref=e54]:
+                  - listitem [ref=e55]:
+                    - generic [ref=e57]:
+                      - link "About Us" [ref=e58] [cursor=pointer]:
+                        - /url: https://www.krest.dental/about-us
+                        - generic [ref=e59]: About Us
+                      - button "More About Us pages" [ref=e60] [cursor=pointer]:
+                        - img [ref=e61]
+                  - listitem [ref=e63]:
+                    - generic [ref=e65]:
+                      - link "Our Services" [ref=e66] [cursor=pointer]:
+                        - /url: https://www.krest.dental/our-services
+                        - generic [ref=e67]: Our Services
+                      - button "More Our Services pages" [ref=e68] [cursor=pointer]:
+                        - img [ref=e69]
+                  - listitem [ref=e71]:
+                    - link "Contact" [ref=e74] [cursor=pointer]:
+                      - /url: https://www.krest.dental/contact
+                      - generic [ref=e75]: Contact
+          - generic [ref=e76]:
+            - group:
+              - link "Book Appointment" [ref=e79] [cursor=pointer]:
+                - /url: https://www.krest.dental/contact
+                - generic [ref=e81]: Book Appointment
+          - generic [ref=e82]:
+            - group:
+              - list "Social Bar" [ref=e85]:
+                - listitem [ref=e86]:
+                  - link "Facebook" [ref=e87] [cursor=pointer]:
+                    - /url: https://www.facebook.com/krestdentalcare
+                    - img "Facebook" [ref=e89]
+                - listitem [ref=e90]:
+                  - link "Instagram" [ref=e91] [cursor=pointer]:
+                    - /url: https://www.instagram.com/krestdental/
+                    - img "Instagram" [ref=e93]
+                - listitem [ref=e94]:
+                  - link "YouTube" [ref=e95] [cursor=pointer]:
+                    - /url: https://www.youtube.com/@KrestDentalCare
+                    - img "YouTube" [ref=e97]
+              - generic [ref=e98]:
+                - generic [ref=e100]:
+                  - img [ref=e104]
+                  - paragraph [ref=e108]: +91 95738 84525
+                - generic [ref=e109]:
+                  - img [ref=e113]
+                  - paragraph [ref=e117]:
+                    - link "krestdental@gmail.com" [ref=e119] [cursor=pointer]:
+                      - /url: mailto:krestdental@gmail.com
+      - main:
+        - generic [ref=e120]:
+          - group:
+            - generic [ref=e124]:
+              - group:
+                - img "DSC08627.jpg" [ref=e130]
+            - generic [ref=e131]:
+              - group:
+                - img [ref=e135]
+                - generic [ref=e138]:
+                  - heading "Dr. Suneeta Veramachaneni" [level=1] [ref=e141]
+                  - paragraph [ref=e146]: Cosmetic Dentist & Implantologist
+                  - button "Book Appointment" [ref=e148] [cursor=pointer]:
+                    - generic [ref=e149]:
+                      - generic [ref=e150]: Book Appointment
+                      - img [ref=e153]
+        - generic [ref=e157]:
+          - group:
+            - generic [ref=e161]:
+              - group
+            - generic [ref=e163]:
+              - group:
+                - paragraph [ref=e166]: Dr Suneeta Journey
+                - img [ref=e169]
+                - generic [ref=e173]:
+                  - img [ref=e177]
+                  - paragraph [ref=e181]: Doctor of Dental Surgery (DDS) at University of California - 2005
+                - generic [ref=e182]:
+                  - img [ref=e186]
+                  - generic [ref=e189]:
+                    - paragraph [ref=e190]: Practiced dentistry in
+                    - paragraph [ref=e191]: San Francisco for over 8 years
+                - generic [ref=e192]:
+                  - img [ref=e196]
+                  - paragraph [ref=e200]: Return to India in 2013
+                - generic [ref=e201]:
+                  - img [ref=e205]
+                  - paragraph [ref=e209]: Established KREST Dental - 2014
+                - generic [ref=e210]:
+                  - img [ref=e214]
+                  - paragraph [ref=e218]: Bachelor of Dental Surgery (BDS) at Manipal - 2000
+            - generic [ref=e219]:
+              - group:
+                - heading "Our Story" [level=1] [ref=e222]
+                - paragraph [ref=e224]: Dr. Suneeta Veeramachaneni, a top-ranked graduate from UCSF, launched Krest Dental Care in Visakhapatnam after practicing in San Francisco for 8+ years. Krest offers advanced dental services, including implants, orthodontics, and smile makeovers, using cutting-edge technology like digital X-rays, lasers, and stringent sterilization standards for top-tier patient care.
+        - generic [ref=e225]:
+          - group:
+            - generic [ref=e229]:
+              - group:
+                - generic [ref=e233]:
+                  - heading "Our Vision" [level=2] [ref=e236]
+                  - paragraph [ref=e238]: To transform lives by creating confident, healthy smiles through world-class, patient-centered dental care, setting new standards of excellence in Visakhapatnam and beyond.
+            - generic [ref=e239]:
+              - group:
+                - generic [ref=e243]:
+                  - heading "Our Mission" [level=2] [ref=e246]
+                  - paragraph [ref=e248]: To deliver advanced, comprehensive, and compassionate dental solutions tailored to each individual. We combine cutting-edge technology, global expertise, and a deeply personalized approach to restore function, enhance aesthetics, and build lasting trust. Empowering every patient to smile with confidence.
+        - generic [ref=e249]:
+          - group:
+            - generic [ref=e253]:
+              - group:
+                - heading "Success in Numbers" [level=2] [ref=e256]
+            - generic [ref=e257]:
+              - group:
+                - generic [ref=e259]:
+                  - list:
+                    - listitem [ref=e260]:
+                      - generic [ref=e262]:
+                        - paragraph [ref=e265]: 5,000+
+                        - paragraph [ref=e270]: Happy Patients
+                    - listitem [ref=e271]:
+                      - generic [ref=e273]:
+                        - paragraph [ref=e276]: 20+
+                        - paragraph [ref=e281]: Years of Experience
+                    - listitem [ref=e282]:
+                      - generic [ref=e284]:
+                        - paragraph [ref=e287]: 25,000+
+                        - paragraph [ref=e292]: Successful Procedures
+                    - listitem [ref=e293]:
+                      - generic [ref=e295]:
+                        - paragraph [ref=e298]: 20+
+                        - paragraph [ref=e303]: Expert Staff
+        - generic [ref=e304]:
+          - group:
+            - generic [ref=e308]:
+              - group:
+                - generic [ref=e310]:
+                  - img [ref=e314]
+                  - generic [ref=e317]:
+                    - heading "Our Mission" [level=2] [ref=e320]
+                    - paragraph [ref=e322]: This is the space to introduce visitors to the business or brand. Briefly explain who's behind it, what it does and what makes it unique. Share its core values and what this site has to offer.
+            - generic [ref=e323]:
+              - group:
+                - generic [ref=e325]:
+                  - img [ref=e329]
+                  - generic [ref=e332]:
+                    - heading "Our Vision" [level=2] [ref=e335]
+                    - paragraph [ref=e337]: We invite you to become a part of the Proudigy family, where you'll find a supportive and inspiring environment to pursue your musical dreams.
+      - contentinfo:
+        - generic [ref=e338]:
+          - group:
+            - generic [ref=e342]:
+              - group:
+                - generic [ref=e344]:
+                  - paragraph [ref=e347]: Legal
+                  - paragraph [ref=e349]:
+                    - link "Privacy Policy" [ref=e350] [cursor=pointer]:
+                      - /url: https://www.krest.dental/privacy-policy
+                  - paragraph [ref=e352]:
+                    - link "Terms & Conditions" [ref=e353] [cursor=pointer]:
+                      - /url: https://www.krest.dental/terms-and-conditions
+                  - paragraph [ref=e355]:
+                    - link "Accessibility statement" [ref=e356] [cursor=pointer]:
+                      - /url: https://www.krest.dental/accessibility-statement
+            - generic [ref=e357]:
+              - group:
+                - generic [ref=e359]:
+                  - link [ref=e362] [cursor=pointer]:
+                    - /url: https://www.krest.dental
+                    - img [ref=e364]
+                  - list "Social Bar" [ref=e385]:
+                    - listitem [ref=e386]:
+                      - link "Facebook" [ref=e387] [cursor=pointer]:
+                        - /url: https://www.facebook.com/krestdentalcare
+                    - listitem [ref=e389]:
+                      - link "Instagram" [ref=e390] [cursor=pointer]:
+                        - /url: https://www.instagram.com/krestdental/
+                    - listitem [ref=e392]:
+                      - link "YouTube" [ref=e393] [cursor=pointer]:
+                        - /url: https://www.youtube.com/@KrestDentalCare
+            - generic [ref=e395]:
+              - group:
+                - generic [ref=e397]:
+                  - paragraph [ref=e402]: Menu
+                  - generic [ref=e403]:
+                    - paragraph [ref=e406]:
+                      - link "Home" [ref=e407] [cursor=pointer]:
+                        - /url: https://www.krest.dental
+                    - paragraph [ref=e409]:
+                      - link "About Us" [ref=e410] [cursor=pointer]:
+                        - /url: https://www.krest.dental/about-us
+                    - paragraph [ref=e412]:
+                      - link "Services" [ref=e413] [cursor=pointer]:
+                        - /url: https://www.krest.dental/our-services
+                    - paragraph [ref=e415]:
+                      - link "Contact Us" [ref=e416] [cursor=pointer]:
+                        - /url: https://www.krest.dental/contact
+            - generic [ref=e417]:
+              - group:
+                - generic [ref=e419]:
+                  - paragraph [ref=e422]: Contact Us
+                  - paragraph [ref=e424]: E-mail
+                  - paragraph [ref=e426]:
+                    - link "krestdental@gmail.com" [ref=e427] [cursor=pointer]:
+                      - /url: mailto:krestdental@gmail.com
+                  - paragraph [ref=e429]: Phone
+                  - paragraph [ref=e431]:
+                    - link "+91 95738 84525" [ref=e433] [cursor=pointer]:
+                      - /url: https://www.google.com/search?q=krest+dental&rlz=1C5MACD_enIN1153IN1153&oq=krest+dental+&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQIxgnMgYIAhAjGCcyDQgDEC4YrwEYxwEYgAQyBwgEEAAYgAQyBggFEEUYPDIGCAYQRRg8MgYIBxBFGDzSAQkxMjYxMGowajeoAgCwAgA&sourceid=chrome&ie=UTF-8#
+                  - paragraph [ref=e435]: Address
+                  - paragraph [ref=e437]:
+                    - text: KREST DENTAL CARE
+                    - text: 3rd Floor, Door No 2-48-21
+                    - text: Opposite To Latte
+                    - text: Sector 11, MVP Colony
+                    - text: MVP Double Road
+                    - text: Visakhapatnam -530017.
+            - generic [ref=e438]:
+              - group:
+                - generic [ref=e440]:
+                  - group:
+                    - paragraph [ref=e443]: Opening Hours
+                    - paragraph [ref=e445]: Monday-Friday
+                    - paragraph [ref=e447]: 9:00 AM - 7:30 PM
+                    - paragraph [ref=e449]: Sunday
+                    - paragraph [ref=e451]: Closed
+            - generic [ref=e452]:
+              - group:
+                - paragraph [ref=e455]:
+                  - generic [ref=e456]:
+                    - text: © 2025 by Krest Dental. Developed by
+                    - link "Xscade" [ref=e458] [cursor=pointer]:
+                      - /url: https://www.xscade.com/
+  - region "bottom of page"

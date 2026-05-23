@@ -35,8 +35,8 @@ export function ServicesSection() {
 
 function ServiceCard({ service }: { service: Service }) {
   return (
-    <article className="grid grid-cols-1 items-center gap-6 rounded-[28px] border border-copper/35 bg-white/40 px-6 py-8 sm:px-10 sm:py-10 lg:grid-cols-[260px_1px_1fr] lg:gap-10 lg:px-14 lg:py-14">
-      <div className="relative mx-auto flex aspect-square w-[180px] items-center justify-center sm:w-[220px] lg:w-[240px]">
+    <article className="grid grid-cols-1 items-center gap-6 rounded-[28px] border border-copper/35 bg-white/40 px-6 py-8 sm:px-10 sm:py-10 lg:grid-cols-[280px_1px_1fr] lg:gap-10 lg:px-14 lg:py-14">
+      <div className="relative mx-auto flex aspect-square w-[200px] items-center justify-center sm:w-[240px] lg:w-[260px]">
         <span
           aria-hidden="true"
           className="absolute inset-0 rounded-full bg-[#EFD9D0]"
@@ -44,12 +44,12 @@ function ServiceCard({ service }: { service: Service }) {
         <img
           src={service.image}
           alt={`${service.title} illustration`}
-          width={240}
-          height={240}
-          className="relative h-[58%] w-auto object-contain"
+          width={260}
+          height={260}
+          className="relative h-[78%] w-auto object-contain"
           loading="lazy"
           decoding="async"
-          sizes="(max-width: 1024px) 220px, 240px"
+          sizes="(max-width: 640px) 200px, (max-width: 1024px) 240px, 260px"
         />
       </div>
 

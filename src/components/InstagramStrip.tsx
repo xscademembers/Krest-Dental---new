@@ -18,7 +18,7 @@ export function InstagramStrip() {
               href={INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="transition-colors hover:text-copper"
+              className="no-underline transition-colors hover:text-copper"
             >
               @Krestdental
             </a>

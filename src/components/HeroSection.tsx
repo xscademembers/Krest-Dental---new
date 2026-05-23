@@ -21,13 +21,15 @@ export function HeroSection() {
             <h1 className="font-display italic text-[40px] font-normal leading-[1.05] tracking-[-0.01em] text-ink sm:text-[52px] lg:text-[60px]">
               Dr. Suneeta Veramachaneni
             </h1>
-            <span
-              aria-hidden="true"
-              className="mt-4 block h-px w-16 bg-ink/85"
-            />
-            <p className="mt-4 font-accent text-[14px] tracking-wide text-copper sm:text-[15px]">
-              Cosmetic Dentist &amp; Implantologist
-            </p>
+            <div className="mt-4 flex items-center gap-9">
+              <span
+                aria-hidden="true"
+                className="block h-px w-[120px] shrink-0 bg-copper"
+              />
+              <p className="font-accent text-[14px] tracking-wide text-copper sm:text-[15px]">
+                Cosmetic Dentist &amp; Implantologist
+              </p>
+            </div>
             <p className="mt-6 max-w-[560px] font-display text-[15px] leading-[1.65] text-ink sm:text-[16px] lg:text-[16.5px]">
               {HERO.description}
             </p>

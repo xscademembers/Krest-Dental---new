@@ -1,0 +1,45 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { DrSuneetaPage } from "@/components/DrSuneetaPage";
+import { FloatingCallButton } from "@/components/FloatingCallButton";
+import { SiteFooter } from "@/components/SiteFooter";
+import { SiteHeader } from "@/components/SiteHeader";
+import { DR_SUNEETA_PAGE, EMAIL, PHONE_DISPLAY } from "@/lib/krest-content";
+
+export const prerender = true;
+
+const canonical = "https://www.krest.dental/drsuneeta";
+const title = "Dr. Suneeta | Krest Dental";
+const description = DR_SUNEETA_PAGE.ourStoryText;
+const keywords = [
+  "dr suneeta veeramachaneni",
+  "cosmetic dentist vizag",
+  "implantologist visakhapatnam",
+  "krest dental",
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: DR_SUNEETA_PAGE.name,
+  jobTitle: DR_SUNEETA_PAGE.title,
+  email: EMAIL,
+  telephone: PHONE_DISPLAY,
+  url: canonical,
+  worksFor: {
+    "@type": "Dentist",
+    name: "Krest Dental",
+    url: "https://www.krest.dental",
+  },
+};
+---
+
+<Layout {title} {description} {canonical} {keywords}>
+  <SiteHeader client:load />
+  <main class="flex-1 bg-white">
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <DrSuneetaPage />
+  </main>
+  <SiteFooter />
+  <FloatingCallButton />
+</Layout>

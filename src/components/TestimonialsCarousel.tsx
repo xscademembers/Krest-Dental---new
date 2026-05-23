@@ -31,7 +31,7 @@ export function TestimonialsCarousel() {
             {visible.map((t) => (
               <figure
                 key={t.id}
-                className="flex min-h-[280px] flex-col items-center justify-center gap-8 rounded-[18px] border border-copper/40 bg-cream/40 px-8 py-12 text-center sm:px-10 lg:min-h-[340px] lg:px-12"
+                className="flex min-h-[280px] flex-col items-center justify-center gap-8 rounded-[18px] border-2 border-copper/70 bg-cream/40 px-8 py-12 text-center sm:px-10 lg:min-h-[340px] lg:px-12"
               >
                 <blockquote>
                   <p className="font-display text-[15px] leading-[1.7] text-taupe sm:text-[16px] lg:text-[17px]">
