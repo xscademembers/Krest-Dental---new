@@ -145,7 +145,7 @@ export function DrSuneetaPage() {
         aria-label="Dr Suneeta Journey and Our Story"
         className="relative bg-white"
       >
-        <div className="mx-auto max-w-[1240px] px-[25px] py-16 lg:py-24">
+        <div className="krest-site py-16 lg:py-24">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
             {/* LEFT — sticky "Our Story" + heading */}
             <div className="lg:sticky lg:top-28 lg:self-start">
@@ -155,7 +155,7 @@ export function DrSuneetaPage() {
               >
                 {DR_SUNEETA_PAGE.ourStoryHeading}
               </h2>
-              <p className="mt-6 max-w-[460px] font-display text-[14px] leading-[1.65] text-ink sm:text-[15px]">
+              <p className="text-krest-body mt-6 max-w-[460px]">
                 {DR_SUNEETA_PAGE.ourStoryText}
               </p>
             </div>
@@ -182,7 +182,7 @@ export function DrSuneetaPage() {
                     }`}
                   >
                     <MapPinIcon className="h-5 w-5 text-ink" />
-                    <p className="max-w-[28ch] font-display text-[14px] leading-[1.55] text-ink sm:text-[15px]">
+                    <p className="text-krest-body max-w-[28ch]">
                       {item.lines
                         ? item.lines.map((line, i) => (
                             <span key={i} className="block">
@@ -203,7 +203,7 @@ export function DrSuneetaPage() {
         aria-labelledby="dr-suneeta-vision-mission"
         className="bg-[#fdfcfb] py-14 lg:py-20"
       >
-        <div className="mx-auto max-w-[1240px] px-[25px]">
+        <div className="krest-site">
           <h2 id="dr-suneeta-vision-mission" className="sr-only">
             Our vision and mission
           </h2>
@@ -212,7 +212,7 @@ export function DrSuneetaPage() {
               <h3 className="font-display text-[28px] font-normal italic leading-tight text-[#9b6c5a] sm:text-[32px] lg:text-[34px]">
                 {ABOUT_VISION_MISSION.vision.title}
               </h3>
-              <p className="mt-6 max-w-[52ch] font-display text-[16px] font-normal leading-[1.75] text-[#444444] sm:text-[17px]">
+              <p className="text-krest-body mt-6 max-w-[52ch] text-[#444444]">
                 {ABOUT_VISION_MISSION.vision.text}
               </p>
             </article>
@@ -220,7 +220,7 @@ export function DrSuneetaPage() {
               <h3 className="font-display text-[28px] font-normal italic leading-tight text-[#9b6c5a] sm:text-[32px] lg:text-[34px]">
                 {ABOUT_VISION_MISSION.mission.title}
               </h3>
-              <p className="mt-6 max-w-[52ch] font-display text-[16px] font-normal leading-[1.75] text-[#444444] sm:text-[17px]">
+              <p className="text-krest-body mt-6 max-w-[52ch] text-[#444444]">
                 {ABOUT_VISION_MISSION.mission.text}
               </p>
             </article>
@@ -232,7 +232,7 @@ export function DrSuneetaPage() {
         aria-label="Success in Numbers"
         className="bg-[#F4EAE6] py-16 lg:py-24"
       >
-        <div className="mx-auto max-w-[1180px] px-[25px]">
+        <div className="krest-site">
           <h2 className="font-display text-[34px] font-normal italic leading-[1.15] tracking-[-0.01em] text-copper sm:text-[44px] lg:text-[52px]">
             {DR_SUNEETA_PAGE.statsHeading}
           </h2>

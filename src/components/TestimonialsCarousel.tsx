@@ -21,7 +21,7 @@ export function TestimonialsCarousel() {
       aria-label="What our happy customers say"
       className="bg-cream py-20 lg:py-28"
     >
-      <div className="mx-auto max-w-[1280px] px-[25px]">
+      <div className="krest-site">
         <h2 className="text-center font-display text-[34px] font-normal leading-[1.15] tracking-[-0.01em] text-copper sm:text-[42px] lg:text-[48px]">
           What Our Happy Customers Say
         </h2>

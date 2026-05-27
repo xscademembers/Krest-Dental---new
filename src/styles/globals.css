@@ -69,6 +69,21 @@
   --krest-ink: oklch(0 0 0);               /* #000000 */
   --krest-pink: oklch(0.83 0.06 30);       /* #F5B8AA */
 
+  /* Layout — measured at 1440px on krest.dental */
+  --krest-site-max: 1425px;
+  --krest-content-max: 1069px;
+  --krest-card-max: 1275px;
+  --krest-gutter-min: 25px;
+  --krest-radius-card: 2.325rem; /* ~37px live; we use 40px for cards */
+
+  /* Type scale — from getComputedStyle (our-services + home @ 1440px) */
+  --krest-text-page-title: clamp(2.75rem, 5.4vw, 4.875rem);
+  --krest-text-section: clamp(1.875rem, 3.1vw, 2.8125rem);
+  --krest-text-hero: clamp(1.125rem, 1.55vw, 1.375rem);
+  --krest-text-body: 1.125rem;
+  --krest-text-list: clamp(1.125rem, 1.65vw, 1.5rem);
+  --krest-leading-body: 1.6;
+
   /* Map shadcn tokens onto krest palette so primitives inherit naturally */
   --background: var(--krest-cream);
   --foreground: var(--krest-ink);
@@ -136,6 +151,81 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer components {
+  .krest-site {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: var(--krest-site-max);
+    margin-inline: auto;
+    padding-inline: var(--krest-gutter-min);
+  }
+
+  @media (min-width: 1024px) {
+    .krest-site {
+      padding-inline: max(
+        var(--krest-gutter-min),
+        calc((min(100vw, var(--krest-site-max)) - var(--krest-content-max)) / 2)
+      );
+    }
+
+    .krest-site--cards {
+      padding-inline: max(
+        var(--krest-gutter-min),
+        calc((min(100vw, var(--krest-site-max)) - var(--krest-card-max)) / 2)
+      );
+    }
+  }
+
+  .krest-prose {
+    width: 100%;
+    max-width: var(--krest-content-max);
+    margin-inline: auto;
+  }
+
+  .krest-card-band {
+    width: 100%;
+    max-width: var(--krest-card-max);
+    margin-inline: auto;
+  }
+
+  .text-krest-page-title {
+    font-family: var(--font-display);
+    font-size: var(--krest-text-page-title);
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--krest-copper);
+  }
+
+  .text-krest-section-title {
+    font-family: var(--font-display);
+    font-size: var(--krest-text-section);
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--krest-copper);
+  }
+
+  .text-krest-body {
+    font-family: var(--font-body);
+    font-size: var(--krest-text-body);
+    line-height: var(--krest-leading-body);
+    color: var(--krest-ink);
+  }
+
+  .text-krest-body-serif {
+    font-family: var(--font-display);
+    font-size: var(--krest-text-hero);
+    line-height: 1.3;
+    color: var(--krest-ink);
+  }
+
+  .text-krest-list {
+    font-family: var(--font-display);
+    font-size: var(--krest-text-list);
+    line-height: var(--krest-leading-body);
+    color: var(--krest-taupe);
+  }
 }
 
 @layer base {

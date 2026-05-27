@@ -14,6 +14,13 @@ const downloads = [
   ["images/hero/design-02.png", "https://static.wixstatic.com/media/494201_56e3ddd3638d4be4bcc0bf92e5b273be~mv2.png/v1/fill/w_502,h_906,al_c,lg_1,q_85,enc_avif,quality_auto/design-02.png"],
   ["images/hero/dr-suneeta-portrait.jpg", "https://static.wixstatic.com/media/9356bd_f7a5ae19e3fd434a91f0a2b74267fe2e~mv2.jpg/v1/crop/x_128,y_1060,w_3872,h_4335/fill/w_856,h_958,fp_0.50_0.50,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/DSC08658.jpg"],
   ["images/dr-suneeta/dsc08627.jpg", "https://static.wixstatic.com/media/9356bd_b6d3a85e9ee043598434f6be969522b9~mv2.jpg/v1/fill/w_1100,h_1040,fp_0.50_0.43,q_90,usm_0.66_1.00_0.01/DSC08627.jpg"],
+
+  // Our Services page
+  ["images/our-services/general-dentistry.png", "https://static.wixstatic.com/media/494201_6ce2a400654641178a6942d5fa5ee299~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/dentist-chair.png"],
+  ["images/our-services/cosmetic-dentistry.png", "https://static.wixstatic.com/media/494201_b097360a8fe440878fba0502aa394dca~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/skincare.png"],
+  ["images/our-services/restorative-dentistry.png", "https://static.wixstatic.com/media/494201_44b7ead0a8684c2ab9603202fd30597a~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/toothbrushing.png"],
+  ["images/our-services/emergency-care.png", "https://static.wixstatic.com/media/494201_6856c53c786c42758323cecdc9eda624~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/toothache.png"],
+  ["images/our-services/appointment-cta.jpg", "https://static.wixstatic.com/media/9356bd_8785d8ca43c44a45bc898bb16b558057~mv2.jpg/v1/fill/w_1400,h_980,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/DSC08466.jpg"],
   ["images/hero/dr-suneeta-signature.png", "https://static.wixstatic.com/media/2139b1_3bdd8c7e324e45d8b688c7dce334524d~mv2.png/v1/crop/x_106,y_519,w_1351,h_524/fill/w_422,h_164,fp_0.50_0.50,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Dr%20Suneeta.png"],
 
   // Service card illustrations

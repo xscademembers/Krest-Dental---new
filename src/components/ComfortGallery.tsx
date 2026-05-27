@@ -10,7 +10,7 @@ export function ComfortGallery() {
       aria-label="Krest Dental — interiors and amenities"
       className="bg-white py-16 lg:py-24"
     >
-      <div className="mx-auto max-w-[1280px] px-[25px]">
+      <div className="krest-site">
         <div className="mb-12 text-center lg:mb-14">
           <p className="font-display text-[42px] font-normal leading-[1.05] tracking-[-0.02em] text-copper sm:text-[58px] lg:text-[70px]">
             Redefining Comfort and Care

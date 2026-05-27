@@ -92,7 +92,7 @@ export function ImplantsMain() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
-        <section className="mx-auto grid max-w-[1180px] items-center gap-12 px-[25px] pb-14 pt-14 lg:grid-cols-[1fr_0.95fr] lg:gap-16 lg:pb-18 lg:pt-20">
+        <section className="krest-site grid items-center gap-12 px-[25px] pb-14 pt-14 lg:grid-cols-[1fr_0.95fr] lg:gap-16 lg:pb-18 lg:pt-20">
           <div>
             <p className="inline-flex items-center rounded-full bg-white/70 px-3 py-1 font-accent text-[12px] tracking-wide text-copper">
               DENTAL CARE
@@ -101,7 +101,7 @@ export function ImplantsMain() {
               Dental Implants{" "}
               <span className="italic text-copper">Reimagined</span>
             </h1>
-            <p className="mt-6 max-w-[540px] text-[19px] leading-8 text-taupe">
+            <p className="text-krest-body mt-6 max-w-[540px] text-taupe">
               Achieve the perfect balance between function and esthetics with advanced
               dental implants. Our specialized approach is designed for natural-looking
               results, lasting stability, and confident everyday comfort.
@@ -171,7 +171,7 @@ export function ImplantsMain() {
         </section>
 
         <section className="bg-white py-14 lg:py-20">
-          <div className="mx-auto grid max-w-[1180px] grid-cols-1 gap-8 px-[25px] lg:grid-cols-[1.05fr_1.25fr] lg:gap-10">
+          <div className="krest-site grid grid-cols-1 gap-8 px-[25px] lg:grid-cols-[1.05fr_1.25fr] lg:gap-10">
             <div className="pt-2">
               <h2 className="font-display text-[44px] leading-[1.1] text-ink">
                 Tailored Implant Solutions for Every Need
@@ -226,7 +226,7 @@ export function ImplantsMain() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-[1180px] px-[25px] pt-14 pb-14 lg:pt-20 lg:pb-20">
+        <section className="krest-site pt-14 pb-14 lg:pt-20 lg:pb-20">
           <h2 className="font-display text-4xl text-copper">
             Why choose dental implants over other tooth replacement options?
           </h2>
@@ -271,7 +271,7 @@ export function ImplantsMain() {
         </section>
 
         <section className="bg-white py-14 lg:py-20">
-          <div className="mx-auto max-w-[1180px] px-[25px]">
+          <div className="krest-site">
             <h2 className="font-display text-4xl text-copper">How does the dental implant procedure work?</h2>
             <ol className="mt-8 space-y-4">
               {[
@@ -306,7 +306,7 @@ export function ImplantsMain() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-[1180px] px-[25px] pt-14 pb-14 lg:pt-20 lg:pb-20">
+        <section className="krest-site pt-14 pb-14 lg:pt-20 lg:pb-20">
           <h2 className="font-display text-4xl text-copper">What is the cost of dental implants?</h2>
           <p className="mt-5 text-[17px] leading-8 text-taupe">
             The cost of dental implants varies by treatment complexity and final restoration design. Instead of quoting
@@ -324,7 +324,7 @@ export function ImplantsMain() {
         </section>
 
         <section className="bg-white py-14 lg:py-20">
-          <div className="mx-auto max-w-[1180px] px-[25px]">
+          <div className="krest-site">
             <h2 className="font-display text-4xl text-copper">
               Before and after: what changes can you expect?
             </h2>
@@ -372,7 +372,7 @@ export function ImplantsMain() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-[1180px] px-[25px] pt-14 pb-14 lg:pt-20 lg:pb-20">
+        <section className="krest-site pt-14 pb-14 lg:pt-20 lg:pb-20">
           <div className="text-center">
             <p className="inline-flex items-center gap-3 font-accent text-[11px] uppercase tracking-[0.28em] text-copper">
               <span className="h-px w-10 bg-copper/45" />
@@ -447,7 +447,7 @@ export function ImplantsMain() {
         </section>
 
         <section className="bg-white py-14 lg:py-20">
-          <div className="mx-auto max-w-[1180px] px-[25px]">
+          <div className="krest-site">
             <div className="text-center">
               <p className="font-accent text-[11px] uppercase tracking-[0.28em] text-copper">
                 Patient Stories
@@ -497,7 +497,7 @@ export function ImplantsMain() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-[1180px] px-[25px] pt-14 pb-14 lg:pt-20 lg:pb-20">
+        <section className="krest-site pt-14 pb-14 lg:pt-20 lg:pb-20">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_1.15fr] lg:gap-10">
             <div>
               <h2 className="font-display text-4xl text-ink">Why Krest Dental for Implants?</h2>
@@ -548,7 +548,7 @@ export function ImplantsMain() {
         </section>
 
         <section className="bg-white py-14 lg:py-20">
-          <div className="mx-auto max-w-[1180px] px-[25px]">
+          <div className="krest-site">
             <div className="text-center">
             <h2 className="font-display text-5xl text-ink sm:text-6xl">
               Frequently Asked Questions
@@ -593,7 +593,7 @@ export function ImplantsMain() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-[1180px] px-[25px] pt-14 pb-20 lg:pt-20">
+        <section className="krest-site pt-14 pb-20 lg:pt-20">
           <div className="rounded-[28px] border border-copper/35 bg-white/60 p-8 text-center lg:p-10">
             <h2 className="font-display text-4xl text-ink">Ready for permanent teeth replacement?</h2>
             <p className="mx-auto mt-4 max-w-[840px] text-lg leading-8 text-taupe">

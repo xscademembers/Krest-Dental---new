@@ -44,3 +44,12 @@ export type BlogPost = {
   cover: { src: string; alt: string };
   body: string[];
 };
+
+export type OurServiceCategory = {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  imageAlt: string;
+  items: string[];
+};

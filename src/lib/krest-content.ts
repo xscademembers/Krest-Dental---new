@@ -2,11 +2,15 @@ import type {
   BlogPost,
   GalleryImage,
   NavItem,
+  OurServiceCategory,
   Service,
   SocialLink,
   Stat,
   Testimonial,
 } from "@/types/krest";
+
+/** Footer-only brand mark (public/images/Krest Logo.Ai - 7.png) */
+export const FOOTER_LOGO_SRC = "/images/Krest%20Logo.Ai%20-%207.png";
 
 export const NAV_ITEMS: NavItem[] = [
   {
@@ -351,6 +355,100 @@ export const ABOUT_VISION_MISSION = {
   mission: {
     title: "Our Mission",
     text: "To deliver advanced, comprehensive, and compassionate dental solutions tailored to each individual. We combine cutting-edge technology, global expertise, and a deeply personalized approach to restore function, enhance aesthetics, and build lasting trust empowering every patient to smile with confidence.",
+  },
+} as const;
+
+/** Our Services page — krest.dental/our-services */
+export const OUR_SERVICES_PAGE = {
+  title: "Our Services",
+  intro:
+    "At Krest Dental, we deliver advanced, patient-centric dental care tailored to every smile. From preventive checkups to complex procedures like implants, smile makeovers, and orthodontics, our expert-led services combine cutting-edge technology, precision, and comfort. Discover comprehensive care designed to restore, protect, and perfect your oral health.",
+  categories: [
+    {
+      id: "general",
+      title: "General Dentistry",
+      description:
+        "Our general dentistry services focus on maintaining lifelong oral health through preventive care, routine checkups, and timely treatments. From professional cleanings to root canals, every procedure is performed with precision and compassion — so you can smile confidently every day.",
+      image: "/images/our-services/general-dentistry.png",
+      imageAlt: "General Dentistry at Krest Dental",
+      items: [
+        "Comprehensive Dental Exams",
+        "Professional Cleanings",
+        "Mercury-Free Fillings",
+        "Root Canals",
+        "Extractions",
+        "Sealants",
+        "Inlays & Onlays, Fluoride Treatments",
+        "Oral Cancer Screenings",
+      ],
+    },
+    {
+      id: "cosmetic",
+      title: "Cosmetic Dentistry",
+      description:
+        "We believe a confident smile can transform not just your appearance but your self-esteem and overall quality of life. Our cosmetic treatments enhance the natural beauty of your teeth using advanced techniques and premium materials — all tailored to your goals and comfort.",
+      image: "/images/our-services/cosmetic-dentistry.png",
+      imageAlt: "Cosmetic Dentistry at Krest Dental",
+      items: [
+        "Braces",
+        "Veneers",
+        "Whitening",
+        "Clear Aligners",
+        "Smile Makeovers",
+        "Bonding",
+        "Gum Contouring",
+      ],
+    },
+    {
+      id: "restorative",
+      title: "Restorative Dentistry",
+      description:
+        "Restore the function and beauty of your smile with our expert restorative solutions. Whether you need a single crown or a full-mouth rehabilitation, our team blends precision, innovation, and gentle care to help you eat, speak, and smile with renewed confidence.",
+      image: "/images/our-services/restorative-dentistry.png",
+      imageAlt: "Restorative Dentistry at Krest Dental",
+      items: [
+        "Implants",
+        "Crowns",
+        "Bridges",
+        "Dentures",
+        "Full-Mouth Rehabilitation",
+      ],
+    },
+    {
+      id: "emergency",
+      title: "Emergency Care",
+      description:
+        "Dental emergencies can happen at any time. From sudden toothaches to knocked-out teeth, we provide prompt, expert care to relieve pain and restore your smile as quickly as possible. Your comfort and safety are always our top priority.",
+      image: "/images/our-services/emergency-care.png",
+      imageAlt: "Emergency Dental Care at Krest Dental",
+      items: [
+        "Chipped Tooth",
+        "Lost Filling",
+        "Severe Toothache",
+        "Swelling or Infection",
+      ],
+    },
+    {
+      id: "invisalign",
+      title: "Invisalign",
+      description:
+        "Straighten your teeth discreetly and comfortably with Invisalign’s clear, removable aligners. At Krest Dental, we customize each treatment plan using precise 3D digital scans, helping you achieve a straighter, more confident smile without brackets or wires — and with minimal impact on your lifestyle.",
+      image: "/images/services/invisalign.png",
+      imageAlt: "Invisalign clear aligners at Krest Dental",
+      items: [
+        "Bite Problems",
+        "Tooth Wear",
+        "Jaw Pain",
+        "Better Function",
+        "Long-term Stability",
+      ],
+    },
+  ] satisfies OurServiceCategory[],
+  cta: {
+    image: "/images/our-services/appointment-cta.jpg",
+    imageAlt: "Krest Dental treatment room with dental chair and city view",
+    heading: "Schedule Your Appointment Today!",
+    text: "A healthy, beautiful smile starts with expert care. Contact us today to schedule your appointment and experience the Krest difference.",
   },
 } as const;
 

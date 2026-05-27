@@ -33,7 +33,7 @@ export function SiteHeader() {
   return (
     <header className="relative z-30 w-full">
       <div className="bg-copper text-white">
-        <div className="mx-auto flex max-w-[1425px] items-center justify-between gap-6 px-[25px] py-2">
+        <div className="krest-site flex items-center justify-between gap-6 py-2">
           <ul className="flex items-center gap-2">
             {SOCIALS.map((s) => {
               const Icon = socialIcon[s.label];
@@ -74,7 +74,7 @@ export function SiteHeader() {
       </div>
 
       <div className="bg-white">
-        <div className="mx-auto flex max-w-[1425px] items-center justify-between gap-6 px-[25px] py-4">
+        <div className="krest-site flex items-center justify-between gap-6 py-4">
           <Logo />
 
           <nav aria-label="Site" className="hidden lg:block">

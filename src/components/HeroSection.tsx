@@ -15,7 +15,7 @@ export function HeroSection() {
         height={560}
         className="pointer-events-none absolute right-0 top-8 z-0 h-[128%] w-auto select-none opacity-55 lg:right-0 lg:top-6"
       />
-      <div className="mx-auto max-w-[1240px] px-[25px]">
+      <div className="krest-site">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
           <div>
             <h1 className="font-display italic text-[40px] font-normal leading-[1.05] tracking-[-0.01em] text-ink sm:text-[52px] lg:text-[60px]">
@@ -30,7 +30,7 @@ export function HeroSection() {
                 Cosmetic Dentist &amp; Implantologist
               </p>
             </div>
-            <p className="mt-6 max-w-[560px] font-display text-[15px] leading-[1.65] text-ink sm:text-[16px] lg:text-[16.5px]">
+            <p className="text-krest-body-serif mt-6 max-w-[560px]">
               {HERO.description}
             </p>
             <a

@@ -6,7 +6,7 @@ export function DoctorQuote() {
       aria-label="Doctor's note"
       className="relative overflow-hidden py-16 lg:py-24"
     >
-      <div className="mx-auto grid max-w-[1100px] grid-cols-1 items-center gap-10 px-6 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16 lg:px-12">
+      <div className="krest-site grid grid-cols-1 items-center gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16">
         <div className="relative mx-auto aspect-[7/8] w-full max-w-[360px] overflow-hidden">
           <img
             src={HERO.doctorPortrait}

@@ -6,6 +6,7 @@ import {
 import {
   ADDRESS,
   EMAIL,
+  FOOTER_LOGO_SRC,
   HOURS,
   PHONE_DISPLAY,
   PHONE_TEL,
@@ -28,7 +29,7 @@ const FOOTER_NAV = [
 export function SiteFooter() {
   return (
     <footer className="mt-12 border-t border-copper/15 bg-white pb-8 pt-10">
-      <div className="mx-auto grid max-w-[1180px] grid-cols-1 gap-12 px-[32px] sm:grid-cols-2 lg:grid-cols-[1.25fr_0.65fr_1fr_0.8fr] lg:gap-24">
+      <div className="krest-site grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-[1.25fr_0.65fr_1fr_0.8fr] lg:gap-24">
         <div className="flex flex-col items-start gap-8">
           <FooterLogo />
           <ul className="flex items-center gap-4 text-taupe">
@@ -126,7 +127,7 @@ export function SiteFooter() {
         </div>
       </div>
 
-      <div className="mx-auto mt-20 max-w-[1180px] px-[32px] text-center font-body text-[11px] text-taupe">
+      <div className="krest-site mt-20 text-center font-body text-[11px] text-taupe">
         © 2025 by Krest Dental. Developed by{" "}
         <a
           href="https://www.xscade.com/"
@@ -147,37 +148,17 @@ function FooterLogo() {
     <a
       href="/"
       aria-label="Krest Dental — Home"
-      className="inline-flex items-center gap-2.5 text-taupe"
+      className="inline-block"
     >
-      <svg
-        viewBox="0 0 64 56"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        aria-hidden="true"
-        className="h-14 w-14 text-copper"
-      >
-        <path
-          d="M 8 14 C 16 4, 25 11, 32 10 C 43 8, 52 3, 56 9 C 60 15, 54 28, 44 36 C 34 44, 25 46, 15 42 C 8 39, 5 31, 8 22"
-          stroke="currentColor"
-          strokeWidth="2.6"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path
-          d="M 18 18 C 25 21, 34 21, 45 15"
-          stroke="currentColor"
-          strokeWidth="2.4"
-          strokeLinecap="round"
-        />
-      </svg>
-      <span className="font-display text-[36px] font-semibold leading-none tracking-tight">
-        Krest
-      </span>
-      <span aria-hidden="true" className="h-[34px] w-px bg-copper/35" />
-      <span className="flex flex-col font-accent leading-[1.05] tracking-[0.18em] text-taupe">
-        <span className="text-[10px]">DENTAL</span>
-        <span className="text-[10px]">CARE</span>
-      </span>
+      <img
+        src={FOOTER_LOGO_SRC}
+        alt="Krest Dental Care"
+        width={320}
+        height={120}
+        className="h-auto w-[200px] max-w-full object-contain object-left sm:w-[260px]"
+        loading="lazy"
+        decoding="async"
+      />
     </a>
   );
 }

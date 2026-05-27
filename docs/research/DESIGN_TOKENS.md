@@ -47,7 +47,28 @@ Primary fonts loaded by Wix (we will load via Google Fonts in `next/font/google`
 
 ## Spacing & layout
 
-- Page wrapper width: 1425px (Wix max-content container)
+Measured at **1440×900** (2026-05-27):
+
+| Token | Value | Usage |
+|---|---|---|
+| `--krest-site-max` | **1425px** | Wix site canvas — header, sections |
+| `--krest-content-max` | **1069px** | Centered prose (hero intro, page titles block) |
+| `--krest-card-max` | **1275px** | White service cards on `/our-services` |
+| `--krest-gutter-min` | **25px** | Mobile minimum horizontal padding |
+| Desktop gutter | **~178px** | `calc((min(100vw, 1425px) - 1069px) / 2)` inside `.krest-site` |
+| Card gutter | **~75px** | `calc((min(100vw, 1425px) - 1275px) / 2)` via `.krest-site--cards` |
+
+Implementation: `src/components/SiteContainer.tsx` + `.krest-site` / `.krest-prose` / `.krest-card-band` in `globals.css`.
+
+## Our Services type (@ 1440px)
+
+| Element | Size | Family |
+|---|---|---|
+| Page `h1` | **~78px** | EB Garamond |
+| Intro `p` | **18px** | madefor-text → `font-body` |
+| Card `h3` | **~45px** | EB Garamond |
+| List items | **~24px** | EB Garamond, taupe |
+
 - Header height: 104.17px
 - Body baseline `font-size`: 10px (Wix uses `1rem = 0.1em` math)
 

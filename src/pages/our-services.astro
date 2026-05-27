@@ -1,0 +1,48 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { FloatingCallButton } from "@/components/FloatingCallButton";
+import { OurServicesPage } from "@/components/OurServicesPage";
+import { SiteFooter } from "@/components/SiteFooter";
+import { SiteHeader } from "@/components/SiteHeader";
+import { OUR_SERVICES_PAGE } from "@/lib/krest-content";
+
+export const prerender = true;
+
+const canonical = "https://www.krest.dental/our-services";
+const title = "Our Services | Krest Dental";
+const description = OUR_SERVICES_PAGE.intro;
+const keywords = [
+  "dental services vizag",
+  "general dentistry visakhapatnam",
+  "cosmetic dentistry",
+  "dental implants",
+  "invisalign vizag",
+  "emergency dentist",
+  "krest dental",
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  name: "Krest Dental",
+  url: canonical,
+  description,
+  medicalSpecialty: [
+    "General Dentistry",
+    "Cosmetic Dentistry",
+    "Restorative Dentistry",
+    "Emergency Dental Service",
+    "Orthodontics",
+  ],
+};
+---
+
+<Layout {title} {description} {canonical} {keywords}>
+  <SiteHeader client:load />
+  <main class="flex-1 bg-cream">
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <OurServicesPage />
+  </main>
+  <SiteFooter />
+  <FloatingCallButton />
+</Layout>

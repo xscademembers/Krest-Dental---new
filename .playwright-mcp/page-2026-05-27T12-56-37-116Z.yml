@@ -1,0 +1,271 @@
+- generic [ref=e3]:
+  - region "top of page"
+  - generic [ref=e10]:
+    - group:
+      - banner:
+        - generic [ref=e11]:
+          - generic [ref=e15]:
+            - group:
+              - link [ref=e18] [cursor=pointer]:
+                - /url: https://www.krest.dental
+                - img [ref=e20]
+          - generic [ref=e38]:
+            - group:
+              - navigation "Site" [ref=e42]:
+                - list [ref=e43]:
+                  - listitem [ref=e44]:
+                    - generic [ref=e46]:
+                      - link "About Us" [ref=e47] [cursor=pointer]:
+                        - /url: https://www.krest.dental/about-us
+                        - generic [ref=e48]: About Us
+                      - button "More About Us pages" [ref=e49] [cursor=pointer]:
+                        - img [ref=e50]
+                  - listitem [ref=e52]:
+                    - generic [ref=e54]:
+                      - link "Our Services" [ref=e55] [cursor=pointer]:
+                        - /url: https://www.krest.dental/our-services
+                        - generic [ref=e56]: Our Services
+                      - button "More Our Services pages" [ref=e57] [cursor=pointer]:
+                        - img [ref=e58]
+                  - listitem [ref=e60]:
+                    - link "Contact" [ref=e63] [cursor=pointer]:
+                      - /url: https://www.krest.dental/contact
+                      - generic [ref=e64]: Contact
+          - generic [ref=e65]:
+            - group:
+              - link "Book Appointment" [ref=e68] [cursor=pointer]:
+                - /url: https://www.krest.dental/contact
+                - generic [ref=e70]: Book Appointment
+          - generic [ref=e71]:
+            - group:
+              - list "Social Bar" [ref=e74]:
+                - listitem [ref=e75]:
+                  - link "Facebook" [ref=e76] [cursor=pointer]:
+                    - /url: https://www.facebook.com/krestdentalcare
+                - listitem [ref=e78]:
+                  - link "Instagram" [ref=e79] [cursor=pointer]:
+                    - /url: https://www.instagram.com/krestdental/
+                - listitem [ref=e81]:
+                  - link "YouTube" [ref=e82] [cursor=pointer]:
+                    - /url: https://www.youtube.com/@KrestDentalCare
+              - generic [ref=e84]:
+                - generic [ref=e86]:
+                  - img [ref=e90]
+                  - paragraph [ref=e94]: +91 95738 84525
+                - generic [ref=e95]:
+                  - img [ref=e99]
+                  - paragraph [ref=e103]:
+                    - link "krestdental@gmail.com" [ref=e105] [cursor=pointer]:
+                      - /url: mailto:krestdental@gmail.com
+      - main:
+        - generic [ref=e106]:
+          - group:
+            - generic [ref=e110]:
+              - group:
+                - generic [ref=e112]:
+                  - group:
+                    - heading "Our Services" [level=1] [ref=e115]
+                    - paragraph [ref=e117]: At Krest Dental, we deliver advanced, patient-centric dental care tailored to every smile. From preventive checkups to complex procedures like implants, smile makeovers, and orthodontics, our expert-led services combine cutting-edge technology, precision, and comfort. Discover comprehensive care designed to restore, protect, and perfect your oral health.
+        - generic [ref=e122]:
+          - list:
+            - listitem [ref=e123]:
+              - img "General Dentistry" [ref=e129]
+              - generic [ref=e130]:
+                - heading "General Dentistry" [level=3] [ref=e133]
+                - paragraph [ref=e135]: Our general dentistry services focus on maintaining lifelong oral health through preventive care, routine checkups, and timely treatments. From professional cleanings to root canals, every procedure is performed with precision and compassion — so you can smile confidently every day.
+                - link "Book Appointment" [ref=e137] [cursor=pointer]:
+                  - /url: https://www.xscade.com
+                  - generic [ref=e138]:
+                    - generic [ref=e139]: Book Appointment
+                    - img [ref=e142]
+              - list [ref=e147]:
+                - listitem [ref=e148]:
+                  - paragraph [ref=e149]: Comprehensive Dental Exams
+                - listitem [ref=e150]:
+                  - paragraph [ref=e151]: Professional Cleanings
+                - listitem [ref=e152]:
+                  - paragraph [ref=e153]: Mercury-Free Fillings
+                - listitem [ref=e154]:
+                  - paragraph [ref=e155]: Root Canals
+                - listitem [ref=e156]:
+                  - paragraph [ref=e157]: Extractions
+                - listitem [ref=e158]:
+                  - paragraph [ref=e159]: Sealants
+                - listitem [ref=e160]:
+                  - paragraph [ref=e161]: Inlays & Onlays, Fluoride Treatments
+                - listitem [ref=e162]:
+                  - paragraph [ref=e163]: Oral Cancer Screenings
+            - listitem [ref=e164]:
+              - img "Cosmetic Dentistry" [ref=e170]
+              - generic [ref=e171]:
+                - heading "Cosmetic Dentistry" [level=3] [ref=e174]
+                - paragraph [ref=e176]: We believe a confident smile can transform not just your appearance but your self-esteem and overall quality of life. Our cosmetic treatments enhance the natural beauty of your teeth using advanced techniques and premium materials — all tailored to your goals and comfort.
+                - link "Book Appointment" [ref=e178] [cursor=pointer]:
+                  - /url: https://www.instagram.com
+                  - generic [ref=e179]:
+                    - generic [ref=e180]: Book Appointment
+                    - img [ref=e183]
+              - list [ref=e188]:
+                - listitem [ref=e189]:
+                  - paragraph [ref=e190]: Braces
+                - listitem [ref=e191]:
+                  - paragraph [ref=e192]: Veneers
+                - listitem [ref=e193]:
+                  - paragraph [ref=e194]: Whitening
+                - listitem [ref=e195]:
+                  - paragraph [ref=e196]: Clear Aligners
+                - listitem [ref=e197]:
+                  - paragraph [ref=e198]: Smile Makeovers
+                - listitem [ref=e199]:
+                  - paragraph [ref=e200]: Bonding
+                - listitem [ref=e201]:
+                  - paragraph [ref=e202]: Gum Contouring
+            - listitem [ref=e203]:
+              - img "Restorative Dentistry" [ref=e209]
+              - generic [ref=e210]:
+                - heading "Restorative Dentistry" [level=3] [ref=e213]
+                - paragraph [ref=e215]: Restore the function and beauty of your smile with our expert restorative solutions. Whether you need a single crown or a full-mouth rehabilitation, our team blends precision, innovation, and gentle care to help you eat, speak, and smile with renewed confidence.
+                - link "Book Appointment" [ref=e217] [cursor=pointer]:
+                  - /url: https://www.facebook.com
+                  - generic [ref=e218]:
+                    - generic [ref=e219]: Book Appointment
+                    - img [ref=e222]
+              - list [ref=e227]:
+                - listitem [ref=e228]:
+                  - paragraph [ref=e229]: Implants
+                - listitem [ref=e230]:
+                  - paragraph [ref=e231]: Crowns
+                - listitem [ref=e232]:
+                  - paragraph [ref=e233]: Bridges
+                - listitem [ref=e234]:
+                  - paragraph [ref=e235]: Dentures
+                - listitem [ref=e236]:
+                  - paragraph [ref=e237]: Full-Mouth Rehabilitation
+            - listitem [ref=e238]:
+              - img "Emergency Care" [ref=e244]
+              - generic [ref=e245]:
+                - heading "Emergency Care" [level=3] [ref=e248]: Emergency Care
+                - paragraph [ref=e250]: Dental emergencies can happen at any time. From sudden toothaches to knocked-out teeth, we provide prompt, expert care to relieve pain and restore your smile as quickly as possible. Your comfort and safety are always our top priority.
+                - link "Book Appointment" [ref=e252] [cursor=pointer]:
+                  - /url: https://www.google.com
+                  - generic [ref=e253]:
+                    - generic [ref=e254]: Book Appointment
+                    - img [ref=e257]
+              - list [ref=e262]:
+                - listitem [ref=e263]:
+                  - paragraph [ref=e264]: Chipped Tooth
+                - listitem [ref=e265]:
+                  - paragraph [ref=e266]: Lost Filling
+                - listitem [ref=e267]:
+                  - paragraph [ref=e268]: Severe Toothache
+                - listitem [ref=e269]:
+                  - paragraph [ref=e270]: Swelling or Infection
+            - listitem [ref=e271]:
+              - img "Invisalign" [ref=e277]
+              - generic [ref=e278]:
+                - heading "Invisalign" [level=3] [ref=e281]
+                - paragraph [ref=e283]: Straighten your teeth discreetly and comfortably with Invisalign’s clear, removable aligners. At Krest Dental, we customize each treatment plan using precise 3D digital scans, helping you achieve a straighter, more confident smile without brackets or wires — and with minimal impact on your lifestyle
+                - link "Book Appointment" [ref=e285] [cursor=pointer]:
+                  - /url: https://www.google.com
+                  - generic [ref=e286]:
+                    - generic [ref=e287]: Book Appointment
+                    - img [ref=e290]
+              - list [ref=e295]:
+                - listitem [ref=e296]:
+                  - paragraph [ref=e297]: Bite Problems
+                - listitem [ref=e298]:
+                  - paragraph [ref=e299]: Tooth Wear
+                - listitem [ref=e300]:
+                  - paragraph [ref=e301]: Jaw Pain
+                - listitem [ref=e302]:
+                  - paragraph [ref=e303]: Better Function
+                - listitem [ref=e304]:
+                  - paragraph [ref=e305]: Long-term Stability
+        - generic [ref=e306]:
+          - group:
+            - generic [ref=e310]:
+              - group:
+                - img "DSC08466.jpg" [ref=e316]
+            - generic [ref=e317]:
+              - group:
+                - generic [ref=e319]:
+                  - group:
+                    - heading "Schedule Your Appointment Today!" [level=2] [ref=e322]
+                    - paragraph [ref=e324]: A healthy, beautiful smile starts with expert care. Contact us today to schedule your appointment and experience the Krest difference.
+                    - button "Book Appointment" [ref=e326] [cursor=pointer]:
+                      - generic [ref=e327]:
+                        - generic [ref=e328]: Book Appointment
+                        - img [ref=e331]
+      - contentinfo:
+        - generic [ref=e335]:
+          - group:
+            - generic [ref=e339]:
+              - group:
+                - generic [ref=e341]:
+                  - link [ref=e344] [cursor=pointer]:
+                    - /url: https://www.krest.dental
+                    - img [ref=e346]
+                  - list "Social Bar" [ref=e367]:
+                    - listitem [ref=e368]:
+                      - link "Facebook" [ref=e369] [cursor=pointer]:
+                        - /url: https://www.facebook.com/
+                    - listitem [ref=e371]:
+                      - link "Instagram" [ref=e372] [cursor=pointer]:
+                        - /url: https://www.instagram.com/
+                    - listitem [ref=e374]:
+                      - link "Youtube" [ref=e375] [cursor=pointer]:
+                        - /url: https://www.youtube.com/
+            - generic [ref=e377]:
+              - group:
+                - generic [ref=e379]:
+                  - paragraph [ref=e384]: Menu
+                  - generic [ref=e385]:
+                    - paragraph [ref=e388]:
+                      - link "Home" [ref=e389] [cursor=pointer]:
+                        - /url: https://www.krest.dental
+                    - paragraph [ref=e391]:
+                      - link "About Us" [ref=e392] [cursor=pointer]:
+                        - /url: https://www.krest.dental/about-us
+                    - paragraph [ref=e394]:
+                      - link "Services" [ref=e395] [cursor=pointer]:
+                        - /url: https://www.krest.dental/our-services
+                    - paragraph [ref=e397]:
+                      - link "Contact Us" [ref=e398] [cursor=pointer]:
+                        - /url: https://www.krest.dental/contact
+            - generic [ref=e399]:
+              - group:
+                - generic [ref=e401]:
+                  - paragraph [ref=e404]: Contact Us
+                  - paragraph [ref=e406]: E-mail
+                  - paragraph [ref=e408]:
+                    - link "krestdental@gmail.com" [ref=e410] [cursor=pointer]:
+                      - /url: mailto:krestdental@gmail.com
+                  - paragraph [ref=e412]: Phone
+                  - paragraph [ref=e414]: +91 95738 84525
+                  - paragraph [ref=e416]: Address
+                  - paragraph [ref=e418]:
+                    - text: KREST DENTAL CARE
+                    - text: 3rd Floor, Door No 2-48-21
+                    - text: Opposite To Latte
+                    - text: Sector 11, MVP Colony
+                    - text: MVP Double Road
+                    - text: Visakhapatnam -530017.
+            - generic [ref=e419]:
+              - group:
+                - generic [ref=e421]:
+                  - group:
+                    - paragraph [ref=e424]: Opening Hours
+                    - paragraph [ref=e426]: Monday - Saturday
+                    - paragraph [ref=e428]: 9:00 AM - 7:30 PM
+                    - paragraph [ref=e430]: Sunday
+                    - paragraph [ref=e432]: Closed
+            - generic [ref=e433]:
+              - group
+            - generic [ref=e435]:
+              - group:
+                - paragraph [ref=e438]:
+                  - generic [ref=e439]:
+                    - text: © 2025 by Krest Dental. Developed by
+                    - link "Xscade" [ref=e441] [cursor=pointer]:
+                      - /url: https://www.xscade.com/
+  - region "bottom of page"

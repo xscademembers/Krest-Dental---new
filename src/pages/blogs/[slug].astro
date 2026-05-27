@@ -66,7 +66,7 @@ const jsonLd = {
 
     <article>
       <header class="bg-[#F4EAE7] pb-10 pt-12 lg:pb-14 lg:pt-16">
-        <div class="mx-auto max-w-[860px] px-[25px] text-center">
+        <div class="krest-site text-center">
           <p class="font-accent text-[12px] uppercase tracking-[0.28em] text-copper">
             {post.category} · {post.readingTime}
           </p>
@@ -83,7 +83,7 @@ const jsonLd = {
         </div>
       </header>
 
-      <div class="mx-auto max-w-[1080px] px-[25px] pt-10 lg:pt-14">
+      <div class="krest-site pt-10 lg:pt-14">
         <div
           class="overflow-hidden rounded-[20px] shadow-[0_22px_60px_-32px_rgba(0,0,0,0.35)] lg:rounded-[24px]"
         >
@@ -98,7 +98,7 @@ const jsonLd = {
         </div>
       </div>
 
-      <div class="mx-auto max-w-[760px] px-[25px] py-12 lg:py-16">
+      <div class="krest-site py-12 lg:py-16">
         <div class="space-y-6">
           {post.body.map((para) => (
             <p class="font-display text-[17px] leading-[1.8] text-ink sm:text-[18px]">{para}</p>
@@ -137,7 +137,7 @@ const jsonLd = {
 
     {related.length > 0 && (
       <section class="border-t border-copper/15 bg-[#F4EAE7] py-14 lg:py-20" aria-label="Related posts">
-        <div class="mx-auto max-w-[1240px] px-[25px]">
+        <div class="krest-site">
           <p class="font-accent text-[12px] uppercase tracking-[0.28em] text-copper">
             Continue reading
           </p>

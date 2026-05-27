@@ -8,7 +8,7 @@ export function InstagramStrip() {
       aria-label="Krest Dental on Instagram"
       className="py-16 lg:py-24"
     >
-      <div className="mx-auto max-w-[1280px] px-[25px]">
+      <div className="krest-site">
         <div className="mb-10 text-center">
           <h2 className="font-display text-[36px] font-normal leading-[1.1] tracking-[-0.02em] text-copper sm:text-[44px] lg:text-[52px]">
             Follow Us on Instagram

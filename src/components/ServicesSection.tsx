@@ -9,7 +9,7 @@ export function ServicesSection() {
       aria-label="Signature services"
       className="bg-white py-20 lg:py-28"
     >
-      <div className="mx-auto max-w-[1180px] px-[25px]">
+      <div className="krest-site">
         <div className="mx-auto mb-14 max-w-[920px] text-center lg:mb-20">
           <h2 className="font-display text-[44px] font-normal leading-[1.05] tracking-[-0.02em] text-copper sm:text-[58px] lg:text-[72px]">
             Signature Services

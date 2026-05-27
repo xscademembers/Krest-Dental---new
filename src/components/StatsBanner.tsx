@@ -6,7 +6,7 @@ export function StatsBanner() {
       aria-label="Krest Dental — by the numbers"
       className="bg-white py-16 lg:py-24"
     >
-      <div className="mx-auto max-w-[1180px] px-[25px]">
+      <div className="krest-site">
         <h2 className="text-center font-display text-[34px] font-normal leading-[1.15] tracking-[-0.01em] text-copper sm:text-[44px] lg:text-left lg:text-[52px]">
           Crafting world-class smiles with Precision and Artistry.
         </h2>
