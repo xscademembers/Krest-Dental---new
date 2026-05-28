@@ -9,7 +9,7 @@ import type {
   Testimonial,
 } from "@/types/krest";
 
-/** Footer-only brand mark (public/images/Krest Logo.Ai - 7.png) */
+/** Footer-only logo (public/images/Krest Logo.Ai - 7.png) */
 export const FOOTER_LOGO_SRC = "/images/Krest%20Logo.Ai%20-%207.png";
 
 export const NAV_ITEMS: NavItem[] = [
@@ -476,6 +476,6 @@ export const ADDRESS = {
 } as const;
 
 export const HOURS = [
-  { day: "Monday – Friday", time: "9:00 AM – 7:30 PM" },
+  { day: "Monday - Saturday", time: "9:00 AM - 7:30 PM" },
   { day: "Sunday", time: "Closed" },
 ] as const;
