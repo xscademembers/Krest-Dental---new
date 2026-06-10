@@ -1,0 +1,8 @@
+[    1056ms] [ERROR] Failed to load resource: the server responded with a status of 504 (Outdated Optimize Dep) @ http://localhost:4322/node_modules/.vite/deps/lenis.js?v=7552f6ac:0
+[    1092ms] [ERROR] [astro-island] Error hydrating /src/components/lenis-provider.tsx TypeError: Failed to fetch dynamically imported module: http://localhost:4322/src/components/lenis-provider.tsx @ http://localhost:4322/:4165
+[ 1349082ms] [LOG] [vite] server connection lost. Polling for restart... @ http://localhost:4322/@vite/client:1695
+[ 1351422ms] [ERROR] WebSocket connection to 'ws://localhost:4322/' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4322/@vite/client:1766
+[ 1354785ms] [ERROR] WebSocket connection to 'ws://localhost:4322/' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4322/@vite/client:1766
+[ 1358182ms] [ERROR] WebSocket connection to 'ws://localhost:4322/' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4322/@vite/client:1766
+[ 1361563ms] [ERROR] WebSocket connection to 'ws://localhost:4322/' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4322/@vite/client:1766
+[ 1364922ms] [ERROR] WebSocket connection to 'ws://localhost:4322/' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:4322/@vite/client:1766

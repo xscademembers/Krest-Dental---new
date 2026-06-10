@@ -23,6 +23,7 @@ export const NAV_ITEMS: NavItem[] = [
     href: "/our-services",
     children: [
       { label: "Invisalign", href: "/invisalign" },
+      { label: "Invisilign - old", href: "/invisilign-old" },
       { label: "Implants", href: "/implants" },
     ],
   },

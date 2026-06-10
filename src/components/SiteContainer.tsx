@@ -5,11 +5,11 @@ type SiteContainerProps = {
   children: ReactNode;
   className?: string;
   as?: ElementType;
-  /** Use wider horizontal padding band for large white cards (1275px). */
+  /** Legacy alias — same 25px gutters as default; card width via SiteCardBand. */
   variant?: "default" | "cards";
 };
 
-/** Matches Wix site max width (1425px) and computed gutters at 1440px viewport. */
+/** Matches Wix site max width (1425px) and 25px section padding at all breakpoints. */
 export function SiteContainer({
   children,
   className,

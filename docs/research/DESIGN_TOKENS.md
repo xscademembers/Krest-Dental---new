@@ -54,9 +54,8 @@ Measured at **1440×900** (2026-05-27):
 | `--krest-site-max` | **1425px** | Wix site canvas — header, sections |
 | `--krest-content-max` | **1069px** | Centered prose (hero intro, page titles block) |
 | `--krest-card-max` | **1275px** | White service cards on `/our-services` |
-| `--krest-gutter-min` | **25px** | Mobile minimum horizontal padding |
-| Desktop gutter | **~178px** | `calc((min(100vw, 1425px) - 1069px) / 2)` inside `.krest-site` |
-| Card gutter | **~75px** | `calc((min(100vw, 1425px) - 1275px) / 2)` via `.krest-site--cards` |
+| `--krest-gutter` | **25px** | All sections — `padding-inline` on `.krest-site` (live measured) |
+| Content centering | **max-width** | Prose/cards centered via `.krest-prose` / `.krest-card-band`, not extra padding |
 
 Implementation: `src/components/SiteContainer.tsx` + `.krest-site` / `.krest-prose` / `.krest-card-band` in `globals.css`.
 

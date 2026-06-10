@@ -18,7 +18,7 @@ export function HeroSection() {
       <div className="krest-site">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
           <div>
-            <h1 className="font-display italic text-[40px] font-normal leading-[1.05] tracking-[-0.01em] text-ink sm:text-[52px] lg:text-[60px]">
+            <h1 className="text-krest-hero-name italic">
               Dr. Suneeta Veramachaneni
             </h1>
             <div className="mt-4 flex items-center gap-9">
@@ -26,7 +26,7 @@ export function HeroSection() {
                 aria-hidden="true"
                 className="block h-px w-[120px] shrink-0 bg-copper"
               />
-              <p className="font-accent text-[14px] tracking-wide text-copper sm:text-[15px]">
+              <p className="text-krest-accent tracking-wide">
                 Cosmetic Dentist &amp; Implantologist
               </p>
             </div>
@@ -66,7 +66,7 @@ export function HeroSection() {
           </div>
           <figure className="text-center lg:text-left">
             <blockquote>
-              <p className="font-display italic text-[14px] leading-[1.7] text-taupe sm:text-[15px] lg:text-[15.5px]">
+              <p className="text-krest-body-lg italic text-taupe">
                 &ldquo;{HERO.quote}&rdquo;
               </p>
             </blockquote>

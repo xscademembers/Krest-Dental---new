@@ -11,10 +11,10 @@ export function ServicesSection() {
     >
       <div className="krest-site">
         <div className="mx-auto mb-14 max-w-[920px] text-center lg:mb-20">
-          <h2 className="font-display text-[44px] font-normal leading-[1.05] tracking-[-0.02em] text-copper sm:text-[58px] lg:text-[72px]">
+          <h2 className="text-krest-display-xl">
             Signature Services
           </h2>
-          <p className="mt-6 font-display text-[16px] leading-[1.55] text-copper sm:text-[18px] lg:text-[19px]">
+          <p className="text-krest-body-lg mt-6 text-copper">
             At Krest Dental, your well-being is our highest priority. We design
             personalized care plans tailored to each individual&apos;s needs and goals.
             Our team of skilled professionals ensures your comfort and safety at every
@@ -59,10 +59,10 @@ function ServiceCard({ service }: { service: Service }) {
       />
 
       <div className="text-center lg:text-left">
-        <h3 className="font-display text-[30px] font-normal leading-[1.1] tracking-[-0.02em] text-taupe sm:text-[36px] lg:text-[40px]">
+        <h3 className="text-krest-section-title">
           {service.title}
         </h3>
-        <p className="mt-4 font-display text-[15px] leading-[1.6] text-taupe sm:text-[16px] lg:text-[17px]">
+        <p className="text-krest-body-md mt-4">
           {service.description}
         </p>
         <a

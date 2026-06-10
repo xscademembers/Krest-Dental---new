@@ -7,7 +7,7 @@ export function StatsBanner() {
       className="bg-white py-16 lg:py-24"
     >
       <div className="krest-site">
-        <h2 className="text-center font-display text-[34px] font-normal leading-[1.15] tracking-[-0.01em] text-copper sm:text-[44px] lg:text-left lg:text-[52px]">
+        <h2 className="text-krest-display-lg text-center lg:text-left">
           Crafting world-class smiles with Precision and Artistry.
         </h2>
 
@@ -17,14 +17,14 @@ export function StatsBanner() {
               key={stat.label}
               className="rounded-[28px] bg-[#F4EAE6] px-7 py-9 lg:px-8 lg:py-10"
             >
-              <p className="font-display text-[36px] font-normal leading-none tracking-tight text-ink sm:text-[40px] lg:text-[44px]">
+              <p className="text-krest-stat-value">
                 {stat.value}
               </p>
               <span
                 aria-hidden="true"
                 className="mt-4 block h-px w-full bg-ink/80"
               />
-              <p className="mt-5 font-display text-[14px] tracking-wide text-taupe sm:text-[15px]">
+              <p className="text-krest-caption mt-5 tracking-wide">
                 {stat.label}
               </p>
             </li>

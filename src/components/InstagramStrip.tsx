@@ -10,10 +10,10 @@ export function InstagramStrip() {
     >
       <div className="krest-site">
         <div className="mb-10 text-center">
-          <h2 className="font-display text-[36px] font-normal leading-[1.1] tracking-[-0.02em] text-copper sm:text-[44px] lg:text-[52px]">
+          <h2 className="text-krest-display-sm">
             Follow Us on Instagram
           </h2>
-          <p className="mt-2 font-accent text-[18px] tracking-wide text-taupe">
+          <p className="mt-2 font-accent text-[var(--krest-text-ig-handle)] tracking-wide text-taupe">
             <a
               href={INSTAGRAM_URL}
               target="_blank"

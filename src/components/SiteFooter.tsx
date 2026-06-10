@@ -29,7 +29,7 @@ const FOOTER_NAV = [
 export function SiteFooter() {
   return (
     <footer className="mt-12 bg-white pb-10 pt-14 lg:pb-12 lg:pt-16">
-      <div className="krest-site krest-site--cards grid w-full grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-12 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,0.75fr)_minmax(0,1.15fr)_minmax(0,0.85fr)] lg:items-start lg:gap-x-16 xl:gap-x-24">
+      <div className="krest-site grid w-full grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-12 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,0.75fr)_minmax(0,1.15fr)_minmax(0,0.85fr)] lg:items-start lg:gap-x-16 xl:gap-x-24">
         <div className="flex w-full flex-col items-start gap-7 pl-0 sm:gap-8">
           <FooterLogo />
           <ul className="flex items-center gap-3">

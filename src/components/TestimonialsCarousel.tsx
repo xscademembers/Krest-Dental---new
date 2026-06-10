@@ -22,7 +22,7 @@ export function TestimonialsCarousel() {
       className="bg-cream py-20 lg:py-28"
     >
       <div className="krest-site">
-        <h2 className="text-center font-display text-[34px] font-normal leading-[1.15] tracking-[-0.01em] text-copper sm:text-[42px] lg:text-[48px]">
+        <h2 className="text-krest-display-md text-center">
           What Our Happy Customers Say
         </h2>
 
@@ -34,11 +34,11 @@ export function TestimonialsCarousel() {
                 className="flex min-h-[280px] flex-col items-center justify-center gap-8 rounded-[18px] border-2 border-copper/70 bg-cream/40 px-8 py-12 text-center sm:px-10 lg:min-h-[340px] lg:px-12"
               >
                 <blockquote>
-                  <p className="font-display text-[15px] leading-[1.7] text-taupe sm:text-[16px] lg:text-[17px]">
+                  <p className="text-krest-caption">
                     {t.quote}
                   </p>
                 </blockquote>
-                <figcaption className="font-display text-[18px] font-semibold tracking-wide text-taupe">
+                <figcaption className="text-krest-caption font-semibold tracking-wide">
                   {t.author}
                 </figcaption>
               </figure>

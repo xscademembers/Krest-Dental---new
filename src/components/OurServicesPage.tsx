@@ -126,11 +126,11 @@ export function OurServicesPage() {
                 <div className="w-full max-w-[673px] rounded-[28px] bg-[#FFFFFF] px-8 py-11 text-center shadow-[0_12px_44px_rgba(0,0,0,0.14)] sm:px-10 sm:py-12 lg:rounded-[32px] lg:px-12 lg:py-14">
                   <h2
                     id="our-services-cta-heading"
-                    className="font-display text-[32px] font-normal leading-[1.2] text-copper sm:text-[40px] lg:text-[47px]"
+                    className="text-krest-display-sm text-copper"
                   >
                     {cta.heading}
                   </h2>
-                  <p className="mx-auto mt-5 max-w-[540px] font-display text-[18px] leading-[1.55] text-copper sm:text-[20px]">
+                  <p className="text-krest-body-md mx-auto mt-5 max-w-[540px] text-copper">
                     {cta.text}
                   </p>
                   <div className="mt-8 flex justify-center">

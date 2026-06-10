@@ -1,0 +1,2 @@
+[    5867ms] [ERROR] Failed to load resource: the server responded with a status of 504 (Outdated Optimize Dep) @ http://localhost:4322/node_modules/.vite/deps/lenis.js?v=7552f6ac:0
+[    5871ms] [ERROR] [astro-island] Error hydrating /src/components/lenis-provider.tsx TypeError: Failed to fetch dynamically imported module: http://localhost:4322/src/components/lenis-provider.tsx @ http://localhost:4322/:4089

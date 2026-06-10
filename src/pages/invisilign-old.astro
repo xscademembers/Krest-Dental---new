@@ -1,0 +1,29 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { FloatingCallButton } from "@/components/FloatingCallButton";
+import { InvisilignOldMain } from "@/components/InvisilignOldMain";
+import { SiteFooter } from "@/components/SiteFooter";
+import { SiteHeader } from "@/components/SiteHeader";
+
+export const prerender = true;
+
+const canonical = "https://www.krest.dental/invisilign";
+const title = "Invisalign in Vizag (Original Page) | Krest Dental";
+const description =
+  "Original Invisalign page — clear aligners at Krest Dental, Visakhapatnam. Learn why orthodontics matters, why choose Invisalign, and walk through the Invisalign journey step by step.";
+const keywords = [
+  "invisalign",
+  "invisilign",
+  "invisalign vizag",
+  "clear aligners visakhapatnam",
+  "invisible braces",
+  "krest dental invisalign",
+];
+---
+
+<Layout {title} {description} {canonical} ogType="article" {keywords}>
+  <SiteHeader client:load />
+  <InvisilignOldMain />
+  <SiteFooter />
+  <FloatingCallButton />
+</Layout>

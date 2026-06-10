@@ -1,0 +1,310 @@
+- generic [ref=e3]:
+  - region "top of page"
+  - generic [ref=e10]:
+    - group:
+      - generic:
+        - banner:
+          - generic [ref=e11]:
+            - generic [ref=e15]:
+              - group:
+                - navigation "Site" [ref=e19]:
+                  - button "Menu" [ref=e21] [cursor=pointer]:
+                    - img [ref=e25]
+                - link [ref=e29] [cursor=pointer]:
+                  - /url: https://www.krest.dental
+                  - img [ref=e31]
+            - generic [ref=e49]:
+              - group:
+                - navigation "Site" [ref=e53]:
+                  - list [ref=e54]:
+                    - listitem [ref=e55]:
+                      - generic [ref=e57]:
+                        - link "About Us" [ref=e58] [cursor=pointer]:
+                          - /url: https://www.krest.dental/about-us
+                          - generic [ref=e59]: About Us
+                        - button "More About Us pages" [ref=e60] [cursor=pointer]:
+                          - img [ref=e61]
+                    - listitem [ref=e63]:
+                      - generic [ref=e65]:
+                        - link "Our Services" [ref=e66] [cursor=pointer]:
+                          - /url: https://www.krest.dental/our-services
+                          - generic [ref=e67]: Our Services
+                        - button "More Our Services pages" [ref=e68] [cursor=pointer]:
+                          - img [ref=e69]
+                    - listitem [ref=e71]:
+                      - link "Contact" [ref=e74] [cursor=pointer]:
+                        - /url: https://www.krest.dental/contact
+                        - generic [ref=e75]: Contact
+            - generic [ref=e76]:
+              - group:
+                - link "Book Appointment" [ref=e79] [cursor=pointer]:
+                  - /url: https://www.krest.dental/contact
+                  - generic [ref=e81]: Book Appointment
+            - generic [ref=e82]:
+              - group:
+                - list "Social Bar" [ref=e85]:
+                  - listitem [ref=e86]:
+                    - link "Facebook" [ref=e87] [cursor=pointer]:
+                      - /url: https://www.facebook.com/krestdentalcare
+                      - img "Facebook" [ref=e89]
+                  - listitem [ref=e90]:
+                    - link "Instagram" [ref=e91] [cursor=pointer]:
+                      - /url: https://www.instagram.com/krestdental/
+                      - img "Instagram" [ref=e93]
+                  - listitem [ref=e94]:
+                    - link "YouTube" [ref=e95] [cursor=pointer]:
+                      - /url: https://www.youtube.com/@KrestDentalCare
+                      - img "YouTube" [ref=e97]
+                - generic [ref=e98]:
+                  - generic [ref=e100]:
+                    - img [ref=e104]
+                    - paragraph [ref=e108]: +91 95738 84525
+                  - generic [ref=e109]:
+                    - img [ref=e113]
+                    - paragraph [ref=e117]:
+                      - link "krestdental@gmail.com" [ref=e119] [cursor=pointer]:
+                        - /url: mailto:krestdental@gmail.com
+      - main:
+        - generic [ref=e120]:
+          - img "design-02.png" [ref=e128]
+          - generic [ref=e129]:
+            - group:
+              - img [ref=e133]
+              - generic [ref=e136]:
+                - heading "Dr. Suneeta Veramachaneni" [level=1] [ref=e139]
+                - paragraph [ref=e144]: Cosmetic Dentist & Implantologist
+                - paragraph [ref=e146]: Visakhapatnam’s premier multi-specialty dental clinic, led by internationally trained cosmetic dentist & implantologist Dr. Suneeta Veeramachaneni. At Krest, we deliver world-class smile makeovers, implants, and comprehensive dental treatments. Unlock your best smile with advanced dentistry in a calming, state-of-the-art environment.
+                - link "Book Appointment" [ref=e148] [cursor=pointer]:
+                  - /url: https://www.krest.dental/contact
+                  - generic [ref=e149]:
+                    - generic [ref=e150]: Book Appointment
+                    - img [ref=e153]
+          - generic [ref=e157]:
+            - group:
+              - generic [ref=e159]:
+                - img "DSC08658.jpg" [ref=e165]
+                - paragraph [ref=e167]: "\"A confident smile is a reflection of great care. At Krest Dental, we blend precision, innovation, and heartfelt compassion to create smiles that truly stand out\""
+                - img "Dr Suneeta.png" [ref=e172]
+        - generic [ref=e173]:
+          - group:
+            - img [ref=e179]
+            - generic [ref=e182]:
+              - paragraph [ref=e185]: Crafting world-class smiles with Precision and Artistry.
+              - generic [ref=e186]:
+                - list:
+                  - listitem [ref=e187]:
+                    - generic [ref=e189]:
+                      - heading "5,000+" [level=2] [ref=e192]
+                      - paragraph [ref=e197]: Happy Patients
+                  - listitem [ref=e198]:
+                    - generic [ref=e200]:
+                      - heading "20+" [level=2] [ref=e203]
+                      - paragraph [ref=e208]: Years of Experience
+                  - listitem [ref=e209]:
+                    - generic [ref=e211]:
+                      - heading "25,000+" [level=2] [ref=e214]
+                      - paragraph [ref=e219]: Successful Procedures
+                  - listitem [ref=e220]:
+                    - generic [ref=e222]:
+                      - heading "20+" [level=2] [ref=e225]
+                      - paragraph [ref=e230]: Expert Staff
+              - link "Our Story" [ref=e232] [cursor=pointer]:
+                - /url: https://www.krest.dental/about-us
+                - generic [ref=e234]: Our Story
+        - generic [ref=e235]:
+          - group:
+            - group [ref=e239]:
+              - generic [ref=e240]:
+                - group:
+                  - group [ref=e241]:
+                    - list:
+                      - listitem [ref=e242]:
+                        - generic [ref=e246]:
+                          - blockquote [ref=e249]: Suneeta is a master of her craft. You won’t get any better than Krest Dental in Visakhapatnam. International standards of work. A bit pricey, but well worth it. 5 star treatment. I would highly recommend Dr. Suneeta to anyone looking for specialized dentistry.
+                          - paragraph [ref=e251]: Verified Patient
+                        - generic [ref=e254]:
+                          - paragraph [ref=e257]: Most importantly staff receives you with a smile. Whenever I get stressed, the doctor gave time for me to relax and asked me to cool down. She sees the patient as her own and treats them with care. She asked to raise my left hand if there is pain, I am sure I would have raised my pain hundred times with another doctor, here it's just an information but she has done it so nicely that I don't have to raise my hand.
+                          - paragraph [ref=e259]: Seth
+                  - button "Previous" [ref=e261] [cursor=pointer]:
+                    - img [ref=e265]
+                  - button "Next" [ref=e269] [cursor=pointer]:
+                    - img [ref=e273]
+        - generic [ref=e276]:
+          - group:
+            - generic [ref=e280]:
+              - heading "Signature Services" [level=2] [ref=e283]
+              - paragraph [ref=e285]: At Krest Dental, your well-being is our highest priority. We design personalized care plans tailored to each individual’s needs and goals. Our team of skilled professionals ensures your comfort and safety at every step, providing reliable, compassionate support and world-class expertise. So you feel confident and cared for, always.
+        - generic [ref=e286]:
+          - group:
+            - generic [ref=e290]:
+              - img [ref=e294]
+              - img "1.png" [ref=e301]
+              - generic [ref=e304]:
+                - heading "Implants" [level=2] [ref=e307]
+                - paragraph [ref=e309]: At Krest, we redefine smiles through precision-crafted dental implants that seamlessly blend beauty and function. Our advanced implant solutions restore missing teeth with unmatched natural aesthetics and lasting durability, empowering you with renewed confidence. Guided by expertise, innovation, and an unwavering commitment to excellence, we don’t just replace teeth we create smiles that inspire for a lifetime.
+                - link "Read More" [ref=e311] [cursor=pointer]:
+                  - /url: https://www.krest.dental/implants
+                  - generic [ref=e312]:
+                    - generic [ref=e313]: Know More
+                    - img [ref=e316]
+        - generic [ref=e319]:
+          - group:
+            - generic [ref=e323]:
+              - img [ref=e327]
+              - img "2.png" [ref=e334]
+              - generic [ref=e337]:
+                - heading "Invisalign" [level=2] [ref=e340]
+                - paragraph [ref=e342]: Dr. Suneeta Veeramachaneni transforms smiles with Invisalign a precise, comfortable, and virtually invisible alternative to metal braces. Say goodbye to bulky wires and hello to smooth, pain-free teeth straightening that fits effortlessly into your lifestyle. Designed for elegance and efficiency, our customized Invisalign treatment ensures flawless alignment with minimal disruption. Because at Krest, a perfect smile isn’t just a dream it’s within your reach.
+                - link "Read More" [ref=e344] [cursor=pointer]:
+                  - /url: https://www.krest.dental/invisilign
+                  - generic [ref=e345]:
+                    - generic [ref=e346]: Know More
+                    - img [ref=e349]
+        - generic [ref=e352]:
+          - group:
+            - generic [ref=e356]:
+              - img [ref=e360]
+              - img "4.png" [ref=e367]
+              - generic [ref=e370]:
+                - heading "Aesthetic/Cosmetic Dentistry" [level=2] [ref=e373]
+                - paragraph [ref=e375]: We combine advanced aesthetic techniques and artistic precision to create stunning, natural-looking smiles. From porcelain veneers to professional teeth whitening, each treatment is crafted to enhance your unique beauty and boost your confidence. Our bespoke smile makeovers are designed for those who seek perfection because at Krest, a radiant smile isn’t just a luxury, it’s a signature statement.
+                - link "Read More" [ref=e377] [cursor=pointer]:
+                  - /url: https://www.krest.dental/contact
+                  - generic [ref=e378]:
+                    - generic [ref=e379]: Know More
+                    - img [ref=e382]
+        - generic [ref=e385]:
+          - group:
+            - generic [ref=e389]:
+              - img [ref=e393]
+              - img "5.png" [ref=e400]
+              - generic [ref=e403]:
+                - heading "Comprehensive/General Dentistry" [level=2] [ref=e406]
+                - paragraph [ref=e408]: At Krest Dental, we provide comprehensive dental care designed to keep your smile healthy and flawless for years to come. From preventive check-ups and thorough cleanings to advanced restorative treatments, every procedure is performed with meticulous precision and gentle care. Using cutting-edge technology and a personalized approach, we deliver seamless, pain-free experiences that prioritize your long-term oral health. Because at Krest Dental, excellence isn’t an option it’s our promise.
+                - link "Read More" [ref=e410] [cursor=pointer]:
+                  - /url: https://www.krest.dental/contact
+                  - generic [ref=e411]:
+                    - generic [ref=e412]: Know More
+                    - img [ref=e415]
+        - generic [ref=e418]:
+          - group:
+            - generic [ref=e422]:
+              - group:
+                - generic [ref=e424]:
+                  - paragraph [ref=e425]: Redefining Comfort and Care
+                  - paragraph [ref=e426]: — Only at Krest Dental
+            - generic [ref=e427]:
+              - group:
+                - generic [ref=e429]:
+                  - group:
+                    - region [ref=e436]:
+                      - generic [ref=e439]:
+                        - generic "image"
+        - generic [ref=e457]:
+          - generic [ref=e461]:
+            - group:
+              - generic [ref=e463]:
+                - heading "Follow Us on Instagram" [level=2] [ref=e466]
+                - paragraph [ref=e468]:
+                  - link "@Krestdental" [ref=e470] [cursor=pointer]:
+                    - /url: https://www.instagram.com/krestdental/
+          - generic [ref=e471]:
+            - group:
+              - generic [ref=e473]:
+                - group:
+                  - region [ref=e481]:
+                    - generic [ref=e484]:
+                      - generic "image"
+        - generic [ref=e506]:
+          - group:
+            - heading "What Our Happy Customers Say" [level=2] [ref=e509]:
+              - generic [ref=e511]: What Our Happy Customers Say
+      - contentinfo:
+        - generic [ref=e512]:
+          - group:
+            - generic [ref=e516]:
+              - group:
+                - generic [ref=e518]:
+                  - paragraph [ref=e521]: Legal
+                  - paragraph [ref=e523]:
+                    - link "Privacy Policy" [ref=e524] [cursor=pointer]:
+                      - /url: https://www.krest.dental/privacy-policy
+                  - paragraph [ref=e526]:
+                    - link "Terms & Conditions" [ref=e527] [cursor=pointer]:
+                      - /url: https://www.krest.dental/terms-and-conditions
+                  - paragraph [ref=e529]:
+                    - link "Accessibility statement" [ref=e530] [cursor=pointer]:
+                      - /url: https://www.krest.dental/accessibility-statement
+            - generic [ref=e531]:
+              - group:
+                - generic [ref=e533]:
+                  - link [ref=e536] [cursor=pointer]:
+                    - /url: https://www.krest.dental
+                    - img [ref=e538]
+                  - list "Social Bar" [ref=e559]:
+                    - listitem [ref=e560]:
+                      - link "Facebook" [ref=e561] [cursor=pointer]:
+                        - /url: https://www.facebook.com/krestdentalcare
+                    - listitem [ref=e563]:
+                      - link "Instagram" [ref=e564] [cursor=pointer]:
+                        - /url: https://www.instagram.com/krestdental/
+                    - listitem [ref=e566]:
+                      - link "YouTube" [ref=e567] [cursor=pointer]:
+                        - /url: https://www.youtube.com/@KrestDentalCare
+            - generic [ref=e569]:
+              - group:
+                - generic [ref=e571]:
+                  - paragraph [ref=e576]: Menu
+                  - generic [ref=e577]:
+                    - paragraph [ref=e580]:
+                      - link "Home" [ref=e581] [cursor=pointer]:
+                        - /url: https://www.krest.dental
+                    - paragraph [ref=e583]:
+                      - link "About Us" [ref=e584] [cursor=pointer]:
+                        - /url: https://www.krest.dental/about-us
+                    - paragraph [ref=e586]:
+                      - link "Services" [ref=e587] [cursor=pointer]:
+                        - /url: https://www.krest.dental/our-services
+                    - paragraph [ref=e589]:
+                      - link "Contact Us" [ref=e590] [cursor=pointer]:
+                        - /url: https://www.krest.dental/contact
+            - generic [ref=e591]:
+              - group:
+                - generic [ref=e593]:
+                  - paragraph [ref=e596]: Contact Us
+                  - paragraph [ref=e598]: E-mail
+                  - paragraph [ref=e600]:
+                    - link "krestdental@gmail.com" [ref=e601] [cursor=pointer]:
+                      - /url: mailto:krestdental@gmail.com
+                  - paragraph [ref=e603]: Phone
+                  - paragraph [ref=e605]:
+                    - link "+91 95738 84525" [ref=e607] [cursor=pointer]:
+                      - /url: https://www.google.com/search?q=krest+dental&rlz=1C5MACD_enIN1153IN1153&oq=krest+dental+&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQIxgnMgYIAhAjGCcyDQgDEC4YrwEYxwEYgAQyBwgEEAAYgAQyBggFEEUYPDIGCAYQRRg8MgYIBxBFGDzSAQkxMjYxMGowajeoAgCwAgA&sourceid=chrome&ie=UTF-8#
+                  - paragraph [ref=e609]: Address
+                  - paragraph [ref=e611]:
+                    - text: KREST DENTAL CARE
+                    - text: 3rd Floor, Door No 2-48-21
+                    - text: Opposite To Latte
+                    - text: Sector 11, MVP Colony
+                    - text: MVP Double Road
+                    - text: Visakhapatnam -530017.
+            - generic [ref=e612]:
+              - group:
+                - generic [ref=e614]:
+                  - group:
+                    - paragraph [ref=e617]: Opening Hours
+                    - paragraph [ref=e619]: Monday-Friday
+                    - paragraph [ref=e621]: 9:00 AM - 7:30 PM
+                    - paragraph [ref=e623]: Sunday
+                    - paragraph [ref=e625]: Closed
+            - generic [ref=e626]:
+              - group:
+                - paragraph [ref=e629]:
+                  - generic [ref=e630]:
+                    - text: © 2025 by Krest Dental. Developed by
+                    - link "Xscade" [ref=e632] [cursor=pointer]:
+                      - /url: https://www.xscade.com/
+      - link "Like" [ref=e634] [cursor=pointer]:
+        - /url: tel:9573884525
+        - img [ref=e638]
+  - region "bottom of page"
