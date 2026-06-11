@@ -69,6 +69,10 @@ const downloads = [
   // Implants (old) page — hero collage lead photo, exact live crop at 2x
   ["images/implants-old/implants.jpg", "https://static.wixstatic.com/media/2139b1_17e8047ec1224ef4b3a26820cc5aa6c7~mv2.jpg/v1/fill/w_512,h_382,al_c,q_85,usm_0.66_1.00_0.01/implants.jpg"],
 
+  // Blog covers — wide, high-res crops of the live treatment photos
+  ["images/blog/implants-cover.jpg", "https://static.wixstatic.com/media/2139b1_17e8047ec1224ef4b3a26820cc5aa6c7~mv2.jpg/v1/fill/w_1600,h_1000,al_c,q_85,usm_0.66_1.00_0.01/implants.jpg"],
+  ["images/blog/invisalign-cover.jpg", "https://static.wixstatic.com/media/2139b1_7ce1537fc03845e6937567a6a3fc28d7~mv2.jpg/v1/fill/w_1600,h_1000,fp_0.36_0.36,q_85,usm_0.66_1.00_0.01/Invisalign%20Consultation.jpg"],
+
   // Favicons / SEO
   ["seo/favicon-192.png", "https://static.wixstatic.com/media/2139b1_3aca976a133d47c892175732c7f05d7b~mv2.png/v1/fill/w_192,h_192,lg_1,usm_0.66_1.00_0.01/2139b1_3aca976a133d47c892175732c7f05d7b~mv2.png"],
   ["seo/favicon-32.png", "https://static.wixstatic.com/media/2139b1_3aca976a133d47c892175732c7f05d7b~mv2.png/v1/fill/w_32,h_32,lg_1,usm_0.66_1.00_0.01/2139b1_3aca976a133d47c892175732c7f05d7b~mv2.png"],

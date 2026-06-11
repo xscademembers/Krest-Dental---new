@@ -1,0 +1,266 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - banner [ref=e5]:
+      - generic [ref=e7]:
+        - list [ref=e8]:
+          - listitem [ref=e9]:
+            - link "Facebook" [ref=e10] [cursor=pointer]:
+              - /url: https://www.facebook.com/krestdentalcare
+              - img [ref=e11]
+          - listitem [ref=e13]:
+            - link "Instagram" [ref=e14] [cursor=pointer]:
+              - /url: https://www.instagram.com/krestdental/
+              - img [ref=e15]
+          - listitem [ref=e17]:
+            - link "YouTube" [ref=e18] [cursor=pointer]:
+              - /url: https://www.youtube.com/@KrestDentalCare
+              - img [ref=e19]
+        - generic [ref=e21]:
+          - link "+91 95738 84525" [ref=e22] [cursor=pointer]:
+            - /url: tel:9573884525
+            - img [ref=e23]
+            - generic [ref=e25]: +91 95738 84525
+          - link "krestdental@gmail.com" [ref=e27] [cursor=pointer]:
+            - /url: mailto:krestdental@gmail.com
+            - img [ref=e28]
+            - generic [ref=e30]: krestdental@gmail.com
+      - generic [ref=e32]:
+        - link "Krest Dental — Home" [ref=e33] [cursor=pointer]:
+          - /url: /
+          - img [ref=e34]
+        - navigation "Site" [ref=e52]:
+          - list [ref=e53]:
+            - listitem [ref=e54]:
+              - link "About Us" [ref=e55] [cursor=pointer]:
+                - /url: /about-us
+                - text: About Us
+                - img [ref=e56]
+            - listitem [ref=e58]:
+              - link "Our Services" [ref=e59] [cursor=pointer]:
+                - /url: /our-services
+                - text: Our Services
+                - img [ref=e60]
+            - listitem [ref=e62]:
+              - link "Blogs" [ref=e63] [cursor=pointer]:
+                - /url: /blogs
+            - listitem [ref=e64]:
+              - link "Contact" [ref=e65] [cursor=pointer]:
+                - /url: /contact
+        - link "Book Appointment" [ref=e66] [cursor=pointer]:
+          - /url: /contact
+    - main [ref=e67]:
+      - article [ref=e68]:
+        - generic [ref=e70]:
+          - navigation "Breadcrumb" [ref=e71]:
+            - list [ref=e72]:
+              - listitem [ref=e73]:
+                - link "Home" [ref=e74] [cursor=pointer]:
+                  - /url: /
+              - listitem [ref=e75]: ›
+              - listitem [ref=e76]:
+                - link "Blog" [ref=e77] [cursor=pointer]:
+                  - /url: /blogs
+              - listitem [ref=e78]: ›
+              - listitem [ref=e79]: Implants
+          - 'heading "Implants vs. bridges: how to choose what is right for you" [level=1] [ref=e80]'
+          - paragraph [ref=e81]: Both restore missing teeth, but they age differently and demand different long-term care. Here is how we help patients decide.
+          - generic [ref=e82]:
+            - img "Dr. Suneeta Veeramachaneni" [ref=e83]
+            - generic [ref=e84]:
+              - paragraph [ref=e85]: Dr. Suneeta Veeramachaneni
+              - paragraph [ref=e86]: 2 August 2025 · 5 min read
+        - img "Krest Dental — implants overview" [ref=e89]
+        - generic [ref=e91]:
+          - paragraph [ref=e92]: When a tooth is lost, two of the most common replacement options are a dental implant and a fixed bridge. Both restore function and aesthetics, but they take different paths to get there.
+          - generic [ref=e93]:
+            - heading "How an implant works" [level=2] [ref=e94]: How an implant works
+            - paragraph [ref=e96]: An implant replaces the root with a titanium post anchored in the jaw, then a custom crown is placed on top. Because the post stimulates the bone, the surrounding ridge stays healthier over time. The neighbouring teeth are left untouched.
+          - figure "Dr. Suneeta Veeramachaneni" [ref=e97]:
+            - blockquote [ref=e98]: “Because the post stimulates the bone, the surrounding ridge stays healthier over time.”
+            - generic [ref=e99]: Dr. Suneeta Veeramachaneni
+          - generic [ref=e100]:
+            - heading "How a bridge works" [level=2] [ref=e101]: How a bridge works
+            - paragraph [ref=e103]: A bridge instead uses the two adjacent teeth as anchors. The middle tooth is suspended between them. It is a faster, lower-cost path that suits patients who want to avoid surgery, and it can look excellent in skilled hands. The trade-off is that the anchor teeth need to be reshaped, and the bone underneath the missing tooth slowly resorbs.
+          - generic [ref=e104]:
+            - heading "How we decide together" [level=2] [ref=e105]: How we decide together
+            - paragraph [ref=e107]: We usually recommend implants when the neighbouring teeth are healthy, when bone volume is good, and when the patient wants the most long-lasting solution. Bridges remain a strong option when the adjacent teeth already need crowns, or when surgery is not preferred.
+          - complementary "Key takeaways" [ref=e108]:
+            - heading "Key takeaways" [level=2] [ref=e109]
+            - list [ref=e110]:
+              - listitem [ref=e111]: Implants preserve bone and leave neighbouring teeth untouched.
+              - listitem [ref=e113]: Bridges are faster and avoid surgery, but anchor teeth must be reshaped.
+              - listitem [ref=e115]: Healthy adjacent teeth and good bone volume favour an implant.
+              - listitem [ref=e117]: If the adjacent teeth already need crowns, a bridge can be the smarter path.
+          - generic [ref=e119]:
+            - paragraph [ref=e120]: Share this article
+            - generic [ref=e121]:
+              - link "Share on WhatsApp" [ref=e122] [cursor=pointer]:
+                - /url: https://wa.me/?text=Implants%20vs.%20bridges%3A%20how%20to%20choose%20what%20is%20right%20for%20you%20https%3A%2F%2Fwww.krest.dental%2Fblogs%2Fimplants-vs-bridges
+                - img [ref=e123]
+              - link "Share on Facebook" [ref=e125] [cursor=pointer]:
+                - /url: https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.krest.dental%2Fblogs%2Fimplants-vs-bridges
+                - img [ref=e126]
+              - link "Share on X" [ref=e128] [cursor=pointer]:
+                - /url: https://x.com/intent/tweet?text=Implants%20vs.%20bridges%3A%20how%20to%20choose%20what%20is%20right%20for%20you&url=https%3A%2F%2Fwww.krest.dental%2Fblogs%2Fimplants-vs-bridges
+                - img [ref=e129]
+              - button "Copy link" [ref=e131]:
+                - img [ref=e132]
+          - generic [ref=e135]:
+            - img "Dr. Suneeta Veeramachaneni" [ref=e136]
+            - generic [ref=e137]:
+              - paragraph [ref=e138]: Written by
+              - paragraph [ref=e139]: Dr. Suneeta Veeramachaneni
+              - paragraph [ref=e140]: Cosmetic & Aesthetic Dentist, Implantologist
+              - link "More about Dr. Suneeta" [ref=e141] [cursor=pointer]:
+                - /url: /drsuneeta
+                - text: More about Dr. Suneeta
+                - img [ref=e142]
+          - navigation "More articles" [ref=e144]:
+            - link "← Older article Invisalign or braces? A practical guide for adults" [ref=e145] [cursor=pointer]:
+              - /url: /blogs/invisalign-or-braces
+              - paragraph [ref=e146]: ← Older article
+              - paragraph [ref=e147]: Invisalign or braces? A practical guide for adults
+            - link "Newer article → What to expect at your first visit to Krest Dental" [ref=e148] [cursor=pointer]:
+              - /url: /blogs/what-to-expect-at-your-first-visit
+              - paragraph [ref=e149]: Newer article →
+              - paragraph [ref=e150]: What to expect at your first visit to Krest Dental
+      - region "Related posts" [ref=e151]:
+        - generic [ref=e152]:
+          - generic [ref=e153]:
+            - generic [ref=e154]:
+              - paragraph [ref=e155]: Continue reading
+              - heading "More from the journal" [level=2] [ref=e156]
+            - link "View all articles" [ref=e157] [cursor=pointer]:
+              - /url: /blogs
+          - generic [ref=e158]:
+            - article [ref=e159]:
+              - link "Krest Dental waiting area Patient Guide" [ref=e160] [cursor=pointer]:
+                - /url: /blogs/what-to-expect-at-your-first-visit
+                - img "Krest Dental waiting area" [ref=e162]
+                - generic [ref=e163]: Patient Guide
+              - generic [ref=e164]:
+                - paragraph [ref=e165]: 12 September 2025 · 4 min read
+                - heading "What to expect at your first visit to Krest Dental" [level=3] [ref=e166]:
+                  - link "What to expect at your first visit to Krest Dental" [ref=e167] [cursor=pointer]:
+                    - /url: /blogs/what-to-expect-at-your-first-visit
+                - paragraph [ref=e168]: A walkthrough of what happens from the moment you arrive — paperwork, oral examination, imaging, and how we plan your treatment together.
+            - article [ref=e169]:
+              - link "Krest Dental — Invisalign overview Orthodontics" [ref=e170] [cursor=pointer]:
+                - /url: /blogs/invisalign-or-braces
+                - img "Krest Dental — Invisalign overview" [ref=e172]
+                - generic [ref=e173]: Orthodontics
+              - generic [ref=e174]:
+                - paragraph [ref=e175]: 18 June 2025 · 4 min read
+                - heading "Invisalign or braces? A practical guide for adults" [level=3] [ref=e176]:
+                  - link "Invisalign or braces? A practical guide for adults" [ref=e177] [cursor=pointer]:
+                    - /url: /blogs/invisalign-or-braces
+                - paragraph [ref=e178]: Aligners are not always the answer, and braces are not always the slow option. Here is how we match the appliance to the case.
+            - article [ref=e179]:
+              - link "Krest Dental consultation area Inside Krest" [ref=e180] [cursor=pointer]:
+                - /url: /blogs/how-we-keep-the-clinic-spotless
+                - img "Krest Dental consultation area" [ref=e182]
+                - generic [ref=e183]: Inside Krest
+              - generic [ref=e184]:
+                - paragraph [ref=e185]: 21 April 2025 · 3 min read
+                - 'heading "Behind the scenes: how we keep the clinic spotless" [level=3] [ref=e186]':
+                  - 'link "Behind the scenes: how we keep the clinic spotless" [ref=e187] [cursor=pointer]':
+                    - /url: /blogs/how-we-keep-the-clinic-spotless
+                - paragraph [ref=e188]: Sterilisation, water lines, surface protocols, and the small habits that protect every patient who walks in.
+      - region "Book a consultation" [ref=e189]:
+        - generic [ref=e190]:
+          - generic [ref=e191]:
+            - heading "Ready to talk about your smile?" [level=2] [ref=e192]
+            - paragraph [ref=e193]: Book a consultation with Dr. Suneeta in Visakhapatnam.
+          - link "Book Appointment" [ref=e194] [cursor=pointer]:
+            - /url: /contact
+            - text: Book Appointment
+            - img [ref=e196]
+    - contentinfo [ref=e198]:
+      - generic [ref=e199]:
+        - generic [ref=e200]:
+          - link "Krest Dental — Home" [ref=e201] [cursor=pointer]:
+            - /url: /
+            - img [ref=e202]
+          - list [ref=e222]:
+            - listitem [ref=e223]:
+              - link "Facebook" [ref=e224] [cursor=pointer]:
+                - /url: https://www.facebook.com/krestdentalcare
+                - img [ref=e225]
+            - listitem [ref=e227]:
+              - link "Instagram" [ref=e228] [cursor=pointer]:
+                - /url: https://www.instagram.com/krestdental/
+                - img [ref=e229]
+            - listitem [ref=e231]:
+              - link "YouTube" [ref=e232] [cursor=pointer]:
+                - /url: https://www.youtube.com/@KrestDentalCare
+                - img [ref=e233]
+        - generic [ref=e235]:
+          - heading "Menu" [level=3] [ref=e236]
+          - list [ref=e237]:
+            - listitem [ref=e238]:
+              - link "Home" [ref=e239] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e240]:
+              - link "About Us" [ref=e241] [cursor=pointer]:
+                - /url: /about-us
+            - listitem [ref=e242]:
+              - link "Services" [ref=e243] [cursor=pointer]:
+                - /url: /our-services
+            - listitem [ref=e244]:
+              - link "Contact Us" [ref=e245] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=e246]:
+          - heading "Contact Us" [level=3] [ref=e247]
+          - generic [ref=e248]:
+            - generic [ref=e249]:
+              - term [ref=e250]: E-mail
+              - definition [ref=e251]:
+                - link "krestdental@gmail.com" [ref=e252] [cursor=pointer]:
+                  - /url: mailto:krestdental@gmail.com
+            - generic [ref=e253]:
+              - term [ref=e254]: Phone
+              - definition [ref=e255]:
+                - link "+91 95738 84525" [ref=e256] [cursor=pointer]:
+                  - /url: tel:9573884525
+            - generic [ref=e257]:
+              - term [ref=e258]: Address
+              - definition [ref=e259]:
+                - generic [ref=e260]:
+                  - text: KREST DENTAL CARE
+                  - generic [ref=e261]: 3rd Floor, Door No 2-48-21
+                  - generic [ref=e262]: Opposite To Latte
+                  - generic [ref=e263]: Sector 11, MVP Colony
+                  - generic [ref=e264]: MVP Double Road
+                  - generic [ref=e265]: Visakhapatnam — 530017.
+        - generic [ref=e266]:
+          - heading "Opening Hours" [level=3] [ref=e267]
+          - generic [ref=e268]:
+            - generic [ref=e269]:
+              - term [ref=e270]: Monday - Saturday
+              - definition [ref=e271]: 9:00 AM - 7:30 PM
+            - generic [ref=e272]:
+              - term [ref=e273]: Sunday
+              - definition [ref=e274]: Closed
+      - generic [ref=e275]:
+        - text: © 2025 by Krest Dental. Developed by
+        - link "Xscade" [ref=e276] [cursor=pointer]:
+          - /url: https://www.xscade.com/
+        - text: .
+    - link "Call Krest Dental" [ref=e277] [cursor=pointer]:
+      - /url: tel:9573884525
+      - img [ref=e278]
+  - generic [ref=e282]:
+    - button "Menu" [ref=e283]:
+      - img [ref=e285]
+      - generic: Menu
+    - button "Inspect" [ref=e289]:
+      - img [ref=e291]
+      - generic: Inspect
+    - button "Audit" [ref=e293]:
+      - generic [ref=e294]:
+        - img [ref=e295]
+        - img [ref=e298]
+      - generic: Audit
+    - button "Settings" [ref=e301]:
+      - img [ref=e303]
+      - generic: Settings

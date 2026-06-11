@@ -38,6 +38,12 @@ export type GalleryImage = {
   height?: number;
 };
 
+export type BlogSection = {
+  /** Optional H2 heading; sections without one render as plain paragraphs */
+  heading?: string;
+  paragraphs: string[];
+};
+
 export type BlogPost = {
   slug: string;
   title: string;
@@ -46,7 +52,14 @@ export type BlogPost = {
   readingTime: string;
   category: string;
   cover: { src: string; alt: string };
-  body: string[];
+  author: string;
+  authorRole: string;
+  /** Lead paragraph rendered larger at the top of the article */
+  intro: string;
+  sections: BlogSection[];
+  /** Optional pull quote rendered between sections */
+  quote?: { text: string; afterSection: number };
+  takeaways?: string[];
 };
 
 export type OurServiceCategory = {

@@ -1,0 +1,270 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - banner [ref=e5]:
+      - generic [ref=e7]:
+        - list [ref=e8]:
+          - listitem [ref=e9]:
+            - link "Facebook" [ref=e10] [cursor=pointer]:
+              - /url: https://www.facebook.com/krestdentalcare
+              - img [ref=e11]
+          - listitem [ref=e13]:
+            - link "Instagram" [ref=e14] [cursor=pointer]:
+              - /url: https://www.instagram.com/krestdental/
+              - img [ref=e15]
+          - listitem [ref=e17]:
+            - link "YouTube" [ref=e18] [cursor=pointer]:
+              - /url: https://www.youtube.com/@KrestDentalCare
+              - img [ref=e19]
+        - generic [ref=e21]:
+          - link "+91 95738 84525" [ref=e22] [cursor=pointer]:
+            - /url: tel:9573884525
+            - img [ref=e23]
+            - generic [ref=e25]: +91 95738 84525
+          - link "krestdental@gmail.com" [ref=e27] [cursor=pointer]:
+            - /url: mailto:krestdental@gmail.com
+            - img [ref=e28]
+            - generic [ref=e30]: krestdental@gmail.com
+      - generic [ref=e32]:
+        - link "Krest Dental — Home" [ref=e33] [cursor=pointer]:
+          - /url: /
+          - img [ref=e34]
+        - navigation "Site" [ref=e52]:
+          - list [ref=e53]:
+            - listitem [ref=e54]:
+              - link "About Us" [ref=e55] [cursor=pointer]:
+                - /url: /about-us
+                - text: About Us
+                - img [ref=e56]
+            - listitem [ref=e58]:
+              - link "Our Services" [ref=e59] [cursor=pointer]:
+                - /url: /our-services
+                - text: Our Services
+                - img [ref=e60]
+            - listitem [ref=e62]:
+              - link "Blogs" [ref=e63] [cursor=pointer]:
+                - /url: /blogs
+            - listitem [ref=e64]:
+              - link "Contact" [ref=e65] [cursor=pointer]:
+                - /url: /contact
+                - text: Contact
+                - img [ref=e66]
+        - link "Book Appointment" [ref=e68] [cursor=pointer]:
+          - /url: /contact
+    - main [ref=e69]:
+      - generic [ref=e70]:
+        - paragraph [ref=e71]: Get in touch
+        - heading "Let’s plan your healthiest smile together" [level=1] [ref=e72]
+        - paragraph [ref=e73]: Questions, second opinions, or your first consultation with Dr. Suneeta — reach us whichever way is easiest for you.
+      - region "Quick contact options" [ref=e74]:
+        - list [ref=e75]:
+          - listitem [ref=e76]:
+            - link "Call us +91 95738 84525 Mon – Sat, 9:00 AM – 7:30 PM" [ref=e77] [cursor=pointer]:
+              - /url: tel:9573884525
+              - img [ref=e79]
+              - paragraph [ref=e81]: Call us
+              - paragraph [ref=e82]: +91 95738 84525
+              - paragraph [ref=e83]: Mon – Sat, 9:00 AM – 7:30 PM
+          - listitem [ref=e84]:
+            - link "WhatsApp Chat with our team Quick replies during clinic hours" [ref=e85] [cursor=pointer]:
+              - /url: https://wa.me/919573884525
+              - img [ref=e87]
+              - paragraph [ref=e89]: WhatsApp
+              - paragraph [ref=e90]: Chat with our team
+              - paragraph [ref=e91]: Quick replies during clinic hours
+          - listitem [ref=e92]:
+            - link "Email krestdental@gmail.com We reply within one working day" [ref=e93] [cursor=pointer]:
+              - /url: mailto:krestdental@gmail.com
+              - img [ref=e95]
+              - paragraph [ref=e97]: Email
+              - paragraph [ref=e98]: krestdental@gmail.com
+              - paragraph [ref=e99]: We reply within one working day
+      - generic [ref=e101]:
+        - generic [ref=e102]:
+          - paragraph [ref=e103]: Book a consultation
+          - heading "Send us a message" [level=2] [ref=e104]
+          - paragraph [ref=e105]: Tell us a little about what you need — we’ll call you back to confirm a time that suits you.
+          - generic [ref=e106]:
+            - textbox [ref=e107]
+            - generic [ref=e108]:
+              - generic [ref=e109]:
+                - text: Full name
+                - textbox "Full name" [ref=e110]:
+                  - /placeholder: Jane Doe
+              - generic [ref=e111]:
+                - text: Phone number
+                - textbox "Phone number" [ref=e112]:
+                  - /placeholder: +91 …
+            - generic [ref=e113]:
+              - generic [ref=e114]:
+                - text: Email
+                - textbox "Email" [ref=e115]:
+                  - /placeholder: you@example.com
+              - generic [ref=e116]:
+                - text: Interested treatment
+                - combobox "Interested treatment" [ref=e117] [cursor=pointer]:
+                  - option "Select a treatment" [selected]
+                  - option "Dental implants"
+                  - option "Invisalign / aligners"
+                  - option "Cosmetic / smile makeover"
+                  - option "General dentistry"
+                  - option "Other / not sure"
+            - generic [ref=e118]:
+              - text: Your message
+              - textbox "Your message" [ref=e119]:
+                - /placeholder: Tell us your goals...
+            - generic [ref=e120]:
+              - paragraph [ref=e121]: By sending this inquiry, you agree we may contact you about your request.
+              - button "Send Inquiry" [ref=e122]
+        - complementary [ref=e123]:
+          - img "Krest Dental reception" [ref=e125]
+          - generic [ref=e126]:
+            - heading "Visit our clinic" [level=3] [ref=e127]
+            - generic [ref=e128]:
+              - paragraph [ref=e129]: KREST DENTAL CARE
+              - paragraph [ref=e130]: 3rd Floor, Door No 2-48-21
+              - paragraph [ref=e131]: Opposite To Latte
+              - paragraph [ref=e132]: Sector 11, MVP Colony
+              - paragraph [ref=e133]: MVP Double Road
+              - paragraph [ref=e134]: Visakhapatnam — 530017.
+            - link "Open in Google Maps" [ref=e135] [cursor=pointer]:
+              - /url: https://www.google.com/maps/search/?api=1&query=Krest+Dental+MVP+Colony+Visakhapatnam
+              - text: Open in Google Maps
+              - img [ref=e136]
+          - generic [ref=e138]:
+            - heading "Opening hours" [level=3] [ref=e139]
+            - list [ref=e140]:
+              - listitem [ref=e141]:
+                - generic [ref=e142]: Monday - Saturday
+                - generic [ref=e143]: 9:00 AM - 7:30 PM
+              - listitem [ref=e144]:
+                - generic [ref=e145]: Sunday
+                - generic [ref=e146]: Closed
+            - generic [ref=e147]:
+              - link "Facebook" [ref=e148] [cursor=pointer]:
+                - /url: https://www.facebook.com/krestdentalcare
+                - img [ref=e149]
+              - link "Instagram" [ref=e151] [cursor=pointer]:
+                - /url: https://www.instagram.com/krestdental/
+                - img [ref=e152]
+              - link "YouTube" [ref=e154] [cursor=pointer]:
+                - /url: https://www.youtube.com/@KrestDentalCare
+                - img [ref=e155]
+      - region "Clinic location map" [ref=e157]:
+        - generic [ref=e159]:
+          - generic [ref=e160]:
+            - paragraph [ref=e161]: Find us
+            - heading "In the heart of MVP Colony" [level=2] [ref=e162]
+            - paragraph [ref=e163]: We’re on MVP Double Road, opposite Latte — easy to reach from anywhere in Vizag, with parking nearby. Call ahead and we’ll help you plan your visit.
+            - link "Get directions" [ref=e164] [cursor=pointer]:
+              - /url: https://www.google.com/maps/search/?api=1&query=Krest+Dental+MVP+Colony+Visakhapatnam
+          - iframe [ref=e166]:
+            
+      - region "Krest Dental — by the numbers" [ref=e167]:
+        - generic [ref=e168]:
+          - heading "Creating Beautiful Smiles, One Patient at a Time." [level=2] [ref=e169]:
+            - generic [ref=e170]: Creating Beautiful Smiles,
+            - generic [ref=e171]: One Patient at a Time.
+          - list [ref=e172]:
+            - listitem [ref=e173]:
+              - paragraph [ref=e174]: 5,000+
+              - paragraph [ref=e176]: Happy Patients
+            - listitem [ref=e177]:
+              - paragraph [ref=e178]: 20+
+              - paragraph [ref=e180]: Years of Experience
+            - listitem [ref=e181]:
+              - paragraph [ref=e182]: 25000+
+              - paragraph [ref=e184]: Successful Procedures
+            - listitem [ref=e185]:
+              - paragraph [ref=e186]: 10+
+              - paragraph [ref=e188]: Expert Doctors
+          - link "Our Story" [ref=e190] [cursor=pointer]:
+            - /url: /about-us
+    - contentinfo [ref=e191]:
+      - generic [ref=e192]:
+        - generic [ref=e193]:
+          - link "Krest Dental — Home" [ref=e194] [cursor=pointer]:
+            - /url: /
+            - img [ref=e195]
+          - list [ref=e215]:
+            - listitem [ref=e216]:
+              - link "Facebook" [ref=e217] [cursor=pointer]:
+                - /url: https://www.facebook.com/krestdentalcare
+                - img [ref=e218]
+            - listitem [ref=e220]:
+              - link "Instagram" [ref=e221] [cursor=pointer]:
+                - /url: https://www.instagram.com/krestdental/
+                - img [ref=e222]
+            - listitem [ref=e224]:
+              - link "YouTube" [ref=e225] [cursor=pointer]:
+                - /url: https://www.youtube.com/@KrestDentalCare
+                - img [ref=e226]
+        - generic [ref=e228]:
+          - heading "Menu" [level=3] [ref=e229]
+          - list [ref=e230]:
+            - listitem [ref=e231]:
+              - link "Home" [ref=e232] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e233]:
+              - link "About Us" [ref=e234] [cursor=pointer]:
+                - /url: /about-us
+            - listitem [ref=e235]:
+              - link "Services" [ref=e236] [cursor=pointer]:
+                - /url: /our-services
+            - listitem [ref=e237]:
+              - link "Contact Us" [ref=e238] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=e239]:
+          - heading "Contact Us" [level=3] [ref=e240]
+          - generic [ref=e241]:
+            - generic [ref=e242]:
+              - term [ref=e243]: E-mail
+              - definition [ref=e244]:
+                - link "krestdental@gmail.com" [ref=e245] [cursor=pointer]:
+                  - /url: mailto:krestdental@gmail.com
+            - generic [ref=e246]:
+              - term [ref=e247]: Phone
+              - definition [ref=e248]:
+                - link "+91 95738 84525" [ref=e249] [cursor=pointer]:
+                  - /url: tel:9573884525
+            - generic [ref=e250]:
+              - term [ref=e251]: Address
+              - definition [ref=e252]:
+                - generic [ref=e253]:
+                  - text: KREST DENTAL CARE
+                  - generic [ref=e254]: 3rd Floor, Door No 2-48-21
+                  - generic [ref=e255]: Opposite To Latte
+                  - generic [ref=e256]: Sector 11, MVP Colony
+                  - generic [ref=e257]: MVP Double Road
+                  - generic [ref=e258]: Visakhapatnam — 530017.
+        - generic [ref=e259]:
+          - heading "Opening Hours" [level=3] [ref=e260]
+          - generic [ref=e261]:
+            - generic [ref=e262]:
+              - term [ref=e263]: Monday - Saturday
+              - definition [ref=e264]: 9:00 AM - 7:30 PM
+            - generic [ref=e265]:
+              - term [ref=e266]: Sunday
+              - definition [ref=e267]: Closed
+      - generic [ref=e268]:
+        - text: © 2025 by Krest Dental. Developed by
+        - link "Xscade" [ref=e269] [cursor=pointer]:
+          - /url: https://www.xscade.com/
+        - text: .
+    - link "Call Krest Dental" [ref=e270] [cursor=pointer]:
+      - /url: tel:9573884525
+      - img [ref=e271]
+  - generic [ref=e275]:
+    - button "Menu" [ref=e276]:
+      - img [ref=e278]
+      - generic: Menu
+    - button "Inspect" [ref=e282]:
+      - img [ref=e284]
+      - generic: Inspect
+    - button "Audit" [ref=e286]:
+      - generic [ref=e287]:
+        - img [ref=e288]
+        - img [ref=e291]
+      - generic: Audit
+    - button "Settings" [ref=e294]:
+      - img [ref=e296]
+      - generic: Settings

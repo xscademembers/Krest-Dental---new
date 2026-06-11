@@ -3,6 +3,7 @@ import Layout from "@/layouts/Layout.astro";
 import { FloatingCallButton } from "@/components/FloatingCallButton";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { StatsBanner } from "@/components/StatsBanner";
 import { ADDRESS, EMAIL, HOURS, PHONE_DISPLAY, PHONE_TEL, SOCIALS } from "@/lib/krest-content";
 
 export const prerender = true;
@@ -17,6 +18,8 @@ const keywords = [
   "dental clinic mvp colony",
   "book dental consultation vizag",
 ];
+
+const WHATSAPP_URL = "https://wa.me/919573884525";
 
 const mapsSearchUrl =
   "https://www.google.com/maps/search/?api=1&query=Krest+Dental+MVP+Colony+Visakhapatnam";
@@ -47,6 +50,33 @@ const jsonLd = {
   },
 };
 
+const quickActions = [
+  {
+    label: "Call us",
+    value: PHONE_DISPLAY,
+    hint: "Mon – Sat, 9:00 AM – 7:30 PM",
+    href: PHONE_TEL,
+    external: false,
+    icon: "phone",
+  },
+  {
+    label: "WhatsApp",
+    value: "Chat with our team",
+    hint: "Quick replies during clinic hours",
+    href: WHATSAPP_URL,
+    external: true,
+    icon: "whatsapp",
+  },
+  {
+    label: "Email",
+    value: EMAIL,
+    hint: "We reply within one working day",
+    href: `mailto:${EMAIL}`,
+    external: false,
+    icon: "mail",
+  },
+];
+
 /** Leads POST to /api/leads; after success the API redirects to /contact?success=1 on the same host (see getPublicOrigin). */
 ---
 
@@ -55,267 +85,147 @@ const jsonLd = {
   <main class="flex-1 bg-cream">
     <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
-    <section class="krest-site pb-6 pt-12 text-center lg:pt-16">
-      <p class="font-accent text-[11px] uppercase tracking-[0.28em] text-copper">Get in touch</p>
-      <h1 class="mt-3 font-display text-[40px] font-normal leading-tight text-ink sm:text-[52px]">
-        We’d love to hear from you
+    <!-- ============ Header ============ -->
+    <section class="krest-site pt-14 text-center lg:pt-20">
+      <p class="font-accent text-[11px] uppercase tracking-[0.3em] text-copper">Get in touch</p>
+      <h1 class="mx-auto mt-4 max-w-[760px] font-display text-[40px] font-normal leading-[1.12] text-ink sm:text-[52px] lg:text-[58px]">
+        Let’s plan your <span class="italic text-copper">healthiest smile</span> together
       </h1>
+      <p class="mx-auto mt-5 max-w-[620px] font-body text-[16px] leading-relaxed text-taupe sm:text-[17px]">
+        Questions, second opinions, or your first consultation with Dr. Suneeta — reach us whichever
+        way is easiest for you.
+      </p>
     </section>
 
-    <section class="krest-site pb-16 lg:pb-24">
+    <!-- ============ Quick actions ============ -->
+    <section class="krest-site mt-12 lg:mt-14" aria-label="Quick contact options">
+      <ul class="grid grid-cols-1 gap-5 sm:grid-cols-3 lg:gap-6">
+        {quickActions.map((qa) => (
+          <li>
+            <a
+              href={qa.href}
+              target={qa.external ? "_blank" : undefined}
+              rel={qa.external ? "noopener noreferrer" : undefined}
+              class="group flex h-full flex-col items-start rounded-[24px] border border-copper/10 bg-white p-7 shadow-[0_18px_40px_-28px_rgba(63,42,32,0.45)] transition-all duration-300 hover:-translate-y-1 hover:border-copper/30 hover:shadow-[0_26px_50px_-26px_rgba(63,42,32,0.5)]"
+            >
+              <span class="flex h-12 w-12 items-center justify-center rounded-full bg-[#F4EAE6] text-copper transition-colors duration-300 group-hover:bg-copper group-hover:text-white">
+                {qa.icon === "phone" && (
+                  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1.02 1.02 0 0 0-1.02.24l-2.2 2.2a15.045 15.045 0 0 1-6.59-6.59l2.2-2.21c.28-.28.36-.67.25-1.02A11.36 11.36 0 0 1 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z" />
+                  </svg>
+                )}
+                {qa.icon === "whatsapp" && (
+                  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+                  </svg>
+                )}
+                {qa.icon === "mail" && (
+                  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z" />
+                  </svg>
+                )}
+              </span>
+              <p class="mt-5 font-body text-[11px] font-semibold uppercase tracking-[0.18em] text-taupe">
+                {qa.label}
+              </p>
+              <p class="mt-1.5 break-all font-display text-[20px] leading-snug text-ink">
+                {qa.value}
+              </p>
+              <p class="mt-1 font-body text-[13px] text-taupe">{qa.hint}</p>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <!-- ============ Form + clinic info ============ -->
+    <section class="krest-site mt-14 pb-16 lg:mt-16 lg:pb-24">
       <div
         id="form-success"
-        class="mx-auto mb-10 hidden rounded-[24px] border border-copper/20 bg-[#F3E9E4] px-8 py-10 text-center shadow-lg"
+        class="mx-auto mb-10 hidden rounded-[24px] border border-copper/20 bg-[#F4EAE6] px-8 py-12 text-center shadow-lg"
         role="status"
       >
-        <p class="font-display text-[24px] text-ink">Thank you — we received your message.</p>
+        <span class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-copper">
+          <svg class="h-7 w-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+        </span>
+        <p class="mt-5 font-display text-[28px] text-ink">Thank you — we received your message.</p>
         <p class="mt-2 font-body text-[16px] text-taupe">Our team will contact you shortly.</p>
       </div>
 
-      <div
-        id="contact-split-card"
-        class="overflow-hidden rounded-[28px] shadow-[0_24px_60px_-24px_rgba(0,0,0,0.28)] lg:rounded-[32px]"
-      >
-        <div class="grid grid-cols-1 items-stretch lg:grid-cols-2">
-          <!-- Left: terracotta panel (colors from globals — guaranteed contrast) -->
-          <div
-            class="contact-split-panel flex flex-col p-10 sm:p-12 lg:min-h-[560px] lg:p-14 lg:pr-12"
-          >
-            <div>
-              <h2 class="font-display text-[34px] font-normal leading-[1.15] text-white sm:text-[40px]">
-                Start Your Journey
-              </h2>
-              <p class="mt-5 max-w-[440px] font-body text-[15px] leading-relaxed text-white/95">
-                We are here to answer your questions and help you schedule your first consultation with Dr. Suneeta
-                Veeramachaneni at Krest Dental.
-              </p>
+      <div id="contact-split-card" class="grid grid-cols-1 gap-6 lg:grid-cols-[1fr_400px] lg:gap-8">
+        <!-- Form card -->
+        <div class="rounded-[28px] border border-copper/10 bg-white p-8 shadow-[0_24px_60px_-32px_rgba(63,42,32,0.4)] sm:p-10 lg:p-12">
+          <p class="font-accent text-[11px] uppercase tracking-[0.24em] text-copper">Book a consultation</p>
+          <h2 class="mt-3 font-display text-[30px] font-normal leading-tight text-ink sm:text-[36px]">
+            Send us a message
+          </h2>
+          <p class="mt-3 font-body text-[15px] leading-relaxed text-taupe">
+            Tell us a little about what you need — we’ll call you back to confirm a time that suits
+            you.
+          </p>
 
-              <ul class="mt-10 space-y-8">
-              <li class="flex gap-4">
-                <span class="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/15">
-                  <svg
-                    class="h-5 w-5 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                    />
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                    />
-                  </svg>
-                </span>
-                <div>
-                  <p class="font-body text-[12px] font-semibold uppercase tracking-[0.14em] text-white">
-                    Our Clinic
-                  </p>
-                  <p class="mt-1.5 font-body text-[15px] leading-relaxed text-white">
-                    {ADDRESS.name}, {ADDRESS.lines.join(", ")}
-                  </p>
-                </div>
-              </li>
+          <form id="lead-form" class="relative mt-9 space-y-6" action="/api/leads" method="POST">
+            <input type="hidden" name="utm_source" value="" />
+            <input type="hidden" name="utm_medium" value="" />
+            <input type="hidden" name="utm_campaign" value="" />
+            <input type="hidden" name="utm_term" value="" />
+            <input type="hidden" name="utm_content" value="" />
+            <input type="hidden" name="gclid" value="" />
+            <input type="hidden" name="fbclid" value="" />
 
-              <li class="flex gap-4">
-                <span class="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/15">
-                  <svg
-                    class="h-5 w-5 text-white"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1.02 1.02 0 00-1.02.24l-2.2 2.2a15.045 15.045 0 01-6.59-6.59l2.2-2.21c.28-.28.36-.67.25-1.02A11.36 11.36 0 018.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z"
-                    />
-                  </svg>
-                </span>
-                <div>
-                  <p class="font-body text-[12px] font-semibold uppercase tracking-[0.14em] text-white">Call Us</p>
-                  <p class="mt-1.5">
-                    <a
-                      href={PHONE_TEL}
-                      class="font-body text-[16px] underline decoration-white/50 underline-offset-[3px] transition hover:decoration-white"
-                    >
-                      {PHONE_DISPLAY}
-                    </a>
-                  </p>
-                </div>
-              </li>
+            <input
+              type="text"
+              name="botcheck"
+              class="absolute -left-[9999px] h-px w-px opacity-0"
+              tabindex="-1"
+              autocomplete="off"
+              aria-hidden="true"
+            />
 
-              <li class="flex gap-4">
-                <span class="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/15">
-                  <svg
-                    class="h-5 w-5 text-white"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                  </svg>
-                </span>
-                <div>
-                  <p class="font-body text-[12px] font-semibold uppercase tracking-[0.14em] text-white">Email</p>
-                  <p class="mt-1.5">
-                    <a
-                      href={`mailto:${EMAIL}`}
-                      class="break-all font-body text-[16px] underline decoration-white/50 underline-offset-[3px] transition hover:decoration-white"
-                    >
-                      {EMAIL}
-                    </a>
-                  </p>
-                </div>
-              </li>
-
-              <li class="flex gap-4">
-                <span class="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/15">
-                  <svg
-                    class="h-5 w-5 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                </span>
-                <div>
-                  <p class="font-body text-[12px] font-semibold uppercase tracking-[0.14em] text-white">
-                    Consultation Hours
-                  </p>
-                  <div class="mt-1.5 space-y-1 font-body text-[15px] leading-relaxed text-white">
-                    {HOURS.map((row) => (
-                      <p>
-                        <span class="font-semibold">{row.day}:</span> {row.time}
-                      </p>
-                    ))}
-                  </div>
-                </div>
-              </li>
-            </ul>
-            </div>
-
-            <div class="mt-12 lg:mt-auto lg:pt-8">
-              <ul class="flex flex-wrap gap-3">
-              {SOCIALS.map((s) => (
-                <li>
-                  <a
-                    href={s.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={s.label}
-                    class="flex h-11 w-11 items-center justify-center rounded-full bg-white/15 text-white ring-1 ring-white/20 transition hover:bg-white/25"
-                  >
-                    {s.label === "Facebook" && (
-                      <svg class="h-[18px] w-[18px]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                        <path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692V11.07h3.128V8.412c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.795.143v3.24h-1.918c-1.504 0-1.795.715-1.795 1.762v2.31h3.587l-.467 3.622h-3.12V24h6.116c.733 0 1.325-.593 1.325-1.325V1.325C24 .593 23.408 0 22.675 0z" />
-                      </svg>
-                    )}
-                    {s.label === "Instagram" && (
-                      <svg class="h-[18px] w-[18px]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162 0 3.403 2.759 6.163 6.162 6.163 3.403 0 6.162-2.759 6.162-6.163 0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                      </svg>
-                    )}
-                    {s.label === "YouTube" && (
-                      <svg class="h-[18px] w-[18px]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                      </svg>
-                    )}
-                  </a>
-                </li>
-              ))}
-            </ul>
-
-              <p class="mt-6">
-              <a
-                href={mapsSearchUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex font-body text-[14px] text-white underline decoration-white/45 underline-offset-[4px] transition hover:decoration-white"
-              >
-                Open in Google Maps →
-              </a>
-            </p>
-            </div>
-          </div>
-
-          <!-- Right: form panel -->
-          <div class="flex min-h-full flex-col bg-white p-10 sm:p-12 lg:p-14 lg:pl-12">
-            <h2 class="font-display text-[30px] font-normal leading-tight text-ink sm:text-[34px]">
-              Send Us a Message
-            </h2>
-
-            <form id="lead-form" class="relative mt-8 space-y-5" action="/api/leads" method="POST">
-
-              <input type="hidden" name="utm_source" value="" />
-              <input type="hidden" name="utm_medium" value="" />
-              <input type="hidden" name="utm_campaign" value="" />
-              <input type="hidden" name="utm_term" value="" />
-              <input type="hidden" name="utm_content" value="" />
-              <input type="hidden" name="gclid" value="" />
-              <input type="hidden" name="fbclid" value="" />
-
-              <input
-                type="text"
-                name="botcheck"
-                class="absolute -left-[9999px] h-px w-px opacity-0"
-                tabindex="-1"
-                autocomplete="off"
-                aria-hidden="true"
-              />
-
-              <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                <div>
-                  <label
-                    for="lead-name"
-                    class="font-body text-[11px] font-semibold uppercase tracking-[0.14em] text-taupe"
-                  >
-                    Full name
-                  </label>
-                  <input
-                    id="lead-name"
-                    name="name"
-                    type="text"
-                    required
-                    autocomplete="name"
-                    placeholder="Jane Doe"
-                    class="contact-field mt-2 w-full px-4 py-3.5 font-body text-[16px]"
-                  />
-                </div>
-                <div>
-                  <label
-                    for="lead-phone"
-                    class="font-body text-[11px] font-semibold uppercase tracking-[0.14em] text-taupe"
-                  >
-                    Phone number
-                  </label>
-                  <input
-                    id="lead-phone"
-                    name="phone"
-                    type="tel"
-                    required
-                    autocomplete="tel"
-                    placeholder="+91 …"
-                    class="contact-field mt-2 w-full px-4 py-3.5 font-body text-[16px]"
-                  />
-                </div>
+            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+              <div>
+                <label
+                  for="lead-name"
+                  class="font-body text-[11px] font-semibold uppercase tracking-[0.16em] text-taupe"
+                >
+                  Full name
+                </label>
+                <input
+                  id="lead-name"
+                  name="name"
+                  type="text"
+                  required
+                  autocomplete="name"
+                  placeholder="Jane Doe"
+                  class="contact-field mt-2.5 w-full px-4 py-3.5 font-body text-[16px]"
+                />
               </div>
+              <div>
+                <label
+                  for="lead-phone"
+                  class="font-body text-[11px] font-semibold uppercase tracking-[0.16em] text-taupe"
+                >
+                  Phone number
+                </label>
+                <input
+                  id="lead-phone"
+                  name="phone"
+                  type="tel"
+                  required
+                  autocomplete="tel"
+                  placeholder="+91 …"
+                  class="contact-field mt-2.5 w-full px-4 py-3.5 font-body text-[16px]"
+                />
+              </div>
+            </div>
 
+            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
               <div>
                 <label
                   for="lead-email"
-                  class="font-body text-[11px] font-semibold uppercase tracking-[0.14em] text-taupe"
+                  class="font-body text-[11px] font-semibold uppercase tracking-[0.16em] text-taupe"
                 >
                   Email
                 </label>
@@ -326,21 +236,20 @@ const jsonLd = {
                   required
                   autocomplete="email"
                   placeholder="you@example.com"
-                  class="contact-field mt-2 w-full px-4 py-3.5 font-body text-[16px]"
+                  class="contact-field mt-2.5 w-full px-4 py-3.5 font-body text-[16px]"
                 />
               </div>
-
               <div>
                 <label
                   for="lead-interest"
-                  class="font-body text-[11px] font-semibold uppercase tracking-[0.14em] text-taupe"
+                  class="font-body text-[11px] font-semibold uppercase tracking-[0.16em] text-taupe"
                 >
                   Interested treatment
                 </label>
                 <select
                   id="lead-interest"
                   name="interest"
-                  class="contact-field mt-2 w-full cursor-pointer px-4 py-3.5 font-body text-[16px]"
+                  class="contact-field mt-2.5 w-full cursor-pointer px-4 py-3.5 font-body text-[16px]"
                 >
                   <option value="">Select a treatment</option>
                   <option value="Dental implants">Dental implants</option>
@@ -350,55 +259,150 @@ const jsonLd = {
                   <option value="Other / not sure">Other / not sure</option>
                 </select>
               </div>
+            </div>
 
-              <div>
-                <label
-                  for="lead-message"
-                  class="font-body text-[11px] font-semibold uppercase tracking-[0.14em] text-taupe"
-                >
-                  Your message
-                </label>
-                <textarea
-                  id="lead-message"
-                  name="message"
-                  rows={4}
-                  placeholder="Tell us your goals..."
-                  class="contact-field mt-2 min-h-[120px] w-full resize-y px-4 py-3.5 font-body text-[16px]"
-                />
-              </div>
+            <div>
+              <label
+                for="lead-message"
+                class="font-body text-[11px] font-semibold uppercase tracking-[0.16em] text-taupe"
+              >
+                Your message
+              </label>
+              <textarea
+                id="lead-message"
+                name="message"
+                rows={5}
+                placeholder="Tell us your goals..."
+                class="contact-field mt-2.5 min-h-[130px] w-full resize-y px-4 py-3.5 font-body text-[16px]"
+              />
+            </div>
 
-              <p class="font-body text-[13px] leading-relaxed text-taupe">
+            <div class="flex flex-col gap-5 pt-1 sm:flex-row sm:items-center sm:justify-between">
+              <p class="max-w-[320px] font-body text-[13px] leading-relaxed text-taupe">
                 By sending this inquiry, you agree we may contact you about your request.
               </p>
-
-              <button type="submit" class="contact-submit mt-2 w-full py-4 font-body text-[15px] font-semibold">
+              <button
+                type="submit"
+                class="contact-submit inline-flex h-[52px] shrink-0 items-center justify-center rounded-full px-10 font-body text-[15px] font-semibold"
+              >
                 Send Inquiry
               </button>
-            </form>
+            </div>
+          </form>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="flex flex-col gap-6">
+          <div class="overflow-hidden rounded-[28px] border border-copper/10 shadow-[0_24px_60px_-32px_rgba(63,42,32,0.4)]">
+            <img
+              src="/images/about/reception.jpg"
+              alt="Krest Dental reception"
+              class="h-[210px] w-full object-cover"
+              width="800"
+              height="420"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="rounded-[28px] bg-[#F4EAE6] p-8">
+            <h3 class="font-display text-[22px] text-ink">Visit our clinic</h3>
+            <address class="mt-4 space-y-0.5 font-body text-[14.5px] not-italic leading-relaxed text-ink/85">
+              <p class="font-semibold">{ADDRESS.name}</p>
+              {ADDRESS.lines.map((line) => <p>{line}</p>)}
+            </address>
+            <a
+              href={mapsSearchUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-5 inline-flex items-center gap-2 font-body text-[14px] font-semibold text-copper underline-offset-4 transition hover:underline"
+            >
+              Open in Google Maps
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+
+          <div class="rounded-[28px] border border-copper/10 bg-white p-8">
+            <h3 class="font-display text-[22px] text-ink">Opening hours</h3>
+            <ul class="mt-4 space-y-3">
+              {HOURS.map((row) => (
+                <li class="flex items-baseline justify-between gap-4 border-b border-copper/10 pb-3 last:border-0 last:pb-0">
+                  <span class="font-body text-[14px] font-semibold text-ink">{row.day}</span>
+                  <span class="font-body text-[14px] text-taupe">{row.time}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div class="mt-6 flex gap-3">
+              {SOCIALS.map((s) => (
+                <a
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={s.label}
+                  class="flex h-10 w-10 items-center justify-center rounded-full bg-[#F4EAE6] text-copper transition-colors hover:bg-copper hover:text-white"
+                >
+                  {s.label === "Facebook" && (
+                    <svg class="h-[16px] w-[16px]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692V11.07h3.128V8.412c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.795.143v3.24h-1.918c-1.504 0-1.795.715-1.795 1.762v2.31h3.587l-.467 3.622h-3.12V24h6.116c.733 0 1.325-.593 1.325-1.325V1.325C24 .593 23.408 0 22.675 0z" />
+                    </svg>
+                  )}
+                  {s.label === "Instagram" && (
+                    <svg class="h-[16px] w-[16px]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162 0 3.403 2.759 6.163 6.162 6.163 3.403 0 6.162-2.759 6.162-6.163 0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg>
+                  )}
+                  {s.label === "YouTube" && (
+                    <svg class="h-[16px] w-[16px]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                    </svg>
+                  )}
+                </a>
+              ))}
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ Map ============ -->
+    <section class="bg-white py-16 lg:py-20" aria-label="Clinic location map">
+      <div class="krest-site">
+        <div class="grid grid-cols-1 items-center gap-10 lg:grid-cols-[380px_1fr] lg:gap-14">
+          <div>
+            <p class="font-accent text-[11px] uppercase tracking-[0.3em] text-copper">Find us</p>
+            <h2 class="mt-3 font-display text-[34px] font-normal leading-[1.15] text-ink sm:text-[40px]">
+              In the heart of MVP Colony
+            </h2>
+            <p class="mt-4 font-body text-[15px] leading-relaxed text-taupe">
+              We’re on MVP Double Road, opposite Latte — easy to reach from anywhere in Vizag, with
+              parking nearby. Call ahead and we’ll help you plan your visit.
+            </p>
+            <a
+              href={mapsSearchUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-7 inline-flex h-11 items-center justify-center rounded-full bg-copper px-7 font-body text-[14px] text-white transition-opacity hover:opacity-90"
+            >
+              Get directions
+            </a>
+          </div>
+          <div class="overflow-hidden rounded-[28px] border border-copper/15 shadow-[0_24px_60px_-32px_rgba(63,42,32,0.4)]">
+            <iframe
+              title="Krest Dental — map location"
+              src={mapEmbedUrl}
+              class="h-[340px] w-full border-0 sm:h-[420px]"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+            />
           </div>
         </div>
       </div>
     </section>
 
-    <section class="border-t border-copper/15 bg-cream py-14 lg:py-20">
-      <div class="krest-site">
-        <h2 class="text-center font-display text-[36px] text-copper sm:text-[44px]">Visit us</h2>
-        <p class="mx-auto mt-4 max-w-[720px] text-center text-[17px] leading-8 text-taupe">
-          Conveniently located in MVP Colony. Use the map link above for directions, or call ahead — we’ll help you
-          plan your arrival and appointment time.
-        </p>
-        <div class="mt-10 overflow-hidden rounded-[20px] border border-copper/20 bg-[#F3E9E4]">
-          <iframe
-            title="Krest Dental — map location"
-            src={mapEmbedUrl}
-            class="aspect-[16/9] min-h-[280px] w-full border-0 sm:min-h-[360px]"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            allowfullscreen
-          />
-        </div>
-      </div>
-    </section>
+    <StatsBanner variant="light" />
 
     <script is:inline>
       (function () {

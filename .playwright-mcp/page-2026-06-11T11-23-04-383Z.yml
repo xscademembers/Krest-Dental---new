@@ -1,0 +1,257 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - banner [ref=e5]:
+      - generic [ref=e7]:
+        - list [ref=e8]:
+          - listitem [ref=e9]:
+            - link "Facebook" [ref=e10] [cursor=pointer]:
+              - /url: https://www.facebook.com/krestdentalcare
+              - img [ref=e11]
+          - listitem [ref=e13]:
+            - link "Instagram" [ref=e14] [cursor=pointer]:
+              - /url: https://www.instagram.com/krestdental/
+              - img [ref=e15]
+          - listitem [ref=e17]:
+            - link "YouTube" [ref=e18] [cursor=pointer]:
+              - /url: https://www.youtube.com/@KrestDentalCare
+              - img [ref=e19]
+        - generic [ref=e21]:
+          - link "+91 95738 84525" [ref=e22] [cursor=pointer]:
+            - /url: tel:9573884525
+            - img [ref=e23]
+            - generic [ref=e25]: +91 95738 84525
+          - link "krestdental@gmail.com" [ref=e27] [cursor=pointer]:
+            - /url: mailto:krestdental@gmail.com
+            - img [ref=e28]
+            - generic [ref=e30]: krestdental@gmail.com
+      - generic [ref=e32]:
+        - link "Krest Dental — Home" [ref=e33] [cursor=pointer]:
+          - /url: /
+          - img [ref=e34]
+        - navigation "Site" [ref=e52]:
+          - list [ref=e53]:
+            - listitem [ref=e54]:
+              - link "About Us" [ref=e55] [cursor=pointer]:
+                - /url: /about-us
+                - text: About Us
+                - img [ref=e56]
+            - listitem [ref=e58]:
+              - link "Our Services" [ref=e59] [cursor=pointer]:
+                - /url: /our-services
+                - text: Our Services
+                - img [ref=e60]
+            - listitem [ref=e62]:
+              - link "Blogs" [ref=e63] [cursor=pointer]:
+                - /url: /blogs
+            - listitem [ref=e64]:
+              - link "Contact" [ref=e65] [cursor=pointer]:
+                - /url: /contact
+        - link "Book Appointment" [ref=e66] [cursor=pointer]:
+          - /url: /contact
+    - main [ref=e67]:
+      - region "Blog header" [ref=e68]:
+        - generic [ref=e69]:
+          - paragraph [ref=e70]: The Krest Journal
+          - heading "Notes on healthy, confident smiles" [level=1] [ref=e71]
+          - paragraph [ref=e73]: Patient guides, treatment explainers, and behind-the-scenes notes from Dr. Suneeta and the team in Visakhapatnam.
+      - region "Filter posts by category" [ref=e74]:
+        - generic [ref=e75]:
+          - button "All" [ref=e76]
+          - button "Patient Guide" [ref=e77]
+          - button "Implants" [ref=e78]
+          - button "Orthodontics" [ref=e79]
+          - button "Inside Krest" [ref=e80]
+          - button "Pediatric" [ref=e81]
+          - button "Cosmetic" [ref=e82]
+      - region "Featured post" [ref=e83]:
+        - paragraph [ref=e84]: Latest article
+        - link "Krest Dental waiting area Patient Guide 12 Sept 2025 · 4 min read What to expect at your first visit to Krest Dental A walkthrough of what happens from the moment you arrive — paperwork, oral examination, imaging, and how we plan your treatment together. By Dr. Suneeta Veeramachaneni Read article" [ref=e85] [cursor=pointer]:
+          - /url: /blogs/what-to-expect-at-your-first-visit
+          - generic [ref=e86]:
+            - img "Krest Dental waiting area" [ref=e87]
+            - generic [ref=e88]: Patient Guide
+          - generic [ref=e89]:
+            - paragraph [ref=e90]: 12 Sept 2025 · 4 min read
+            - heading "What to expect at your first visit to Krest Dental" [level=2] [ref=e91]
+            - paragraph [ref=e92]: A walkthrough of what happens from the moment you arrive — paperwork, oral examination, imaging, and how we plan your treatment together.
+            - paragraph [ref=e93]: By Dr. Suneeta Veeramachaneni
+            - generic [ref=e94]:
+              - text: Read article
+              - img [ref=e96]
+      - region "All blog posts" [ref=e98]:
+        - generic [ref=e99]:
+          - article [ref=e100]:
+            - link "Dental implant treatment at Krest Dental Implants" [ref=e101] [cursor=pointer]:
+              - /url: /blogs/implants-vs-bridges
+              - img "Dental implant treatment at Krest Dental" [ref=e103]
+              - generic [ref=e104]: Implants
+            - generic [ref=e105]:
+              - paragraph [ref=e106]: 2 Aug 2025 · 5 min read
+              - 'heading "Implants vs. bridges: how to choose what is right for you" [level=2] [ref=e107]':
+                - 'link "Implants vs. bridges: how to choose what is right for you" [ref=e108] [cursor=pointer]':
+                  - /url: /blogs/implants-vs-bridges
+              - paragraph [ref=e109]: Both restore missing teeth, but they age differently and demand different long-term care. Here is how we help patients decide.
+              - generic [ref=e110]:
+                - generic [ref=e111]: Dr. Suneeta Veeramachaneni
+                - 'link "Read Implants vs. bridges: how to choose what is right for you" [ref=e112] [cursor=pointer]':
+                  - /url: /blogs/implants-vs-bridges
+                  - img [ref=e113]
+          - article [ref=e115]:
+            - link "Invisalign clear aligner consultation at Krest Dental Orthodontics" [ref=e116] [cursor=pointer]:
+              - /url: /blogs/invisalign-or-braces
+              - img "Invisalign clear aligner consultation at Krest Dental" [ref=e118]
+              - generic [ref=e119]: Orthodontics
+            - generic [ref=e120]:
+              - paragraph [ref=e121]: 18 Jun 2025 · 4 min read
+              - heading "Invisalign or braces? A practical guide for adults" [level=2] [ref=e122]:
+                - link "Invisalign or braces? A practical guide for adults" [ref=e123] [cursor=pointer]:
+                  - /url: /blogs/invisalign-or-braces
+              - paragraph [ref=e124]: Aligners are not always the answer, and braces are not always the slow option. Here is how we match the appliance to the case.
+              - generic [ref=e125]:
+                - generic [ref=e126]: Dr. Suneeta Veeramachaneni
+                - link "Read Invisalign or braces? A practical guide for adults" [ref=e127] [cursor=pointer]:
+                  - /url: /blogs/invisalign-or-braces
+                  - img [ref=e128]
+          - article [ref=e130]:
+            - link "Krest Dental consultation area Inside Krest" [ref=e131] [cursor=pointer]:
+              - /url: /blogs/how-we-keep-the-clinic-spotless
+              - img "Krest Dental consultation area" [ref=e133]
+              - generic [ref=e134]: Inside Krest
+            - generic [ref=e135]:
+              - paragraph [ref=e136]: 21 Apr 2025 · 3 min read
+              - 'heading "Behind the scenes: how we keep the clinic spotless" [level=2] [ref=e137]':
+                - 'link "Behind the scenes: how we keep the clinic spotless" [ref=e138] [cursor=pointer]':
+                  - /url: /blogs/how-we-keep-the-clinic-spotless
+              - paragraph [ref=e139]: Sterilisation, water lines, surface protocols, and the small habits that protect every patient who walks in.
+              - generic [ref=e140]:
+                - generic [ref=e141]: Krest Dental Team
+                - 'link "Read Behind the scenes: how we keep the clinic spotless" [ref=e142] [cursor=pointer]':
+                  - /url: /blogs/how-we-keep-the-clinic-spotless
+                  - img [ref=e143]
+          - article [ref=e145]:
+            - link "Krest Dental — pediatric care area Pediatric" [ref=e146] [cursor=pointer]:
+              - /url: /blogs/pediatric-dental-care-tips
+              - img "Krest Dental — pediatric care area" [ref=e148]
+              - generic [ref=e149]: Pediatric
+            - generic [ref=e150]:
+              - paragraph [ref=e151]: 9 Mar 2025 · 3 min read
+              - heading "Five small habits that protect your child’s teeth" [level=2] [ref=e152]:
+                - link "Five small habits that protect your child’s teeth" [ref=e153] [cursor=pointer]:
+                  - /url: /blogs/pediatric-dental-care-tips
+              - paragraph [ref=e154]: Practical, evidence-based ideas for parents — what to do, what to skip, and when to bring your child in.
+              - generic [ref=e155]:
+                - generic [ref=e156]: Dr. Suneeta Veeramachaneni
+                - link "Read Five small habits that protect your child’s teeth" [ref=e157] [cursor=pointer]:
+                  - /url: /blogs/pediatric-dental-care-tips
+                  - img [ref=e158]
+          - article [ref=e160]:
+            - link "Smile makeover consultation at Krest Dental Cosmetic" [ref=e161] [cursor=pointer]:
+              - /url: /blogs/smile-makeover-process
+              - img "Smile makeover consultation at Krest Dental" [ref=e163]
+              - generic [ref=e164]: Cosmetic
+            - generic [ref=e165]:
+              - paragraph [ref=e166]: 14 Jan 2025 · 6 min read
+              - heading "How a smile makeover actually works, step by step" [level=2] [ref=e167]:
+                - link "How a smile makeover actually works, step by step" [ref=e168] [cursor=pointer]:
+                  - /url: /blogs/smile-makeover-process
+              - paragraph [ref=e169]: From the first photographs to the final polish — what a cosmetic plan looks like at Krest, and how long each phase takes.
+              - generic [ref=e170]:
+                - generic [ref=e171]: Dr. Suneeta Veeramachaneni
+                - link "Read How a smile makeover actually works, step by step" [ref=e172] [cursor=pointer]:
+                  - /url: /blogs/smile-makeover-process
+                  - img [ref=e173]
+      - region "Book a consultation" [ref=e175]:
+        - generic [ref=e176]:
+          - paragraph [ref=e177]: Have a question about your smile?
+          - heading "Ask us in person — the first conversation is always unhurried." [level=2] [ref=e178]
+          - link "Book Appointment" [ref=e179] [cursor=pointer]:
+            - /url: /contact
+            - text: Book Appointment
+            - img [ref=e181]
+    - contentinfo [ref=e183]:
+      - generic [ref=e184]:
+        - generic [ref=e185]:
+          - link "Krest Dental — Home" [ref=e186] [cursor=pointer]:
+            - /url: /
+            - img [ref=e187]
+          - list [ref=e207]:
+            - listitem [ref=e208]:
+              - link "Facebook" [ref=e209] [cursor=pointer]:
+                - /url: https://www.facebook.com/krestdentalcare
+                - img [ref=e210]
+            - listitem [ref=e212]:
+              - link "Instagram" [ref=e213] [cursor=pointer]:
+                - /url: https://www.instagram.com/krestdental/
+                - img [ref=e214]
+            - listitem [ref=e216]:
+              - link "YouTube" [ref=e217] [cursor=pointer]:
+                - /url: https://www.youtube.com/@KrestDentalCare
+                - img [ref=e218]
+        - generic [ref=e220]:
+          - heading "Menu" [level=3] [ref=e221]
+          - list [ref=e222]:
+            - listitem [ref=e223]:
+              - link "Home" [ref=e224] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e225]:
+              - link "About Us" [ref=e226] [cursor=pointer]:
+                - /url: /about-us
+            - listitem [ref=e227]:
+              - link "Services" [ref=e228] [cursor=pointer]:
+                - /url: /our-services
+            - listitem [ref=e229]:
+              - link "Contact Us" [ref=e230] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=e231]:
+          - heading "Contact Us" [level=3] [ref=e232]
+          - generic [ref=e233]:
+            - generic [ref=e234]:
+              - term [ref=e235]: E-mail
+              - definition [ref=e236]:
+                - link "krestdental@gmail.com" [ref=e237] [cursor=pointer]:
+                  - /url: mailto:krestdental@gmail.com
+            - generic [ref=e238]:
+              - term [ref=e239]: Phone
+              - definition [ref=e240]:
+                - link "+91 95738 84525" [ref=e241] [cursor=pointer]:
+                  - /url: tel:9573884525
+            - generic [ref=e242]:
+              - term [ref=e243]: Address
+              - definition [ref=e244]:
+                - generic [ref=e245]:
+                  - text: KREST DENTAL CARE
+                  - generic [ref=e246]: 3rd Floor, Door No 2-48-21
+                  - generic [ref=e247]: Opposite To Latte
+                  - generic [ref=e248]: Sector 11, MVP Colony
+                  - generic [ref=e249]: MVP Double Road
+                  - generic [ref=e250]: Visakhapatnam — 530017.
+        - generic [ref=e251]:
+          - heading "Opening Hours" [level=3] [ref=e252]
+          - generic [ref=e253]:
+            - generic [ref=e254]:
+              - term [ref=e255]: Monday - Saturday
+              - definition [ref=e256]: 9:00 AM - 7:30 PM
+            - generic [ref=e257]:
+              - term [ref=e258]: Sunday
+              - definition [ref=e259]: Closed
+      - generic [ref=e260]:
+        - text: © 2025 by Krest Dental. Developed by
+        - link "Xscade" [ref=e261] [cursor=pointer]:
+          - /url: https://www.xscade.com/
+        - text: .
+    - link "Call Krest Dental" [ref=e262] [cursor=pointer]:
+      - /url: tel:9573884525
+      - img [ref=e263]
+  - generic [ref=e267]:
+    - button "Menu" [ref=e268]:
+      - img [ref=e270]
+      - generic: Menu
+    - button "Inspect" [ref=e274]:
+      - img [ref=e276]
+      - generic: Inspect
+    - button "Audit" [ref=e278]:
+      - img [ref=e280]
+      - generic: Audit
+    - button "Settings" [ref=e283]:
+      - img [ref=e285]
+      - generic: Settings

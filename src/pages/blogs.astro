@@ -27,7 +27,8 @@ const dateFormatter = new Intl.DateTimeFormat("en-IN", {
 const posts = [...BLOG_POSTS].sort(
   (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
 );
-const [featured, ...rest] = posts;
+const [featured] = posts;
+const categories = ["All", ...new Set(posts.map((p) => p.category))];
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -41,6 +42,7 @@ const jsonLd = {
     url: `${canonical}/${p.slug}`,
     image: p.cover.src,
     description: p.excerpt,
+    author: { "@type": "Person", name: p.author },
   })),
 };
 ---
@@ -50,135 +52,134 @@ const jsonLd = {
   <main class="flex-1 bg-cream">
     <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
-    <section
-      class="bg-[#F4EAE7] pb-12 pt-12 lg:pb-16 lg:pt-16"
-      aria-label="Blog header"
-    >
+    <!-- HEADER -->
+    <section class="bg-[#F4EAE6] pb-14 pt-14 lg:pb-20 lg:pt-20" aria-label="Blog header">
       <div class="krest-site text-center">
-        <p class="font-accent text-[12px] uppercase tracking-[0.28em] text-copper">
-          From the chair
+        <p class="font-accent text-[13px] uppercase tracking-[0.3em] text-copper">
+          The Krest Journal
         </p>
-        <h1
-          class="mt-3 font-display text-[40px] font-normal leading-tight text-ink sm:text-[52px] lg:text-[58px]"
-        >
-          Krest Dental Journal
+        <h1 class="mx-auto mt-4 font-display text-[clamp(1.75rem,3.4vw,3.375rem)] font-normal leading-[1.08] text-ink sm:whitespace-nowrap">
+          Notes on healthy, confident smiles
         </h1>
-        <p
-          class="mx-auto mt-5 max-w-[640px] font-display text-[16px] leading-[1.7] text-taupe sm:text-[17px]"
-        >
-          Patient guides, treatment explainers, and behind-the-scenes notes from Dr. Suneeta and the team in Visakhapatnam.
+        <span aria-hidden="true" class="mx-auto mt-6 block h-[2px] w-[120px] bg-copper"></span>
+        <p class="mx-auto mt-6 max-w-[620px] font-display text-[17px] leading-[1.7] text-ink/80 sm:text-[19px]">
+          Patient guides, treatment explainers, and behind-the-scenes notes from
+          Dr.&nbsp;Suneeta and the team in Visakhapatnam.
         </p>
       </div>
     </section>
 
-    <section class="krest-site py-14 lg:py-20" aria-label="Featured post">
+    <!-- CATEGORY FILTER -->
+    <section class="krest-site pt-10 lg:pt-12" aria-label="Filter posts by category">
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        {categories.map((cat, i) => (
+          <button
+            type="button"
+            data-filter={cat}
+            class={`blog-filter inline-flex h-10 items-center rounded-full border border-copper px-5 font-display text-[15px] tracking-[0.02em] transition-colors ${
+              i === 0 ? "is-active" : ""
+            }`}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+    </section>
+
+    <!-- FEATURED POST -->
+    <section data-featured class="krest-site pt-10 lg:pt-12" aria-label="Featured post">
+      <p class="mb-5 font-accent text-[12px] uppercase tracking-[0.28em] text-copper">
+        Latest article
+      </p>
       <a
         href={`/blogs/${featured.slug}`}
-        class="group grid grid-cols-1 gap-8 overflow-hidden rounded-[24px] bg-white shadow-[0_18px_50px_-28px_rgba(0,0,0,0.25)] transition lg:grid-cols-[1.1fr_0.9fr] lg:gap-12"
+        class="group grid grid-cols-1 overflow-hidden rounded-[30px] bg-white shadow-[0_24px_60px_-38px_rgba(76,69,59,0.45)] lg:grid-cols-[1.08fr_0.92fr]"
       >
-        <div class="relative aspect-[16/10] w-full overflow-hidden lg:aspect-auto lg:h-full">
+        <div class="relative aspect-[16/10] w-full overflow-hidden lg:aspect-auto lg:min-h-[420px]">
           <img
             src={featured.cover.src}
             alt={featured.cover.alt}
-            class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
             loading="eager"
             decoding="async"
             fetchpriority="high"
           />
+          <span class="absolute left-5 top-5 inline-flex items-center rounded-full bg-white/95 px-4 py-1.5 font-display text-[13px] tracking-[0.04em] text-copper">
+            {featured.category}
+          </span>
         </div>
-        <div class="flex flex-col justify-center px-6 pb-10 lg:px-10 lg:py-12">
-          <p class="font-accent text-[12px] uppercase tracking-[0.18em] text-copper">
-            {featured.category} · {featured.readingTime}
+        <div class="flex flex-col justify-center px-7 py-10 lg:px-12 lg:py-14">
+          <p class="font-body text-[12px] uppercase tracking-[0.18em] text-ink/55">
+            {dateFormatter.format(new Date(featured.date))} · {featured.readingTime}
           </p>
-          <h2
-            class="mt-4 font-display text-[28px] font-normal leading-[1.2] text-ink sm:text-[34px] lg:text-[36px]"
-          >
+          <h2 class="mt-4 font-display text-[28px] font-normal leading-[1.18] text-ink transition-colors group-hover:text-copper sm:text-[34px] lg:text-[38px]">
             {featured.title}
           </h2>
-          <p class="mt-5 font-display text-[16px] leading-[1.7] text-taupe sm:text-[17px]">
+          <p class="mt-5 font-display text-[16px] leading-[1.7] text-ink/75 sm:text-[18px]">
             {featured.excerpt}
           </p>
-          <div class="mt-8 flex items-center gap-4">
-            <span
-              class="inline-flex items-center gap-3 rounded-full bg-copper px-5 py-2 font-display text-[14px] tracking-wide text-white transition group-hover:bg-copper/90"
-            >
-              Read article
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2.2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="h-3.5 w-3.5"
-                aria-hidden="true"
-              >
+          <p class="mt-5 font-display text-[15px] italic text-ink/60">
+            By {featured.author}
+          </p>
+          <span class="mt-8 inline-flex h-[50px] w-fit items-center gap-4 rounded-[50px] bg-copper pl-[22px] pr-[10px] font-display text-[17px] tracking-[0.04em] text-white transition-opacity group-hover:opacity-90">
+            Read article
+            <span class="flex h-[26px] w-[26px] items-center justify-center rounded-full bg-white text-copper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3" aria-hidden="true">
                 <path d="M5 12h14" />
                 <path d="M13 5l7 7-7 7" />
               </svg>
             </span>
-            <span class="font-body text-[13px] uppercase tracking-[0.16em] text-taupe">
-              {dateFormatter.format(new Date(featured.date))}
-            </span>
-          </div>
+          </span>
         </div>
       </a>
     </section>
 
-    <section
-      class="krest-site pb-20 lg:pb-28"
-      aria-label="All blog posts"
-    >
-      <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-12">
-        {rest.map((post) => (
+    <!-- ALL POSTS -->
+    <section class="krest-site pb-16 pt-12 lg:pb-24 lg:pt-16" aria-label="All blog posts">
+      <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10">
+        {posts.map((post, i) => (
           <article
-            class="flex h-full flex-col overflow-hidden rounded-[20px] bg-white shadow-[0_14px_38px_-26px_rgba(0,0,0,0.22)] transition hover:-translate-y-1 hover:shadow-[0_22px_50px_-26px_rgba(0,0,0,0.28)]"
+            data-post-card
+            data-category={post.category}
+            data-dup={i === 0 ? "true" : "false"}
+            class={`group flex h-full flex-col overflow-hidden rounded-[20px] bg-white shadow-[0_18px_44px_-32px_rgba(76,69,59,0.4)] transition duration-300 hover:-translate-y-1.5 hover:shadow-[0_28px_60px_-32px_rgba(76,69,59,0.5)] ${
+              i === 0 ? "hidden" : ""
+            }`}
           >
-            <a href={`/blogs/${post.slug}`} class="group block">
+            <a href={`/blogs/${post.slug}`} class="relative block">
               <div class="relative aspect-[16/10] w-full overflow-hidden">
                 <img
                   src={post.cover.src}
                   alt={post.cover.alt}
-                  class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                  class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.05]"
                   loading="lazy"
                   decoding="async"
                 />
               </div>
+              <span class="absolute left-4 top-4 inline-flex items-center rounded-full bg-white/95 px-3.5 py-1 font-display text-[12px] tracking-[0.04em] text-copper">
+                {post.category}
+              </span>
             </a>
-            <div class="flex flex-1 flex-col px-6 pb-7 pt-6 lg:px-7">
-              <p class="font-accent text-[11px] uppercase tracking-[0.18em] text-copper">
-                {post.category} · {post.readingTime}
+            <div class="flex flex-1 flex-col px-6 pb-7 pt-6">
+              <p class="font-body text-[11px] uppercase tracking-[0.18em] text-ink/55">
+                {dateFormatter.format(new Date(post.date))} · {post.readingTime}
               </p>
-              <h2 class="mt-3 font-display text-[22px] font-normal leading-[1.25] text-ink sm:text-[24px]">
-                <a
-                  href={`/blogs/${post.slug}`}
-                  class="transition-colors hover:text-copper"
-                >
+              <h2 class="mt-3 font-display text-[22px] font-normal leading-[1.25] text-ink">
+                <a href={`/blogs/${post.slug}`} class="transition-colors hover:text-copper">
                   {post.title}
                 </a>
               </h2>
-              <p class="mt-4 font-display text-[15px] leading-[1.7] text-taupe sm:text-[16px]">
+              <p class="mt-3 font-display text-[15px] leading-[1.65] text-ink/70">
                 {post.excerpt}
               </p>
-              <div class="mt-auto flex items-center justify-between pt-6">
-                <span class="font-body text-[12px] uppercase tracking-[0.16em] text-taupe">
-                  {dateFormatter.format(new Date(post.date))}
-                </span>
+              <div class="mt-auto flex items-center justify-between border-t border-copper/12 pt-5 lg:pt-6">
+                <span class="font-display text-[14px] italic text-ink/60">{post.author}</span>
                 <a
                   href={`/blogs/${post.slug}`}
-                  class="inline-flex items-center gap-2 font-display text-[14px] text-copper transition-colors hover:text-ink"
+                  aria-label={`Read ${post.title}`}
+                  class="flex h-9 w-9 items-center justify-center rounded-full border border-copper text-copper transition-colors hover:bg-copper hover:text-white"
                 >
-                  Read more
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="h-3 w-3"
-                    aria-hidden="true"
-                  >
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="h-3.5 w-3.5" aria-hidden="true">
                     <path d="M5 12h14" />
                     <path d="M13 5l7 7-7 7" />
                   </svg>
@@ -188,8 +189,81 @@ const jsonLd = {
           </article>
         ))}
       </div>
+      <p data-empty class="hidden pt-12 text-center font-display text-[18px] text-ink/60">
+        No articles in this category yet.
+      </p>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-[#F4EAE6] py-16 lg:py-20" aria-label="Book a consultation">
+      <div class="krest-site text-center">
+        <p class="font-accent text-[13px] uppercase tracking-[0.3em] text-copper">
+          Have a question about your smile?
+        </p>
+        <h2 class="mx-auto mt-4 max-w-[680px] font-display text-[30px] font-normal leading-[1.15] text-ink sm:text-[38px]">
+          Ask us in person — the first conversation is always unhurried.
+        </h2>
+        <a
+          href="/contact"
+          class="mt-8 inline-flex h-[50px] items-center gap-4 rounded-[50px] bg-copper pl-[22px] pr-[10px] font-display text-[17px] tracking-[0.04em] text-white transition-opacity hover:opacity-90"
+        >
+          Book Appointment
+          <span class="flex h-[26px] w-[26px] items-center justify-center rounded-full bg-white text-copper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" class="h-3 w-3" aria-hidden="true">
+              <path d="M5 12h14" />
+              <path d="M13 5l7 7-7 7" />
+            </svg>
+          </span>
+        </a>
+      </div>
     </section>
   </main>
   <SiteFooter />
   <FloatingCallButton />
 </Layout>
+
+<style>
+  .blog-filter {
+    background-color: transparent;
+    color: var(--color-copper, #9f6449);
+  }
+  .blog-filter:hover {
+    background-color: rgba(159, 100, 73, 0.08);
+  }
+  .blog-filter.is-active {
+    background-color: #9f6449;
+    color: #ffffff;
+  }
+</style>
+
+<script>
+  const buttons = Array.from(
+    document.querySelectorAll<HTMLButtonElement>(".blog-filter"),
+  );
+  const cards = Array.from(
+    document.querySelectorAll<HTMLElement>("[data-post-card]"),
+  );
+  const featured = document.querySelector<HTMLElement>("[data-featured]");
+  const empty = document.querySelector<HTMLElement>("[data-empty]");
+
+  function applyFilter(category: string) {
+    buttons.forEach((b) =>
+      b.classList.toggle("is-active", b.dataset.filter === category),
+    );
+    const showAll = category === "All";
+    if (featured) featured.classList.toggle("hidden", !showAll);
+
+    let visible = 0;
+    cards.forEach((card) => {
+      const isDup = card.dataset.dup === "true";
+      const show = showAll ? !isDup : card.dataset.category === category;
+      card.classList.toggle("hidden", !show);
+      if (show) visible += 1;
+    });
+    if (empty) empty.classList.toggle("hidden", showAll || visible > 0);
+  }
+
+  buttons.forEach((b) =>
+    b.addEventListener("click", () => applyFilter(b.dataset.filter ?? "All")),
+  );
+</script>

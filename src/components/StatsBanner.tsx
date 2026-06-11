@@ -1,21 +1,63 @@
 import { STATS } from "@/lib/krest-content";
 
-export function StatsBanner() {
+type Stat = { value: string; label: string };
+
+type StatsBannerProps = {
+  /** "default" = landing page look, "light" = white centered theme (contact page) */
+  variant?: "default" | "light";
+  headingLines?: string[];
+  stats?: Stat[];
+};
+
+const LIGHT_HEADING = ["Creating Beautiful Smiles,", "One Patient at a Time."];
+
+const LIGHT_STATS: Stat[] = [
+  { value: "5,000+", label: "Happy Patients" },
+  { value: "20+", label: "Years of Experience" },
+  { value: "25000+", label: "Successful Procedures" },
+  { value: "10+", label: "Expert Doctors" },
+];
+
+export function StatsBanner({ variant = "default", headingLines, stats }: StatsBannerProps) {
+  const light = variant === "light";
+  const lines = headingLines ?? (light ? LIGHT_HEADING : null);
+  const items = stats ?? (light ? LIGHT_STATS : STATS);
+
   return (
     <section
       aria-label="Krest Dental — by the numbers"
       className="bg-white py-16 lg:py-24"
     >
       <div className="krest-site">
-        <h2 className="text-krest-display-lg text-center lg:text-left">
-          Crafting world-class smiles with Precision and Artistry.
-        </h2>
+        {light ? (
+          <h2 className="mx-auto max-w-[820px] text-center font-display text-[34px] font-normal leading-[1.3] text-copper sm:text-[44px] lg:text-[52px]">
+            {(lines ?? LIGHT_HEADING).map((line) => (
+              <span key={line} className="block">
+                {line}
+              </span>
+            ))}
+          </h2>
+        ) : (
+          <h2 className="text-krest-display-lg text-center lg:text-left">
+            Crafting world-class smiles with Precision and Artistry.
+          </h2>
+        )}
 
-        <ul className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:mt-14 lg:grid-cols-4 lg:gap-6">
-          {STATS.map((stat) => (
+        <ul
+          className={
+            light
+              ? "mx-auto mt-12 grid max-w-[1100px] grid-cols-1 gap-5 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4 lg:gap-7"
+              : "mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:mt-14 lg:grid-cols-4 lg:gap-6"
+          }
+        >
+          {items.map((stat) => (
             <li
               key={stat.label}
-              className="rounded-[28px] bg-[#F4EAE6] px-7 py-9 lg:px-8 lg:py-10"
+              className={
+                light
+                  ? "rounded-[20px] bg-[#F4EAE6] px-8 py-9"
+                  : "rounded-[28px] bg-[#F4EAE6] px-7 py-9 lg:px-8 lg:py-10"
+              }
             >
               <p className="text-krest-stat-value">
                 {stat.value}
@@ -34,7 +76,11 @@ export function StatsBanner() {
         <div className="mt-12 flex justify-center lg:mt-14">
           <a
             href="/about-us"
-            className="inline-flex h-11 items-center justify-center rounded-full border border-copper bg-white px-7 font-display text-[14px] italic text-copper transition-colors hover:bg-copper hover:text-white"
+            className={
+              light
+                ? "inline-flex h-10 items-center justify-center rounded-full bg-copper px-6 font-body text-[13px] text-white transition-opacity hover:opacity-90"
+                : "inline-flex h-11 items-center justify-center rounded-full border border-copper bg-white px-7 font-display text-[14px] italic text-copper transition-colors hover:bg-copper hover:text-white"
+            }
           >
             Our Story
           </a>
