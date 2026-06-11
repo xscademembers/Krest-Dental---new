@@ -1,33 +1,65 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@/components/icons";
 import { GALLERY } from "@/lib/krest-content";
+import type { GalleryImage } from "@/types/krest";
 
-const DESKTOP_VISIBLE = 3;
+const GALLERY_OUTER_HEIGHT_PX = 571;
+const GALLERY_PADDING_BOTTOM_PX = 50;
+const GALLERY_INNER_HEIGHT_PX =
+  GALLERY_OUTER_HEIGHT_PX - GALLERY_PADDING_BOTTOM_PX;
+const SLIDE_GAP_PX = 3;
 
-function wrapIndex(index: number, length: number) {
-  return ((index % length) + length) % length;
+type GallerySlide = GalleryImage & {
+  displayWidth: number;
+  displayHeight: number;
+};
+
+function slideWidth(image: GalleryImage, trackHeight: number) {
+  if (!image.width || !image.height) return trackHeight;
+  return Math.round(trackHeight * (image.width / image.height));
 }
 
-function visibleSlides(start: number, count: number) {
-  return Array.from({ length: count }, (_, offset) => GALLERY[wrapIndex(start + offset, GALLERY.length)]);
+function buildSlides(trackHeight: number): GallerySlide[] {
+  return GALLERY.map((image) => ({
+    ...image,
+    displayHeight: trackHeight,
+    displayWidth: slideWidth(image, trackHeight),
+  }));
+}
+
+function slideOffset(slides: GallerySlide[], index: number) {
+  return slides
+    .slice(0, index)
+    .reduce((sum, slide) => sum + slide.displayWidth + SLIDE_GAP_PX, 0);
 }
 
 export function ComfortGallery() {
   const [index, setIndex] = useState(0);
 
+  const desktopSlides = useMemo(
+    () => buildSlides(GALLERY_INNER_HEIGHT_PX),
+    [],
+  );
+  const mobileSlides = useMemo(() => buildSlides(280), []);
+
   const go = (direction: -1 | 1) => {
-    setIndex((current) => wrapIndex(current + direction, GALLERY.length));
+    setIndex((current) => {
+      const next = current + direction;
+      if (next < 0) return GALLERY.length - 1;
+      if (next >= GALLERY.length) return 0;
+      return next;
+    });
   };
 
-  const desktopSlides = visibleSlides(index, DESKTOP_VISIBLE);
-  const mobileSlide = GALLERY[index];
+  const desktopOffset = slideOffset(desktopSlides, index);
+  const mobileOffset = slideOffset(mobileSlides, index);
 
   return (
     <section
       aria-label="Krest Dental — interiors and amenities"
-      className="bg-white py-20 lg:py-28"
+      className="bg-white pb-16 pt-20 lg:pb-20 lg:pt-28"
     >
       <div className="krest-site">
         <header className="text-center">
@@ -40,36 +72,76 @@ export function ComfortGallery() {
         </header>
       </div>
 
-      <div className="relative mt-14 lg:mt-16">
-        <div className="krest-site">
-          <div className="relative">
-            <div className="grid grid-cols-3 gap-[3px] max-sm:hidden">
+      <div className="krest-site mt-14 lg:mt-16">
+        {/*
+          Wix pro-gallery:
+          - 1265×571 outer box, 16px side / 50px bottom padding
+          - Fixed-height horizontal strip; each slide width = height × native aspect
+          - No crop — images keep original landscape/portrait proportions
+        */}
+        <div className="pro-gallery mx-auto box-border w-full max-w-[1265px] pt-0 max-lg:pb-0 lg:h-[571px] lg:px-4 lg:pb-[50px]">
+          <div className="relative w-full overflow-hidden max-lg:h-[280px] lg:h-[521px]">
+            <div
+              className="flex gap-[3px] transition-transform duration-500 ease-out will-change-transform max-lg:hidden"
+              style={{
+                height: `${GALLERY_INNER_HEIGHT_PX}px`,
+                width: "max-content",
+                transform: `translateX(-${desktopOffset}px)`,
+              }}
+            >
               {desktopSlides.map((image, slideIndex) => (
-                <div key={`${image.src}-${slideIndex}`} className="h-[280px] sm:h-[320px] lg:h-[352px]">
+                <div
+                  key={image.src}
+                  className="shrink-0 bg-white"
+                  style={{
+                    width: `${image.displayWidth}px`,
+                    height: `${image.displayHeight}px`,
+                  }}
+                >
                   <img
                     src={image.src}
                     alt={image.alt}
-                    className="h-full w-full object-cover"
-                    width={425}
-                    height={352}
-                    loading={slideIndex === 0 ? "eager" : "lazy"}
+                    width={image.width}
+                    height={image.height}
+                    className="block h-full w-full"
+                    loading={slideIndex < 3 ? "eager" : "lazy"}
                     decoding="async"
-                    fetchPriority={slideIndex === 0 && index === 0 ? "high" : undefined}
+                    fetchPriority={slideIndex === 0 ? "high" : undefined}
+                    draggable={false}
                   />
                 </div>
               ))}
             </div>
 
-            <div className="h-[280px] sm:hidden">
-              <img
-                src={mobileSlide.src}
-                alt={mobileSlide.alt}
-                className="h-full w-full object-cover"
-                width={425}
-                height={352}
-                loading="eager"
-                decoding="async"
-              />
+            <div
+              className="flex gap-[3px] transition-transform duration-500 ease-out will-change-transform lg:hidden"
+              style={{
+                height: "280px",
+                width: "max-content",
+                transform: `translateX(-${mobileOffset}px)`,
+              }}
+            >
+              {mobileSlides.map((image, slideIndex) => (
+                <div
+                  key={`${image.src}-mobile`}
+                  className="shrink-0 bg-white"
+                  style={{
+                    width: `${image.displayWidth}px`,
+                    height: `${image.displayHeight}px`,
+                  }}
+                >
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    width={image.width}
+                    height={image.height}
+                    className="block h-full w-full"
+                    loading={slideIndex === 0 ? "eager" : "lazy"}
+                    decoding="async"
+                    draggable={false}
+                  />
+                </div>
+              ))}
             </div>
 
             <button

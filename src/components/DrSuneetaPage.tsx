@@ -1,195 +1,153 @@
-import type { SVGProps } from "react";
 import {
   ABOUT_VISION_MISSION,
   DR_SUNEETA_PAGE,
   STATS,
 } from "@/lib/krest-content";
+import {
+  ButtonArrowCircle,
+  JourneyPin,
+  JourneySwirl,
+  ToothFlourish,
+} from "@/components/DrSuneetaDecorations";
 
-function SimpleArrow(props: SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2.2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      <path d="M5 12h14" />
-      <path d="M13 5l7 7-7 7" />
-    </svg>
-  );
-}
-
-function HeroCornerFlourish(props: SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      viewBox="0 0 420 180"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-      {...props}
-    >
-      <path
-        d="M 58 88
-           C 58 144, 94 176, 154 176
-           C 232 176, 286 134, 316 76
-           C 336 36, 312 8, 278 12
-           C 246 16, 234 50, 258 72
-           C 286 98, 330 104, 364 84
-           C 394 66, 412 38, 414 14"
-        vectorEffect="non-scaling-stroke"
-      />
-    </svg>
-  );
-}
-
-function MapPinIcon(props: SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-      {...props}
-    >
-      <path d="M12 2C7.589 2 4 5.589 4 9.995 4 14.55 9.572 21.038 11.213 22.667a1.122 1.122 0 0 0 1.575 0C14.428 21.038 20 14.55 20 9.995 20 5.589 16.411 2 12 2zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
-    </svg>
-  );
-}
-
-/** Winding decorative path behind the timeline (matches krest.dental/drsuneeta). */
-function JourneyCurve(props: SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      viewBox="0 0 400 1100"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="58"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      xmlns="http://www.w3.org/2000/svg"
-      preserveAspectRatio="xMidYMid meet"
-      {...props}
-    >
-      <path
-        d="M 320 40
-           C 380 90, 380 170, 300 200
-           C 220 230, 240 320, 320 360
-           C 400 400, 380 480, 280 500
-           C 160 520, 140 600, 240 660
-           C 360 720, 340 820, 220 840
-           C 110 860, 100 940, 200 980
-           C 280 1010, 280 1060, 240 1080"
-      />
-    </svg>
-  );
-}
+/**
+ * Journey milestones positioned exactly as on krest.dental/drsuneeta.
+ * Coordinates are relative to the 566x2326 swirl box (measured at 1440px).
+ */
+const MILESTONE_LAYOUT: Record<
+  string,
+  { left: number; top: number; textWidth: number; gap: number }
+> = {
+  bds: { left: 173, top: 231, textWidth: 245, gap: 23 },
+  dds: { left: 353, top: 673, textWidth: 245, gap: 26 },
+  sf: { left: 305, top: 1100, textWidth: 245, gap: 22 },
+  india: { left: 110, top: 1540, textWidth: 220, gap: 24 },
+  krest: { left: 396, top: 2027, textWidth: 170, gap: 20 },
+};
 
 export function DrSuneetaPage() {
   return (
     <>
-      <section
-        aria-label="Dr. Suneeta Veramachaneni"
-        className="bg-white"
-      >
-        <div className="grid min-h-[420px] grid-cols-1 lg:min-h-[560px] lg:grid-cols-2">
-          <div className="relative min-h-[360px] lg:min-h-0">
+      {/* ============ Hero: portrait left, name + CTA on pale-pink panel right ============ */}
+      <section aria-label="Dr. Suneeta Veramachaneni" className="bg-white">
+        <div className="mx-auto grid w-full max-w-[1425px] grid-cols-1 lg:h-[676px] lg:grid-cols-2">
+          {/* Live: 713x676 photo, fp 0.50 0.43 */}
+          <div className="relative min-h-[360px] sm:min-h-[480px] lg:min-h-0">
             <img
               src={DR_SUNEETA_PAGE.portraitSrc}
               alt={DR_SUNEETA_PAGE.portraitAlt}
-              width={1100}
-              height={1040}
-              className="absolute inset-0 h-full w-full object-cover object-[50%_28%]"
+              width={713}
+              height={676}
+              className="absolute inset-0 h-full w-full object-cover"
               loading="eager"
               decoding="async"
               fetchPriority="high"
             />
           </div>
-          <div className="relative flex flex-col justify-center bg-[#F4EAE6] px-[25px] py-14 sm:px-14 lg:px-20 lg:py-16 xl:px-24">
-            <div className="relative z-10 w-full min-w-0">
-              <h1 className="whitespace-nowrap font-display text-[32px] font-normal italic leading-[1.06] tracking-[-0.02em] text-ink sm:text-[42px] lg:text-[52px] xl:text-[56px]">
+
+          {/* Live: bg #F4EAE6, text starts 54px in / 254px down */}
+          <div className="relative bg-[#F4EAE6] px-[25px] py-14 sm:px-12 lg:px-0 lg:py-0">
+            <div className="lg:pl-[54px] lg:pt-[254px]">
+              {/* Live: EB Garamond italic 56.78px, lh 0.9, ls -0.03em, black */}
+              <h1 className="font-display text-[30px] font-normal italic leading-[0.9] tracking-[-0.03em] text-black sm:text-[42px] lg:text-[56.78px]">
                 {DR_SUNEETA_PAGE.name}
               </h1>
-              <div className="mt-5 flex items-center gap-6 sm:gap-9">
+              {/* Live: 90x2 copper line + Marmelad 20px copper */}
+              <div className="mt-[16px] flex items-center">
                 <span
                   aria-hidden="true"
-                  className="block h-px w-[100px] shrink-0 bg-copper sm:w-[120px]"
+                  className="block w-[60px] border-t-2 border-copper sm:w-[90px]"
                 />
-                <p className="whitespace-nowrap font-accent text-[14px] tracking-wide text-copper sm:text-[15px]">
+                <p className="ml-[29px] font-accent text-[17px] leading-[1.3] text-copper sm:text-[20px]">
                   {DR_SUNEETA_PAGE.title}
                 </p>
               </div>
+              {/* Live: 227x50 copper pill, EB Garamond 18px white + 26px white arrow circle */}
               <a
                 href="/contact"
-                className="mt-8 inline-flex h-11 w-fit items-center gap-3 rounded-full bg-copper pl-5 pr-1.5 font-display text-[14px] tracking-wide text-white transition-all duration-200 hover:bg-copper/90"
+                className="mt-[25px] inline-flex h-[50px] w-[227px] items-center rounded-[50px] bg-copper pl-[22px] transition-colors hover:bg-copper/90"
               >
-                <span>Book Appointment</span>
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-copper">
-                  <SimpleArrow className="h-3 w-3" />
+                <span className="font-display text-[18px] leading-[1.4] text-white">
+                  Book Appointment
                 </span>
+                <ButtonArrowCircle className="ml-[19px] h-[26px] w-[26px]" />
               </a>
             </div>
-            <HeroCornerFlourish className="pointer-events-none absolute bottom-6 right-6 h-28 w-auto text-copper/25 sm:bottom-8 sm:right-10 sm:h-36 lg:h-44" />
+            {/* Live: 356x245 thin grey tooth doodle, flush bottom-right */}
+            <ToothFlourish className="pointer-events-none absolute bottom-0 right-0 hidden h-[245px] w-[356px] lg:block" />
           </div>
         </div>
       </section>
 
-      <section
-        aria-label="Dr Suneeta Journey and Our Story"
-        className="relative bg-white"
-      >
-        <div className="krest-site py-16 lg:py-24">
-          <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
-            {/* LEFT — sticky "Our Story" + heading */}
-            <div className="lg:sticky lg:top-28 lg:self-start">
-              <h2
-                id="dr-suneeta-our-story"
-                className="font-display text-[36px] font-normal italic leading-[1.05] tracking-[-0.02em] text-copper sm:text-[44px] lg:text-[56px]"
-              >
+      {/* ============ Our Story (sticky) + Dr Suneeta Journey timeline ============ */}
+      <section aria-label="Our Story and Dr Suneeta Journey" className="bg-white">
+        <div className="mx-auto grid w-full max-w-[1425px] grid-cols-1 lg:grid-cols-[712px_1fr]">
+          {/* LEFT — sticky "Our Story" (live: sticky top 61px, text inset 61px) */}
+          <div className="px-[25px] pt-16 lg:px-0 lg:pt-0">
+            {/* Live: sticky box is a fixed 900px-tall container, so it releases
+                and scrolls away once the swirl nears the section bottom */}
+            <div className="lg:sticky lg:top-[61px] lg:h-[900px] lg:pl-[61px] lg:pt-[89px]">
+              {/* Live: EB Garamond italic 60.12px copper, lh 1 */}
+              <h2 className="font-display text-[36px] font-normal italic leading-none text-copper sm:text-[48px] lg:text-[60.12px]">
                 {DR_SUNEETA_PAGE.ourStoryHeading}
               </h2>
-              <p className="text-krest-body mt-6 max-w-[460px]">
+              {/* Live: 22px justify black, width 602 */}
+              <p className="mt-[42px] max-w-[602px] text-justify font-display text-[18px] leading-[1.3] text-black sm:text-[20px] lg:text-[22px]">
                 {DR_SUNEETA_PAGE.ourStoryText}
               </p>
             </div>
+          </div>
 
-            {/* RIGHT — Dr Suneeta Journey timeline with curvy decorative path */}
-            <div className="relative">
-              <p className="mb-12 text-right font-display text-[15px] text-ink sm:text-[16px] lg:mb-16">
-                {DR_SUNEETA_PAGE.journeyHeading}
-              </p>
+          {/* RIGHT — journey label + giant swirl with absolutely-placed milestones */}
+          <div className="px-[25px] pb-16 pt-12 lg:px-0 lg:pb-0 lg:pt-[28px]">
+            {/* Live: label 116px in from swirl left, 36px above swirl */}
+            <p className="font-display text-[20px] leading-[1.1] text-black lg:ml-auto lg:mr-auto lg:w-[566px] lg:pl-[116px] lg:text-[22.27px]">
+              {DR_SUNEETA_PAGE.journeyHeading}
+            </p>
 
-              <JourneyCurve
-                aria-hidden="true"
-                className="pointer-events-none absolute inset-0 h-full w-full text-[#F4EAE6]"
-              />
+            {/* Desktop: exact 566x2326 swirl with measured milestone coordinates */}
+            <div className="relative mx-auto mt-[36px] hidden h-[2326px] w-[566px] lg:block">
+              <JourneySwirl className="absolute inset-0 h-full w-full" />
+              <ol className="absolute inset-0">
+                {DR_SUNEETA_PAGE.milestones.map((item) => {
+                  const pos = MILESTONE_LAYOUT[item.id];
+                  return (
+                    <li
+                      key={item.id}
+                      data-float-in="left"
+                      className="absolute"
+                      style={{ left: pos.left, top: pos.top, width: pos.textWidth }}
+                    >
+                      <JourneyPin className="h-[21px] w-auto" />
+                      <p
+                        className="font-display text-[22.27px] font-normal leading-[1.1] text-black"
+                        style={{ marginTop: pos.gap }}
+                      >
+                        {item.lines.map((line) => (
+                          <span key={line} className="block">
+                            {line}
+                          </span>
+                        ))}
+                      </p>
+                    </li>
+                  );
+                })}
+              </ol>
+            </div>
 
-              <ol className="relative space-y-32 sm:space-y-40 lg:space-y-44">
+            {/* Mobile/tablet: simple timeline list over a slimmer swirl */}
+            <div className="relative mt-8 lg:hidden">
+              <JourneySwirl className="pointer-events-none absolute left-1/2 top-0 h-full w-auto -translate-x-1/2 opacity-70" />
+              <ol className="relative space-y-16 py-6">
                 {DR_SUNEETA_PAGE.milestones.map((item, idx) => (
                   <li
                     key={item.id}
-                    className={`relative flex flex-col gap-3 ${
-                      idx % 2 === 0
-                        ? "items-start text-left sm:pl-2"
-                        : "items-end text-right sm:pr-2"
-                    }`}
+                    data-float-in="left"
+                    className={`flex flex-col gap-3 ${idx % 2 === 0 ? "items-start pl-2" : "items-end pr-2 text-right"}`}
                   >
-                    <MapPinIcon className="h-5 w-5 text-ink" />
-                    <p className="text-krest-body max-w-[28ch]">
-                      {item.lines
-                        ? item.lines.map((line, i) => (
-                            <span key={i} className="block">
-                              {line}
-                            </span>
-                          ))
-                        : item.text}
+                    <JourneyPin className="h-[21px] w-auto" />
+                    <p className="max-w-[260px] font-display text-[19px] leading-[1.15] text-black">
+                      {item.text}
                     </p>
                   </li>
                 ))}
@@ -199,57 +157,54 @@ export function DrSuneetaPage() {
         </div>
       </section>
 
-      <section
-        aria-labelledby="dr-suneeta-vision-mission"
-        className="bg-[#fdfcfb] py-14 lg:py-20"
-      >
-        <div className="krest-site">
-          <h2 id="dr-suneeta-vision-mission" className="sr-only">
-            Our vision and mission
-          </h2>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8 lg:gap-10">
-            <article className="flex min-h-[280px] flex-col items-center justify-center rounded-[48px] bg-[#f4ece8] px-8 py-12 text-center sm:px-10 sm:py-14 lg:rounded-[50px] lg:px-12 lg:py-16">
-              <h3 className="font-display text-[28px] font-normal italic leading-tight text-[#9b6c5a] sm:text-[32px] lg:text-[34px]">
-                {ABOUT_VISION_MISSION.vision.title}
-              </h3>
-              <p className="text-krest-body mt-6 max-w-[52ch] text-[#444444]">
-                {ABOUT_VISION_MISSION.vision.text}
-              </p>
-            </article>
-            <article className="flex min-h-[280px] flex-col items-center justify-center rounded-[48px] bg-[#f4ece8] px-8 py-12 text-center sm:px-10 sm:py-14 lg:rounded-[50px] lg:px-12 lg:py-16">
-              <h3 className="font-display text-[28px] font-normal italic leading-tight text-[#9b6c5a] sm:text-[32px] lg:text-[34px]">
-                {ABOUT_VISION_MISSION.mission.title}
-              </h3>
-              <p className="text-krest-body mt-6 max-w-[52ch] text-[#444444]">
-                {ABOUT_VISION_MISSION.mission.text}
-              </p>
-            </article>
-          </div>
+      {/* ============ Our Vision / Our Mission (white bg, pale-pink cards) ============ */}
+      <section aria-label="Our Vision and Our Mission" className="bg-white">
+        <div className="mx-auto grid w-full max-w-[1425px] grid-cols-1 gap-10 px-[25px] py-12 lg:grid-cols-2 lg:gap-x-[139px] lg:px-[69px] lg:pb-[35px] lg:pt-[35px]">
+          {/* Live: 574x455 card, radius 56.4, bg #F4EAE6, content centered */}
+          <article className="flex min-h-[320px] flex-col items-center justify-center rounded-[40px] bg-[#F4EAE6] px-8 py-12 lg:min-h-[455px] lg:rounded-[56px] lg:px-[50px]">
+            {/* Live: EB Garamond italic 67.59px copper, lh 1.4 */}
+            <h2 className="text-center font-display text-[38px] font-normal italic leading-[1.4] text-copper sm:text-[50px] lg:text-[67.59px]">
+              {ABOUT_VISION_MISSION.vision.title}
+            </h2>
+            {/* Live: 24px justify black, lh 1.3, width 473 */}
+            <p className="mt-[34px] max-w-[473px] text-justify font-display text-[18px] leading-[1.3] text-black sm:text-[20px] lg:text-[24px]">
+              {ABOUT_VISION_MISSION.vision.text}
+            </p>
+          </article>
+          {/* Live: right card 574x432, offset 12px lower */}
+          <article className="flex min-h-[320px] flex-col items-center justify-center rounded-[40px] bg-[#F4EAE6] px-8 py-12 lg:mt-[12px] lg:min-h-[432px] lg:rounded-[56px] lg:px-[50px]">
+            <h2 className="text-center font-display text-[38px] font-normal italic leading-[1.4] text-copper sm:text-[50px] lg:text-[67.59px]">
+              {ABOUT_VISION_MISSION.mission.title}
+            </h2>
+            <p className="mt-[34px] max-w-[473px] text-justify font-display text-[18px] leading-[1.3] text-black sm:text-[20px] lg:text-[24px]">
+              {ABOUT_VISION_MISSION.mission.text}
+            </p>
+          </article>
         </div>
       </section>
 
-      <section
-        aria-label="Success in Numbers"
-        className="bg-[#F4EAE6] py-16 lg:py-24"
-      >
-        <div className="krest-site">
-          <h2 className="font-display text-[34px] font-normal italic leading-[1.15] tracking-[-0.01em] text-copper sm:text-[44px] lg:text-[52px]">
+      {/* ============ Success in Numbers (pale-pink band, white stat cards) ============ */}
+      <section aria-label="Success in Numbers" className="bg-[#F4EAE6]">
+        <div className="mx-auto w-full max-w-[1425px] px-[25px] pb-16 pt-12 lg:px-[67px] lg:pb-[113px] lg:pt-[63px]">
+          {/* Live: EB Garamond italic 55.66px copper, lh 1 */}
+          <h2 className="font-display text-[34px] font-normal italic leading-none text-copper sm:text-[44px] lg:pl-[12px] lg:text-[55.66px]">
             {DR_SUNEETA_PAGE.statsHeading}
           </h2>
-          <ul className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:mt-12 lg:grid-cols-4 lg:gap-6">
+          {/* Live: cards 312x225, radius 34, 22px gap, 96px below heading */}
+          <ul className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:mt-[96px] lg:grid-cols-4 lg:gap-[22px]">
             {STATS.map((stat) => (
               <li
                 key={stat.label}
-                className="rounded-[28px] bg-white px-7 py-9 text-left lg:px-8 lg:py-10"
+                className="rounded-[34px] bg-white px-[22px] pb-[40px] pt-[51px] lg:h-[225px]"
               >
-                <p className="font-display text-[36px] font-normal leading-none tracking-tight text-ink sm:text-[40px] lg:text-[44px]">
+                {/* Live: EB Garamond 47.25px black, lh 1.1 */}
+                <p className="font-display text-[38px] font-normal leading-[1.1] text-black lg:text-[47.25px]">
                   {stat.value}
                 </p>
-                <span
-                  aria-hidden="true"
-                  className="mt-4 block h-px w-[88%] bg-ink/85"
-                />
-                <p className="mt-5 font-display text-[14px] tracking-wide text-ink sm:text-[15px]">
+                {/* Live: 1px black line 24px below value */}
+                <span aria-hidden="true" className="mt-[24px] block w-full border-t border-black" />
+                {/* Live: EB Garamond 18px black, lh 1.3 */}
+                <p className="mt-[23px] font-display text-[18px] leading-[1.3] text-black">
                   {stat.label}
                 </p>
               </li>

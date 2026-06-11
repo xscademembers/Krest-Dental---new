@@ -67,5 +67,25 @@ const image = ogImage.startsWith("http")
     <LenisProvider client:load>
       <slot />
     </LenisProvider>
+    <script>
+      // Wix-style "Float" entrance for any [data-float-in] element
+      const floatTargets = document.querySelectorAll("[data-float-in]");
+      if (floatTargets.length > 0 && "IntersectionObserver" in window) {
+        const io = new IntersectionObserver(
+          (entries) => {
+            for (const entry of entries) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-floated");
+                io.unobserve(entry.target);
+              }
+            }
+          },
+          { threshold: 0.25 },
+        );
+        floatTargets.forEach((el) => io.observe(el));
+      } else {
+        floatTargets.forEach((el) => el.classList.add("is-floated"));
+      }
+    </script>
   </body>
 </html>

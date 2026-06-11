@@ -1,3 +1,4 @@
+import { FooterLogoIcon } from "@/components/FooterLogoIcon";
 import {
   FacebookIcon,
   InstagramIcon,
@@ -6,7 +7,6 @@ import {
 import {
   ADDRESS,
   EMAIL,
-  FOOTER_LOGO_SRC,
   HOURS,
   PHONE_DISPLAY,
   PHONE_TEL,
@@ -28,7 +28,7 @@ const FOOTER_NAV = [
 
 export function SiteFooter() {
   return (
-    <footer className="mt-12 bg-white pb-10 pt-14 lg:pb-12 lg:pt-16">
+    <footer className="bg-white pb-10 pt-14 lg:pb-12 lg:pt-16">
       <div className="krest-site grid w-full grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-12 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,0.75fr)_minmax(0,1.15fr)_minmax(0,0.85fr)] lg:items-start lg:gap-x-16 xl:gap-x-24">
         <div className="flex w-full flex-col items-start gap-7 pl-0 sm:gap-8">
           <FooterLogo />
@@ -150,15 +150,8 @@ function FooterLogo() {
       aria-label="Krest Dental — Home"
       className="inline-block"
     >
-      <img
-        src={FOOTER_LOGO_SRC}
-        alt="Krest Dental Care"
-        width={320}
-        height={100}
-        className="h-auto w-[220px] max-w-full object-contain object-left sm:w-[280px]"
-        loading="lazy"
-        decoding="async"
-      />
+      {/* Live footer vector art: 188×76 at 1440px */}
+      <FooterLogoIcon className="h-[76px] w-[188px] max-w-full" />
     </a>
   );
 }

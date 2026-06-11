@@ -14,6 +14,7 @@ const downloads = [
   ["images/hero/design-02.png", "https://static.wixstatic.com/media/494201_56e3ddd3638d4be4bcc0bf92e5b273be~mv2.png/v1/fill/w_502,h_906,al_c,lg_1,q_85,enc_avif,quality_auto/design-02.png"],
   ["images/hero/dr-suneeta-portrait.jpg", "https://static.wixstatic.com/media/9356bd_f7a5ae19e3fd434a91f0a2b74267fe2e~mv2.jpg/v1/crop/x_128,y_1060,w_3872,h_4335/fill/w_856,h_958,fp_0.50_0.50,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/DSC08658.jpg"],
   ["images/dr-suneeta/dsc08627.jpg", "https://static.wixstatic.com/media/9356bd_b6d3a85e9ee043598434f6be969522b9~mv2.jpg/v1/fill/w_1100,h_1040,fp_0.50_0.43,q_90,usm_0.66_1.00_0.01/DSC08627.jpg"],
+  ["images/dr-suneeta/hero-portrait.jpg", "https://static.wixstatic.com/media/9356bd_b6d3a85e9ee043598434f6be969522b9~mv2.jpg/v1/fill/w_1426,h_1352,fp_0.50_0.43,q_85,usm_0.66_1.00_0.01/DSC08627.jpg"],
 
   // Our Services page
   ["images/our-services/general-dentistry.png", "https://static.wixstatic.com/media/494201_6ce2a400654641178a6942d5fa5ee299~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/dentist-chair.png"],
@@ -21,6 +22,7 @@ const downloads = [
   ["images/our-services/restorative-dentistry.png", "https://static.wixstatic.com/media/494201_44b7ead0a8684c2ab9603202fd30597a~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/toothbrushing.png"],
   ["images/our-services/emergency-care.png", "https://static.wixstatic.com/media/494201_6856c53c786c42758323cecdc9eda624~mv2.png/v1/fill/w_600,h_600,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/toothache.png"],
   ["images/our-services/appointment-cta.jpg", "https://static.wixstatic.com/media/9356bd_8785d8ca43c44a45bc898bb16b558057~mv2.jpg/v1/fill/w_1400,h_980,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/DSC08466.jpg"],
+  ["images/our-services/cta-banner.jpg", "https://static.wixstatic.com/media/9356bd_8785d8ca43c44a45bc898bb16b558057~mv2.jpg/v1/fill/w_2680,h_998,al_c,q_85,usm_0.66_1.00_0.01/DSC08466.jpg"],
   ["images/hero/dr-suneeta-signature.png", "https://static.wixstatic.com/media/2139b1_3bdd8c7e324e45d8b688c7dce334524d~mv2.png/v1/crop/x_106,y_519,w_1351,h_524/fill/w_422,h_164,fp_0.50_0.50,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Dr%20Suneeta.png"],
 
   // Service card illustrations
@@ -38,15 +40,34 @@ const downloads = [
   ["images/gallery/clinic-06.jpg", "https://static.wixstatic.com/media/9356bd_d6994b373bf84187b346528c3b1aaf6b~mv2.jpg/v1/fit/w_862,h_1294,q_90,enc_avif,quality_auto/9356bd_d6994b373bf84187b346528c3b1aaf6b~mv2.jpg"],
   ["images/gallery/clinic-07.jpg", "https://static.wixstatic.com/media/9356bd_ad1ac3c9bf05413d899265cc14818208~mv2.jpg/v1/fit/w_1940,h_1294,q_90,enc_avif,quality_auto/9356bd_ad1ac3c9bf05413d899265cc14818208~mv2.jpg"],
 
-  // Instagram strip thumbnails (12)
+  // Instagram pro-gallery — 15 images in live order (krest.dental @ 1440px)
   ["images/instagram/post-01.jpg", "https://static.wixstatic.com/media/9356bd_b8cd1595b8e14b07847c7b34a3e40b3a~mv2.jpg/v1/fill/w_414,h_312,q_90,enc_avif,quality_auto/9356bd_b8cd1595b8e14b07847c7b34a3e40b3a~mv2.jpg"],
   ["images/instagram/post-02.jpg", "https://static.wixstatic.com/media/9356bd_391d5407527d45feb9dcefb05dee3d92~mv2.jpg/v1/fill/w_416,h_312,q_90,enc_avif,quality_auto/9356bd_391d5407527d45feb9dcefb05dee3d92~mv2.jpg"],
   ["images/instagram/post-03.jpg", "https://static.wixstatic.com/media/9356bd_6da07c05c7fe41a3b9cb03e325dd8a19~mv2.jpg/v1/fill/w_414,h_312,q_90,enc_avif,quality_auto/9356bd_6da07c05c7fe41a3b9cb03e325dd8a19~mv2.jpg"],
   ["images/instagram/post-04.jpg", "https://static.wixstatic.com/media/9356bd_59cf8cd74afe4b2288b6db7a00ea6163~mv2.jpg/v1/fill/w_416,h_312,q_90,enc_avif,quality_auto/9356bd_59cf8cd74afe4b2288b6db7a00ea6163~mv2.jpg"],
   ["images/instagram/post-05.jpg", "https://static.wixstatic.com/media/9356bd_6d6fab58285c474b953d5b14e333e332~mv2.jpg/v1/fill/w_414,h_312,q_90,enc_avif,quality_auto/9356bd_6d6fab58285c474b953d5b14e333e332~mv2.jpg"],
   ["images/instagram/post-06.jpg", "https://static.wixstatic.com/media/9356bd_05dfb227cee945c2a0ceb3ea0238eaa3~mv2.jpg/v1/fill/w_414,h_312,q_90,enc_avif,quality_auto/9356bd_05dfb227cee945c2a0ceb3ea0238eaa3~mv2.jpg"],
-  ["images/instagram/post-07.jpg", "https://static.wixstatic.com/media/9356bd_be5d6c61c06747c4b7dddf1a5a3f9669~mv2.jpg/v1/fill/w_414,h_312,fp_0.34_0.38,q_90,enc_avif,quality_auto/9356bd_be5d6c61c06747c4b7dddf1a5a3f9669~mv2.jpg"],
-  ["images/instagram/post-08.jpg", "https://static.wixstatic.com/media/9356bd_eab23b9e671a47c3b21cf4db3bb8c674~mv2.jpg/v1/fill/w_416,h_312,q_90,enc_avif,quality_auto/9356bd_eab23b9e671a47c3b21cf4db3bb8c674~mv2.jpg"],
+  ["images/instagram/post-07.jpg", "https://static.wixstatic.com/media/9356bd_0ac2c8d86d9f449abc51c2a1992111c4~mv2.jpg/v1/fill/w_414,h_312,q_90,enc_avif,quality_auto/9356bd_0ac2c8d86d9f449abc51c2a1992111c4~mv2.jpg"],
+  ["images/instagram/post-08.jpg", "https://static.wixstatic.com/media/9356bd_d6994b373bf84187b346528c3b1aaf6b~mv2.jpg/v1/fill/w_414,h_312,q_90,enc_avif,quality_auto/9356bd_d6994b373bf84187b346528c3b1aaf6b~mv2.jpg"],
+  ["images/instagram/post-09.jpg", "https://static.wixstatic.com/media/9356bd_8785d8ca43c44a45bc898bb16b558057~mv2.jpg/v1/fill/w_414,h_312,q_90,enc_avif,quality_auto/9356bd_8785d8ca43c44a45bc898bb16b558057~mv2.jpg"],
+  ["images/instagram/post-10.jpg", "https://static.wixstatic.com/media/9356bd_be5d6c61c06747c4b7dddf1a5a3f9669~mv2.jpg/v1/fill/w_414,h_312,fp_0.34_0.38,q_90,enc_avif,quality_auto/9356bd_be5d6c61c06747c4b7dddf1a5a3f9669~mv2.jpg"],
+  ["images/instagram/post-11.jpg", "https://static.wixstatic.com/media/9356bd_c142aa91024743ff9b780c6c7e2894bc~mv2.jpg/v1/fill/w_414,h_312,q_90,enc_avif,quality_auto/9356bd_c142aa91024743ff9b780c6c7e2894bc~mv2.jpg"],
+  ["images/instagram/post-12.jpg", "https://static.wixstatic.com/media/9356bd_eab23b9e671a47c3b21cf4db3bb8c674~mv2.jpg/v1/fill/w_416,h_312,q_90,enc_avif,quality_auto/9356bd_eab23b9e671a47c3b21cf4db3bb8c674~mv2.jpg"],
+  ["images/instagram/post-13.jpg", "https://static.wixstatic.com/media/9356bd_c83eb1e0bb504db9a1c093aa7dad23c4~mv2.jpg/v1/fill/w_414,h_312,q_90,enc_avif,quality_auto/9356bd_c83eb1e0bb504db9a1c093aa7dad23c4~mv2.jpg"],
+  ["images/instagram/post-14.jpg", "https://static.wixstatic.com/media/9356bd_a7c850e24cdb41879ac399e3e200cec1~mv2.jpg/v1/fill/w_414,h_312,q_90,enc_avif,quality_auto/9356bd_a7c850e24cdb41879ac399e3e200cec1~mv2.jpg"],
+  ["images/instagram/post-15.jpg", "https://static.wixstatic.com/media/9356bd_ad1ac3c9bf05413d899265cc14818208~mv2.jpg/v1/fill/w_414,h_312,q_90,enc_avif,quality_auto/9356bd_ad1ac3c9bf05413d899265cc14818208~mv2.jpg"],
+
+  // About Us page — exact live-site center-fill crops at 2x
+  ["images/about/established-portrait.jpg", "https://static.wixstatic.com/media/2139b1_68472ba674d34d209f9c0d89dfd78284~mv2.jpg/v1/fill/w_1078,h_1308,al_c,q_85,usm_0.66_1.00_0.01/established-portrait.jpg"],
+  ["images/about/reception.jpg", "https://static.wixstatic.com/media/2139b1_623b9e88c9ad41c084c945121d516cd8~mv2.jpg/v1/fill/w_1104,h_774,al_c,q_85,usm_0.66_1.00_0.01/reception.jpg"],
+
+  // Invisilign (old) page — hero collage photos, exact live crops at 2x
+  ["images/invisilign-old/invisalign-consultation.jpg", "https://static.wixstatic.com/media/2139b1_7ce1537fc03845e6937567a6a3fc28d7~mv2.jpg/v1/fill/w_512,h_382,fp_0.36_0.36,q_85,usm_0.66_1.00_0.01/Invisalign%20Consultation.jpg"],
+  ["images/invisilign-old/studio-portrait.jpg", "https://static.wixstatic.com/media/2139b1_9409c1f9edd344d8bfd2c5d87cc88974~mv2.jpg/v1/fill/w_398,h_382,fp_0.60_0.38,q_85,usm_0.66_1.00_0.01/Studio%20Portrait.jpg"],
+  ["images/invisilign-old/getty-man.jpg", "https://static.wixstatic.com/media/2139b1_19e7981ac07b4ff780540ab5dd01f23b~mv2.jpg/v1/crop/x_760,y_0,w_2240,h_2001/fill/w_400,h_382,al_c,q_85,usm_0.66_1.00_0.01/GettyImages-1363870324-2.jpg"],
+
+  // Implants (old) page — hero collage lead photo, exact live crop at 2x
+  ["images/implants-old/implants.jpg", "https://static.wixstatic.com/media/2139b1_17e8047ec1224ef4b3a26820cc5aa6c7~mv2.jpg/v1/fill/w_512,h_382,al_c,q_85,usm_0.66_1.00_0.01/implants.jpg"],
 
   // Favicons / SEO
   ["seo/favicon-192.png", "https://static.wixstatic.com/media/2139b1_3aca976a133d47c892175732c7f05d7b~mv2.png/v1/fill/w_192,h_192,lg_1,usm_0.66_1.00_0.01/2139b1_3aca976a133d47c892175732c7f05d7b~mv2.png"],

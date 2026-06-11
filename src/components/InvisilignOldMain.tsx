@@ -1,4 +1,5 @@
 import { BookButton, InvisilignHeroMosaic } from "@/components/InvisilignHeroMosaic";
+import { JourneyUnderline, StepEllipseIcon } from "@/components/InvisilignDecorations";
 
 const pageUrl = "https://www.krest.dental/invisilign";
 
@@ -85,6 +86,78 @@ const journey = [
   { step: "05", title: "Smile Reveal & Retention Phase" },
 ];
 
+/**
+ * Two-column "Why ..." band shared by sections 2-4 of the live page.
+ * Live geometry @1440: left col 584px (pt 45), 40px gap, right cards 712px
+ * (2-up grid, 341px cards, 30px gaps, 20px radius, 24px padding).
+ */
+export function WhyBand({
+  heading,
+  intro,
+  cards,
+  cardHeight,
+  cardsBg,
+  cardsOffset,
+  minHeight = 520,
+  introJustify = true,
+  cardBodyJustify = false,
+}: {
+  heading: string;
+  intro: string;
+  cards: { title: string; body: string }[];
+  cardHeight: number;
+  cardsBg: string;
+  cardsOffset: number;
+  minHeight?: number;
+  introJustify?: boolean;
+  cardBodyJustify?: boolean;
+}) {
+  return (
+    <div
+      className="mx-auto grid max-w-[1425px] grid-cols-1 content-start gap-10 px-[25px] lg:grid-cols-[584px_1fr] lg:gap-x-[40px] lg:px-[44px]"
+      style={{ minHeight }}
+    >
+      <div className="lg:pt-[45px]">
+        <h2 className="font-display text-[30px] leading-[1.2] text-black lg:text-[36px]">
+          {heading}
+        </h2>
+        <p
+          className={`mt-[16px] font-display text-[20px] leading-[1.6] text-black lg:text-[23px] ${
+            introJustify ? "text-justify" : ""
+          }`}
+        >
+          {intro}
+        </p>
+        <BookButton className="mt-[22px]" />
+      </div>
+
+      <div
+        className="grid grid-cols-1 gap-[30px] sm:grid-cols-2"
+        style={{ marginTop: cardsOffset }}
+      >
+        {cards.map((card) => (
+          <article
+            key={card.title}
+            className="rounded-[20px] p-6"
+            style={{ backgroundColor: cardsBg, minHeight: cardHeight }}
+          >
+            <h3 className="font-display text-[23px] leading-[1.3] text-[#9F6449]">
+              {card.title}
+            </h3>
+            <p
+              className={`mt-[18px] font-display text-[18px] leading-[1.6] text-black ${
+                cardBodyJustify ? "text-justify" : ""
+              }`}
+            >
+              {card.body}
+            </p>
+          </article>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export function InvisilignOldMain() {
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -96,7 +169,7 @@ export function InvisilignOldMain() {
   };
 
   return (
-    <main className="flex-1 bg-cream">
+    <main className="flex-1 bg-[#F4EAE6]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
@@ -104,154 +177,77 @@ export function InvisilignOldMain() {
 
       <InvisilignHeroMosaic />
 
-      {/* WHY ORTHODONTICS? */}
-      <section className="bg-white py-14 lg:py-20">
-        <div className="krest-site">
-          <div className="max-w-[820px]">
-            <h2 className="font-display text-[44px] leading-[1.1] text-copper sm:text-5xl">
-              Why Orthodontics?
-            </h2>
-            <p className="mt-5 text-[18px] leading-8 text-taupe">
-              Orthodontic treatment isn’t just about aesthetics — it’s about
-              creating a healthy bite, boosting your self-confidence, and
-              protecting your long-term oral health. Whether you’re addressing
-              gaps, crowding, or bite issues, orthodontics ensures your smile
-              looks great and functions perfectly.
+      {/* WHY ORTHODONTICS? — white band, cream cards (240px) */}
+      <section className="bg-white py-[44px]">
+        <WhyBand
+          heading="Why Orthodontics?"
+          intro="Orthodontic treatment isn’t just about aesthetics — it’s about creating a healthy bite, boosting your self-confidence, and protecting your long-term oral health. Whether you’re addressing gaps, crowding, or bite issues, orthodontics ensures your smile looks great and functions perfectly."
+          cards={orthoCards}
+          cardHeight={240}
+          cardsBg="#F4EAE6"
+          cardsOffset={12}
+        />
+      </section>
+
+      {/* WHY CHOOSE INVISALIGN? — cream band, white cards (227px) */}
+      <section className="bg-[#F4EAE6] py-[44px]">
+        <WhyBand
+          heading="Why Choose Invisalign?"
+          intro="Invisalign has completely transformed orthodontic care, offering a smarter, more comfortable alternative to braces. Here’s why it’s the preferred choice for teens and adults:"
+          cards={whyInvisalign}
+          cardHeight={227}
+          cardsBg="#FFFFFF"
+          cardsOffset={0}
+          minHeight={741}
+        />
+      </section>
+
+      {/* WHY CHOOSE KREST DENTAL FOR INVISALIGN? — white band, cream cards (227px) */}
+      <section className="bg-white py-[44px]">
+        <WhyBand
+          heading="Why Choose Krest Dental for Invisalign?"
+          intro="Experience world-class Invisalign care at Krest Dental, led by UCSF-trained Dr. Suneeta Veeramachaneni. Our blend of advanced technology, personalized treatment, and unmatched expertise makes us the preferred choice in Visakhapatnam."
+          cards={whyKrest}
+          cardHeight={227}
+          cardsBg="#F4EAE6"
+          cardsOffset={18}
+          cardBodyJustify
+        />
+      </section>
+
+      {/* YOUR INVISALIGN JOURNEY — cream band, white pill rows */}
+      <section className="bg-[#F4EAE6] pb-[118px] pt-[60px]">
+        <div className="mx-auto grid max-w-[1425px] grid-cols-1 gap-10 px-[25px] lg:grid-cols-2 lg:gap-0 lg:px-[40px]">
+          <div className="lg:pt-[26px]">
+            <div className="relative inline-block">
+              <h2 className="font-display text-[36px] leading-[1.1] text-black lg:text-[47px]">
+                Your Invisalign Journey
+              </h2>
+              <JourneyUnderline className="absolute left-[208px] top-[49px] hidden h-[22px] w-[216px] lg:block" />
+            </div>
+            <p className="mt-[30px] max-w-[394px] font-body text-[18px] leading-[1.4] text-black lg:text-[20px]">
+              A Seamless, Personalized Path to Your Perfect Smile
             </p>
-            <BookButton className="mt-7" />
           </div>
 
-          <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {orthoCards.map((card) => (
-              <article
-                key={card.title}
-                className="rounded-2xl border border-copper/15 bg-[#F3E9E4] p-6"
+          <ol className="flex flex-col gap-[50px] lg:mt-[25px]">
+            {journey.map((item, i) => (
+              <li
+                key={item.step}
+                className="relative flex min-h-[102px] items-center rounded-[30px] bg-white py-4 pl-[140px] pr-6 lg:py-0 lg:pl-[159px]"
               >
-                <h3 className="font-display text-[24px] leading-[1.2] text-copper">
-                  {card.title}
-                </h3>
-                <p className="mt-3 text-[16px] leading-7 text-taupe">{card.body}</p>
-              </article>
+                <span className="absolute left-[47px] top-1/2 flex h-[58px] w-[71px] -translate-y-1/2 items-center justify-center">
+                  <StepEllipseIcon index={i} className="absolute inset-0 h-full w-full" />
+                  <span className="font-body text-[27px] leading-[1.1] text-black">
+                    {item.step}
+                  </span>
+                </span>
+                <span className="max-w-[451px] font-body text-[20px] leading-[1.3] text-[#9F6449] lg:text-[24px]">
+                  {item.title}
+                </span>
+              </li>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* WHY CHOOSE INVISALIGN? */}
-      <section className="krest-site pt-14 pb-14 lg:pt-20 lg:pb-20">
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_1.2fr] lg:gap-14">
-          <div>
-            <h2 className="font-display text-[44px] leading-[1.1] text-copper sm:text-5xl">
-              Why Choose Invisalign?
-            </h2>
-            <p className="mt-5 text-[18px] leading-8 text-taupe">
-              Invisalign has completely transformed orthodontic care, offering a
-              smarter, more comfortable alternative to braces. Here’s why it’s
-              the preferred choice for teens and adults:
-            </p>
-            <BookButton className="mt-7" />
-          </div>
-
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-            {whyInvisalign.map((card) => (
-              <article
-                key={card.title}
-                className="rounded-2xl border border-copper/15 bg-[#F3E9E4] p-6"
-              >
-                <h3 className="font-display text-[24px] leading-[1.2] text-copper">
-                  {card.title}
-                </h3>
-                <p className="mt-3 text-[16px] leading-7 text-taupe">{card.body}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* WHY CHOOSE KREST DENTAL FOR INVISALIGN? */}
-      <section className="bg-white py-14 lg:py-20">
-        <div className="krest-site grid grid-cols-1 gap-10 lg:grid-cols-[1fr_1.15fr] lg:gap-14">
-          <div>
-            <h2 className="font-display text-[44px] leading-[1.1] text-copper sm:text-5xl">
-              Why Choose Krest Dental for Invisalign?
-            </h2>
-            <p className="mt-5 text-[18px] leading-8 text-taupe">
-              Experience world-class Invisalign care at Krest Dental, led by
-              UCSF-trained Dr. Suneeta Veeramachaneni. Our blend of advanced
-              technology, personalized treatment, and unmatched expertise makes
-              us the preferred choice in Visakhapatnam.
-            </p>
-            <BookButton className="mt-7" />
-          </div>
-
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-            {whyKrest.map((card) => (
-              <article
-                key={card.title}
-                className="rounded-2xl border border-copper/15 bg-[#F3E9E4] p-6"
-              >
-                <h3 className="font-display text-[28px] leading-[1.2] text-copper">
-                  {card.title}
-                </h3>
-                <p className="mt-3 text-[16px] leading-7 text-taupe">{card.body}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* YOUR INVISALIGN JOURNEY */}
-      <section className="krest-site pt-14 pb-14 lg:pt-20 lg:pb-20">
-        <div className="text-center">
-          <h2 className="font-display text-[44px] leading-[1.1] text-copper sm:text-5xl">
-            Your Invisalign Journey
-          </h2>
-          <p className="mx-auto mt-4 max-w-[720px] text-[18px] leading-8 text-taupe">
-            A Seamless, Personalized Path to Your Perfect Smile
-          </p>
-        </div>
-
-        <ol className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
-          {journey.map((item) => (
-            <li
-              key={item.step}
-              className="flex flex-col items-start gap-4 rounded-[20px] border border-copper/20 bg-[#F3E9E4] p-6"
-            >
-              <span className="font-accent text-[44px] leading-none text-copper">
-                {item.step}
-              </span>
-              <h3 className="font-display text-[20px] leading-[1.25] text-ink">
-                {item.title}
-              </h3>
-            </li>
-          ))}
-        </ol>
-      </section>
-
-      {/* CTA */}
-      <section className="krest-site pt-6 pb-20 lg:pt-10">
-        <div className="rounded-[28px] border border-copper/35 bg-white/60 p-8 text-center lg:p-10">
-          <h2 className="font-display text-4xl text-ink">
-            Ready for a confident, beautifully aligned smile?
-          </h2>
-          <p className="mx-auto mt-4 max-w-[840px] text-lg leading-8 text-taupe">
-            Book your Invisalign consultation with Dr. Suneeta and get a
-            personalized clear-aligner plan tailored to your smile goals.
-          </p>
-          <div className="mt-7 flex flex-wrap justify-center gap-4">
-            <a
-              href="/contact"
-              className="inline-flex h-11 items-center rounded-full bg-copper px-6 font-display text-white"
-            >
-              Book Appointment
-            </a>
-            <a
-              href="tel:9573884525"
-              className="inline-flex h-11 items-center rounded-full border border-copper px-6 font-display text-copper"
-            >
-              Call / WhatsApp
-            </a>
-          </div>
+          </ol>
         </div>
       </section>
     </main>

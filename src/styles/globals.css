@@ -161,6 +161,37 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+/* Wix-style "Float" entrance (1.5s, 0.2s delay) — pair with the IntersectionObserver in Layout.astro */
+[data-float-in] {
+  opacity: 0;
+  transition:
+    opacity 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s,
+    transform 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s;
+  will-change: opacity, transform;
+}
+
+[data-float-in=""],
+[data-float-in="left"] {
+  transform: translateX(-120px);
+}
+
+[data-float-in="up"] {
+  transform: translateY(80px);
+}
+
+[data-float-in].is-floated {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-float-in] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 @layer components {
   .krest-site {
     box-sizing: border-box;

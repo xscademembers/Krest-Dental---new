@@ -25,6 +25,7 @@ export const NAV_ITEMS: NavItem[] = [
       { label: "Invisalign", href: "/invisalign" },
       { label: "Invisilign - old", href: "/invisilign-old" },
       { label: "Implants", href: "/implants" },
+      { label: "Implants - old", href: "/implants-old" },
     ],
   },
   { label: "Blogs", href: "/blogs" },
@@ -157,24 +158,32 @@ export const TESTIMONIALS: Testimonial[] = [
 ];
 
 export const GALLERY: GalleryImage[] = [
-  { src: "/images/gallery/clinic-01.jpg", alt: "Krest Dental clinic interior" },
-  { src: "/images/gallery/clinic-02.jpg", alt: "Krest Dental treatment room" },
-  { src: "/images/gallery/clinic-03.jpg", alt: "Krest Dental waiting area" },
-  { src: "/images/gallery/clinic-04.jpg", alt: "Krest Dental hallway" },
-  { src: "/images/gallery/clinic-05.jpg", alt: "Krest Dental consultation area" },
-  { src: "/images/gallery/clinic-06.jpg", alt: "Krest Dental detail shot" },
-  { src: "/images/gallery/clinic-07.jpg", alt: "Krest Dental interior view" },
+  { src: "/images/gallery/clinic-01.jpg", alt: "Krest Dental clinic interior", width: 1940, height: 1294 },
+  { src: "/images/gallery/clinic-02.jpg", alt: "Krest Dental hallway", width: 836, height: 1294 },
+  { src: "/images/gallery/clinic-03.jpg", alt: "Krest Dental treatment room", width: 1940, height: 1294 },
+  { src: "/images/gallery/clinic-04.jpg", alt: "Krest Dental consultation area", width: 1940, height: 1294 },
+  { src: "/images/gallery/clinic-05.jpg", alt: "Krest Dental operatory", width: 1940, height: 1294 },
+  { src: "/images/gallery/clinic-06.jpg", alt: "Krest Dental reception detail", width: 862, height: 1294 },
+  { src: "/images/gallery/clinic-07.jpg", alt: "Krest Dental interior view", width: 1940, height: 1294 },
 ];
 
+/** 15 images — same order as krest.dental Instagram pro-gallery */
 export const INSTAGRAM_POSTS: GalleryImage[] = [
-  { src: "/images/instagram/post-01.jpg", alt: "Krest Dental Instagram post" },
-  { src: "/images/instagram/post-02.jpg", alt: "Krest Dental Instagram post" },
-  { src: "/images/instagram/post-03.jpg", alt: "Krest Dental Instagram post" },
-  { src: "/images/instagram/post-04.jpg", alt: "Krest Dental Instagram post" },
-  { src: "/images/instagram/post-05.jpg", alt: "Krest Dental Instagram post" },
-  { src: "/images/instagram/post-06.jpg", alt: "Krest Dental Instagram post" },
-  { src: "/images/instagram/post-07.jpg", alt: "Krest Dental Instagram post" },
-  { src: "/images/instagram/post-08.jpg", alt: "Krest Dental Instagram post" },
+  { src: "/images/instagram/post-01.jpg", alt: "Krest Dental Instagram post 1" },
+  { src: "/images/instagram/post-02.jpg", alt: "Krest Dental Instagram post 2" },
+  { src: "/images/instagram/post-03.jpg", alt: "Krest Dental Instagram post 3" },
+  { src: "/images/instagram/post-04.jpg", alt: "Krest Dental Instagram post 4" },
+  { src: "/images/instagram/post-05.jpg", alt: "Krest Dental Instagram post 5" },
+  { src: "/images/instagram/post-06.jpg", alt: "Krest Dental Instagram post 6" },
+  { src: "/images/instagram/post-07.jpg", alt: "Krest Dental Instagram post 7" },
+  { src: "/images/instagram/post-08.jpg", alt: "Krest Dental Instagram post 8" },
+  { src: "/images/instagram/post-09.jpg", alt: "Krest Dental Instagram post 9" },
+  { src: "/images/instagram/post-10.jpg", alt: "Krest Dental Instagram post 10" },
+  { src: "/images/instagram/post-11.jpg", alt: "Krest Dental Instagram post 11" },
+  { src: "/images/instagram/post-12.jpg", alt: "Krest Dental Instagram post 12" },
+  { src: "/images/instagram/post-13.jpg", alt: "Krest Dental Instagram post 13" },
+  { src: "/images/instagram/post-14.jpg", alt: "Krest Dental Instagram post 14" },
+  { src: "/images/instagram/post-15.jpg", alt: "Krest Dental Instagram post 15" },
 ];
 
 export const BLOG_POSTS: BlogPost[] = [
@@ -302,7 +311,8 @@ export const ABOUT_HERO = {
 
 /** Dr. Suneeta dedicated page — krest.dental/drsuneeta */
 export const DR_SUNEETA_PAGE = {
-  portraitSrc: "/images/dr-suneeta/dsc08627.jpg",
+  /* Exact live crop: fill/w_713,h_676,fp_0.50_0.43 of DSC08627 (downloaded at 2x) */
+  portraitSrc: "/images/dr-suneeta/hero-portrait.jpg",
   portraitAlt:
     "Dr. Suneeta Veramachaneni — Cosmetic Dentist and Implantologist at Krest Dental",
   name: "Dr. Suneeta Veramachaneni",
@@ -346,6 +356,35 @@ export const DR_SUNEETA_PAGE = {
   ourStoryText:
     "Dr. Suneeta Veeramachaneni, a top-ranked graduate from UCSF, launched Krest Dental Care in Visakhapatnam after practicing in San Francisco for 8+ years. Krest offers advanced dental services, including implants, orthodontics, and smile makeovers, using cutting-edge technology like digital X-rays, lasers, and stringent sterilization standards for top-tier patient care.",
   statsHeading: "Success in Numbers",
+} as const;
+
+/** About page — "Excellence that sets us apart" feature cards (live krest.dental/about-us) */
+export const ABOUT_EXCELLENCE = {
+  heading: "Excellence that sets us apart",
+  intro:
+    "At Krest Dental, your well-being is at the heart of everything we do. We create fully personalized care plans tailored to each patient\u2019s unique needs and goals. From your first visit to your final result, our skilled team ensures your comfort, safety, and peace of mind delivering care that is both compassionate and precise.",
+  cards: [
+    {
+      id: "team",
+      title: "An Exceptional Team of Experts",
+      text: "Led by Dr. Suneeta Veeramachaneni, our dedicated team of exceptionally trained professionals blend expertise with artistic precision to restore and enhance smiles. We don\u2019t just replace teeth, we transform confidence and improve quality of life through every carefully crafted result.",
+    },
+    {
+      id: "technology",
+      title: "Advanced Technology & Modern Techniques",
+      text: "We believe a confident smile starts with a strong foundation. That\u2019s why we use state-of-the-art technology including 3D imaging, guided surgical tools, and cutting-edge biomaterials in every treatment. This ensures exceptional precision, comfort, and long-lasting results.",
+    },
+    {
+      id: "results",
+      title: "Proven Results You Can Trust",
+      text: "At Krest, we go beyond promises we deliver. Our success is built on consistently outstanding outcomes, glowing testimonials, and life-changing smile transformations. Backed by advanced diagnostics and meticulous planning, our results are not just beautiful but truly built to last.",
+    },
+    {
+      id: "patient",
+      title: "A Truly Patient-Centric Experience",
+      text: "From the moment you enter, you\u2019ll feel the Krest difference. Our calm, welcoming environment, plush dental chairs, and attentive team make every visit stress-free and comfortable. We believe great dentistry is not only about technical excellence but also about making each patient feel understood, cared for, and confident.",
+    },
+  ],
 } as const;
 
 export const ABOUT_VISION_MISSION = {
@@ -446,7 +485,8 @@ export const OUR_SERVICES_PAGE = {
     },
   ] satisfies OurServiceCategory[],
   cta: {
-    image: "/images/our-services/appointment-cta.jpg",
+    /* Exact live crop: fill/w_1340,h_499,al_c of DSC08466 (downloaded at 2x) */
+    image: "/images/our-services/cta-banner.jpg",
     imageAlt: "Krest Dental treatment room with dental chair and city view",
     heading: "Schedule Your Appointment Today!",
     text: "A healthy, beautiful smile starts with expert care. Contact us today to schedule your appointment and experience the Krest difference.",

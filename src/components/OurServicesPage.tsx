@@ -4,6 +4,7 @@ import {
   SiteContainer,
   SiteProse,
 } from "@/components/SiteContainer";
+import { ButtonArrowCircle } from "@/components/DrSuneetaDecorations";
 import { OUR_SERVICES_PAGE } from "@/lib/krest-content";
 
 function BookArrow(props: SVGProps<SVGSVGElement>) {
@@ -102,45 +103,52 @@ export function OurServicesPage() {
         </SiteContainer>
       </section>
 
+      {/* Live: white section, 1340x499 photo (radius 30) with a centered
+          673x345 cream card floating over it — card has Wix Float entrance */}
       <section
         aria-labelledby="our-services-cta-heading"
-        className="bg-[#F4EAE6] pb-20 lg:pb-28"
+        className="bg-white px-0 py-[60px]"
       >
-        <SiteContainer variant="cards">
-          <SiteCardBand>
-            <div className="relative min-h-[420px] overflow-hidden rounded-[40px] sm:min-h-[480px] lg:min-h-[560px]">
-              <img
-                src={cta.image}
-                alt={cta.imageAlt}
-                width={1400}
-                height={980}
-                className="absolute inset-0 h-full w-full object-cover"
-                loading="lazy"
-                decoding="async"
-              />
-              <div
-                aria-hidden="true"
-                className="absolute inset-0 bg-black/5"
-              />
-              <div className="relative flex min-h-[inherit] items-center justify-center px-6 py-12 sm:px-10 sm:py-14 lg:px-14 lg:py-16">
-                <div className="w-full max-w-[673px] rounded-[28px] bg-[#FFFFFF] px-8 py-11 text-center shadow-[0_12px_44px_rgba(0,0,0,0.14)] sm:px-10 sm:py-12 lg:rounded-[32px] lg:px-12 lg:py-14">
-                  <h2
-                    id="our-services-cta-heading"
-                    className="text-krest-display-sm text-copper"
-                  >
-                    {cta.heading}
-                  </h2>
-                  <p className="text-krest-body-md mx-auto mt-5 max-w-[540px] text-copper">
-                    {cta.text}
-                  </p>
-                  <div className="mt-8 flex justify-center">
-                    <BookAppointmentButton />
-                  </div>
-                </div>
-              </div>
+        <div className="mx-auto w-full max-w-[1425px] px-[25px] lg:px-[42px]">
+          <div className="relative flex items-center justify-center overflow-hidden rounded-[30px] px-4 py-12 sm:px-8 sm:py-16 lg:h-[499px] lg:py-0">
+            <img
+              src={cta.image}
+              alt={cta.imageAlt}
+              width={1340}
+              height={499}
+              className="absolute inset-0 h-full w-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+            {/* Live: 673x345 card, bg #F4EAE6, radius 30, centered on the photo */}
+            <div
+              data-float-in="up"
+              className="relative w-full max-w-[673px] rounded-[30px] bg-[#F4EAE6] px-6 pb-[28px] pt-[28px] text-center sm:px-[27px] lg:min-h-[345px]"
+            >
+              {/* Live: EB Garamond 47.25px copper, lh 1.1 */}
+              <h2
+                id="our-services-cta-heading"
+                className="mx-auto max-w-[619px] font-display text-[30px] font-normal leading-[1.1] text-copper sm:text-[38px] lg:text-[47.25px]"
+              >
+                {cta.heading}
+              </h2>
+              {/* Live: 20px rgb(111,99,86), lh 1.3, width 496 */}
+              <p className="mx-auto mt-[28px] max-w-[496px] font-display text-[17px] leading-[1.3] text-[#6F6356] sm:text-[18px] lg:text-[20px]">
+                {cta.text}
+              </p>
+              {/* Live: 227x50 copper pill, EB Garamond 18px white + 26px arrow circle */}
+              <a
+                href="/contact"
+                className="mt-[29px] inline-flex h-[50px] w-[227px] items-center rounded-[50px] bg-copper pl-[22px] text-left transition-colors hover:bg-copper/90"
+              >
+                <span className="font-display text-[18px] leading-[1.4] text-white">
+                  Book Appointment
+                </span>
+                <ButtonArrowCircle className="ml-[19px] h-[26px] w-[26px]" />
+              </a>
             </div>
-          </SiteCardBand>
-        </SiteContainer>
+          </div>
+        </div>
       </section>
     </>
   );

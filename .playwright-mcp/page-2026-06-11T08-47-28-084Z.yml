@@ -1,0 +1,250 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - banner [ref=e5]:
+      - generic [ref=e7]:
+        - list [ref=e8]:
+          - listitem [ref=e9]:
+            - link "Facebook" [ref=e10] [cursor=pointer]:
+              - /url: https://www.facebook.com/krestdentalcare
+              - img [ref=e11]
+          - listitem [ref=e13]:
+            - link "Instagram" [ref=e14] [cursor=pointer]:
+              - /url: https://www.instagram.com/krestdental/
+              - img [ref=e15]
+          - listitem [ref=e17]:
+            - link "YouTube" [ref=e18] [cursor=pointer]:
+              - /url: https://www.youtube.com/@KrestDentalCare
+              - img [ref=e19]
+        - generic [ref=e21]:
+          - link "+91 95738 84525" [ref=e22] [cursor=pointer]:
+            - /url: tel:9573884525
+            - img [ref=e23]
+            - generic [ref=e25]: +91 95738 84525
+          - link "krestdental@gmail.com" [ref=e27] [cursor=pointer]:
+            - /url: mailto:krestdental@gmail.com
+            - img [ref=e28]
+            - generic [ref=e30]: krestdental@gmail.com
+      - generic [ref=e32]:
+        - link "Krest Dental — Home" [ref=e33] [cursor=pointer]:
+          - /url: /
+          - img [ref=e34]
+        - navigation "Site" [ref=e52]:
+          - list [ref=e53]:
+            - listitem [ref=e54]:
+              - link "About Us" [ref=e55] [cursor=pointer]:
+                - /url: /about-us
+                - text: About Us
+                - img [ref=e56]
+            - listitem [ref=e58]:
+              - link "Our Services" [ref=e59] [cursor=pointer]:
+                - /url: /our-services
+                - text: Our Services
+                - img [ref=e60]
+            - listitem [ref=e62]:
+              - link "Blogs" [ref=e63] [cursor=pointer]:
+                - /url: /blogs
+            - listitem [ref=e64]:
+              - link "Contact" [ref=e65] [cursor=pointer]:
+                - /url: /contact
+        - link "Book Appointment" [ref=e66] [cursor=pointer]:
+          - /url: /contact
+    - main [ref=e67]:
+      - generic [ref=e69]:
+        - generic [ref=e70]:
+          - heading "The Clear Choice for a Confident Smile" [level=1] [ref=e71]
+          - paragraph [ref=e73]: Invisalign is a modern, discreet orthodontic solution that uses clear, removable aligners to gently and comfortably straighten your teeth. Invisalign offers a virtually invisible way to achieve the smile you’ve always wanted — without compromising your confidence or lifestyle.
+          - link "Book Appointment" [ref=e74] [cursor=pointer]:
+            - /url: /contact
+            - generic [ref=e75]: Book Appointment
+            - img [ref=e76]
+        - generic [ref=e79]:
+          - img "Invisalign Consultation" [ref=e81]
+          - img "Studio Portrait" [ref=e85]
+      - generic [ref=e91]:
+        - generic [ref=e92]:
+          - heading "Why Orthodontics?" [level=2] [ref=e93]
+          - paragraph [ref=e94]: Orthodontic treatment isn’t just about aesthetics — it’s about creating a healthy bite, boosting your self-confidence, and protecting your long-term oral health. Whether you’re addressing gaps, crowding, or bite issues, orthodontics ensures your smile looks great and functions perfectly.
+          - link "Book Appointment" [ref=e95] [cursor=pointer]:
+            - /url: /contact
+            - generic [ref=e96]: Book Appointment
+            - img [ref=e97]
+        - generic [ref=e100]:
+          - article [ref=e101]:
+            - heading "Braces & Invisalign" [level=3] [ref=e102]
+            - paragraph [ref=e103]: We offer both traditional metal braces and Invisalign clear aligners to effectively straighten teeth. Each treatment plan is fully customized to meet your smile goals with maximum comfort and precision.
+          - article [ref=e104]:
+            - heading "Clear Aligners" [level=3] [ref=e105]
+            - paragraph [ref=e106]: Nearly invisible and removable, clear aligners are ideal for those seeking a discreet, flexible solution to correct alignment without metal brackets or wires.
+          - article [ref=e107]:
+            - heading "Pediatric Orthodontics" [level=3] [ref=e108]
+            - paragraph [ref=e109]: Early orthodontic care helps guide proper jaw and tooth development, preventing future dental issues. We provide gentle, effective treatments tailored for children.
+          - article [ref=e110]:
+            - heading "Cosmetic Smile Alignment" [level=3] [ref=e111]
+            - paragraph [ref=e112]: For adults with mild crowding or spacing, our aesthetic alignment treatments deliver a confident, beautiful smile — often without the need for full braces.
+      - generic [ref=e114]:
+        - generic [ref=e115]:
+          - heading "Why Choose Invisalign?" [level=2] [ref=e116]
+          - paragraph [ref=e117]: "Invisalign has completely transformed orthodontic care, offering a smarter, more comfortable alternative to braces. Here’s why it’s the preferred choice for teens and adults:"
+          - link "Book Appointment" [ref=e118] [cursor=pointer]:
+            - /url: /contact
+            - generic [ref=e119]: Book Appointment
+            - img [ref=e120]
+        - generic [ref=e123]:
+          - article [ref=e124]:
+            - heading "Nearly Invisible" [level=3] [ref=e125]
+            - paragraph [ref=e126]: Clear aligners blend seamlessly with your natural teeth. Most people won’t even know you’re wearing them.
+          - article [ref=e127]:
+            - heading "Removable & Flexible" [level=3] [ref=e128]
+            - paragraph [ref=e129]: Eat, brush, and floss freely — Invisalign fits perfectly into your lifestyle.
+          - article [ref=e130]:
+            - heading "Comfortable Fit" [level=3] [ref=e131]
+            - paragraph [ref=e132]: Crafted from smooth SmartTrack® material, Invisalign aligners are custom-designed to fit snugly without irritation.
+          - article [ref=e133]:
+            - heading "Fewer Clinic Visits" [level=3] [ref=e134]
+            - paragraph [ref=e135]: Enjoy fewer adjustments and check-ups compared to traditional braces.
+          - article [ref=e136]:
+            - heading "Predictable Results" [level=3] [ref=e137]
+            - paragraph [ref=e138]: Advanced 3D imaging allows you to see your treatment plan and expected outcome from the start.
+          - article [ref=e139]:
+            - heading "Improved Oral Hygiene" [level=3] [ref=e140]
+            - paragraph [ref=e141]: Since aligners are removable, maintaining your oral health is easier, reducing plaque buildup and gum issues.
+      - generic [ref=e143]:
+        - generic [ref=e144]:
+          - heading "Why Choose Krest Dental for Invisalign?" [level=2] [ref=e145]
+          - paragraph [ref=e146]: Experience world-class Invisalign care at Krest Dental, led by UCSF-trained Dr. Suneeta Veeramachaneni. Our blend of advanced technology, personalized treatment, and unmatched expertise makes us the preferred choice in Visakhapatnam.
+          - link "Book Appointment" [ref=e147] [cursor=pointer]:
+            - /url: /contact
+            - generic [ref=e148]: Book Appointment
+            - img [ref=e149]
+        - generic [ref=e152]:
+          - article [ref=e153]:
+            - heading "World-Class Technology" [level=3] [ref=e154]
+            - paragraph [ref=e155]: Digital scanners, 3D imaging, and modern orthodontic tools ensure precise, comfortable treatment.
+          - article [ref=e156]:
+            - heading "Expert-Led Care" [level=3] [ref=e157]
+            - paragraph [ref=e158]: Over 23 years of global experience and leadership in cosmetic and orthodontic dentistry.
+          - article [ref=e159]:
+            - heading "Personalized Treatment Plans" [level=3] [ref=e160]
+            - paragraph [ref=e161]: Every Invisalign journey is custom-tailored to your smile goals and lifestyle.
+          - article [ref=e162]:
+            - heading "Trusted by Thousands" [level=3] [ref=e163]
+            - paragraph [ref=e164]: Backed by countless happy patients and consistently outstanding results.
+      - generic [ref=e166]:
+        - generic [ref=e167]:
+          - generic [ref=e168]:
+            - heading "Your Invisalign Journey" [level=2] [ref=e169]
+            - img [ref=e170]
+          - paragraph [ref=e172]: A Seamless, Personalized Path to Your Perfect Smile
+        - list [ref=e173]:
+          - listitem [ref=e174]:
+            - generic [ref=e175]:
+              - img [ref=e176]
+              - generic [ref=e178]: "01"
+            - generic [ref=e179]: Comprehensive Consultation & Smile Evaluation
+          - listitem [ref=e180]:
+            - generic [ref=e181]:
+              - img [ref=e182]
+              - generic [ref=e184]: "02"
+            - generic [ref=e185]: Digital 3D Scan & Customized Treatment Plan
+          - listitem [ref=e186]:
+            - generic [ref=e187]:
+              - img [ref=e188]
+              - generic [ref=e190]: "03"
+            - generic [ref=e191]: Custom Aligner Fabrication & Fitting
+          - listitem [ref=e192]:
+            - generic [ref=e193]:
+              - img [ref=e194]
+              - generic [ref=e196]: "04"
+            - generic [ref=e197]: Active Alignment & Progress Tracking
+          - listitem [ref=e198]:
+            - generic [ref=e199]:
+              - img [ref=e200]
+              - generic [ref=e202]: "05"
+            - generic [ref=e203]: Smile Reveal & Retention Phase
+    - contentinfo [ref=e204]:
+      - generic [ref=e205]:
+        - generic [ref=e206]:
+          - link "Krest Dental — Home" [ref=e207] [cursor=pointer]:
+            - /url: /
+            - img [ref=e208]
+          - list [ref=e228]:
+            - listitem [ref=e229]:
+              - link "Facebook" [ref=e230] [cursor=pointer]:
+                - /url: https://www.facebook.com/krestdentalcare
+                - img [ref=e231]
+            - listitem [ref=e233]:
+              - link "Instagram" [ref=e234] [cursor=pointer]:
+                - /url: https://www.instagram.com/krestdental/
+                - img [ref=e235]
+            - listitem [ref=e237]:
+              - link "YouTube" [ref=e238] [cursor=pointer]:
+                - /url: https://www.youtube.com/@KrestDentalCare
+                - img [ref=e239]
+        - generic [ref=e241]:
+          - heading "Menu" [level=3] [ref=e242]
+          - list [ref=e243]:
+            - listitem [ref=e244]:
+              - link "Home" [ref=e245] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e246]:
+              - link "About Us" [ref=e247] [cursor=pointer]:
+                - /url: /about-us
+            - listitem [ref=e248]:
+              - link "Services" [ref=e249] [cursor=pointer]:
+                - /url: /our-services
+            - listitem [ref=e250]:
+              - link "Contact Us" [ref=e251] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=e252]:
+          - heading "Contact Us" [level=3] [ref=e253]
+          - generic [ref=e254]:
+            - generic [ref=e255]:
+              - term [ref=e256]: E-mail
+              - definition [ref=e257]:
+                - link "krestdental@gmail.com" [ref=e258] [cursor=pointer]:
+                  - /url: mailto:krestdental@gmail.com
+            - generic [ref=e259]:
+              - term [ref=e260]: Phone
+              - definition [ref=e261]:
+                - link "+91 95738 84525" [ref=e262] [cursor=pointer]:
+                  - /url: tel:9573884525
+            - generic [ref=e263]:
+              - term [ref=e264]: Address
+              - definition [ref=e265]:
+                - generic [ref=e266]:
+                  - text: KREST DENTAL CARE
+                  - generic [ref=e267]: 3rd Floor, Door No 2-48-21
+                  - generic [ref=e268]: Opposite To Latte
+                  - generic [ref=e269]: Sector 11, MVP Colony
+                  - generic [ref=e270]: MVP Double Road
+                  - generic [ref=e271]: Visakhapatnam — 530017.
+        - generic [ref=e272]:
+          - heading "Opening Hours" [level=3] [ref=e273]
+          - generic [ref=e274]:
+            - generic [ref=e275]:
+              - term [ref=e276]: Monday - Saturday
+              - definition [ref=e277]: 9:00 AM - 7:30 PM
+            - generic [ref=e278]:
+              - term [ref=e279]: Sunday
+              - definition [ref=e280]: Closed
+      - generic [ref=e281]:
+        - text: © 2025 by Krest Dental. Developed by
+        - link "Xscade" [ref=e282] [cursor=pointer]:
+          - /url: https://www.xscade.com/
+        - text: .
+    - link "Call Krest Dental" [ref=e283] [cursor=pointer]:
+      - /url: tel:9573884525
+      - img [ref=e284]
+  - generic [ref=e288]:
+    - button "Menu" [ref=e289]:
+      - img [ref=e291]
+      - generic: Menu
+    - button "Inspect" [ref=e295]:
+      - img [ref=e297]
+      - generic: Inspect
+    - button "Audit" [ref=e299]:
+      - img [ref=e301]
+      - generic: Audit
+    - button "Settings" [ref=e304]:
+      - img [ref=e306]
+      - generic: Settings

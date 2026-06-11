@@ -3,12 +3,25 @@ import Layout from "@/layouts/Layout.astro";
 import { FloatingCallButton } from "@/components/FloatingCallButton";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
-import { ABOUT_HERO, ABOUT_VISION_MISSION, EMAIL, PHONE_DISPLAY, PHONE_TEL } from "@/lib/krest-content";
+import {
+  LeafBranchIcon,
+  LeafDotIcon,
+  LeafSpreadIcon,
+  LeafStemIcon,
+  LeafWaveIcon,
+} from "@/components/AboutLeafDecorations";
+import {
+  ABOUT_EXCELLENCE,
+  ABOUT_HERO,
+  ABOUT_VISION_MISSION,
+  EMAIL,
+  PHONE_DISPLAY,
+} from "@/lib/krest-content";
 
 export const prerender = true;
 
 const canonical = "https://www.krest.dental/about-us";
-const title = "About Us | Krest Dental Vizag";
+const title = "About Us | Krest Dental";
 const description =
   "Meet Dr. Suneeta Veeramachaneni and discover Krest Dental Care in Visakhapatnam — world-class cosmetic dentistry, implants, and comprehensive care since 2014.";
 const keywords = [
@@ -33,6 +46,26 @@ const jsonLd = {
   },
   foundingDate: "2014",
 };
+
+/* Leaf decorations per card — rendered inside the card, right of the dotted divider.
+   Each leaf drifts to its resting (middle) position on scroll, like the Wix "Move on Self" effect. */
+const leafByCard = {
+  team: [
+    { Icon: LeafDotIcon, class: "h-auto w-[58px]", wrap: "leaf-anim leaf-anim--slow", pos: "absolute left-6 top-8" },
+    { Icon: LeafBranchIcon, class: "h-auto w-[300px]", wrap: "leaf-anim", pos: "relative left-8 top-2" },
+  ],
+  technology: [
+    { Icon: LeafWaveIcon, class: "h-auto w-[200px]", wrap: "leaf-anim", pos: "absolute left-2 top-4" },
+    { Icon: LeafSpreadIcon, class: "h-auto w-[185px]", wrap: "leaf-anim leaf-anim--slow", pos: "absolute bottom-0 right-4" },
+  ],
+  results: [
+    { Icon: LeafStemIcon, class: "h-auto w-[230px]", wrap: "leaf-anim", pos: "relative" },
+  ],
+  patient: [
+    { Icon: LeafWaveIcon, class: "h-auto w-[200px]", wrap: "leaf-anim", pos: "absolute left-2 top-4" },
+    { Icon: LeafSpreadIcon, class: "h-auto w-[170px]", wrap: "leaf-anim leaf-anim--slow", pos: "absolute bottom-0 right-2" },
+  ],
+} as const;
 ---
 
 <Layout {title} {description} {canonical} {keywords}>
@@ -40,130 +73,172 @@ const jsonLd = {
   <main class="flex-1 bg-cream">
     <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
-    <!-- Hero: two stacked split rows — section bg #F4EAE7 -->
-    <div class="bg-[#F4EAE7]">
+    <!-- ============ Hero: portrait + Established in 2014 / clinic copy + reception ============ -->
+    <div class="bg-[#F4EAE6]">
       <section
         class="about-hero krest-site pb-14 pt-12 lg:pb-20 lg:pt-16"
         aria-label="About Krest Dental Care"
       >
-      <div
-        id="dr-suneeta"
-        class="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14 xl:gap-16"
-      >
-        <div class="order-1">
-          <!-- Portrait frame: 4/5 + top-weighted cover = chest-up crop like reference -->
-          <div
-            class="relative aspect-[4/5] w-full max-w-[520px] overflow-hidden rounded-[12px] shadow-[0_20px_50px_-28px_rgba(0,0,0,0.35)] sm:mx-auto sm:max-w-[480px] lg:mx-0 lg:max-w-none lg:rounded-[14px]"
-          >
-            <img
-              src={ABOUT_HERO.portraitSrc}
-              alt={ABOUT_HERO.portraitAlt}
-              width={574}
-              height={697}
-              class="absolute inset-0 h-full w-full object-cover object-[50%_12%]"
-              loading="eager"
-              decoding="async"
-              fetchpriority="high"
-            />
+        <div
+          id="dr-suneeta"
+          class="grid grid-cols-1 items-start gap-10 lg:grid-cols-[539fr_677fr] lg:gap-x-[100px]"
+        >
+          <div class="order-1">
+            <!-- Live: 539×654 portrait -->
+            <div
+              class="relative aspect-[539/654] w-full max-w-[539px] overflow-hidden sm:mx-auto lg:mx-0"
+            >
+              <img
+                src={ABOUT_HERO.portraitSrc}
+                alt={ABOUT_HERO.portraitAlt}
+                width={539}
+                height={654}
+                class="absolute inset-0 h-full w-full object-cover"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
+              />
+            </div>
+          </div>
+          <div class="order-2 text-left">
+            <!-- Live: 47.25px EB Garamond copper -->
+            <h1 class="text-krest-display-sm">
+              {ABOUT_HERO.establishedHeading}
+            </h1>
+            <div class="mt-8 space-y-6">
+              {ABOUT_HERO.bioParagraphs.map((text) => (
+                <p class="font-display text-[18px] font-normal leading-[1.4] text-ink sm:text-[20px] lg:text-[22px]">{text}</p>
+              ))}
+            </div>
           </div>
         </div>
-        <div class="order-2 text-left">
-          <h1
-            class="font-display text-[36px] font-normal leading-[1.12] tracking-[-0.02em] text-copper sm:text-[42px] lg:text-[46px]"
-          >
-            {ABOUT_HERO.establishedHeading}
-          </h1>
-          <div class="mt-8 space-y-6">
-            {ABOUT_HERO.bioParagraphs.map((text) => (
-              <p class="font-display text-[16px] font-normal leading-[1.7] text-ink sm:text-[17px]">{text}</p>
-            ))}
-          </div>
-        </div>
-      </div>
 
-      <div class="mt-16 grid grid-cols-1 items-center gap-10 lg:mt-20 lg:grid-cols-2 lg:gap-14 xl:gap-16">
-        <div class="text-left">
-          <div class="space-y-6">
-            {ABOUT_HERO.clinicParagraphs.map((text) => (
-              <p class="font-display text-[16px] font-normal leading-[1.7] text-ink sm:text-[17px]">{text}</p>
-            ))}
+        <div
+          class="mt-16 grid grid-cols-1 items-start gap-10 lg:mt-20 lg:grid-cols-[677fr_552fr] lg:gap-x-[100px]"
+        >
+          <div class="text-left">
+            <div class="space-y-6">
+              {ABOUT_HERO.clinicParagraphs.map((text) => (
+                <p class="font-display text-[18px] font-normal leading-[1.4] text-ink sm:text-[20px] lg:text-[22px]">{text}</p>
+              ))}
+            </div>
+          </div>
+          <div>
+            <!-- Live: 552×387 reception photo -->
+            <div class="overflow-hidden">
+              <img
+                src={ABOUT_HERO.receptionSrc}
+                alt={ABOUT_HERO.receptionAlt}
+                width={552}
+                height={387}
+                class="aspect-[552/387] w-full object-cover object-center"
+                loading="lazy"
+                decoding="async"
+                referrerpolicy="no-referrer"
+              />
+            </div>
           </div>
         </div>
-        <div>
-          <div
-            class="overflow-hidden rounded-[12px] shadow-[0_20px_50px_-28px_rgba(0,0,0,0.35)] lg:rounded-[14px]"
-          >
-            <img
-              src={ABOUT_HERO.receptionSrc}
-              alt={ABOUT_HERO.receptionAlt}
-              width={589}
-              height={412}
-              class="aspect-[589/412] w-full object-cover object-center"
-              loading="lazy"
-              decoding="async"
-              referrerpolicy="no-referrer"
-            />
-          </div>
-        </div>
-      </div>
       </section>
     </div>
 
+    <!-- ============ Excellence that sets us apart — 4 feature cards (white bg) ============ -->
     <section
-      class="bg-[#F4EAE7] py-14 lg:py-20"
+      class="bg-white pb-20 pt-16 lg:pb-28 lg:pt-24"
+      aria-labelledby="about-excellence-heading"
+    >
+      <div class="krest-site">
+        <div class="mx-auto max-w-[860px] text-center">
+          <!-- Live: 72.2px copper -->
+          <h2 id="about-excellence-heading" class="text-krest-display-xl">
+            {ABOUT_EXCELLENCE.heading}
+          </h2>
+          <!-- Live: 24.5px black, lh 1.4 -->
+          <p class="mt-6 font-display text-[18px] leading-[1.4] text-ink sm:text-[21px] lg:text-[24.5px]">
+            {ABOUT_EXCELLENCE.intro}
+          </p>
+        </div>
+
+        <!-- Live card: 1126×451, bg #F4EAE6, radius 37px, heading 45px #26221D, body 20px, leaf top-right -->
+        <div class="mt-16 flex flex-col gap-16 lg:mt-24 lg:gap-28">
+          {ABOUT_EXCELLENCE.cards.map((card) => {
+            const leaves = leafByCard[card.id];
+            return (
+              <article class="relative mx-auto w-full max-w-[1126px]">
+                <div class="relative overflow-clip rounded-[37px] bg-[#F4EAE6] px-8 py-12 sm:px-12 sm:py-14 lg:min-h-[451px] lg:px-[57px] lg:py-[100px]">
+                  <div class="grid grid-cols-1 items-center gap-10 lg:grid-cols-[minmax(0,550px)_1px_minmax(0,1fr)] lg:gap-x-12 xl:gap-x-14">
+                    <div class="max-w-[640px]">
+                      <h3 class="font-display text-[30px] font-normal leading-[1.1] tracking-[-0.02em] text-[#26221D] sm:text-[38px] lg:text-[45px]">
+                        {card.title}
+                      </h3>
+                      <p class="mt-4 max-w-[550px] font-display text-[17px] leading-[1.3] text-[#26221D] sm:text-[18px] lg:text-[20px]">
+                        {card.text}
+                      </p>
+                      <a
+                        href="/contact"
+                        class="mt-7 inline-flex h-[47px] items-center justify-center rounded-[300px] bg-copper px-8 font-display text-[16px] tracking-wide text-white transition-colors hover:bg-copper/90"
+                      >
+                        Book an Appointment
+                      </a>
+                    </div>
+
+                    <div
+                      aria-hidden="true"
+                      class="hidden w-px self-stretch border-l-2 border-dotted border-copper/50 lg:block"
+                    />
+
+                    <div class="pointer-events-none relative hidden min-h-[280px] items-center justify-center lg:flex">
+                      {leaves.map((leaf) => {
+                        const Leaf = leaf.Icon;
+                        return (
+                          <div class={`${leaf.pos} ${leaf.wrap}`}>
+                            <Leaf className={leaf.class} />
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Our Vision / Our Mission (cream bg, white cards) ============ -->
+    <section
+      class="bg-[#F4EAE6] py-16 lg:py-[118px]"
       aria-labelledby="about-vision-mission-heading"
     >
       <div class="krest-site">
         <h2 id="about-vision-mission-heading" class="sr-only">
           Our vision and mission
         </h2>
-        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8 lg:gap-10">
+        <!-- Live: two 574×433 white cards, radius 56px, ~140px gutter between -->
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-[140px]">
           <article
-            class="flex h-full min-h-[280px] flex-col items-center justify-center rounded-[48px] bg-white px-8 py-12 text-center shadow-[0_12px_42px_-22px_rgba(0,0,0,0.14)] sm:min-h-0 sm:px-10 sm:py-14 lg:rounded-[50px] lg:px-12 lg:py-16"
+            class="flex h-full min-h-[280px] flex-col items-center justify-center rounded-[40px] bg-white px-8 py-12 text-center sm:px-10 lg:min-h-[433px] lg:rounded-[56px] lg:px-12"
           >
-            <h3
-              class="font-display text-[28px] font-normal leading-tight text-[#a37e6d] sm:text-[32px] lg:text-[34px]"
-            >
+            <!-- Live: 50.1px copper -->
+            <h3 class="text-krest-display-md">
               {ABOUT_VISION_MISSION.vision.title}
             </h3>
-            <p class="text-krest-body mt-6 max-w-[52ch]">
+            <!-- Live: 24px black, lh 1.3, width 473px -->
+            <p class="mt-6 max-w-[473px] font-display text-[18px] leading-[1.3] text-ink sm:text-[20px] lg:text-[24px]">
               {ABOUT_VISION_MISSION.vision.text}
             </p>
           </article>
           <article
-            class="flex h-full min-h-[280px] flex-col items-center justify-center rounded-[48px] bg-white px-8 py-12 text-center shadow-[0_12px_42px_-22px_rgba(0,0,0,0.14)] sm:min-h-0 sm:px-10 sm:py-14 lg:rounded-[50px] lg:px-12 lg:py-16"
+            class="flex h-full min-h-[280px] flex-col items-center justify-center rounded-[40px] bg-white px-8 py-12 text-center sm:px-10 lg:min-h-[433px] lg:rounded-[56px] lg:px-12"
           >
-            <h3
-              class="font-display text-[28px] font-normal leading-tight text-[#a37e6d] sm:text-[32px] lg:text-[34px]"
-            >
+            <h3 class="text-krest-display-md">
               {ABOUT_VISION_MISSION.mission.title}
             </h3>
-            <p class="text-krest-body mt-6 max-w-[52ch]">
+            <p class="mt-6 max-w-[473px] font-display text-[18px] leading-[1.3] text-ink sm:text-[20px] lg:text-[24px]">
               {ABOUT_VISION_MISSION.mission.text}
             </p>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="border-t border-copper/15 bg-white py-12 lg:py-16">
-      <div class="krest-site text-center">
-        <p class="font-display text-[18px] text-taupe sm:text-[20px]">
-          Questions or ready to book?
-        </p>
-        <div class="mt-5 flex flex-wrap items-center justify-center gap-4">
-          <a
-            href={PHONE_TEL}
-            class="inline-flex h-11 items-center rounded-full border border-copper bg-copper px-6 font-display text-[15px] text-white transition hover:bg-copper/90"
-          >
-            Call {PHONE_DISPLAY}
-          </a>
-          <a
-            href="/contact"
-            class="inline-flex h-11 items-center rounded-full border border-copper/40 bg-transparent px-6 font-display text-[15px] text-copper transition hover:bg-cream"
-          >
-            Contact us
-          </a>
         </div>
       </div>
     </section>
@@ -171,3 +246,46 @@ const jsonLd = {
   <SiteFooter />
   <FloatingCallButton />
 </Layout>
+
+<style>
+  /* Wix-style "Move on Self" scroll effect: each leaf rises from below to its
+     resting middle position as the card scrolls into view. Pure CSS scroll-driven
+     animation — browsers without support simply show the leaves in place. */
+  @supports (animation-timeline: view()) {
+    .leaf-anim {
+      animation: leaf-drift linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 55%;
+    }
+
+    .leaf-anim--slow {
+      animation-name: leaf-drift-slow;
+      animation-range: entry 0% cover 70%;
+    }
+  }
+
+  @keyframes leaf-drift {
+    from {
+      transform: translateY(120px);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes leaf-drift-slow {
+    from {
+      transform: translateY(180px);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .leaf-anim,
+    .leaf-anim--slow {
+      animation: none;
+    }
+  }
+</style>

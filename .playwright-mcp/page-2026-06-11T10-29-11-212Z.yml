@@ -1,0 +1,223 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - banner [ref=e5]:
+      - generic [ref=e7]:
+        - list [ref=e8]:
+          - listitem [ref=e9]:
+            - link "Facebook" [ref=e10] [cursor=pointer]:
+              - /url: https://www.facebook.com/krestdentalcare
+              - img [ref=e11]
+          - listitem [ref=e13]:
+            - link "Instagram" [ref=e14] [cursor=pointer]:
+              - /url: https://www.instagram.com/krestdental/
+              - img [ref=e15]
+          - listitem [ref=e17]:
+            - link "YouTube" [ref=e18] [cursor=pointer]:
+              - /url: https://www.youtube.com/@KrestDentalCare
+              - img [ref=e19]
+        - generic [ref=e21]:
+          - link "+91 95738 84525" [ref=e22] [cursor=pointer]:
+            - /url: tel:9573884525
+            - img [ref=e23]
+            - generic [ref=e25]: +91 95738 84525
+          - link "krestdental@gmail.com" [ref=e27] [cursor=pointer]:
+            - /url: mailto:krestdental@gmail.com
+            - img [ref=e28]
+            - generic [ref=e30]: krestdental@gmail.com
+      - generic [ref=e32]:
+        - link "Krest Dental — Home" [ref=e33] [cursor=pointer]:
+          - /url: /
+          - img [ref=e34]
+        - navigation "Site" [ref=e52]:
+          - list [ref=e53]:
+            - listitem [ref=e54]:
+              - link "About Us" [ref=e55] [cursor=pointer]:
+                - /url: /about-us
+                - text: About Us
+                - img [ref=e56]
+            - listitem [ref=e58]:
+              - link "Our Services" [ref=e59] [cursor=pointer]:
+                - /url: /our-services
+                - text: Our Services
+                - img [ref=e60]
+            - listitem [ref=e62]:
+              - link "Blogs" [ref=e63] [cursor=pointer]:
+                - /url: /blogs
+            - listitem [ref=e64]:
+              - link "Contact" [ref=e65] [cursor=pointer]:
+                - /url: /contact
+        - link "Book Appointment" [ref=e66] [cursor=pointer]:
+          - /url: /contact
+    - main [ref=e67]:
+      - generic [ref=e69]:
+        - generic [ref=e70]:
+          - heading "Restore Your Smile, Renew Your Confidence" [level=1] [ref=e71]
+          - paragraph [ref=e73]: Dental implants are the most reliable, natural-looking solution to replace missing teeth — restoring not just your smile, but your confidence and quality of life. At Krest Dental, we use advanced techniques and cutting-edge digital technology to deliver implants that look, feel, and function just like natural teeth. Implants help preserve bone, maintain your facial structure, improve chewing efficiency, and give you a lifelong reason to smile with pride.
+          - link "Book Appointment" [ref=e74] [cursor=pointer]:
+            - /url: /contact
+            - generic [ref=e75]: Book Appointment
+            - img [ref=e76]
+        - generic [ref=e79]:
+          - img "implants.png" [ref=e81]
+          - img "Studio Portrait" [ref=e85]
+      - generic [ref=e91]:
+        - generic [ref=e92]:
+          - heading "Tailored Implant Solutions for Every Need" [level=2] [ref=e93]
+          - paragraph [ref=e94]: Dental implants do more than fill gaps — they protect your long-term oral health and overall well-being.
+          - link "Book Appointment" [ref=e95] [cursor=pointer]:
+            - /url: /contact
+            - generic [ref=e96]: Book Appointment
+            - img [ref=e97]
+        - generic [ref=e100]:
+          - article [ref=e101]:
+            - heading "Single Tooth Replacement" [level=3] [ref=e102]
+            - paragraph [ref=e103]: Replace one missing tooth with a single implant and a custom-made crown designed to match your natural teeth perfectly.
+          - article [ref=e104]:
+            - heading "Multi Teeth Replacement" [level=3] [ref=e105]
+            - paragraph [ref=e106]: Bridge larger gaps using two or more implants to support a fixed bridge — stronger, more stable, and longer-lasting than traditional options.
+          - article [ref=e107]:
+            - heading "Full Arch Restoration" [level=3] [ref=e108]
+            - paragraph [ref=e109]: Restore an entire upper or lower arch with implant-supported dentures, eliminating slipping or adhesives and bringing back full confidence.
+          - article [ref=e110]:
+            - heading "Bone Grafting & Sinus Lifts" [level=3] [ref=e111]
+            - paragraph [ref=e112]: Advanced bone augmentation techniques allow us to rebuild insufficient bone volume, creating a strong foundation for implant success even in complex cases.
+      - generic [ref=e114]:
+        - generic [ref=e115]:
+          - heading "Why Krest Dental for Implants?" [level=2] [ref=e116]
+          - paragraph [ref=e117]: Experience exceptional implant dentistry at Krest Dental, led by UCSF-trained Dr. Suneeta Veeramachaneni. Combining advanced technology, personalized care, and over two decades of global expertise, we deliver results that are functional, natural-looking, and designed to last.
+          - link "Book Appointment" [ref=e118] [cursor=pointer]:
+            - /url: /contact
+            - generic [ref=e119]: Book Appointment
+            - img [ref=e120]
+        - generic [ref=e123]:
+          - article [ref=e124]:
+            - heading "World-Class Technology" [level=3] [ref=e125]
+            - paragraph [ref=e126]: 3D CBCT imaging, digital scanners, and guided surgical tools ensure precise, safe, and predictable implant placement.
+          - article [ref=e127]:
+            - heading "Expert-Led Care" [level=3] [ref=e128]
+            - paragraph [ref=e129]: Dr. Suneeta brings over 23 years of international experience and a meticulous approach to every implant case.
+          - article [ref=e130]:
+            - heading "Customized Treatment Plans" [level=3] [ref=e131]
+            - paragraph [ref=e132]: Each implant solution is tailored to your bone health, facial structure, and aesthetic goals.
+          - article [ref=e133]:
+            - heading "Proven Results" [level=3] [ref=e134]
+            - paragraph [ref=e135]: Trusted by thousands of patients, supported by glowing testimonials, and celebrated for consistently excellent outcomes.
+      - generic [ref=e137]:
+        - generic [ref=e138]:
+          - generic [ref=e139]:
+            - heading "Your Implants Journey" [level=2] [ref=e140]
+            - img [ref=e141]
+          - paragraph [ref=e143]: A Seamless, Confident Path to a Complete Smile
+        - list [ref=e144]:
+          - listitem [ref=e145]:
+            - generic [ref=e146]:
+              - img [ref=e147]
+              - generic [ref=e149]: "01"
+            - generic [ref=e150]: Consultation & Comprehensive Assessment
+          - listitem [ref=e151]:
+            - generic [ref=e152]:
+              - img [ref=e153]
+              - generic [ref=e155]: "02"
+            - generic [ref=e156]: Digital Scan & Detailed Implant Planning
+          - listitem [ref=e157]:
+            - generic [ref=e158]:
+              - img [ref=e159]
+              - generic [ref=e161]: "03"
+            - generic [ref=e162]: Implant Placement Surgery.
+          - listitem [ref=e163]:
+            - generic [ref=e164]:
+              - img [ref=e165]
+              - generic [ref=e167]: "04"
+            - generic [ref=e168]: Healing & Osseointegration
+          - listitem [ref=e169]:
+            - generic [ref=e170]:
+              - img [ref=e171]
+              - generic [ref=e173]: "05"
+            - generic [ref=e174]: Custom Crown Placement & Smile Reveal
+    - contentinfo [ref=e176]:
+      - generic [ref=e177]:
+        - generic [ref=e178]:
+          - link "Krest Dental — Home" [ref=e179] [cursor=pointer]:
+            - /url: /
+            - img [ref=e180]
+          - list [ref=e200]:
+            - listitem [ref=e201]:
+              - link "Facebook" [ref=e202] [cursor=pointer]:
+                - /url: https://www.facebook.com/krestdentalcare
+                - img [ref=e203]
+            - listitem [ref=e205]:
+              - link "Instagram" [ref=e206] [cursor=pointer]:
+                - /url: https://www.instagram.com/krestdental/
+                - img [ref=e207]
+            - listitem [ref=e209]:
+              - link "YouTube" [ref=e210] [cursor=pointer]:
+                - /url: https://www.youtube.com/@KrestDentalCare
+                - img [ref=e211]
+        - generic [ref=e213]:
+          - heading "Menu" [level=3] [ref=e214]
+          - list [ref=e215]:
+            - listitem [ref=e216]:
+              - link "Home" [ref=e217] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e218]:
+              - link "About Us" [ref=e219] [cursor=pointer]:
+                - /url: /about-us
+            - listitem [ref=e220]:
+              - link "Services" [ref=e221] [cursor=pointer]:
+                - /url: /our-services
+            - listitem [ref=e222]:
+              - link "Contact Us" [ref=e223] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=e224]:
+          - heading "Contact Us" [level=3] [ref=e225]
+          - generic [ref=e226]:
+            - generic [ref=e227]:
+              - term [ref=e228]: E-mail
+              - definition [ref=e229]:
+                - link "krestdental@gmail.com" [ref=e230] [cursor=pointer]:
+                  - /url: mailto:krestdental@gmail.com
+            - generic [ref=e231]:
+              - term [ref=e232]: Phone
+              - definition [ref=e233]:
+                - link "+91 95738 84525" [ref=e234] [cursor=pointer]:
+                  - /url: tel:9573884525
+            - generic [ref=e235]:
+              - term [ref=e236]: Address
+              - definition [ref=e237]:
+                - generic [ref=e238]:
+                  - text: KREST DENTAL CARE
+                  - generic [ref=e239]: 3rd Floor, Door No 2-48-21
+                  - generic [ref=e240]: Opposite To Latte
+                  - generic [ref=e241]: Sector 11, MVP Colony
+                  - generic [ref=e242]: MVP Double Road
+                  - generic [ref=e243]: Visakhapatnam — 530017.
+        - generic [ref=e244]:
+          - heading "Opening Hours" [level=3] [ref=e245]
+          - generic [ref=e246]:
+            - generic [ref=e247]:
+              - term [ref=e248]: Monday - Saturday
+              - definition [ref=e249]: 9:00 AM - 7:30 PM
+            - generic [ref=e250]:
+              - term [ref=e251]: Sunday
+              - definition [ref=e252]: Closed
+      - generic [ref=e253]:
+        - text: © 2025 by Krest Dental. Developed by
+        - link "Xscade" [ref=e254] [cursor=pointer]:
+          - /url: https://www.xscade.com/
+        - text: .
+    - link "Call Krest Dental" [ref=e255] [cursor=pointer]:
+      - /url: tel:9573884525
+      - img [ref=e256]
+  - generic [ref=e260]:
+    - button "Menu" [ref=e261]:
+      - img [ref=e263]
+      - generic: Menu
+    - button "Inspect" [ref=e267]:
+      - img [ref=e269]
+      - generic: Inspect
+    - button "Audit" [ref=e271]:
+      - img [ref=e273]
+      - generic: Audit
+    - button "Settings" [ref=e276]:
+      - img [ref=e278]
+      - generic: Settings

@@ -32,6 +32,10 @@ export type NavItem = {
 export type GalleryImage = {
   src: string;
   alt: string;
+  /** Native pixel width — used by Comfort pro-gallery for aspect-ratio slides. */
+  width?: number;
+  /** Native pixel height — used by Comfort pro-gallery for aspect-ratio slides. */
+  height?: number;
 };
 
 export type BlogPost = {

@@ -43,6 +43,14 @@ const jsonLd = {
     <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
     <OurServicesPage />
   </main>
-  <SiteFooter />
+  <div class="our-services-footer">
+    <SiteFooter />
+  </div>
   <FloatingCallButton />
 </Layout>
+
+<style>
+  .our-services-footer :global(footer) {
+    background-color: #F4EAE6;
+  }
+</style>
