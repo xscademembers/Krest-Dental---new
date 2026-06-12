@@ -7,6 +7,8 @@ type StatsBannerProps = {
   variant?: "default" | "light";
   headingLines?: string[];
   stats?: Stat[];
+  sectionBg?: string;
+  cardBg?: string;
 };
 
 const LIGHT_HEADING = ["Creating Beautiful Smiles,", "One Patient at a Time."];
@@ -18,15 +20,24 @@ const LIGHT_STATS: Stat[] = [
   { value: "10+", label: "Expert Doctors" },
 ];
 
-export function StatsBanner({ variant = "default", headingLines, stats }: StatsBannerProps) {
+export function StatsBanner({
+  variant = "default",
+  headingLines,
+  stats,
+  sectionBg,
+  cardBg,
+}: StatsBannerProps) {
   const light = variant === "light";
   const lines = headingLines ?? (light ? LIGHT_HEADING : null);
   const items = stats ?? (light ? LIGHT_STATS : STATS);
 
+  const activeSectionBg = sectionBg ?? "bg-white";
+  const activeCardBg = cardBg ?? "bg-[#F4EAE6]";
+
   return (
     <section
       aria-label="Krest Dental — by the numbers"
-      className="bg-white py-16 lg:py-24"
+      className={`${activeSectionBg} py-16 lg:py-24`}
     >
       <div className="krest-site">
         {light ? (
@@ -53,11 +64,11 @@ export function StatsBanner({ variant = "default", headingLines, stats }: StatsB
           {items.map((stat) => (
             <li
               key={stat.label}
-              className={
+              className={`${
                 light
-                  ? "rounded-[20px] bg-[#F4EAE6] px-8 py-9"
-                  : "rounded-[28px] bg-[#F4EAE6] px-7 py-9 lg:px-8 lg:py-10"
-              }
+                  ? "rounded-[20px] px-8 py-9"
+                  : "rounded-[28px] px-7 py-9 lg:px-8 lg:py-10"
+              } ${activeCardBg}`}
             >
               <p className="text-krest-stat-value">
                 {stat.value}
