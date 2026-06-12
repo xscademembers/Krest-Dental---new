@@ -72,6 +72,15 @@ export function OurServicesPage() {
                           width={140}
                           height={140}
                           className="h-auto w-full max-w-[130px] object-contain lg:max-w-[140px]"
+                          style={
+                            category.id === "invisalign"
+                              ? {
+                                  filter:
+                                    "brightness(0) saturate(100%) invert(44%) sepia(26%) saturate(1039%) hue-rotate(336deg) brightness(89%) contrast(90%)",
+                                  transform: "scale(1.4)",
+                                }
+                              : undefined
+                          }
                           loading={index < 2 ? "eager" : "lazy"}
                           decoding="async"
                         />
