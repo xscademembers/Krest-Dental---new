@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useEffect } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@/components/icons";
 import { GALLERY } from "@/lib/krest-content";
 import type { GalleryImage } from "@/types/krest";
@@ -9,7 +9,8 @@ const GALLERY_OUTER_HEIGHT_PX = 571;
 const GALLERY_PADDING_BOTTOM_PX = 50;
 const GALLERY_INNER_HEIGHT_PX =
   GALLERY_OUTER_HEIGHT_PX - GALLERY_PADDING_BOTTOM_PX;
-const SLIDE_GAP_PX = 3;
+const SLIDE_GAP_PX = 8;
+const PIXELS_PER_SECOND = 50;
 
 type GallerySlide = GalleryImage & {
   displayWidth: number;
@@ -29,32 +30,104 @@ function buildSlides(trackHeight: number): GallerySlide[] {
   }));
 }
 
-function slideOffset(slides: GallerySlide[], index: number) {
-  return slides
-    .slice(0, index)
-    .reduce((sum, slide) => sum + slide.displayWidth + SLIDE_GAP_PX, 0);
-}
-
 export function ComfortGallery() {
-  const [index, setIndex] = useState(0);
-
   const desktopSlides = useMemo(
     () => buildSlides(GALLERY_INNER_HEIGHT_PX),
     [],
   );
   const mobileSlides = useMemo(() => buildSlides(280), []);
 
-  const go = (direction: -1 | 1) => {
-    setIndex((current) => {
-      const next = current + direction;
-      if (next < 0) return GALLERY.length - 1;
-      if (next >= GALLERY.length) return 0;
-      return next;
-    });
-  };
+  const desktopSetWidth = useMemo(
+    () =>
+      desktopSlides.reduce(
+        (sum, slide) => sum + slide.displayWidth + SLIDE_GAP_PX,
+        0,
+      ),
+    [desktopSlides],
+  );
 
-  const desktopOffset = slideOffset(desktopSlides, index);
-  const mobileOffset = slideOffset(mobileSlides, index);
+  const mobileSetWidth = useMemo(
+    () =>
+      mobileSlides.reduce(
+        (sum, slide) => sum + slide.displayWidth + SLIDE_GAP_PX,
+        0,
+      ),
+    [mobileSlides],
+  );
+
+  const desktopTrackRef = useRef<HTMLDivElement>(null);
+  const mobileTrackRef = useRef<HTMLDivElement>(null);
+  const isHovered = useRef(false);
+  const lastTime = useRef<number>(0);
+  const isScrollingManually = useRef(false);
+  const scrollTimeout = useRef<ReturnType<typeof setTimeout>>(null);
+
+  // Render 3 sets so we can seamlessly loop forward and backward
+  const tripledDesktop = [...desktopSlides, ...desktopSlides, ...desktopSlides];
+  const tripledMobile = [...mobileSlides, ...mobileSlides, ...mobileSlides];
+
+  useEffect(() => {
+    // Start in the middle set to allow backward scrolling
+    if (desktopTrackRef.current) {
+      desktopTrackRef.current.scrollLeft = desktopSetWidth;
+    }
+    if (mobileTrackRef.current) {
+      mobileTrackRef.current.scrollLeft = mobileSetWidth;
+    }
+
+    let rafId: number;
+
+    const tick = (time: number) => {
+      if (!lastTime.current) lastTime.current = time;
+      let dt = (time - lastTime.current) / 1000;
+      if (dt > 0.1) dt = 0.1; // Cap dt to avoid huge jumps if tab is inactive
+      lastTime.current = time;
+
+      if (!isHovered.current && !isScrollingManually.current) {
+        const delta = PIXELS_PER_SECOND * dt;
+        
+        if (desktopTrackRef.current && window.innerWidth >= 1024) {
+          desktopTrackRef.current.scrollLeft += delta;
+          if (desktopTrackRef.current.scrollLeft >= desktopSetWidth * 2) {
+            desktopTrackRef.current.scrollLeft -= desktopSetWidth;
+          } else if (desktopTrackRef.current.scrollLeft <= 0) {
+             desktopTrackRef.current.scrollLeft += desktopSetWidth;
+          }
+        }
+
+        if (mobileTrackRef.current && window.innerWidth < 1024) {
+          mobileTrackRef.current.scrollLeft += delta;
+          if (mobileTrackRef.current.scrollLeft >= mobileSetWidth * 2) {
+            mobileTrackRef.current.scrollLeft -= mobileSetWidth;
+          } else if (mobileTrackRef.current.scrollLeft <= 0) {
+             mobileTrackRef.current.scrollLeft += mobileSetWidth;
+          }
+        }
+      }
+      rafId = requestAnimationFrame(tick);
+    };
+
+    rafId = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(rafId);
+  }, [desktopSetWidth, mobileSetWidth]);
+
+  const go = (direction: -1 | 1) => {
+    isScrollingManually.current = true;
+    if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
+
+    const jump = 400; // Pixels to scroll on button click
+    if (desktopTrackRef.current && window.innerWidth >= 1024) {
+      desktopTrackRef.current.scrollBy({ left: direction * jump, behavior: 'smooth' });
+    }
+    if (mobileTrackRef.current && window.innerWidth < 1024) {
+      mobileTrackRef.current.scrollBy({ left: direction * jump, behavior: 'smooth' });
+    }
+
+    // Resume auto-scroll after smooth scroll completes (approx 500ms)
+    scrollTimeout.current = setTimeout(() => {
+      isScrollingManually.current = false;
+    }, 500);
+  };
 
   return (
     <section
@@ -72,26 +145,24 @@ export function ComfortGallery() {
         </header>
       </div>
 
-      <div className="krest-site mt-14 lg:mt-16">
-        {/*
-          Wix pro-gallery:
-          - 1265×571 outer box, 16px side / 50px bottom padding
-          - Fixed-height horizontal strip; each slide width = height × native aspect
-          - No crop — images keep original landscape/portrait proportions
-        */}
-        <div className="pro-gallery mx-auto box-border w-full max-w-[1265px] pt-0 max-lg:pb-0 lg:h-[571px] lg:px-4 lg:pb-[50px]">
-          <div className="relative w-full overflow-hidden max-lg:h-[280px] lg:h-[521px]">
+      <div className="mt-14 w-full lg:mt-16">
+        <div className="pro-gallery mx-auto box-border w-full px-4 pt-0 max-lg:pb-0 lg:h-[571px] lg:pb-[50px]">
+          <div 
+            className="relative w-full overflow-hidden max-lg:h-[280px] lg:h-[521px] group"
+            onMouseEnter={() => { isHovered.current = true; }}
+            onMouseLeave={() => { isHovered.current = false; }}
+          >
             <div
-              className="flex gap-[3px] transition-transform duration-500 ease-out will-change-transform max-lg:hidden"
+              ref={desktopTrackRef}
+              className="flex max-lg:hidden overflow-hidden scrollbar-hide"
               style={{
                 height: `${GALLERY_INNER_HEIGHT_PX}px`,
-                width: "max-content",
-                transform: `translateX(-${desktopOffset}px)`,
+                gap: `${SLIDE_GAP_PX}px`,
               }}
             >
-              {desktopSlides.map((image, slideIndex) => (
+              {tripledDesktop.map((image, slideIndex) => (
                 <div
-                  key={image.src}
+                  key={`${image.src}-${slideIndex}`}
                   className="shrink-0 bg-white"
                   style={{
                     width: `${image.displayWidth}px`,
@@ -104,9 +175,8 @@ export function ComfortGallery() {
                     width={image.width}
                     height={image.height}
                     className="block h-full w-full"
-                    loading={slideIndex < 3 ? "eager" : "lazy"}
+                    loading={slideIndex < desktopSlides.length ? "eager" : "lazy"}
                     decoding="async"
-                    fetchPriority={slideIndex === 0 ? "high" : undefined}
                     draggable={false}
                   />
                 </div>
@@ -114,16 +184,16 @@ export function ComfortGallery() {
             </div>
 
             <div
-              className="flex gap-[3px] transition-transform duration-500 ease-out will-change-transform lg:hidden"
+              ref={mobileTrackRef}
+              className="flex lg:hidden overflow-hidden scrollbar-hide"
               style={{
                 height: "280px",
-                width: "max-content",
-                transform: `translateX(-${mobileOffset}px)`,
+                gap: `${SLIDE_GAP_PX}px`,
               }}
             >
-              {mobileSlides.map((image, slideIndex) => (
+              {tripledMobile.map((image, slideIndex) => (
                 <div
-                  key={`${image.src}-mobile`}
+                  key={`${image.src}-mobile-${slideIndex}`}
                   className="shrink-0 bg-white"
                   style={{
                     width: `${image.displayWidth}px`,
@@ -136,7 +206,7 @@ export function ComfortGallery() {
                     width={image.width}
                     height={image.height}
                     className="block h-full w-full"
-                    loading={slideIndex === 0 ? "eager" : "lazy"}
+                    loading={slideIndex < mobileSlides.length ? "eager" : "lazy"}
                     decoding="async"
                     draggable={false}
                   />
@@ -148,7 +218,7 @@ export function ComfortGallery() {
               type="button"
               onClick={() => go(-1)}
               aria-label="Previous Item"
-              className="absolute left-0 top-1/2 z-10 flex h-8 w-8 -translate-y-1/2 items-center justify-center bg-white/60 text-ink opacity-90 transition-opacity hover:opacity-100"
+              className="absolute left-0 top-1/2 z-10 flex h-8 w-8 -translate-y-1/2 items-center justify-center bg-white/60 text-ink opacity-0 transition-opacity group-hover:opacity-90 hover:!opacity-100"
             >
               <ChevronLeftIcon className="h-3.5 w-3.5" />
             </button>
@@ -156,7 +226,7 @@ export function ComfortGallery() {
               type="button"
               onClick={() => go(1)}
               aria-label="Next Item"
-              className="absolute right-0 top-1/2 z-10 flex h-8 w-8 -translate-y-1/2 items-center justify-center bg-white/60 text-ink opacity-90 transition-opacity hover:opacity-100"
+              className="absolute right-0 top-1/2 z-10 flex h-8 w-8 -translate-y-1/2 items-center justify-center bg-white/60 text-ink opacity-0 transition-opacity group-hover:opacity-90 hover:!opacity-100"
             >
               <ChevronRightIcon className="h-3.5 w-3.5" />
             </button>
