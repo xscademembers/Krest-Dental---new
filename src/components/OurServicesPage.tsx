@@ -1,44 +1,10 @@
-import type { SVGProps } from "react";
 import {
   SiteCardBand,
   SiteContainer,
   SiteProse,
 } from "@/components/SiteContainer";
-import { ButtonArrowCircle } from "@/components/DrSuneetaDecorations";
+import { CopperArrowButton } from "@/components/CopperArrowButton";
 import { OUR_SERVICES_PAGE } from "@/lib/krest-content";
-
-function BookArrow(props: SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2.2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-      {...props}
-    >
-      <path d="M5 12h14" />
-      <path d="M13 5l7 7-7 7" />
-    </svg>
-  );
-}
-
-function BookAppointmentButton({ className = "" }: { className?: string }) {
-  return (
-    <a
-      href="/contact"
-      className={`inline-flex h-11 shrink-0 items-center gap-3 rounded-full bg-copper pl-5 pr-1.5 font-display text-[14px] tracking-wide text-white transition-all duration-200 hover:bg-copper/90 ${className}`}
-    >
-      <span>Book Appointment</span>
-      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-copper">
-        <BookArrow className="h-3 w-3" />
-      </span>
-    </a>
-  );
-}
 
 export function OurServicesPage() {
   const { title, intro, categories, cta } = OUR_SERVICES_PAGE;
@@ -95,7 +61,9 @@ export function OurServicesPage() {
                           {category.description}
                         </p>
                         <div className="mt-7 flex justify-center lg:justify-start">
-                          <BookAppointmentButton />
+                          <CopperArrowButton href="/contact" variant="cta">
+                            Book Appointment
+                          </CopperArrowButton>
                         </div>
                       </div>
 
@@ -147,15 +115,9 @@ export function OurServicesPage() {
                 {cta.text}
               </p>
               {/* Live: 227x50 copper pill, EB Garamond 18px white + 26px arrow circle */}
-              <a
-                href="/contact"
-                className="mt-[29px] inline-flex h-[50px] w-[227px] items-center rounded-[50px] bg-copper pl-[22px] text-left transition-colors hover:bg-copper/90"
-              >
-                <span className="font-display text-[18px] leading-[1.4] text-white">
-                  Book Appointment
-                </span>
-                <ButtonArrowCircle className="ml-[19px] h-[26px] w-[26px]" />
-              </a>
+              <CopperArrowButton href="/contact" variant="cta" className="mt-[29px]">
+                Book Appointment
+              </CopperArrowButton>
             </div>
           </div>
         </div>

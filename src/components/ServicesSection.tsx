@@ -1,4 +1,4 @@
-import { ArrowRightIcon } from "@/components/icons";
+import { CopperArrowButton } from "@/components/CopperArrowButton";
 import { SERVICES } from "@/lib/krest-content";
 import type { Service } from "@/types/krest";
 
@@ -60,15 +60,9 @@ function ServiceCard({ service }: { service: Service }) {
         <p className="mt-[15px] font-display text-[18px] font-normal leading-[1.3] text-[#333333] text-justify max-w-2xl mx-auto lg:mx-0">
           {service.description}
         </p>
-        <a
-          href={service.link}
-          className="mt-[25px] inline-flex h-[42px] items-center gap-3 rounded-full bg-copper pl-6 pr-2 font-display text-[15px] tracking-wide text-white transition-all duration-300 hover:bg-copper/90"
-        >
-          <span>Know More</span>
-          <span className="flex h-[30px] w-[30px] items-center justify-center rounded-full border border-white/30">
-            <ArrowRightIcon className="h-3 w-3 -rotate-180" />
-          </span>
-        </a>
+        <CopperArrowButton href={service.link} className="mt-[25px]">
+          Know More
+        </CopperArrowButton>
       </div>
     </article>
   );
