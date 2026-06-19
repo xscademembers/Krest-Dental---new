@@ -164,14 +164,14 @@ const leafByCard = {
           {ABOUT_EXCELLENCE.cards.map((card) => {
             const leaves = leafByCard[card.id];
             return (
-              <article class="relative mx-auto w-full max-w-[1126px]">
-                <div class="relative overflow-clip rounded-[37px] bg-[#F4EAE6] px-8 py-12 sm:px-12 sm:py-14 lg:min-h-[451px] lg:px-[57px] lg:py-[100px]">
-                  <div class="grid grid-cols-1 items-center gap-10 lg:grid-cols-[minmax(0,550px)_1px_minmax(0,1fr)] lg:gap-x-12 xl:gap-x-14">
-                    <div class="max-w-[640px]">
-                      <h3 class="font-display text-[30px] font-normal leading-[1.1] tracking-[-0.02em] text-[#26221D] sm:text-[38px] lg:text-[45px]">
+              <article class="relative mx-auto w-full max-w-[1000px]">
+                <div class="relative flex flex-col justify-center overflow-clip rounded-[37px] bg-[#F4EAE6] px-8 py-12 sm:px-12 sm:py-14 lg:h-[400px] lg:px-[57px] lg:py-0">
+                  <div class="grid grid-cols-1 items-center gap-10 lg:grid-cols-[1.3fr_1px_0.7fr] lg:gap-x-12 xl:gap-x-14">
+                    <div class="w-full max-w-[550px]">
+                      <h3 class="font-display text-[30px] font-normal leading-[1.1] text-[#26221D] sm:text-[36px] lg:text-[40px]">
                         {card.title}
                       </h3>
-                      <p class="mt-4 max-w-[550px] font-display text-[17px] leading-[1.3] text-[#26221D] sm:text-[18px] lg:text-[20px]">
+                      <p class="mt-4 w-full max-w-[550px] font-display text-[17px] leading-[1.3] text-[#26221D] sm:text-[18px] lg:text-[20px] text-justify">
                         {card.text}
                       </p>
                       <a

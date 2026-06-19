@@ -31,14 +31,14 @@ export function TestimonialsCarousel() {
             {visible.map((t) => (
               <figure
                 key={t.id}
-                className="flex min-h-[280px] flex-col items-center justify-center gap-8 rounded-[18px] border-2 border-copper/70 bg-cream/40 px-8 py-12 text-center sm:px-10 lg:min-h-[340px] lg:px-12"
+                className="flex h-[346px] w-full max-w-[494px] mx-auto flex-col items-center justify-center gap-8 rounded-[18px] border-2 border-copper/70 bg-cream/40 px-8 py-12 sm:px-10 lg:px-12"
               >
-                <blockquote>
-                  <p className="text-krest-caption">
+                <blockquote className="w-full">
+                  <p className="text-krest-caption text-justify text-[#A67B5B]">
                     {t.quote}
                   </p>
                 </blockquote>
-                <figcaption className="text-krest-caption font-semibold tracking-wide">
+                <figcaption className="text-krest-caption font-semibold tracking-wide text-center text-[#A67B5B]">
                   {t.author}
                 </figcaption>
               </figure>

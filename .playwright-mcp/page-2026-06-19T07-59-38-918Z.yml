@@ -1,0 +1,149 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - banner [ref=e5]:
+      - list [ref=e8]:
+        - listitem [ref=e9]:
+          - link "Facebook" [ref=e10] [cursor=pointer]:
+            - /url: https://www.facebook.com/krestdentalcare
+            - img [ref=e11]
+        - listitem [ref=e13]:
+          - link "Instagram" [ref=e14] [cursor=pointer]:
+            - /url: https://www.instagram.com/krestdental/
+            - img [ref=e15]
+        - listitem [ref=e17]:
+          - link "YouTube" [ref=e18] [cursor=pointer]:
+            - /url: https://www.youtube.com/@KrestDentalCare
+            - img [ref=e19]
+      - generic [ref=e22]:
+        - link "Krest Dental — Home" [ref=e23] [cursor=pointer]:
+          - /url: /
+          - img [ref=e24]
+        - button "Open menu" [ref=e42]:
+          - img [ref=e43]
+    - main [ref=e45]:
+      - generic [ref=e47]:
+        - img "Dr. Suneeta Veeramachaneni" [ref=e49]
+        - heading "Dr. Suneeta Veeramachaneni" [level=1] [ref=e50]
+        - paragraph [ref=e51]: Bachelor of Dental Surgery (BDS), Manipal University
+        - paragraph [ref=e52]: Doctor of Dental Surgery (DDS), University of California, San Francisco
+      - generic [ref=e54]:
+        - link "Instagram" [ref=e55] [cursor=pointer]:
+          - /url: https://www.instagram.com/krestdental/
+          - img [ref=e57]
+          - generic [ref=e59]: Instagram
+          - img [ref=e61]
+        - link "Facebook" [ref=e63] [cursor=pointer]:
+          - /url: https://www.facebook.com/krestdentalcare
+          - img [ref=e65]
+          - generic [ref=e67]: Facebook
+          - img [ref=e69]
+        - link "YouTube" [ref=e71] [cursor=pointer]:
+          - /url: https://www.youtube.com/@krestdental
+          - img [ref=e73]
+          - generic [ref=e75]: YouTube
+          - img [ref=e77]
+        - link "Practo Reviews" [ref=e79] [cursor=pointer]:
+          - /url: https://www.practo.com/visakhapatnam/doctor/dr-suneeta-veeramachaneni-dentist
+          - img [ref=e81]:
+            - generic [ref=e82]: •P•
+          - generic [ref=e83]: Practo Reviews
+          - img [ref=e85]
+        - link "Google Reviews" [ref=e87] [cursor=pointer]:
+          - /url: https://g.page/r/CUE6gNyLRCGdEBM/review
+          - img [ref=e89]
+          - generic [ref=e94]: Google Reviews
+          - img [ref=e96]
+        - link "Website" [ref=e98] [cursor=pointer]:
+          - /url: https://www.krest.dental/
+          - img [ref=e100]
+          - generic [ref=e103]: Website
+          - img [ref=e105]
+      - iframe [ref=e110]:
+        
+    - contentinfo [ref=e111]:
+      - generic [ref=e112]:
+        - generic [ref=e113]:
+          - link "Krest Dental — Home" [ref=e114] [cursor=pointer]:
+            - /url: /
+            - img [ref=e115]
+          - list [ref=e135]:
+            - listitem [ref=e136]:
+              - link "Facebook" [ref=e137] [cursor=pointer]:
+                - /url: https://www.facebook.com/krestdentalcare
+                - img [ref=e138]
+            - listitem [ref=e140]:
+              - link "Instagram" [ref=e141] [cursor=pointer]:
+                - /url: https://www.instagram.com/krestdental/
+                - img [ref=e142]
+            - listitem [ref=e144]:
+              - link "YouTube" [ref=e145] [cursor=pointer]:
+                - /url: https://www.youtube.com/@KrestDentalCare
+                - img [ref=e146]
+        - generic [ref=e148]:
+          - heading "Menu" [level=3] [ref=e149]
+          - list [ref=e150]:
+            - listitem [ref=e151]:
+              - link "Home" [ref=e152] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e153]:
+              - link "About Us" [ref=e154] [cursor=pointer]:
+                - /url: /about-us
+            - listitem [ref=e155]:
+              - link "Services" [ref=e156] [cursor=pointer]:
+                - /url: /our-services
+            - listitem [ref=e157]:
+              - link "Contact Us" [ref=e158] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=e159]:
+          - heading "Contact Us" [level=3] [ref=e160]
+          - generic [ref=e161]:
+            - generic [ref=e162]:
+              - term [ref=e163]: E-mail
+              - definition [ref=e164]:
+                - link "krestdental@gmail.com" [ref=e165] [cursor=pointer]:
+                  - /url: mailto:krestdental@gmail.com
+            - generic [ref=e166]:
+              - term [ref=e167]: Phone
+              - definition [ref=e168]:
+                - link "+91 95738 84525" [ref=e169] [cursor=pointer]:
+                  - /url: tel:9573884525
+            - generic [ref=e170]:
+              - term [ref=e171]: Address
+              - definition [ref=e172]:
+                - generic [ref=e173]:
+                  - text: KREST DENTAL CARE
+                  - generic [ref=e174]: 3rd Floor, Door No 2-48-21
+                  - generic [ref=e175]: Opposite To Latte
+                  - generic [ref=e176]: Sector 11, MVP Colony
+                  - generic [ref=e177]: MVP Double Road
+                  - generic [ref=e178]: Visakhapatnam — 530017.
+        - generic [ref=e179]:
+          - heading "Opening Hours" [level=3] [ref=e180]
+          - generic [ref=e181]:
+            - generic [ref=e182]:
+              - term [ref=e183]: Monday to Saturday
+              - definition [ref=e184]: 9:30 AM - 7:30 PM
+            - generic [ref=e185]:
+              - term [ref=e186]: Sunday
+              - definition [ref=e187]: Closed
+      - generic [ref=e188]:
+        - text: © 2025 by Krest Dental. Developed by
+        - link "Xscade" [ref=e189] [cursor=pointer]:
+          - /url: https://www.xscade.com/
+        - text: .
+    - link "Call Krest Dental" [ref=e190] [cursor=pointer]:
+      - /url: tel:9573884525
+      - img [ref=e191]
+  - generic [ref=e195]:
+    - button "Menu" [ref=e196]:
+      - img [ref=e198]
+      - generic: Menu
+    - button "Inspect" [ref=e202]:
+      - img [ref=e204]
+      - generic: Inspect
+    - button "Audit" [ref=e206]:
+      - img [ref=e208]
+      - generic: Audit
+    - button "Settings" [ref=e211]:
+      - img [ref=e213]
+      - generic: Settings

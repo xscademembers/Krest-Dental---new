@@ -30,7 +30,7 @@ export function HeroSection() {
                 Cosmetic Dentist &amp; Implantologist
               </p>
             </div>
-            <p className="text-krest-body-serif mt-6 max-w-[560px]">
+            <p className="text-krest-body-serif mt-6">
               {HERO.description}
             </p>
             <a

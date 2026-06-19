@@ -18,9 +18,9 @@ export function DoctorQuote() {
             decoding="async"
           />
         </div>
-        <figure className="text-center lg:text-left">
-          <blockquote className="relative font-display italic text-taupe">
-            <p className="text-[24px] leading-[1.4] sm:text-[28px] lg:text-[32px] lg:leading-[1.35]">
+        <figure className="text-left w-full max-w-[517px] mx-auto lg:mx-0">
+          <blockquote className="relative font-display italic text-[#A67B5B]">
+            <p className="text-[18px] lg:text-[22px] leading-[1.3]">
               &ldquo;{HERO.quote}&rdquo;
             </p>
           </blockquote>
@@ -28,9 +28,9 @@ export function DoctorQuote() {
             <img
               src={HERO.signature}
               alt="Dr. Suneeta signature"
-              width={211}
-              height={82}
-              className="mx-auto h-auto w-[180px] lg:mx-0"
+              width={186}
+              height={72}
+              className="h-[72px] w-[186px] object-contain opacity-100"
               loading="lazy"
               decoding="async"
             />

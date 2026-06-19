@@ -1,35 +1,37 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import { FloatingCallButton } from "@/components/FloatingCallButton";
-import { ImplantsMain } from "@/components/ImplantsMain";
+import { ImplantsOldMain } from "@/components/ImplantsOldMain";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 
 export const prerender = true;
 
 const canonical = "https://www.krest.dental/implants";
-const title = "Dental Implants in Vizag | Krest Dental";
+const title = "Dental Implants in Vizag (Original Page) | Krest Dental";
 const description =
-  "Looking for Dental Implants? Discover advanced, long-lasting tooth replacement options, implant procedure steps, safety, and consultation at Krest Dental.";
+  "Original Implants page — natural-looking dental implants at Krest Dental, Visakhapatnam. Tailored implant solutions, expert-led care, and a step-by-step implants journey.";
 const keywords = [
   "dental implants",
-  "best dental implants",
-  "cost of dental implants",
-  "tooth replacement options",
-  "permanent teeth replacement",
-  "are dental implants safe",
-  "dental implant procedure",
-  "dental implants vizag",
-  "implantologist visakhapatnam",
-  "single tooth implant",
-  "multiple teeth implants",
-  "all-on-4 implants",
+  "implants vizag",
+  "implants visakhapatnam",
+  "tooth replacement",
+  "full arch restoration",
+  "krest dental implants",
 ];
 ---
 
 <Layout {title} {description} {canonical} ogType="article" {keywords}>
   <SiteHeader client:load />
-  <ImplantsMain />
-  <SiteFooter />
+  <ImplantsOldMain />
+  <div class="implants-old-footer">
+    <SiteFooter />
+  </div>
   <FloatingCallButton />
 </Layout>
+
+<style>
+  .implants-old-footer :global(footer) {
+    background-color: #F4EAE6;
+  }
+</style>

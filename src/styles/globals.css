@@ -63,33 +63,53 @@
 
 :root {
   /* Krest tokens (from getComputedStyle of krest.dental) */
-  --krest-cream: oklch(0.94 0.013 47);     /* #F4EAE6 page bg */
-  --krest-copper: oklch(0.55 0.092 41);    /* #9F6449 accent */
-  --krest-taupe: oklch(0.51 0.022 60);     /* #6F6356 muted */
-  --krest-ink: oklch(0 0 0);               /* #000000 */
-  --krest-pink: oklch(0.83 0.06 30);       /* #F5B8AA */
+  --krest-cream: oklch(0.94 0.013 47);
+  /* #F4EAE6 page bg */
+  --krest-copper: oklch(0.55 0.092 41);
+  /* #9F6449 accent */
+  --krest-taupe: oklch(0.51 0.022 60);
+  /* #6F6356 muted */
+  --krest-ink: oklch(0 0 0);
+  /* #000000 */
+  --krest-pink: oklch(0.83 0.06 30);
+  /* #F5B8AA */
 
   /* Layout — measured at 1440px on krest.dental */
   --krest-site-max: 1425px;
   --krest-content-max: 1069px;
   --krest-card-max: 1275px;
-  --krest-gutter: 25px; /* live section padding-inline */
-  --krest-radius-card: 2.325rem; /* ~37px live; we use 40px for cards */
+  --krest-gutter: 25px;
+  /* live section padding-inline */
+  --krest-radius-card: 2.325rem;
+  /* ~37px live; we use 40px for cards */
 
   /* Type scale — getComputedStyle @ 1440px on krest.dental */
-  --krest-text-page-title: clamp(2.75rem, 5.4vw, 4.875rem); /* ~78px */
-  --krest-text-hero-name: clamp(2.25rem, 4.2vw, 3.7575rem); /* 60.12px */
-  --krest-text-display-xl: clamp(2rem, 5vw, 4.513rem); /* 72.21px */
-  --krest-text-display-lg: clamp(1.75rem, 3.9vw, 3.52025rem); /* 56.32px */
-  --krest-text-display-md: clamp(1.625rem, 3.5vw, 3.125rem); /* 50px */
-  --krest-text-display-sm: clamp(1.5rem, 3.3vw, 2.953125rem); /* 47.25px */
-  --krest-text-section: clamp(1.875rem, 3.1vw, 2.820625rem); /* 45.13px */
-  --krest-text-body-lg: clamp(1rem, 1.55vw, 1.375rem); /* 22px */
-  --krest-text-body-md: clamp(0.9375rem, 1.4vw, 1.25rem); /* 20px */
-  --krest-text-body: 1.125rem; /* 18px */
-  --krest-text-list: clamp(1rem, 1.65vw, 1.5rem); /* 24px */
-  --krest-text-accent: clamp(0.9375rem, 1.4vw, 1.25rem); /* 20px Marmelad */
-  --krest-text-ig-handle: clamp(1.125rem, 1.8vw, 1.6171875rem); /* ~26px */
+  --krest-text-page-title: clamp(2.75rem, 5.4vw, 4.875rem);
+  /* ~78px */
+  --krest-text-hero-name: clamp(2.25rem, 4.2vw, 3.7575rem);
+  /* 60.12px */
+  --krest-text-display-xl: clamp(2rem, 5vw, 4.513rem);
+  /* 72.21px */
+  --krest-text-display-lg: clamp(1.75rem, 3.9vw, 3.52025rem);
+  /* 56.32px */
+  --krest-text-display-md: clamp(1.625rem, 3.5vw, 3.125rem);
+  /* 50px */
+  --krest-text-display-sm: clamp(1.5rem, 3.3vw, 2.953125rem);
+  /* 47.25px */
+  --krest-text-section: clamp(1.875rem, 3.1vw, 2.820625rem);
+  /* 45.13px */
+  --krest-text-body-lg: clamp(1rem, 1.55vw, 1.375rem);
+  /* 22px */
+  --krest-text-body-md: clamp(0.9375rem, 1.4vw, 1.25rem);
+  /* 20px */
+  --krest-text-body: 1.125rem;
+  /* 18px */
+  --krest-text-list: clamp(1rem, 1.65vw, 1.5rem);
+  /* 24px */
+  --krest-text-accent: clamp(0.9375rem, 1.4vw, 1.25rem);
+  /* 20px Marmelad */
+  --krest-text-ig-handle: clamp(1.125rem, 1.8vw, 1.6171875rem);
+  /* ~26px */
   --krest-leading-body: 1.6;
 
   /* Map shadcn tokens onto krest palette so primitives inherit naturally */
@@ -280,6 +300,7 @@
     font-size: var(--krest-text-body);
     line-height: var(--krest-leading-body);
     color: var(--krest-ink);
+    text-align: justify;
   }
 
   .text-krest-body-lg {
@@ -287,6 +308,7 @@
     font-size: var(--krest-text-body-lg);
     line-height: 1.3;
     color: var(--krest-ink);
+    text-align: justify;
   }
 
   .text-krest-body-md {
@@ -294,13 +316,15 @@
     font-size: var(--krest-text-body-md);
     line-height: 1.3;
     color: var(--krest-taupe);
+    text-align: justify;
   }
 
   .text-krest-body-serif {
     font-family: var(--font-display);
-    font-size: var(--krest-text-body-lg);
+    font-size: var(--krest-text-body);
     line-height: 1.3;
     color: var(--krest-ink);
+    text-align: justify;
   }
 
   .text-krest-accent {
@@ -338,13 +362,19 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   html {
     font-family: var(--font-display);
     color: var(--krest-ink);
   }
+
   body {
     @apply bg-cream text-ink;
     font-family: var(--font-display);
+  }
+
+  p {
+    @apply text-justify;
   }
 }
 
@@ -353,12 +383,15 @@ html.lenis,
 html.lenis body {
   height: auto;
 }
+
 .lenis.lenis-smooth {
   scroll-behavior: auto !important;
 }
+
 .lenis.lenis-smooth [data-lenis-prevent] {
   overscroll-behavior: contain;
 }
+
 .lenis.lenis-stopped {
   overflow: clip;
 }
@@ -368,40 +401,49 @@ html.lenis body {
   background-color: var(--krest-copper);
   color: var(--primary-foreground);
 }
+
 .contact-split-panel a {
   color: var(--primary-foreground);
 }
+
 .contact-split-panel a:hover {
   opacity: 0.92;
 }
+
 .contact-field {
   background-color: var(--krest-cream);
   border: 1px solid color-mix(in oklch, var(--krest-copper) 18%, var(--border));
   border-radius: 0.5rem;
   color: var(--krest-ink);
 }
+
 .contact-field::placeholder {
   color: var(--krest-taupe);
   opacity: 0.8;
 }
+
 .contact-field:focus {
   outline: none;
   border-color: var(--krest-copper);
   box-shadow: 0 0 0 3px color-mix(in oklch, var(--krest-copper) 28%, transparent);
 }
+
 .contact-field:disabled {
   opacity: 0.65;
   cursor: not-allowed;
 }
+
 .contact-submit {
   background-color: var(--krest-copper);
   color: var(--primary-foreground);
   border-radius: 0.75rem;
   box-shadow: 0 12px 28px -10px color-mix(in oklch, var(--krest-copper) 52%, transparent);
 }
+
 .contact-submit:hover:not(:disabled) {
   filter: brightness(1.05);
 }
+
 .contact-submit:disabled {
   opacity: 0.5;
   cursor: not-allowed;

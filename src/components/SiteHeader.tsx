@@ -79,15 +79,8 @@ export function SiteHeader() {
 
           <nav aria-label="Site" className="hidden lg:block">
             <ul className="flex items-center gap-12">
-              {NAV_ITEMS.map((item, idx) => (
-                <li
-                  key={item.label}
-                  className={`group relative ${
-                    idx === NAV_ITEMS.length - 1
-                      ? "before:absolute before:-left-6 before:top-1/2 before:h-4 before:w-px before:-translate-y-1/2 before:bg-copper/30"
-                      : ""
-                  }`}
-                >
+              {NAV_ITEMS.map((item) => (
+                <li key={item.label} className="group relative">
                   <a
                     href={item.href}
                     className="inline-flex items-center gap-2 font-display text-[16px] text-ink transition-colors hover:text-copper"

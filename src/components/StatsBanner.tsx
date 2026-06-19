@@ -49,7 +49,7 @@ export function StatsBanner({
             ))}
           </h2>
         ) : (
-          <h2 className="text-krest-display-lg text-center lg:text-left">
+          <h2 className="text-[32px] sm:text-[44px] lg:text-[50px] leading-[1.2] text-copper text-center">
             Crafting world-class smiles with Precision and Artistry.
           </h2>
         )}
@@ -64,11 +64,10 @@ export function StatsBanner({
           {items.map((stat) => (
             <li
               key={stat.label}
-              className={`${
-                light
-                  ? "rounded-[20px] px-8 py-9"
-                  : "rounded-[28px] px-7 py-9 lg:px-8 lg:py-10"
-              } ${activeCardBg}`}
+              className={`${light
+                  ? "rounded-[20px]"
+                  : "rounded-[28px]"
+                } w-full max-w-[285px] h-[199px] mx-auto flex flex-col justify-center px-8 ${activeCardBg}`}
             >
               <p className="text-krest-stat-value">
                 {stat.value}

@@ -51,10 +51,10 @@ export function OurServicesPage() {
       >
         <SiteContainer className="text-center">
           <SiteProse>
-            <h1 id="our-services-heading" className="text-krest-page-title">
+            <h1 id="our-services-heading" className="font-display text-[69px] font-normal leading-[1.4] text-[#A67B5B] text-center">
               {title}
             </h1>
-            <p className="text-krest-body mt-6">{intro}</p>
+            <p className="mt-6 font-sans text-[18px] font-normal leading-[1.6] text-black text-justify">{intro}</p>
           </SiteProse>
         </SiteContainer>
 
@@ -63,8 +63,8 @@ export function OurServicesPage() {
             {categories.map((category, index) => (
               <li key={category.id}>
                 <SiteCardBand>
-                  <article className="rounded-[40px] bg-white px-8 py-10 shadow-[0_6px_28px_-10px_rgba(0,0,0,0.1)] sm:px-10 sm:py-12 lg:px-12 lg:py-14">
-                    <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[minmax(100px,140px)_minmax(0,1fr)_minmax(240px,320px)] lg:gap-x-12 xl:gap-x-16">
+                  <article className="rounded-[40px] bg-white pt-[70px] pb-[80px] pl-[40px] pr-[25px] shadow-[0_6px_28px_-10px_rgba(0,0,0,0.1)] lg:min-h-[376px]">
+                    <div className="mx-auto grid w-full max-w-[1000px] grid-cols-1 items-center lg:grid-cols-[0.5fr_1.2fr_1.1fr] gap-10 lg:gap-x-12 xl:gap-x-16">
                       <div className="flex justify-center lg:justify-start">
                         <img
                           src={category.image}
@@ -87,10 +87,10 @@ export function OurServicesPage() {
                       </div>
 
                       <div className="min-w-0 text-center lg:text-left">
-                        <h2 className="text-krest-section-title">
+                        <h2 className="font-display text-[44px] font-normal leading-[0.9] text-[#A67B5B]">
                           {category.title}
                         </h2>
-                        <p className="text-krest-body mt-4">
+                        <p className="mt-4 font-display text-[20px] font-normal leading-[1.5] text-[#6F6356] text-justify">
                           {category.description}
                         </p>
                         <div className="mt-7 flex justify-center lg:justify-start">
@@ -98,7 +98,7 @@ export function OurServicesPage() {
                         </div>
                       </div>
 
-                      <ul className="text-krest-list list-disc space-y-2.5 pl-5 marker:text-copper lg:pl-6">
+                      <ul className="font-display text-[21px] text-[#6F6356] list-disc space-y-2.5 pl-5 marker:text-copper lg:pl-6">
                         {category.items.map((item) => (
                           <li key={item}>{item}</li>
                         ))}
@@ -142,7 +142,7 @@ export function OurServicesPage() {
                 {cta.heading}
               </h2>
               {/* Live: 20px rgb(111,99,86), lh 1.3, width 496 */}
-              <p className="mx-auto mt-[28px] max-w-[496px] font-display text-[17px] leading-[1.3] text-[#6F6356] sm:text-[18px] lg:text-[20px]">
+              <p className="mx-auto mt-[28px] max-w-[496px] font-display text-[17px] leading-[1.3] text-[#6F6356] sm:text-[18px] lg:text-[20px] text-justify">
                 {cta.text}
               </p>
               {/* Live: 227x50 copper pill, EB Garamond 18px white + 26px arrow circle */}

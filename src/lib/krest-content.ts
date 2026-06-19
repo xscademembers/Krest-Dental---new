@@ -16,23 +16,23 @@ export const NAV_ITEMS: NavItem[] = [
   {
     label: "About Us",
     href: "/about-us",
-    children: [{ label: "Dr. Suneeta", href: "/drsuneeta" }],
+    children: [
+      { label: "Dr. Suneeta", href: "/drsuneeta" },
+      { label: "Links", href: "/links" },
+    ],
   },
   {
     label: "Our Services",
     href: "/our-services",
     children: [
-      { label: "Invisalign", href: "/invisalign" },
-      { label: "Invisilign - old", href: "/invisilign-old" },
+      { label: "Invisalign", href: "/invisilign" },
       { label: "Implants", href: "/implants" },
-      { label: "Implants - old", href: "/implants-old" },
     ],
   },
   { label: "Blogs", href: "/blogs" },
   {
     label: "Contact",
     href: "/contact",
-    children: [{ label: "Contact - old", href: "/contact-old" }],
   },
 ];
 
@@ -692,6 +692,6 @@ export const ADDRESS = {
 } as const;
 
 export const HOURS = [
-  { day: "Monday - Saturday", time: "9:00 AM - 7:30 PM" },
+  { day: "Monday to Saturday", time: "9:30 AM - 7:30 PM" },
   { day: "Sunday", time: "Closed" },
 ] as const;

@@ -1,0 +1,179 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - banner [ref=e5]:
+      - generic [ref=e7]:
+        - list [ref=e8]:
+          - listitem [ref=e9]:
+            - link "Facebook" [ref=e10] [cursor=pointer]:
+              - /url: https://www.facebook.com/krestdentalcare
+              - img [ref=e11]
+          - listitem [ref=e13]:
+            - link "Instagram" [ref=e14] [cursor=pointer]:
+              - /url: https://www.instagram.com/krestdental/
+              - img [ref=e15]
+          - listitem [ref=e17]:
+            - link "YouTube" [ref=e18] [cursor=pointer]:
+              - /url: https://www.youtube.com/@KrestDentalCare
+              - img [ref=e19]
+        - generic [ref=e21]:
+          - link "+91 95738 84525" [ref=e22] [cursor=pointer]:
+            - /url: tel:9573884525
+            - img [ref=e23]
+            - generic [ref=e25]: +91 95738 84525
+          - link "krestdental@gmail.com" [ref=e27] [cursor=pointer]:
+            - /url: mailto:krestdental@gmail.com
+            - img [ref=e28]
+            - generic [ref=e30]: krestdental@gmail.com
+      - generic [ref=e32]:
+        - link "Krest Dental — Home" [ref=e33] [cursor=pointer]:
+          - /url: /
+          - img [ref=e34]
+        - navigation "Site" [ref=e52]:
+          - list [ref=e53]:
+            - listitem [ref=e54]:
+              - link "About Us" [ref=e55] [cursor=pointer]:
+                - /url: /about-us
+                - text: About Us
+                - img [ref=e56]
+            - listitem [ref=e58]:
+              - link "Our Services" [ref=e59] [cursor=pointer]:
+                - /url: /our-services
+                - text: Our Services
+                - img [ref=e60]
+            - listitem [ref=e62]:
+              - link "Blogs" [ref=e63] [cursor=pointer]:
+                - /url: /blogs
+            - listitem [ref=e64]:
+              - link "Contact" [ref=e65] [cursor=pointer]:
+                - /url: /contact
+        - link "Book Appointment" [ref=e66] [cursor=pointer]:
+          - /url: /contact
+    - main [ref=e67]:
+      - generic [ref=e70]:
+        - img "Dr. Suneeta Veeramachaneni" [ref=e72]
+        - heading "Dr. Suneeta Veeramachaneni" [level=1] [ref=e73]
+        - paragraph [ref=e74]: Bachelor of Dental Surgery (BDS), Manipal University
+        - paragraph [ref=e75]: Doctor of Dental Surgery (DDS), University of California, San Francisco
+      - generic [ref=e77]:
+        - link "Instagram" [ref=e78] [cursor=pointer]:
+          - /url: https://www.instagram.com/krestdental/
+          - img [ref=e80]
+          - generic [ref=e82]: Instagram
+          - img [ref=e84]
+        - link "Facebook" [ref=e86] [cursor=pointer]:
+          - /url: https://www.facebook.com/krestdentalcare
+          - img [ref=e88]
+          - generic [ref=e90]: Facebook
+          - img [ref=e92]
+        - link "YouTube" [ref=e94] [cursor=pointer]:
+          - /url: https://www.youtube.com/@krestdental
+          - img [ref=e96]
+          - generic [ref=e98]: YouTube
+          - img [ref=e100]
+        - link "Practo Reviews" [ref=e102] [cursor=pointer]:
+          - /url: https://www.practo.com/visakhapatnam/doctor/dr-suneeta-veeramachaneni-dentist
+          - img [ref=e104]:
+            - generic [ref=e105]: •P•
+          - generic [ref=e106]: Practo Reviews
+          - img [ref=e108]
+        - link "Google Reviews" [ref=e110] [cursor=pointer]:
+          - /url: https://g.page/r/CUE6gNyLRCGdEBM/review
+          - img [ref=e112]
+          - generic [ref=e117]: Google Reviews
+          - img [ref=e119]
+        - link "Website" [ref=e121] [cursor=pointer]:
+          - /url: https://www.krest.dental/
+          - img [ref=e123]
+          - generic [ref=e126]: Website
+          - img [ref=e128]
+      - iframe [ref=e133]:
+        
+    - contentinfo [ref=e134]:
+      - generic [ref=e135]:
+        - generic [ref=e136]:
+          - link "Krest Dental — Home" [ref=e137] [cursor=pointer]:
+            - /url: /
+            - img [ref=e138]
+          - list [ref=e158]:
+            - listitem [ref=e159]:
+              - link "Facebook" [ref=e160] [cursor=pointer]:
+                - /url: https://www.facebook.com/krestdentalcare
+                - img [ref=e161]
+            - listitem [ref=e163]:
+              - link "Instagram" [ref=e164] [cursor=pointer]:
+                - /url: https://www.instagram.com/krestdental/
+                - img [ref=e165]
+            - listitem [ref=e167]:
+              - link "YouTube" [ref=e168] [cursor=pointer]:
+                - /url: https://www.youtube.com/@KrestDentalCare
+                - img [ref=e169]
+        - generic [ref=e171]:
+          - heading "Menu" [level=3] [ref=e172]
+          - list [ref=e173]:
+            - listitem [ref=e174]:
+              - link "Home" [ref=e175] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e176]:
+              - link "About Us" [ref=e177] [cursor=pointer]:
+                - /url: /about-us
+            - listitem [ref=e178]:
+              - link "Services" [ref=e179] [cursor=pointer]:
+                - /url: /our-services
+            - listitem [ref=e180]:
+              - link "Contact Us" [ref=e181] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=e182]:
+          - heading "Contact Us" [level=3] [ref=e183]
+          - generic [ref=e184]:
+            - generic [ref=e185]:
+              - term [ref=e186]: E-mail
+              - definition [ref=e187]:
+                - link "krestdental@gmail.com" [ref=e188] [cursor=pointer]:
+                  - /url: mailto:krestdental@gmail.com
+            - generic [ref=e189]:
+              - term [ref=e190]: Phone
+              - definition [ref=e191]:
+                - link "+91 95738 84525" [ref=e192] [cursor=pointer]:
+                  - /url: tel:9573884525
+            - generic [ref=e193]:
+              - term [ref=e194]: Address
+              - definition [ref=e195]:
+                - generic [ref=e196]:
+                  - text: KREST DENTAL CARE
+                  - generic [ref=e197]: 3rd Floor, Door No 2-48-21
+                  - generic [ref=e198]: Opposite To Latte
+                  - generic [ref=e199]: Sector 11, MVP Colony
+                  - generic [ref=e200]: MVP Double Road
+                  - generic [ref=e201]: Visakhapatnam — 530017.
+        - generic [ref=e202]:
+          - heading "Opening Hours" [level=3] [ref=e203]
+          - generic [ref=e204]:
+            - generic [ref=e205]:
+              - term [ref=e206]: Monday to Saturday
+              - definition [ref=e207]: 9:30 AM - 7:30 PM
+            - generic [ref=e208]:
+              - term [ref=e209]: Sunday
+              - definition [ref=e210]: Closed
+      - generic [ref=e211]:
+        - text: © 2025 by Krest Dental. Developed by
+        - link "Xscade" [ref=e212] [cursor=pointer]:
+          - /url: https://www.xscade.com/
+        - text: .
+    - link "Call Krest Dental" [ref=e213] [cursor=pointer]:
+      - /url: tel:9573884525
+      - img [ref=e214]
+  - generic [ref=e218]:
+    - button "Menu" [ref=e219]:
+      - img [ref=e221]
+      - generic: Menu
+    - button "Inspect" [ref=e225]:
+      - img [ref=e227]
+      - generic: Inspect
+    - button "Audit" [ref=e229]:
+      - generic [ref=e230]:
+        - img [ref=e231]
+        - img [ref=e234]
+      - generic: Audit
+    - button "Settings" [ref=e237]:
+      - img [ref=e239]
+      - generic: Settings

@@ -136,10 +136,10 @@ export function ComfortGallery() {
     >
       <div className="krest-site">
         <header className="text-center">
-          <p className="text-krest-display-lg">
+          <p className="text-krest-display-lg text-center">
             Redefining Comfort and Care
           </p>
-          <p className="text-krest-display-lg">
+          <p className="text-krest-display-lg text-center">
             — Only at Krest Dental
           </p>
         </header>

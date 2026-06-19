@@ -1,0 +1,97 @@
+- generic [ref=e3]:
+  - region "top of page"
+  - generic [ref=e10]:
+    - group:
+      - banner:
+        - generic [ref=e15]:
+          - group:
+            - navigation "Site" [ref=e19]:
+              - button "Menu" [ref=e21] [cursor=pointer]:
+                - img [ref=e25]
+            - link [ref=e29] [cursor=pointer]:
+              - /url: https://www.krest.dental
+              - img [ref=e31]
+      - main:
+        - generic [ref=e53]:
+          - group:
+            - generic [ref=e55]:
+              - group:
+                - img "IMG_0889.jpg" [ref=e61]
+            - img "DSC08627.jpg" [ref=e64]
+            - generic [ref=e65]:
+              - paragraph [ref=e68]: Dr. Suneeta Veeramachaneni
+              - paragraph [ref=e70]: Bachelor of Dental Surgery (BDS), Manipal University
+              - paragraph [ref=e72]: Doctor of Dental Surgery (DDS), University of California, San Francisco
+        - generic [ref=e77]:
+          - group:
+            - generic [ref=e79]:
+              - list:
+                - listitem [ref=e80]:
+                  - generic [ref=e82]:
+                    - paragraph [ref=e85]:
+                      - link "Instagram" [ref=e86] [cursor=pointer]:
+                        - /url: https://www.instagram.com/drsunita_aesthetics/
+                    - link [ref=e88] [cursor=pointer]:
+                      - /url: https://www.instagram.com/drsunita_aesthetics/
+                      - img [ref=e90]
+                    - link "Go" [ref=e94] [cursor=pointer]:
+                      - /url: https://www.instagram.com/krestdental/
+                      - img [ref=e98]
+                - listitem [ref=e101]:
+                  - generic [ref=e103]:
+                    - paragraph [ref=e106]:
+                      - link "Facebook" [ref=e107] [cursor=pointer]:
+                        - /url: https://www.facebook.com/SunitaAesthetics
+                    - link [ref=e109] [cursor=pointer]:
+                      - /url: https://www.facebook.com/SunitaAesthetics
+                      - img [ref=e111]
+                    - link "Go" [ref=e115] [cursor=pointer]:
+                      - /url: https://www.facebook.com/krestdentalcare
+                      - img [ref=e119]
+                - listitem [ref=e122]:
+                  - generic [ref=e124]:
+                    - paragraph [ref=e127]:
+                      - link "YouTube" [ref=e128] [cursor=pointer]:
+                        - /url: https://www.youtube.com/@DrSunitaAesthetics
+                    - link [ref=e130] [cursor=pointer]:
+                      - /url: https://www.youtube.com/@DrSunitaAesthetics
+                      - img [ref=e132]
+                    - link "Go" [ref=e136] [cursor=pointer]:
+                      - /url: https://www.youtube.com/@krestdental
+                      - img [ref=e140]
+                - listitem [ref=e143]:
+                  - generic [ref=e145]:
+                    - paragraph [ref=e148]:
+                      - link "Practo Reviews" [ref=e149] [cursor=pointer]:
+                        - /url: https://wa.me/919949866411?text=Hello%2C%3F
+                    - link [ref=e151] [cursor=pointer]:
+                      - /url: https://wa.me/919949866411?text=Hello%2C%3F
+                      - img [ref=e153]
+                    - link "Go" [ref=e170] [cursor=pointer]:
+                      - /url: https://www.practo.com/visakhapatnam/doctor/dr-suneeta-veeramachaneni-dentist
+                      - img [ref=e174]
+                - listitem [ref=e177]:
+                  - generic [ref=e179]:
+                    - paragraph [ref=e182]:
+                      - link "Google Reviews" [ref=e183] [cursor=pointer]:
+                        - /url: https://www.linkedin.com/in/dr-sunita-ghanta-47581681/?originalSubdomain=in
+                    - link [ref=e185] [cursor=pointer]:
+                      - /url: https://www.linkedin.com/in/dr-sunita-ghanta-47581681/?originalSubdomain=in
+                      - img [ref=e187]
+                    - link "Go" [ref=e192] [cursor=pointer]:
+                      - /url: https://g.page/r/CUE6gNyLRCGdEBM/review
+                      - img [ref=e196]
+                - listitem [ref=e199]:
+                  - generic [ref=e201]:
+                    - paragraph [ref=e204]:
+                      - link "Website" [ref=e205] [cursor=pointer]:
+                        - /url: https://www.krest.dental
+                    - link [ref=e207] [cursor=pointer]:
+                      - /url: https://www.krest.dental
+                      - img [ref=e209]
+                    - link "Go" [ref=e213] [cursor=pointer]:
+                      - /url: https://www.krest.dental
+                      - img [ref=e217]
+        - generic [ref=e220]:
+          - group
+  - region "bottom of page"
