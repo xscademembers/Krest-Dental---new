@@ -36,17 +36,13 @@ export function ServicesSection() {
 function ServiceCard({ service }: { service: Service }) {
   return (
     <article className="mx-auto grid w-full max-w-[851px] min-h-[341px] grid-cols-1 items-center gap-6 rounded-[40px] border border-copper bg-white p-0 py-8 lg:grid-cols-[0.6fr_1px_1.4fr] lg:gap-x-[10px] lg:gap-y-0 lg:py-0 overflow-hidden">
-      <div className="relative mx-auto flex aspect-square w-[180px] items-center justify-center lg:w-[180px]">
-        <span
-          aria-hidden="true"
-          className="absolute inset-0 rounded-full bg-[#E8DED8]"
-        />
+      <div className="relative mx-auto flex h-[180px] w-[180px] min-h-[180px] min-w-[180px] shrink-0 items-center justify-center rounded-full bg-[#E8DED8] aspect-square">
         <img
           src={service.image}
           alt={`${service.title} illustration`}
           width={125}
-          height={200}
-          className="relative w-[125px] h-[200px] object-contain"
+          height={125}
+          className="relative z-10 h-[125px] w-[125px] object-contain"
           loading="lazy"
           decoding="async"
         />

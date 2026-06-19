@@ -66,24 +66,25 @@ export function OurServicesPage() {
                   <article className="rounded-[40px] bg-white pt-[70px] pb-[80px] pl-[40px] pr-[25px] shadow-[0_6px_28px_-10px_rgba(0,0,0,0.1)] lg:min-h-[376px]">
                     <div className="mx-auto grid w-full max-w-[1000px] grid-cols-1 items-center lg:grid-cols-[0.5fr_1.2fr_1.1fr] gap-10 lg:gap-x-12 xl:gap-x-16">
                       <div className="flex justify-center lg:justify-start">
-                        <img
-                          src={category.image}
-                          alt={category.imageAlt}
-                          width={140}
-                          height={140}
-                          className="h-auto w-full max-w-[130px] object-contain lg:max-w-[140px]"
-                          style={
-                            category.id === "invisalign"
-                              ? {
-                                  filter:
-                                    "brightness(0) saturate(100%) invert(44%) sepia(26%) saturate(1039%) hue-rotate(336deg) brightness(89%) contrast(90%)",
-                                  transform: "scale(1.4)",
-                                }
-                              : undefined
-                          }
-                          loading={index < 2 ? "eager" : "lazy"}
-                          decoding="async"
-                        />
+                        <div className={`flex shrink-0 items-center justify-center rounded-full bg-[#F0E8E4] aspect-square ${category.id === "invisalign" ? "h-[200px] w-[200px] min-h-[200px] min-w-[200px]" : "h-[180px] w-[180px] min-h-[180px] min-w-[180px]"}`}>
+                          <img
+                            src={category.image}
+                            alt={category.imageAlt}
+                            width={category.id === "invisalign" ? 200 : 120}
+                            height={category.id === "invisalign" ? 200 : 120}
+                            className={category.id === "invisalign" ? "h-[200px] w-[200px] object-contain" : "h-[120px] w-[120px] object-contain"}
+                            style={
+                              category.id === "invisalign"
+                                ? {
+                                    filter:
+                                      "brightness(0) saturate(100%) invert(44%) sepia(26%) saturate(1039%) hue-rotate(336deg) brightness(89%) contrast(90%)",
+                                  }
+                                : undefined
+                            }
+                            loading={index < 2 ? "eager" : "lazy"}
+                            decoding="async"
+                          />
+                        </div>
                       </div>
 
                       <div className="min-w-0 text-center lg:text-left">
