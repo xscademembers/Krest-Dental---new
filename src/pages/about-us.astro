@@ -79,15 +79,12 @@ const leafByCard = {
         class="about-hero krest-site pb-14 pt-12 lg:pb-20 lg:pt-16"
         aria-label="About Krest Dental Care"
       >
-        <div
-          id="dr-suneeta"
-          class="grid grid-cols-1 items-start gap-10 lg:grid-cols-[539fr_677fr] lg:gap-x-[100px]"
-        >
-          <div class="order-1">
-            <!-- Live: 539×654 portrait -->
-            <div
-              class="relative aspect-[539/654] w-full max-w-[539px] overflow-hidden sm:mx-auto lg:mx-0"
-            >
+        <!-- Mobile — heading, portrait, bio, reception image, clinic copy -->
+        <div class="about-hero-mobile lg:hidden">
+          <h1 class="about-hero-mobile__heading">{ABOUT_HERO.establishedHeading}</h1>
+
+          <div id="dr-suneeta" class="mt-4 w-full">
+            <div class="relative aspect-[539/654] w-full overflow-hidden">
               <img
                 src={ABOUT_HERO.portraitSrc}
                 alt={ABOUT_HERO.portraitAlt}
@@ -100,42 +97,89 @@ const leafByCard = {
               />
             </div>
           </div>
-          <div class="order-2 text-left">
-            <!-- Live: 47.25px EB Garamond copper -->
-            <h1 class="text-krest-display-sm">
-              {ABOUT_HERO.establishedHeading}
-            </h1>
-            <div class="mt-8 space-y-6">
-              {ABOUT_HERO.bioParagraphs.map((text) => (
-                <p class="font-display text-[18px] font-normal leading-[1.4] text-ink sm:text-[20px] lg:text-[22px]">{text}</p>
-              ))}
-            </div>
+
+          <div class="mt-8 space-y-6 text-left">
+            {ABOUT_HERO.bioParagraphs.map((text) => (
+              <p class="about-hero-mobile__text">{text}</p>
+            ))}
+          </div>
+
+          <div class="about-hero-reception mt-10 overflow-hidden rounded-[14px]">
+            <img
+              src="/images/about/reception.jpg"
+              alt={ABOUT_HERO.receptionAlt}
+              width={552}
+              height={387}
+              class="aspect-[552/387] w-full object-cover object-center"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+
+          <div class="mt-10 space-y-6 text-left">
+            {ABOUT_HERO.clinicParagraphs.map((text) => (
+              <p class="about-hero-mobile__text">{text}</p>
+            ))}
           </div>
         </div>
 
-        <div
-          class="mt-16 grid grid-cols-1 items-start gap-10 lg:mt-20 lg:grid-cols-[677fr_552fr] lg:gap-x-[100px]"
-        >
-          <div class="text-left">
-            <div class="space-y-6">
-              {ABOUT_HERO.clinicParagraphs.map((text) => (
-                <p class="font-display text-[18px] font-normal leading-[1.4] text-ink sm:text-[20px] lg:text-[22px]">{text}</p>
-              ))}
+        <!-- Desktop — two-column layout unchanged -->
+        <div class="hidden lg:block">
+          <div
+            id="dr-suneeta-desktop"
+            class="grid grid-cols-1 items-start gap-10 lg:grid-cols-[539fr_677fr] lg:gap-x-[100px]"
+          >
+            <div class="order-1">
+              <div
+                class="relative aspect-[539/654] w-full max-w-[539px] overflow-hidden sm:mx-auto lg:mx-0"
+              >
+                <img
+                  src={ABOUT_HERO.portraitSrc}
+                  alt={ABOUT_HERO.portraitAlt}
+                  width={539}
+                  height={654}
+                  class="absolute inset-0 h-full w-full object-cover"
+                  loading="eager"
+                  decoding="async"
+                  fetchpriority="high"
+                />
+              </div>
+            </div>
+            <div class="order-2 text-left">
+              <h1 class="text-krest-display-sm">
+                {ABOUT_HERO.establishedHeading}
+              </h1>
+              <div class="mt-8 space-y-6">
+                {ABOUT_HERO.bioParagraphs.map((text) => (
+                  <p class="font-display text-[18px] font-normal leading-[1.4] text-ink sm:text-[20px] lg:text-[22px]">{text}</p>
+                ))}
+              </div>
             </div>
           </div>
-          <div>
-            <!-- Live: 552×387 reception photo -->
-            <div class="overflow-hidden">
-              <img
-                src={ABOUT_HERO.receptionSrc}
-                alt={ABOUT_HERO.receptionAlt}
-                width={552}
-                height={387}
-                class="aspect-[552/387] w-full object-cover object-center"
-                loading="lazy"
-                decoding="async"
-                referrerpolicy="no-referrer"
-              />
+
+          <div
+            class="mt-16 grid grid-cols-1 items-start gap-10 lg:mt-20 lg:grid-cols-[677fr_552fr] lg:gap-x-[100px]"
+          >
+            <div class="text-left">
+              <div class="space-y-6">
+                {ABOUT_HERO.clinicParagraphs.map((text) => (
+                  <p class="font-display text-[18px] font-normal leading-[1.4] text-ink sm:text-[20px] lg:text-[22px]">{text}</p>
+                ))}
+              </div>
+            </div>
+            <div>
+              <div class="overflow-hidden">
+                <img
+                  src={ABOUT_HERO.receptionSrc}
+                  alt={ABOUT_HERO.receptionAlt}
+                  width={552}
+                  height={387}
+                  class="aspect-[552/387] w-full object-cover object-center"
+                  loading="lazy"
+                  decoding="async"
+                  referrerpolicy="no-referrer"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -248,6 +292,27 @@ const leafByCard = {
 </Layout>
 
 <style>
+  @media (max-width: 1023px) {
+    .about-hero-mobile__heading {
+      font-family: var(--font-display);
+      font-size: 43px;
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--krest-copper);
+      text-align: left;
+    }
+
+    .about-hero-mobile__text {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--krest-ink);
+      text-align: left;
+    }
+  }
+
   /* Wix-style "Move on Self" scroll effect: each leaf rises from below to its
      resting middle position as the card scrolls into view. Pure CSS scroll-driven
      animation — browsers without support simply show the leaves in place. */

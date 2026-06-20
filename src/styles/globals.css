@@ -251,6 +251,53 @@
     color: var(--krest-ink);
   }
 
+  /* Landing hero — Wix mobile specs (375px editor) */
+  @media (max-width: 1023px) {
+    .hero-mobile__name {
+      font-family: var(--font-display);
+      font-size: 49px;
+      font-weight: 400;
+      font-style: italic;
+      line-height: 0.9;
+      letter-spacing: -0.03em;
+      color: var(--krest-ink);
+      text-align: left;
+    }
+
+    .hero-mobile__title {
+      margin-top: 10px;
+      font-family: var(--font-accent);
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.3;
+      letter-spacing: 0;
+      color: var(--krest-copper);
+      text-align: left;
+    }
+
+    .hero-mobile__body {
+      margin-top: 18px;
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.3;
+      letter-spacing: 0;
+      color: var(--krest-ink);
+      text-align: left;
+    }
+
+    .hero-mobile__quote {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.3;
+      letter-spacing: 0;
+      color: var(--krest-copper);
+      text-align: center;
+    }
+  }
+
   .text-krest-display-xl {
     font-family: var(--font-display);
     font-size: var(--krest-text-display-xl);
@@ -346,6 +393,38 @@
     font-size: var(--krest-text-body);
     line-height: 1.6;
     color: var(--krest-taupe);
+  }
+
+  /* Testimonials — Wix mobile */
+  @media (max-width: 767px) {
+    .testimonials-mobile__title {
+      font-family: var(--font-display);
+      font-size: 34px;
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--krest-copper);
+      text-align: center;
+    }
+
+    .testimonials-mobile__quote {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.6;
+      color: #a67b5b;
+      text-align: justify;
+    }
+
+    .testimonials-mobile__author {
+      margin-top: 24px;
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.4;
+      color: #a67b5b;
+      text-align: center;
+    }
   }
 
   .text-krest-stat-value {
