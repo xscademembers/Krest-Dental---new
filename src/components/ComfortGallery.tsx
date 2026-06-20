@@ -57,22 +57,29 @@ export function ComfortGallery() {
 
   const desktopTrackRef = useRef<HTMLDivElement>(null);
   const mobileTrackRef = useRef<HTMLDivElement>(null);
+  const mobileOffsetRef = useRef(0);
   const isHovered = useRef(false);
   const lastTime = useRef<number>(0);
   const isScrollingManually = useRef(false);
   const scrollTimeout = useRef<ReturnType<typeof setTimeout>>(null);
+  const prefersFineHover = useRef(false);
 
   // Render 3 sets so we can seamlessly loop forward and backward
   const tripledDesktop = [...desktopSlides, ...desktopSlides, ...desktopSlides];
   const tripledMobile = [...mobileSlides, ...mobileSlides, ...mobileSlides];
 
   useEffect(() => {
+    prefersFineHover.current = window.matchMedia(
+      "(hover: hover) and (pointer: fine)",
+    ).matches;
+
     // Start in the middle set to allow backward scrolling
     if (desktopTrackRef.current) {
       desktopTrackRef.current.scrollLeft = desktopSetWidth;
     }
+    mobileOffsetRef.current = mobileSetWidth;
     if (mobileTrackRef.current) {
-      mobileTrackRef.current.scrollLeft = mobileSetWidth;
+      mobileTrackRef.current.style.transform = `translate3d(-${mobileSetWidth}px, 0, 0)`;
     }
 
     let rafId: number;
@@ -83,27 +90,21 @@ export function ComfortGallery() {
       if (dt > 0.1) dt = 0.1; // Cap dt to avoid huge jumps if tab is inactive
       lastTime.current = time;
 
-      if (!isHovered.current && !isScrollingManually.current) {
+      const isMobile = window.innerWidth < 1024;
+
+      if (!isHovered.current && !isScrollingManually.current && isMobile && mobileTrackRef.current) {
         const delta = PIXELS_PER_SECOND * dt;
-        
-        if (desktopTrackRef.current && window.innerWidth >= 1024) {
-          desktopTrackRef.current.scrollLeft += delta;
-          if (desktopTrackRef.current.scrollLeft >= desktopSetWidth * 2) {
-            desktopTrackRef.current.scrollLeft -= desktopSetWidth;
-          } else if (desktopTrackRef.current.scrollLeft <= 0) {
-             desktopTrackRef.current.scrollLeft += desktopSetWidth;
-          }
+        mobileOffsetRef.current += delta;
+
+        if (mobileOffsetRef.current >= mobileSetWidth * 2) {
+          mobileOffsetRef.current -= mobileSetWidth;
+        } else if (mobileOffsetRef.current <= 0) {
+          mobileOffsetRef.current += mobileSetWidth;
         }
 
-        if (mobileTrackRef.current && window.innerWidth < 1024) {
-          mobileTrackRef.current.scrollLeft += delta;
-          if (mobileTrackRef.current.scrollLeft >= mobileSetWidth * 2) {
-            mobileTrackRef.current.scrollLeft -= mobileSetWidth;
-          } else if (mobileTrackRef.current.scrollLeft <= 0) {
-             mobileTrackRef.current.scrollLeft += mobileSetWidth;
-          }
-        }
+        mobileTrackRef.current.style.transform = `translate3d(-${mobileOffsetRef.current}px, 0, 0)`;
       }
+
       rafId = requestAnimationFrame(tick);
     };
 
@@ -117,10 +118,11 @@ export function ComfortGallery() {
 
     const jump = 400; // Pixels to scroll on button click
     if (desktopTrackRef.current && window.innerWidth >= 1024) {
-      desktopTrackRef.current.scrollBy({ left: direction * jump, behavior: 'smooth' });
+      desktopTrackRef.current.scrollBy({ left: direction * jump, behavior: "smooth" });
     }
     if (mobileTrackRef.current && window.innerWidth < 1024) {
-      mobileTrackRef.current.scrollBy({ left: direction * jump, behavior: 'smooth' });
+      mobileOffsetRef.current += direction * jump;
+      mobileTrackRef.current.style.transform = `translate3d(-${mobileOffsetRef.current}px, 0, 0)`;
     }
 
     // Resume auto-scroll after smooth scroll completes (approx 500ms)
@@ -147,10 +149,14 @@ export function ComfortGallery() {
 
       <div className="mt-14 w-full lg:mt-16">
         <div className="pro-gallery mx-auto box-border w-full px-4 pt-0 max-lg:pb-0 lg:h-[571px] lg:pb-[50px]">
-          <div 
+          <div
             className="relative w-full overflow-hidden max-lg:h-[280px] lg:h-[521px] group"
-            onMouseEnter={() => { isHovered.current = true; }}
-            onMouseLeave={() => { isHovered.current = false; }}
+            onMouseEnter={() => {
+              if (prefersFineHover.current) isHovered.current = true;
+            }}
+            onMouseLeave={() => {
+              if (prefersFineHover.current) isHovered.current = false;
+            }}
           >
             <div
               ref={desktopTrackRef}
@@ -183,14 +189,15 @@ export function ComfortGallery() {
               ))}
             </div>
 
-            <div
-              ref={mobileTrackRef}
-              className="flex lg:hidden overflow-hidden scrollbar-hide"
-              style={{
-                height: "280px",
-                gap: `${SLIDE_GAP_PX}px`,
-              }}
-            >
+            <div className="w-full overflow-hidden lg:hidden" style={{ height: "280px" }}>
+              <div
+                ref={mobileTrackRef}
+                className="flex will-change-transform"
+                style={{
+                  height: "280px",
+                  gap: `${SLIDE_GAP_PX}px`,
+                }}
+              >
               {tripledMobile.map((image, slideIndex) => (
                 <div
                   key={`${image.src}-mobile-${slideIndex}`}
@@ -212,6 +219,7 @@ export function ComfortGallery() {
                   />
                 </div>
               ))}
+              </div>
             </div>
 
             <button
