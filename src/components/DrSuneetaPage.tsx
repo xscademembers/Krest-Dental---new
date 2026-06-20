@@ -56,9 +56,9 @@ export function DrSuneetaPage() {
               <div className="mt-[16px] flex items-center">
                 <span
                   aria-hidden="true"
-                  className="block w-[60px] border-t-2 border-copper sm:w-[90px]"
+                  className="block w-[28px] shrink-0 border-t-2 border-copper lg:w-[90px]"
                 />
-                <p className="ml-[29px] font-accent text-[17px] leading-[1.3] text-copper sm:text-[20px]">
+                <p className="ml-2 font-accent text-[18px] leading-[1.3] text-copper max-lg:whitespace-nowrap lg:ml-[29px] lg:whitespace-normal lg:text-[20px]">
                   {DR_SUNEETA_PAGE.title}
                 </p>
               </div>

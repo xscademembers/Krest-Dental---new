@@ -17,10 +17,15 @@ export function OurServicesPage() {
       >
         <SiteContainer className="text-center">
           <SiteProse>
-            <h1 id="our-services-heading" className="font-display text-[69px] font-normal leading-[1.4] text-[#A67B5B] text-center">
+            <h1
+              id="our-services-heading"
+              className="font-display text-[34px] font-normal leading-[1.4] tracking-normal text-[#A67B5B] text-center lg:text-[69px]"
+            >
               {title}
             </h1>
-            <p className="mt-6 font-sans text-[18px] font-normal leading-[1.6] text-black text-justify">{intro}</p>
+            <p className="mt-6 font-body text-[18px] font-normal leading-[1.6] tracking-normal text-black text-justify">
+              {intro}
+            </p>
           </SiteProse>
         </SiteContainer>
 
@@ -29,8 +34,8 @@ export function OurServicesPage() {
             {categories.map((category, index) => (
               <li key={category.id}>
                 <SiteCardBand>
-                  <article className="rounded-[40px] bg-white pt-[70px] pb-[80px] pl-[40px] pr-[25px] shadow-[0_6px_28px_-10px_rgba(0,0,0,0.1)] lg:min-h-[376px]">
-                    <div className="mx-auto grid w-full max-w-[1000px] grid-cols-1 items-center lg:grid-cols-[0.5fr_1.2fr_1.1fr] gap-10 lg:gap-x-12 xl:gap-x-16">
+                  <article className="rounded-[40px] bg-white px-6 pb-12 pt-12 shadow-[0_6px_28px_-10px_rgba(0,0,0,0.1)] max-lg:px-5 lg:min-h-[376px] lg:pb-[80px] lg:pl-[40px] lg:pr-[25px] lg:pt-[70px]">
+                    <div className="mx-auto grid w-full max-w-[1000px] grid-cols-1 items-center gap-8 lg:grid-cols-[0.5fr_1.2fr_1.1fr] lg:gap-10 lg:gap-x-12 xl:gap-x-16">
                       <div className="flex justify-center lg:justify-start">
                         <div className={`flex shrink-0 items-center justify-center rounded-full bg-[#F0E8E4] aspect-square ${category.id === "invisalign" ? "h-[200px] w-[200px] min-h-[200px] min-w-[200px]" : "h-[180px] w-[180px] min-h-[180px] min-w-[180px]"}`}>
                           <img
@@ -54,10 +59,10 @@ export function OurServicesPage() {
                       </div>
 
                       <div className="min-w-0 text-center lg:text-left">
-                        <h2 className="font-display text-[44px] font-normal leading-[0.9] text-[#A67B5B]">
+                        <h2 className="font-display text-[33px] font-normal leading-[0.9] tracking-normal text-[#A67B5B] max-lg:text-center lg:text-[44px]">
                           {category.title}
                         </h2>
-                        <p className="mt-4 font-display text-[20px] font-normal leading-[1.5] text-[#6F6356] text-justify">
+                        <p className="mt-4 font-display text-[18px] font-normal leading-[1.5] tracking-normal text-[#6F6356] text-center max-lg:text-center lg:text-[20px] lg:text-justify">
                           {category.description}
                         </p>
                         <div className="mt-7 flex justify-center lg:justify-start">
@@ -67,7 +72,7 @@ export function OurServicesPage() {
                         </div>
                       </div>
 
-                      <ul className="font-display text-[21px] text-[#6F6356] list-disc space-y-2.5 pl-5 marker:text-copper lg:pl-6">
+                      <ul className="mx-auto w-fit list-disc space-y-2.5 pl-5 font-display text-[18px] leading-[1.6] tracking-[-0.01em] text-[#6F6356] marker:text-copper max-lg:text-left lg:mx-0 lg:w-auto lg:pl-6 lg:text-[21px] lg:leading-normal lg:tracking-normal">
                         {category.items.map((item) => (
                           <li key={item}>{item}</li>
                         ))}

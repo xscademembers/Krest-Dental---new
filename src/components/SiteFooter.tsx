@@ -26,132 +26,221 @@ const FOOTER_NAV = [
   { label: "Contact Us", href: "/contact" },
 ];
 
-export function SiteFooter() {
+export function SiteFooter({ mobileWhiteBg = false }: { mobileWhiteBg?: boolean }) {
   return (
-    <footer className="bg-white pb-10 pt-14 lg:pb-12 lg:pt-16">
-      <div className="krest-site grid w-full grid-cols-1 gap-10 sm:grid-cols-2 sm:gap-12 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,0.75fr)_minmax(0,1.15fr)_minmax(0,0.85fr)] lg:items-start lg:gap-x-16 xl:gap-x-24">
-        <div className="flex w-full flex-col items-start gap-7 pl-0 sm:gap-8">
-          <FooterLogo />
-          <ul className="flex items-center gap-3">
-            {SOCIALS.map((s) => {
-              const Icon = socialIcon[s.label];
-              return (
-                <li key={s.label}>
-                  <a
-                    href={s.href}
-                    aria-label={s.label}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex h-8 w-8 items-center justify-center rounded-full bg-ink text-white transition-opacity hover:opacity-85"
-                  >
-                    <Icon className="h-[15px] w-[15px]" />
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
+    <footer
+      className={`pb-10 pt-14 lg:pb-12 lg:pt-16 ${mobileWhiteBg ? "bg-white" : "bg-cream lg:bg-white"}`}
+    >
+      {/* Mobile — Wix collage: brand row, menu|contact, opening hours full-width */}
+      <div className="footer-mobile krest-site lg:hidden">
+        <div className="footer-mobile__grid">
+          <div className="footer-mobile__brand col-span-2 flex items-center justify-between gap-3">
+            <FooterLogo compact />
+            <FooterSocialLinks mobile />
+          </div>
 
-        <div>
-          <h3 className="font-display text-[22px] font-semibold leading-none text-copper">
-            Menu
-          </h3>
-          <ul className="mt-4 flex flex-col gap-2.5">
-            {FOOTER_NAV.map((item) => (
-              <li key={item.label}>
-                <a
-                  href={item.href}
-                  className="font-display text-[16px] leading-[1.5] text-taupe transition-colors hover:text-copper"
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
+          <FooterMenu mobile />
+          <FooterContact mobile emailUnderline />
 
-        <div>
-          <h3 className="font-display text-[22px] font-semibold leading-none text-copper">
-            Contact Us
-          </h3>
-          <dl className="mt-4 flex flex-col gap-4 font-display text-[16px] leading-[1.55] text-taupe">
-            <div>
-              <dt className="font-semibold text-taupe">E-mail</dt>
-              <dd className="mt-0.5">
-                <a
-                  href={`mailto:${EMAIL}`}
-                  className="transition-colors hover:text-copper"
-                >
-                  {EMAIL}
-                </a>
-              </dd>
-            </div>
-            <div>
-              <dt className="font-semibold text-taupe">Phone</dt>
-              <dd className="mt-0.5">
-                <a href={PHONE_TEL} className="transition-colors hover:text-copper">
-                  {PHONE_DISPLAY}
-                </a>
-              </dd>
-            </div>
-            <div>
-              <dt className="font-semibold text-taupe">Address</dt>
-              <dd className="mt-0.5 not-italic">
-                <address className="not-italic">
-                  <span className="font-semibold">{ADDRESS.name}</span>
-                  <br />
-                  {ADDRESS.lines.map((line, idx) => (
-                    <span key={idx}>
-                      {line}
-                      <br />
-                    </span>
-                  ))}
-                </address>
-              </dd>
-            </div>
-          </dl>
-        </div>
-
-        <div>
-          <h3 className="font-display text-[22px] font-semibold leading-none text-copper">
-            Opening Hours
-          </h3>
-          <dl className="mt-4 flex flex-col gap-4 font-display text-[16px] leading-[1.55] text-taupe">
-            {HOURS.map((row) => (
-              <div key={row.day}>
-                <dt className="font-semibold text-taupe">{row.day}</dt>
-                <dd className="mt-0.5">{row.time}</dd>
-              </div>
-            ))}
-          </dl>
+          <div className="col-span-2">
+            <FooterHours mobile />
+          </div>
         </div>
       </div>
 
-      <div className="krest-site krest-site--cards mt-16 text-center font-display text-[16px] leading-[1.5] text-taupe lg:mt-20">
+      {/* Desktop — 4-column layout */}
+      <div className="krest-site hidden w-full grid-cols-[minmax(0,1.35fr)_minmax(0,0.75fr)_minmax(0,1.15fr)_minmax(0,0.85fr)] gap-x-16 lg:grid xl:gap-x-24">
+        <div className="flex w-full flex-col items-start gap-8">
+          <FooterLogo />
+          <FooterSocialLinks />
+        </div>
+
+        <FooterMenu />
+        <FooterContact />
+        <FooterHours />
+      </div>
+
+      <div className="krest-site footer-mobile__copyright mt-[15px] text-center font-display text-[15px] leading-[1.5] text-taupe lg:mt-20 lg:text-[16px]">
         © 2025 by Krest Dental. Developed by{" "}
         <a
           href="https://www.xscade.com/"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-copper transition-colors hover:underline"
+          className="text-taupe underline decoration-taupe/70 underline-offset-2 transition-colors hover:text-copper lg:text-copper lg:no-underline lg:hover:underline"
         >
           Xscade
         </a>
-        .
       </div>
     </footer>
   );
 }
 
-function FooterLogo() {
+function FooterSocialLinks({ mobile = false }: { mobile?: boolean }) {
   return (
-    <a
-      href="/"
-      aria-label="Krest Dental — Home"
-      className="inline-block"
-    >
-      {/* Live footer vector art: 188×76 at 1440px */}
-      <FooterLogoIcon className="h-[76px] w-[188px] max-w-full" />
+    <ul className={`flex shrink-0 items-center ${mobile ? "gap-2" : "gap-2.5"}`}>
+      {SOCIALS.map((s) => {
+        const Icon = socialIcon[s.label];
+        return (
+          <li key={s.label}>
+            <a
+              href={s.href}
+              aria-label={s.label}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex h-8 w-8 items-center justify-center rounded-full bg-ink text-white transition-opacity hover:opacity-85"
+            >
+              <Icon className="h-[15px] w-[15px]" />
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+  );
+}
+
+function FooterMenu({ mobile = false }: { mobile?: boolean }) {
+  return (
+    <div className={mobile ? "min-w-0" : undefined}>
+      <h3
+        className={
+          mobile
+            ? "footer-mobile__heading"
+            : "font-display text-[22px] font-semibold leading-none text-copper"
+        }
+      >
+        Menu
+      </h3>
+      <ul className={`flex flex-col ${mobile ? "footer-mobile__menu mt-3.5 gap-2.5" : "mt-4 gap-2.5"}`}>
+        {FOOTER_NAV.map((item) => (
+          <li key={item.label}>
+            <a
+              href={item.href}
+              className={
+                mobile
+                  ? "footer-mobile__link"
+                  : "font-display text-[16px] leading-[1.5] text-taupe transition-colors hover:text-copper"
+              }
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function FooterContact({
+  phoneUnderline = false,
+  emailUnderline = false,
+  mobile = false,
+}: {
+  phoneUnderline?: boolean;
+  emailUnderline?: boolean;
+  mobile?: boolean;
+}) {
+  return (
+    <div className={mobile ? "min-w-0" : undefined}>
+      <h3
+        className={
+          mobile
+            ? "footer-mobile__heading"
+            : "font-display text-[22px] font-semibold leading-none text-copper"
+        }
+      >
+        Contact Us
+      </h3>
+      <dl
+        className={`flex flex-col ${mobile ? "footer-mobile__contact mt-3.5 gap-3.5" : "mt-4 gap-4 font-display text-[16px] leading-[1.55] text-taupe"}`}
+      >
+        <div>
+          <dt className={mobile ? "footer-mobile__label" : "font-body text-[16px] font-semibold text-taupe"}>
+            E-mail
+          </dt>
+          <dd className={mobile ? "footer-mobile__text mt-0.5" : "mt-0.5"}>
+            <a
+              href={`mailto:${EMAIL}`}
+              className={`transition-colors hover:text-copper ${emailUnderline ? "underline decoration-taupe/80 underline-offset-2" : ""}`}
+            >
+              {EMAIL}
+            </a>
+          </dd>
+        </div>
+        <div>
+          <dt className={mobile ? "footer-mobile__label" : "font-body text-[16px] font-semibold text-taupe"}>
+            Phone
+          </dt>
+          <dd className={mobile ? "footer-mobile__text mt-0.5" : "mt-0.5"}>
+            <a
+              href={PHONE_TEL}
+              className={`transition-colors hover:text-copper ${phoneUnderline ? "underline decoration-taupe/80 underline-offset-2" : ""}`}
+            >
+              {PHONE_DISPLAY}
+            </a>
+          </dd>
+        </div>
+        <div>
+          <dt className={mobile ? "footer-mobile__label" : "font-body text-[16px] font-semibold text-taupe"}>
+            Address
+          </dt>
+          <dd className={mobile ? "footer-mobile__text mt-0.5 not-italic" : "mt-0.5 not-italic"}>
+            <address className="not-italic">
+              <span className={mobile ? "font-body uppercase" : "font-semibold"}>
+                {ADDRESS.name}
+              </span>
+              <br />
+              {ADDRESS.lines.map((line, idx) => (
+                <span key={idx}>
+                  {line}
+                  <br />
+                </span>
+              ))}
+            </address>
+          </dd>
+        </div>
+      </dl>
+    </div>
+  );
+}
+
+function FooterHours({ mobile = false }: { mobile?: boolean }) {
+  return (
+    <div>
+      <h3
+        className={
+          mobile
+            ? "footer-mobile__heading"
+            : "font-display text-[22px] font-semibold leading-none text-copper"
+        }
+      >
+        Opening Hours
+      </h3>
+      <dl
+        className={`flex flex-col ${mobile ? "footer-mobile__hours mt-3.5 gap-3.5" : "mt-4 gap-4 font-display text-[16px] leading-[1.55] text-taupe"}`}
+      >
+        {HOURS.map((row) => (
+          <div key={row.day}>
+            <dt className={mobile ? "footer-mobile__label" : "font-body text-[16px] font-semibold text-taupe"}>
+              {mobile ? row.day.replace(" to ", " - ") : row.day}
+            </dt>
+            <dd className={mobile ? "footer-mobile__text mt-0.5" : "mt-0.5"}>{row.time}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  );
+}
+
+function FooterLogo({ compact = false }: { compact?: boolean }) {
+  return (
+    <a href="/" aria-label="Krest Dental — Home" className="inline-block shrink-0">
+      <FooterLogoIcon
+        className={
+          compact
+            ? "h-[54px] w-[136px] max-w-[calc(100vw-130px)]"
+            : "h-[76px] w-[188px] max-w-full"
+        }
+      />
     </a>
   );
 }

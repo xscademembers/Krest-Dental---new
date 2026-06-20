@@ -395,7 +395,56 @@
     color: var(--krest-taupe);
   }
 
-  /* Testimonials — Wix mobile */
+  /* Footer — Wix mobile collage grid */
+  @media (max-width: 1023px) {
+    .footer-mobile__grid {
+      display: grid;
+      grid-template-columns: 36.6% 63.4%;
+      column-gap: 16px;
+      row-gap: 15px;
+    }
+
+    .footer-mobile__brand {
+      min-height: 103px;
+      align-items: center;
+    }
+
+    .footer-mobile__heading {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 600;
+      line-height: 1;
+      color: var(--krest-copper);
+      text-align: left;
+    }
+
+    .footer-mobile__link,
+    .footer-mobile__text {
+      font-family: var(--font-body);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.55;
+      color: var(--krest-taupe);
+      text-align: left;
+    }
+
+    .footer-mobile__label {
+      font-family: var(--font-body);
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.55;
+      color: var(--krest-ink);
+      text-align: left;
+    }
+
+    .footer-mobile__copyright {
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--krest-taupe);
+    }
+  }
   @media (max-width: 767px) {
     .testimonials-mobile__title {
       font-family: var(--font-display);
