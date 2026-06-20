@@ -1,7 +1,6 @@
 import type { APIRoute } from "astro";
-import { ObjectId } from "mongodb";
 import { getAdminUser } from "@/lib/admin-auth";
-import { LEADS_COLLECTION, getCollection, type LeadDoc } from "@/lib/mongodb";
+import { deleteLead } from "@/lib/leads-store";
 
 export const prerender = false;
 
@@ -13,17 +12,16 @@ export const DELETE: APIRoute = async ({ cookies, params }) => {
     });
   }
   const id = params.id;
-  if (!id || !ObjectId.isValid(id)) {
+  if (!id) {
     return new Response(JSON.stringify({ ok: false, error: "Invalid id" }), {
       status: 400,
       headers: { "content-type": "application/json" },
     });
   }
   try {
-    const col = await getCollection<LeadDoc>(LEADS_COLLECTION);
-    const result = await col.deleteOne({ _id: new ObjectId(id) });
+    const deleted = await deleteLead(id);
     return new Response(
-      JSON.stringify({ ok: true, deleted: result.deletedCount ?? 0 }),
+      JSON.stringify({ ok: true, deleted: deleted ? 1 : 0 }),
       { status: 200, headers: { "content-type": "application/json" } },
     );
   } catch (err) {

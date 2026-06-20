@@ -54,15 +54,13 @@ const quickActions = [
   {
     label: "Call us",
     value: PHONE_DISPLAY,
-    hint: "Mon – Sat, 9:30 AM – 7:30 PM",
     href: PHONE_TEL,
     external: false,
     icon: "phone",
   },
   {
     label: "WhatsApp",
-    value: "Chat with our team",
-    hint: "Quick replies during clinic hours",
+    value: PHONE_DISPLAY,
     href: WHATSAPP_URL,
     external: true,
     icon: "whatsapp",
@@ -70,7 +68,6 @@ const quickActions = [
   {
     label: "Email",
     value: EMAIL,
-    hint: "We reply within one working day",
     href: `mailto:${EMAIL}`,
     external: false,
     icon: "mail",
@@ -105,9 +102,10 @@ const quickActions = [
               href={qa.href}
               target={qa.external ? "_blank" : undefined}
               rel={qa.external ? "noopener noreferrer" : undefined}
-              class="group flex h-full flex-col items-start rounded-[24px] border border-copper/10 bg-white p-7 shadow-[0_18px_40px_-28px_rgba(63,42,32,0.45)] transition-all duration-300 hover:-translate-y-1 hover:border-copper/30 hover:shadow-[0_26px_50px_-26px_rgba(63,42,32,0.5)]"
+              aria-label={`${qa.label}: ${qa.value}`}
+              class="group flex h-full items-center gap-4 rounded-[24px] border border-copper/10 bg-white p-7 shadow-[0_18px_40px_-28px_rgba(63,42,32,0.45)] transition-all duration-300 hover:-translate-y-1 hover:border-copper/30 hover:shadow-[0_26px_50px_-26px_rgba(63,42,32,0.5)]"
             >
-              <span class="flex h-12 w-12 items-center justify-center rounded-full bg-[#F4EAE6] text-copper transition-colors duration-300 group-hover:bg-copper group-hover:text-white">
+              <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#F4EAE6] text-copper transition-colors duration-300 group-hover:bg-copper group-hover:text-white">
                 {qa.icon === "phone" && (
                   <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                     <path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1.02 1.02 0 0 0-1.02.24l-2.2 2.2a15.045 15.045 0 0 1-6.59-6.59l2.2-2.21c.28-.28.36-.67.25-1.02A11.36 11.36 0 0 1 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z" />
@@ -124,13 +122,9 @@ const quickActions = [
                   </svg>
                 )}
               </span>
-              <p class="mt-5 font-body text-[11px] font-semibold uppercase tracking-[0.18em] text-taupe">
-                {qa.label}
-              </p>
-              <p class="mt-1.5 break-all font-display text-[20px] leading-snug text-ink">
+              <p class="min-w-0 break-all font-display text-[20px] leading-snug text-ink">
                 {qa.value}
               </p>
-              <p class="mt-1 font-body text-[13px] text-taupe">{qa.hint}</p>
             </a>
           </li>
         ))}

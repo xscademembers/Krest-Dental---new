@@ -1,7 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import { getAdminUser } from "@/lib/admin-auth";
-import { LEADS_COLLECTION, getCollection, type LeadDoc } from "@/lib/mongodb";
+import { listLeads, type StoredLead } from "@/lib/leads-store";
 
 export const prerender = false;
 
@@ -10,18 +10,13 @@ if (!user) {
   return Astro.redirect("/admin", 303);
 }
 
-let leads: (LeadDoc & { _id: import("mongodb").ObjectId })[] = [];
+let leads: StoredLead[] = [];
 let dbError: string | null = null;
 
 try {
-  const col = await getCollection<LeadDoc>(LEADS_COLLECTION);
-  leads = (await col
-    .find({})
-    .sort({ createdAt: -1 })
-    .limit(500)
-    .toArray()) as (LeadDoc & { _id: import("mongodb").ObjectId })[];
+  leads = await listLeads(500);
 } catch (err) {
-  console.error("[admin/dashboard] mongo error", err);
+  console.error("[admin/dashboard] leads error", err);
   dbError = err instanceof Error ? err.message : "Could not load leads.";
 }
 

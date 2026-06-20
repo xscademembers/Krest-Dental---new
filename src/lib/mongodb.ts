@@ -11,22 +11,20 @@ let dnsConfigured = false;
  * In dev we default to public DNS; in prod use `MONGODB_DNS_SERVERS` if needed.
  */
 function configureDnsForMongoSrv(uri: string): void {
-  if (dnsConfigured) return;
+  if (dnsConfigured || !uri.startsWith("mongodb+srv://")) return;
+
   const custom = getEnv("MONGODB_DNS_SERVERS");
-  if (custom) {
-    const list = custom
-      .split(",")
-      .map((s) => s.trim())
-      .filter(Boolean);
-    if (list.length > 0) {
-      dns.setServers(list);
-      dns.setDefaultResultOrder("ipv4first");
-      dnsConfigured = true;
-    }
-    return;
-  }
-  if (uri.startsWith("mongodb+srv://") && import.meta.env.DEV) {
-    dns.setServers(["8.8.8.8", "1.1.1.1"]);
+  const servers = custom
+    ? custom
+        .split(",")
+        .map((s) => s.trim())
+        .filter(Boolean)
+    : import.meta.env.DEV || process.platform === "win32"
+      ? ["8.8.8.8", "1.1.1.1"]
+      : [];
+
+  if (servers.length > 0) {
+    dns.setServers(servers);
     dns.setDefaultResultOrder("ipv4first");
     dnsConfigured = true;
   }
@@ -64,7 +62,12 @@ async function buildClient(): Promise<MongoState> {
 }
 
 export function getMongo(): Promise<MongoState> {
-  if (!cached) cached = buildClient();
+  if (!cached) {
+    cached = buildClient().catch((err) => {
+      cached = undefined;
+      throw err;
+    });
+  }
   return cached;
 }
 

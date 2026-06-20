@@ -18,7 +18,7 @@ export const NAV_ITEMS: NavItem[] = [
     href: "/about-us",
     children: [
       { label: "Dr. Suneeta", href: "/drsuneeta" },
-      { label: "Links", href: "/links" },
+      { label: "Connect With Us", href: "/links" },
     ],
   },
   {

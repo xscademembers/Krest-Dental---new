@@ -48,3 +48,6 @@ next-env.d.ts
 
 # Local temp files
 temp/
+
+# Local lead fallback (when MongoDB is unavailable)
+data/leads.json

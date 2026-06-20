@@ -1,5 +1,6 @@
 import type { APIRoute } from "astro";
-import { LEADS_COLLECTION, getCollection, type LeadDoc } from "@/lib/mongodb";
+import { insertLead } from "@/lib/leads-store";
+import type { LeadDoc } from "@/lib/mongodb";
 
 export const prerender = false;
 
@@ -91,10 +92,9 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
   };
 
   try {
-    const col = await getCollection<LeadDoc>(LEADS_COLLECTION);
-    await col.insertOne(doc);
+    await insertLead(doc);
   } catch (err) {
-    console.error("[/api/leads] Mongo insert failed:", err);
+    console.error("[/api/leads] save failed:", err);
     return new Response(
       JSON.stringify({ ok: false, error: "Could not save your message. Please try again." }),
       { status: 500, headers: { "content-type": "application/json" } },
