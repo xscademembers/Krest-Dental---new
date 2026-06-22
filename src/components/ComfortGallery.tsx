@@ -57,6 +57,7 @@ export function ComfortGallery() {
 
   const desktopTrackRef = useRef<HTMLDivElement>(null);
   const mobileTrackRef = useRef<HTMLDivElement>(null);
+  const desktopOffsetRef = useRef(0);
   const mobileOffsetRef = useRef(0);
   const isHovered = useRef(false);
   const lastTime = useRef<number>(0);
@@ -74,8 +75,9 @@ export function ComfortGallery() {
     ).matches;
 
     // Start in the middle set to allow backward scrolling
+    desktopOffsetRef.current = desktopSetWidth;
     if (desktopTrackRef.current) {
-      desktopTrackRef.current.scrollLeft = desktopSetWidth;
+      desktopTrackRef.current.style.transform = `translate3d(-${desktopSetWidth}px, 0, 0)`;
     }
     mobileOffsetRef.current = mobileSetWidth;
     if (mobileTrackRef.current) {
@@ -92,17 +94,30 @@ export function ComfortGallery() {
 
       const isMobile = window.innerWidth < 1024;
 
-      if (!isHovered.current && !isScrollingManually.current && isMobile && mobileTrackRef.current) {
+      if (!isHovered.current && !isScrollingManually.current) {
         const delta = PIXELS_PER_SECOND * dt;
-        mobileOffsetRef.current += delta;
 
-        if (mobileOffsetRef.current >= mobileSetWidth * 2) {
-          mobileOffsetRef.current -= mobileSetWidth;
-        } else if (mobileOffsetRef.current <= 0) {
-          mobileOffsetRef.current += mobileSetWidth;
+        if (isMobile && mobileTrackRef.current) {
+          mobileOffsetRef.current += delta;
+
+          if (mobileOffsetRef.current >= mobileSetWidth * 2) {
+            mobileOffsetRef.current -= mobileSetWidth;
+          } else if (mobileOffsetRef.current <= 0) {
+            mobileOffsetRef.current += mobileSetWidth;
+          }
+
+          mobileTrackRef.current.style.transform = `translate3d(-${mobileOffsetRef.current}px, 0, 0)`;
+        } else if (!isMobile && desktopTrackRef.current) {
+          desktopOffsetRef.current += delta;
+
+          if (desktopOffsetRef.current >= desktopSetWidth * 2) {
+            desktopOffsetRef.current -= desktopSetWidth;
+          } else if (desktopOffsetRef.current <= 0) {
+            desktopOffsetRef.current += desktopSetWidth;
+          }
+
+          desktopTrackRef.current.style.transform = `translate3d(-${desktopOffsetRef.current}px, 0, 0)`;
         }
-
-        mobileTrackRef.current.style.transform = `translate3d(-${mobileOffsetRef.current}px, 0, 0)`;
       }
 
       rafId = requestAnimationFrame(tick);
@@ -118,7 +133,8 @@ export function ComfortGallery() {
 
     const jump = 400; // Pixels to scroll on button click
     if (desktopTrackRef.current && window.innerWidth >= 1024) {
-      desktopTrackRef.current.scrollBy({ left: direction * jump, behavior: "smooth" });
+      desktopOffsetRef.current += direction * jump;
+      desktopTrackRef.current.style.transform = `translate3d(-${desktopOffsetRef.current}px, 0, 0)`;
     }
     if (mobileTrackRef.current && window.innerWidth < 1024) {
       mobileOffsetRef.current += direction * jump;
@@ -160,7 +176,7 @@ export function ComfortGallery() {
           >
             <div
               ref={desktopTrackRef}
-              className="flex max-lg:hidden overflow-hidden scrollbar-hide"
+              className="flex max-lg:hidden will-change-transform"
               style={{
                 height: `${GALLERY_INNER_HEIGHT_PX}px`,
                 gap: `${SLIDE_GAP_PX}px`,
