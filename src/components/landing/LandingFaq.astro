@@ -1,0 +1,39 @@
+---
+import SectionHeading from "@/components/landing/SectionHeading.astro";
+import type { LandingContent } from "@/types/landing";
+
+interface Props {
+  data: LandingContent["faq"];
+  sectionBg?: string;
+}
+
+const { data, sectionBg = "bg-cream" } = Astro.props;
+---
+
+<section class={`${sectionBg} py-16 lg:py-20`} aria-label={data.heading}>
+  <div class="krest-site">
+    <SectionHeading heading={data.heading} intro={data.intro} />
+
+    <div class="mx-auto mt-10 max-w-[820px] space-y-3 lg:mt-12">
+      {data.items.map((item) => (
+        <details class="landing-faq group rounded-[16px] border border-copper/12 bg-white px-6 py-1 open:shadow-sm">
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-4 font-display text-[17px] leading-snug text-ink sm:text-[18px]">
+            {item.q}
+            <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#F4EAE6] text-copper transition-transform duration-200 group-open:rotate-45">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <path d="M12 5v14 M5 12h14" />
+              </svg>
+            </span>
+          </summary>
+          <p class="pb-5 font-body text-[15px] leading-relaxed text-taupe">{item.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .landing-faq summary::-webkit-details-marker {
+    display: none;
+  }
+</style>

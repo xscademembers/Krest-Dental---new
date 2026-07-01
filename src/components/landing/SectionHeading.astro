@@ -1,0 +1,51 @@
+---
+interface Props {
+  eyebrow?: string;
+  heading: string;
+  intro?: string;
+  align?: "center" | "left";
+  class?: string;
+}
+
+const { eyebrow, heading, intro, align = "center", class: className = "" } = Astro.props;
+const isCenter = align === "center";
+---
+
+<div
+  class:list={[
+    className,
+    isCenter && "landing-section-heading mx-auto w-full",
+    !isCenter && "text-left",
+  ]}
+>
+  {eyebrow && (
+    <p
+      class:list={[
+        "font-accent text-[12px] uppercase tracking-[0.24em] text-copper",
+        isCenter && "text-center",
+      ]}
+    >
+      {eyebrow}
+    </p>
+  )}
+  <h2
+    class:list={[
+      "mt-3 font-display text-[30px] font-normal leading-[1.15] text-ink sm:text-[38px]",
+      isCenter && "max-w-[720px] text-center",
+      !isCenter && "text-left",
+    ]}
+  >
+    {heading}
+  </h2>
+  {intro && (
+    <p
+      class:list={[
+        "landing-section-heading__intro mt-4 font-body text-[15px] leading-relaxed text-taupe sm:text-[16px]",
+        isCenter && "!text-center",
+        !isCenter && "!text-left",
+      ]}
+    >
+      {intro}
+    </p>
+  )}
+</div>

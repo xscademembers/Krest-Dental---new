@@ -1,0 +1,160 @@
+---
+import { ANALYTICS, TRACK_EVENTS } from "@/lib/analytics-config";
+
+interface Props {
+  /** Page identifier included with every event, e.g. "invisalign_lp". */
+  page: string;
+}
+
+const { page } = Astro.props;
+const { ga4Id, googleAdsId, googleAdsConversionLabel, metaPixelId } = ANALYTICS;
+const hasGtag = Boolean(ga4Id || googleAdsId);
+---
+
+{/* Google tag (gtag.js) — loaded only when a GA4 or Google Ads ID is configured */}
+{
+  hasGtag && (
+    <script
+      is:inline
+      async
+      src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id || googleAdsId}`}
+    />
+  )
+}
+
+<script
+  is:inline
+  define:vars={{
+    page,
+    ga4Id,
+    googleAdsId,
+    googleAdsConversionLabel,
+    metaPixelId,
+    EVENTS: TRACK_EVENTS,
+  }}
+>
+  (function () {
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      window.dataLayer.push(arguments);
+    }
+    window.gtag = window.gtag || gtag;
+
+    // ---- Vendor init (all optional) ----
+    if (ga4Id || googleAdsId) {
+      gtag("js", new Date());
+      if (ga4Id) gtag("config", ga4Id, { page_title: page });
+      if (googleAdsId) gtag("config", googleAdsId);
+    }
+
+    if (metaPixelId) {
+      (function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+      window.fbq("init", metaPixelId);
+      window.fbq("track", "PageView");
+    }
+
+    // ---- Unified tracking helper ----
+    function track(eventName, params) {
+      params = params || {};
+      params.page = page;
+      window.dataLayer.push(Object.assign({ event: eventName }, params));
+      if (typeof window.gtag === "function") window.gtag("event", eventName, params);
+
+      // Fire Google Ads conversion on lead/book actions
+      if (
+        (eventName === EVENTS.formSubmit || eventName === EVENTS.bookClick) &&
+        googleAdsId &&
+        googleAdsConversionLabel
+      ) {
+        window.gtag("event", "conversion", {
+          send_to: googleAdsId + "/" + googleAdsConversionLabel,
+        });
+      }
+
+      // Meta Pixel mapping
+      if (typeof window.fbq === "function") {
+        if (eventName === EVENTS.formSubmit) window.fbq("track", "Lead");
+        else if (eventName === EVENTS.callClick || eventName === EVENTS.whatsappClick)
+          window.fbq("track", "Contact");
+      }
+    }
+    window.krestTrack = track;
+
+    // ---- UTM capture (persist across the session + fill hidden fields) ----
+    var UTM_KEYS = [
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_term",
+      "utm_content",
+      "gclid",
+      "fbclid",
+    ];
+    var params = new URLSearchParams(window.location.search);
+    UTM_KEYS.forEach(function (k) {
+      var v = params.get(k);
+      if (v) {
+        try {
+          sessionStorage.setItem("krest_" + k, v);
+        } catch (e) {}
+      }
+      var stored = v || safeGet("krest_" + k);
+      if (stored) {
+        document.querySelectorAll('input[name="' + k + '"]').forEach(function (inp) {
+          inp.value = stored;
+        });
+      }
+    });
+    function safeGet(k) {
+      try {
+        return sessionStorage.getItem(k);
+      } catch (e) {
+        return null;
+      }
+    }
+
+    // ---- Click tracking via [data-track] ----
+    document.addEventListener("click", function (e) {
+      var el = e.target && e.target.closest ? e.target.closest("[data-track]") : null;
+      if (!el) return;
+      track(el.getAttribute("data-track"), {
+        label: el.getAttribute("data-track-label") || el.textContent.trim().slice(0, 60),
+      });
+    });
+
+    // ---- Scroll depth (25 / 50 / 75 / 100) ----
+    var marks = [25, 50, 75, 100];
+    var fired = {};
+    function onScroll() {
+      var doc = document.documentElement;
+      var scrolled =
+        (doc.scrollTop || document.body.scrollTop) /
+        ((doc.scrollHeight || document.body.scrollHeight) - doc.clientHeight);
+      var pct = Math.round(scrolled * 100);
+      marks.forEach(function (m) {
+        if (pct >= m && !fired[m]) {
+          fired[m] = true;
+          track(EVENTS.scrollDepth, { percent: m });
+        }
+      });
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+  })();
+</script>

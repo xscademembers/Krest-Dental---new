@@ -1,0 +1,47 @@
+---
+import SectionHeading from "@/components/landing/SectionHeading.astro";
+import type { LandingContent } from "@/types/landing";
+
+interface Props {
+  data: LandingContent["testimonials"];
+  sectionBg?: string;
+}
+
+const { data, sectionBg = "bg-white" } = Astro.props;
+
+function stars(n: number) {
+  return Array.from({ length: 5 }, (_, i) => i < n);
+}
+---
+
+<section class={`${sectionBg} py-16 lg:py-20`} aria-label={data.heading}>
+  <div class="krest-site">
+    <SectionHeading heading={data.heading} intro={data.intro} />
+
+    <ul class="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:mt-14 lg:grid-cols-3 lg:gap-6">
+      {data.reviews.map((review) => (
+        <li class="flex flex-col rounded-[22px] border border-copper/10 bg-cream p-7 shadow-[0_18px_44px_-34px_rgba(63,42,32,0.5)]">
+          <div class="flex items-center gap-1 text-copper" aria-label={`${review.rating ?? 5} star rating`}>
+            {stars(review.rating ?? 5).map((filled) => (
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill={filled ? "currentColor" : "none"} stroke="currentColor" stroke-width="1.5">
+                <path d="M12 3l2.9 6 6.1.9-4.5 4.3 1.1 6.1L12 17.8 6.4 20.3l1.1-6.1L3 9.9 9.1 9 12 3Z" />
+              </svg>
+            ))}
+          </div>
+          <p class="mt-4 flex-1 font-body text-[14.5px] leading-relaxed text-taupe">
+            “{review.quote}”
+          </p>
+          <div class="mt-5 flex items-center gap-3">
+            <span class="flex h-9 w-9 items-center justify-center rounded-full bg-copper/15 font-display text-[16px] text-copper">
+              {review.author.charAt(0)}
+            </span>
+            <div>
+              <p class="font-body text-[14px] font-semibold text-ink">{review.author}</p>
+              <p class="font-body text-[12px] text-taupe">Google Review</p>
+            </div>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

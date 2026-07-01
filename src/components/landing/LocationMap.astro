@@ -1,0 +1,91 @@
+---
+import LandingIcon from "@/components/landing/LandingIcon.astro";
+import SectionHeading from "@/components/landing/SectionHeading.astro";
+import { ADDRESS, HOURS } from "@/lib/krest-content";
+
+interface Props {
+  sectionBg?: string;
+}
+
+const { sectionBg = "bg-white" } = Astro.props;
+
+const mapsSearchUrl =
+  "https://www.google.com/maps/search/?api=1&query=Krest+Dental+MVP+Colony+Visakhapatnam";
+const mapEmbedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(
+  "Krest Dental Care MVP Colony Visakhapatnam 530017",
+)}&output=embed`;
+---
+
+<section class={`${sectionBg} py-16 lg:py-20`} aria-label="Clinic location">
+  <div class="krest-site">
+    <SectionHeading heading="Visit Our Clinic" intro="In the heart of MVP Colony, Visakhapatnam — easy to reach with parking nearby." />
+
+    <div class="mt-10 grid grid-cols-1 gap-8 lg:mt-12 lg:grid-cols-[380px_1fr] lg:gap-12">
+      <div class="space-y-6">
+        <div class="flex gap-3">
+          <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#F4EAE6] text-copper">
+            <LandingIcon name="location" class="h-[22px] w-[22px]" />
+          </span>
+          <div>
+            <h3 class="font-display text-[18px] text-ink">Address</h3>
+            <address class="mt-1 space-y-0.5 font-body text-[14.5px] not-italic leading-relaxed text-taupe">
+              <span class="block font-semibold text-ink">{ADDRESS.name}</span>
+              {ADDRESS.lines.map((line) => <span class="block">{line}</span>)}
+            </address>
+          </div>
+        </div>
+
+        <div class="flex gap-3">
+          <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#F4EAE6] text-copper">
+            <LandingIcon name="car" class="h-[22px] w-[22px]" />
+          </span>
+          <div>
+            <h3 class="font-display text-[18px] text-ink">Parking</h3>
+            <p class="mt-1 font-body text-[14.5px] leading-relaxed text-taupe">
+              Convenient parking available near the clinic on MVP Double Road.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex gap-3">
+          <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#F4EAE6] text-copper">
+            <LandingIcon name="clock" class="h-[22px] w-[22px]" />
+          </span>
+          <div>
+            <h3 class="font-display text-[18px] text-ink">Working Hours</h3>
+            <dl class="mt-1 space-y-2 font-body text-[14.5px] leading-relaxed">
+              {HOURS.map((row) => (
+                <div>
+                  <dt class="font-semibold text-ink">{row.day}</dt>
+                  <dd class="text-taupe">{row.time}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </div>
+
+        <a
+          href={mapsSearchUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          data-track="book_click"
+          data-track-label="get_directions"
+          class="inline-flex h-11 items-center justify-center rounded-full bg-copper px-7 font-body text-[14px] font-semibold text-white transition hover:opacity-90"
+        >
+          Get Directions
+        </a>
+      </div>
+
+      <div class="overflow-hidden rounded-[28px] border border-copper/15 shadow-[0_24px_60px_-32px_rgba(63,42,32,0.4)]">
+        <iframe
+          title="Krest Dental — map location"
+          src={mapEmbedUrl}
+          class="h-[340px] w-full border-0 lg:h-full lg:min-h-[440px]"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen
+        />
+      </div>
+    </div>
+  </div>
+</section>

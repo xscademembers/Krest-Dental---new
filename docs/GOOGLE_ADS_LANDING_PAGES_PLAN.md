@@ -1,6 +1,6 @@
 # Google Ads Landing Pages — Implementation Plan
 
-**Status:** Planning only — no implementation started yet.
+**Status:** Phase 1 (Invisalign) — BUILT. Phase 2 (Dental Implants) — not started.
 **Created:** 2026-07-01
 **Owner:** Krest Dental
 **Purpose:** Build high-converting, standalone Google Ads landing pages (NOT service/marketing pages).
@@ -385,4 +385,19 @@ Fields:
 
 ---
 
-*This document is a plan only. Implementation has not started.*
+## Implementation Status
+
+### Phase 1 — Invisalign (`/invisalign-treatment-vizag`) — ✅ Built
+- Reusable landing component library in `src/components/landing/`
+- Content decoupled in `src/lib/landing-content.ts` (`INVISALIGN_LANDING`)
+- Types in `src/types/landing.ts`; analytics config in `src/lib/analytics-config.ts`
+- All 11 sections + sticky mobile CTA
+- SEO metadata, MedicalBusiness + FAQPage JSON-LD
+- Analytics/conversion hooks (GA4, Google Ads, Meta Pixel, UTM capture, scroll depth, click + form tracking) — **vendor IDs pending** (set via `PUBLIC_*` env vars)
+- Leads API extended: `email` now optional, `preferredTime` captured (contact page unaffected)
+- `astro check`: 0 errors
+
+### Phase 2 — Dental Implants (`/dental-implants-vizag`) — ⏳ Not started
+- Will reuse the same component library with implants-specific content
+
+*Phase 1 implemented on 2026-07-01.*

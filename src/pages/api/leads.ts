@@ -58,9 +58,10 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
   const name = data.name;
   const phone = data.phone;
   const email = data.email;
-  if (!name || !phone || !email) {
+  // Email is optional (landing-page lead forms collect only name + phone).
+  if (!name || !phone) {
     return new Response(
-      JSON.stringify({ ok: false, error: "Name, phone and email are required." }),
+      JSON.stringify({ ok: false, error: "Name and phone are required." }),
       { status: 400, headers: { "content-type": "application/json" } },
     );
   }
@@ -68,8 +69,9 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
   const doc: LeadDoc = {
     name,
     phone,
-    email,
+    email: email || "",
     interest: data.interest || undefined,
+    preferredTime: data.preferredTime || undefined,
     message: data.message || undefined,
     utm: {
       source: data.utm_source || undefined,

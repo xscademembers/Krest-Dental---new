@@ -395,6 +395,27 @@
     color: var(--krest-taupe);
   }
 
+  /* Google Ads landing pages — section headings */
+  .landing-section-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .landing-section-heading__intro {
+    width: 100%;
+    max-width: 68rem;
+    text-align: center;
+    text-wrap: balance;
+  }
+
+  @media (min-width: 1024px) {
+    .landing-section-heading__intro {
+      max-width: 72rem;
+    }
+  }
+
   /* Footer — Wix mobile collage grid */
   @media (max-width: 1023px) {
     .footer-mobile__grid {

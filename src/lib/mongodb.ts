@@ -87,6 +87,7 @@ export type LeadDoc = {
   phone: string;
   email: string;
   interest?: string;
+  preferredTime?: string;
   message?: string;
   utm?: {
     source?: string;

@@ -1,0 +1,83 @@
+---
+import LandingIcon from "@/components/landing/LandingIcon.astro";
+import type { LandingContent } from "@/types/landing";
+
+interface Props {
+  hero: LandingContent["hero"];
+  trustBadges: LandingContent["trustBadges"];
+}
+
+const { hero, trustBadges } = Astro.props;
+const isTel = hero.secondaryCta.href.startsWith("tel:");
+---
+
+<section class="relative overflow-hidden bg-cream" aria-label="Hero">
+  <div class="krest-site grid grid-cols-1 items-center gap-10 py-12 lg:grid-cols-2 lg:gap-14 lg:py-20">
+    <!-- Copy -->
+    <div class="order-2 lg:order-1">
+      {hero.eyebrow && (
+        <p class="font-accent text-[12px] uppercase tracking-[0.24em] text-copper">
+          {hero.eyebrow}
+        </p>
+      )}
+      <h1 class="mt-4 font-display text-[34px] font-normal leading-[1.1] text-ink sm:text-[44px] lg:text-[54px]">
+        {hero.headline}
+        {hero.headlineAccent && (
+          <span class="mt-2 block text-copper">{hero.headlineAccent}</span>
+        )}
+      </h1>
+      <p class="mt-5 max-w-[540px] font-body text-[16px] leading-relaxed text-taupe sm:text-[18px]">
+        {hero.subheading}
+      </p>
+
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+        <a
+          href={hero.primaryCta.href}
+          data-track="book_click"
+          data-track-label="hero_primary"
+          class="inline-flex h-[54px] items-center justify-center rounded-full bg-copper px-8 font-body text-[15px] font-semibold text-white shadow-[0_18px_40px_-18px_rgba(159,100,73,0.9)] transition hover:opacity-90"
+        >
+          {hero.primaryCta.label}
+        </a>
+        <a
+          href={hero.secondaryCta.href}
+          data-track={isTel ? "call_click" : "book_click"}
+          data-track-label="hero_secondary"
+          class="inline-flex h-[54px] items-center justify-center gap-2 rounded-full border border-copper/40 px-8 font-body text-[15px] font-semibold text-copper transition hover:border-copper hover:bg-copper/5"
+        >
+          <LandingIcon name="phone" class="h-[18px] w-[18px]" />
+          {hero.secondaryCta.label}
+        </a>
+      </div>
+
+      <!-- Trust badges -->
+      <ul class="mt-9 grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-4">
+        {trustBadges.map((badge) => (
+          <li class="flex flex-col items-start gap-2">
+            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-white text-copper shadow-sm">
+              <LandingIcon name={badge.icon} class="h-5 w-5" />
+            </span>
+            <span class="font-body text-[13px] font-semibold leading-tight text-ink">
+              {badge.label}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <!-- Image -->
+    <div class="order-1 lg:order-2">
+      <div class="relative overflow-hidden rounded-[28px] shadow-[0_30px_70px_-30px_rgba(63,42,32,0.5)]">
+        <img
+          src={hero.image}
+          alt={hero.imageAlt}
+          width="820"
+          height="720"
+          fetchpriority="high"
+          decoding="async"
+          class="h-[320px] w-full object-cover sm:h-[420px] lg:h-[520px]"
+        />
+      </div>
+    </div>
+  </div>
+</section>

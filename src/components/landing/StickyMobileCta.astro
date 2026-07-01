@@ -1,0 +1,49 @@
+---
+import LandingIcon from "@/components/landing/LandingIcon.astro";
+import { PHONE_TEL } from "@/lib/krest-content";
+
+interface Props {
+  bookHref?: string;
+  whatsappHref?: string;
+}
+
+const {
+  bookHref = "#lead-form",
+  whatsappHref = "https://wa.me/919573884525",
+} = Astro.props;
+---
+
+<div
+  class="fixed inset-x-0 bottom-0 z-40 grid grid-cols-3 border-t border-copper/15 bg-white/95 backdrop-blur lg:hidden"
+  aria-label="Quick actions"
+>
+  <a
+    href={PHONE_TEL}
+    data-track="call_click"
+    data-track-label="sticky_call"
+    class="flex flex-col items-center justify-center gap-1 py-2.5 font-body text-[12px] font-semibold text-ink"
+  >
+    <LandingIcon name="phone" class="h-5 w-5 text-copper" />
+    Call
+  </a>
+  <a
+    href={whatsappHref}
+    target="_blank"
+    rel="noopener noreferrer"
+    data-track="whatsapp_click"
+    data-track-label="sticky_whatsapp"
+    class="flex flex-col items-center justify-center gap-1 border-x border-copper/15 py-2.5 font-body text-[12px] font-semibold text-ink"
+  >
+    <LandingIcon name="whatsapp" class="h-5 w-5 text-[#25D366]" />
+    WhatsApp
+  </a>
+  <a
+    href={bookHref}
+    data-track="book_click"
+    data-track-label="sticky_book"
+    class="flex flex-col items-center justify-center gap-1 bg-copper py-2.5 font-body text-[12px] font-semibold text-white"
+  >
+    <LandingIcon name="calendar" class="h-5 w-5" />
+    Book
+  </a>
+</div>

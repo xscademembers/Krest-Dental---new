@@ -1,0 +1,31 @@
+---
+import LandingIcon from "@/components/landing/LandingIcon.astro";
+import SectionHeading from "@/components/landing/SectionHeading.astro";
+import type { LandingContent } from "@/types/landing";
+
+interface Props {
+  data: LandingContent["conditions"];
+  sectionBg?: string;
+}
+
+const { data, sectionBg = "bg-cream" } = Astro.props;
+---
+
+<section class={`${sectionBg} py-16 lg:py-20`} aria-label={data.heading}>
+  <div class="krest-site">
+    <SectionHeading heading={data.heading} intro={data.intro} />
+
+    <ul class="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:mt-12 lg:gap-5">
+      {data.cards.map((card) => (
+        <li class="flex flex-col items-center gap-3 rounded-[18px] border border-copper/12 bg-white px-4 py-7 text-center transition hover:border-copper/30 hover:shadow-sm">
+          <span class="flex h-12 w-12 items-center justify-center rounded-full bg-[#F4EAE6] text-copper">
+            <LandingIcon name={card.icon} class="h-6 w-6" />
+          </span>
+          <h3 class="font-body text-[14px] font-semibold leading-snug text-ink sm:text-[15px]">
+            {card.title}
+          </h3>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

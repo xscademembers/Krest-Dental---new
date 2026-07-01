@@ -1,0 +1,175 @@
+---
+import SectionHeading from "@/components/landing/SectionHeading.astro";
+import type { LandingContent } from "@/types/landing";
+
+interface Props {
+  data: LandingContent["leadForm"];
+  sectionBg?: string;
+}
+
+const { data, sectionBg = "bg-cream" } = Astro.props;
+
+const PREFERRED_TIMES = [
+  "Morning (9:30 AM – 12 PM)",
+  "Afternoon (12 PM – 4 PM)",
+  "Evening (4 PM – 7:30 PM)",
+  "Any time",
+];
+---
+
+<section id="lead-form" class={`${sectionBg} scroll-mt-24 py-16 lg:py-20`} aria-label={data.heading}>
+  <div class="krest-site">
+    <div class="mx-auto max-w-[640px] rounded-[28px] border border-copper/10 bg-white p-8 shadow-[0_24px_60px_-32px_rgba(63,42,32,0.4)] sm:p-10 lg:p-12">
+      <SectionHeading heading={data.heading} intro={data.intro} class="!mx-0 !max-w-none" align="left" />
+
+      <!-- Success state (shown after AJAX submit) -->
+      <div
+        id="lead-success"
+        class="mt-8 hidden rounded-[20px] border border-copper/20 bg-[#F4EAE6] px-6 py-10 text-center"
+        role="status"
+      >
+        <span class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-copper">
+          <svg class="h-7 w-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+        </span>
+        <p class="mt-5 font-display text-[24px] text-ink">Thank you!</p>
+        <p class="mt-2 font-body text-[15px] text-taupe">Our team will call you back shortly to confirm your consultation.</p>
+      </div>
+
+      <form
+        id="landing-lead-form"
+        class="mt-8 space-y-5"
+        action="/api/leads"
+        method="POST"
+      >
+        <input type="hidden" name="interest" value={data.interest} />
+        <input type="hidden" name="utm_source" value="" />
+        <input type="hidden" name="utm_medium" value="" />
+        <input type="hidden" name="utm_campaign" value="" />
+        <input type="hidden" name="utm_term" value="" />
+        <input type="hidden" name="utm_content" value="" />
+        <input type="hidden" name="gclid" value="" />
+        <input type="hidden" name="fbclid" value="" />
+        <input
+          type="text"
+          name="botcheck"
+          class="absolute -left-[9999px] h-px w-px opacity-0"
+          tabindex="-1"
+          autocomplete="off"
+          aria-hidden="true"
+        />
+
+        <div>
+          <label for="ll-name" class="font-body text-[12px] font-semibold uppercase tracking-[0.14em] text-taupe">
+            Name
+          </label>
+          <input
+            id="ll-name"
+            name="name"
+            type="text"
+            required
+            autocomplete="name"
+            placeholder="Your full name"
+            class="contact-field mt-2 w-full px-4 py-3.5 font-body text-[16px]"
+          />
+        </div>
+
+        <div>
+          <label for="ll-phone" class="font-body text-[12px] font-semibold uppercase tracking-[0.14em] text-taupe">
+            Phone
+          </label>
+          <input
+            id="ll-phone"
+            name="phone"
+            type="tel"
+            required
+            autocomplete="tel"
+            placeholder="+91 …"
+            class="contact-field mt-2 w-full px-4 py-3.5 font-body text-[16px]"
+          />
+        </div>
+
+        <div>
+          <label for="ll-time" class="font-body text-[12px] font-semibold uppercase tracking-[0.14em] text-taupe">
+            Preferred Time
+          </label>
+          <select
+            id="ll-time"
+            name="preferredTime"
+            class="contact-field mt-2 w-full cursor-pointer px-4 py-3.5 font-body text-[16px]"
+          >
+            <option value="">Select a time</option>
+            {PREFERRED_TIMES.map((t) => <option value={t}>{t}</option>)}
+          </select>
+        </div>
+
+        <button
+          type="submit"
+          class="contact-submit inline-flex h-[54px] w-full items-center justify-center rounded-full px-10 font-body text-[15px] font-semibold"
+        >
+          {data.submitLabel}
+        </button>
+
+        <p id="lead-error" class="hidden font-body text-[13px] text-red-600"></p>
+        <p class="font-body text-[12px] leading-relaxed text-taupe">
+          By submitting, you agree we may contact you about your consultation request.
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  (function () {
+    var form = document.getElementById("landing-lead-form");
+    if (!form) return;
+    var success = document.getElementById("lead-success");
+    var errorEl = document.getElementById("lead-error");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      errorEl.classList.add("hidden");
+      var btn = form.querySelector('button[type="submit"]');
+      var original = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = "Sending…";
+
+      var payload = {};
+      new FormData(form).forEach(function (v, k) {
+        payload[k] = v;
+      });
+
+      fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(payload),
+      })
+        .then(function (r) {
+          return r.json().catch(function () {
+            return { ok: r.ok };
+          });
+        })
+        .then(function (res) {
+          if (res && res.ok) {
+            form.classList.add("hidden");
+            if (success) success.classList.remove("hidden");
+            if (typeof window.krestTrack === "function") {
+              window.krestTrack("generate_lead", { form: "landing" });
+            }
+            if (success && success.scrollIntoView) {
+              success.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+          } else {
+            throw new Error((res && res.error) || "Submission failed");
+          }
+        })
+        .catch(function (err) {
+          errorEl.textContent = err.message || "Something went wrong. Please call us instead.";
+          errorEl.classList.remove("hidden");
+          btn.disabled = false;
+          btn.textContent = original;
+        });
+    });
+  })();
+</script>
