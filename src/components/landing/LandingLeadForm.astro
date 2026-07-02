@@ -1,5 +1,5 @@
 ---
-import SectionHeading from "@/components/landing/SectionHeading.astro";
+import LandingIcon from "@/components/landing/LandingIcon.astro";
 import type { LandingContent } from "@/types/landing";
 
 interface Props {
@@ -7,169 +7,166 @@ interface Props {
   sectionBg?: string;
 }
 
-const { data, sectionBg = "bg-cream" } = Astro.props;
-
-const PREFERRED_TIMES = [
-  "Morning (9:30 AM – 12 PM)",
-  "Afternoon (12 PM – 4 PM)",
-  "Evening (4 PM – 7:30 PM)",
-  "Any time",
-];
+const { data, sectionBg = "bg-pure-white" } = Astro.props;
 ---
 
-<section id="lead-form" class={`${sectionBg} scroll-mt-24 py-16 lg:py-20`} aria-label={data.heading}>
-  <div class="krest-site">
-    <div class="mx-auto max-w-[640px] rounded-[28px] border border-copper/10 bg-white p-8 shadow-[0_24px_60px_-32px_rgba(63,42,32,0.4)] sm:p-10 lg:p-12">
-      <SectionHeading heading={data.heading} intro={data.intro} class="!mx-0 !max-w-none" align="left" />
-
-      <!-- Success state (shown after AJAX submit) -->
-      <div
-        id="lead-success"
-        class="mt-8 hidden rounded-[20px] border border-copper/20 bg-[#F4EAE6] px-6 py-10 text-center"
-        role="status"
-      >
-        <span class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-copper">
-          <svg class="h-7 w-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-          </svg>
-        </span>
-        <p class="mt-5 font-display text-[24px] text-ink">Thank you!</p>
-        <p class="mt-2 font-body text-[15px] text-taupe">Our team will call you back shortly to confirm your consultation.</p>
+<section id="lead-form" class={`${sectionBg} py-24 lg:py-[120px]`} aria-label="Book Consultation">
+  <div class="krest-site mx-auto max-w-[1069px]">
+    
+    <div class="relative overflow-hidden rounded-[32px] bg-copper shadow-[0_30px_70px_-20px_rgba(63,42,32,0.4)] ring-1 ring-black/5" data-float-in="up">
+      <!-- Decorative background pattern -->
+      <div class="pointer-events-none absolute inset-0 opacity-10">
+        <svg class="h-full w-full" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="grid-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="1"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#grid-pattern)" />
+        </svg>
       </div>
 
-      <form
-        id="landing-lead-form"
-        class="mt-8 space-y-5"
-        action="/api/leads"
-        method="POST"
-      >
-        <input type="hidden" name="interest" value={data.interest} />
-        <input type="hidden" name="utm_source" value="" />
-        <input type="hidden" name="utm_medium" value="" />
-        <input type="hidden" name="utm_campaign" value="" />
-        <input type="hidden" name="utm_term" value="" />
-        <input type="hidden" name="utm_content" value="" />
-        <input type="hidden" name="gclid" value="" />
-        <input type="hidden" name="fbclid" value="" />
-        <input
-          type="text"
-          name="botcheck"
-          class="absolute -left-[9999px] h-px w-px opacity-0"
-          tabindex="-1"
-          autocomplete="off"
-          aria-hidden="true"
-        />
+      <div class="grid grid-cols-1 lg:grid-cols-5">
+        
+        <!-- Left: Copy & Trust Signals -->
+        <div class="relative z-10 flex flex-col justify-center p-10 lg:col-span-2 lg:p-14 lg:pr-8">
+          <h2 class="font-display text-[36px] font-medium leading-[1.1] text-white sm:text-[42px]">
+            {data.heading}
+          </h2>
+          <p class="mt-4 font-body text-[18px] leading-[1.6] text-white/80">
+            {data.intro}
+          </p>
 
-        <div>
-          <label for="ll-name" class="font-body text-[12px] font-semibold uppercase tracking-[0.14em] text-taupe">
-            Name
-          </label>
-          <input
-            id="ll-name"
-            name="name"
-            type="text"
-            required
-            autocomplete="name"
-            placeholder="Your full name"
-            class="contact-field mt-2 w-full px-4 py-3.5 font-body text-[16px]"
-          />
+          <div class="mt-12 space-y-6 border-t border-white/20 pt-8">
+            <div class="flex items-center gap-4">
+              <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm">
+                <LandingIcon name="star" class="h-5 w-5 text-white" />
+              </div>
+              <p class="font-body text-[15px] font-medium text-white">5.0 Google Rated Clinic</p>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm">
+                <LandingIcon name="phone" class="h-5 w-5 text-white" />
+              </div>
+              <p class="font-body text-[15px] font-medium text-white">Fast Response (Under 15 mins)</p>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm">
+                <LandingIcon name="check" class="h-5 w-5 text-white" />
+              </div>
+              <p class="font-body text-[15px] font-medium text-white">100% Privacy. No Spam.</p>
+            </div>
+          </div>
         </div>
 
-        <div>
-          <label for="ll-phone" class="font-body text-[12px] font-semibold uppercase tracking-[0.14em] text-taupe">
-            Phone
-          </label>
-          <input
-            id="ll-phone"
-            name="phone"
-            type="tel"
-            required
-            autocomplete="tel"
-            placeholder="+91 …"
-            class="contact-field mt-2 w-full px-4 py-3.5 font-body text-[16px]"
-          />
+        <!-- Right: Form -->
+        <div class="relative z-10 p-4 lg:col-span-3 lg:p-10">
+          <div class="rounded-[24px] bg-white p-8 shadow-lg sm:p-10">
+            <form id="landing-lead-form" class="flex flex-col gap-5">
+              <input type="hidden" name="interest" value={data.interest} />
+              
+              <div>
+                <label for="name" class="sr-only">Full Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="Full Name"
+                  class="contact-field h-14 w-full px-5 font-body text-[16px] transition-colors"
+                />
+              </div>
+
+              <div>
+                <label for="phone" class="sr-only">Phone Number</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                  placeholder="Phone Number"
+                  class="contact-field h-14 w-full px-5 font-body text-[16px] transition-colors"
+                />
+              </div>
+
+              <div class="relative">
+                <label for="preferredTime" class="sr-only">Preferred Time to Call</label>
+                <select
+                  id="preferredTime"
+                  name="preferredTime"
+                  class="contact-field h-14 w-full appearance-none bg-white px-5 font-body text-[16px] transition-colors"
+                  required
+                >
+                  <option value="" disabled selected>Preferred Time to Call</option>
+                  <option value="morning">Morning (9 AM - 12 PM)</option>
+                  <option value="afternoon">Afternoon (12 PM - 4 PM)</option>
+                  <option value="evening">Evening (4 PM - 8 PM)</option>
+                  <option value="anytime">Anytime</option>
+                </select>
+                <div class="pointer-events-none absolute inset-y-0 right-5 flex items-center">
+                  <LandingIcon name="check" class="h-4 w-4 rotate-90 text-taupe" />
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                data-track="form_submit"
+                data-track-label="lead_form_bottom"
+                class="contact-submit mt-4 h-14 w-full font-body text-[16px] font-semibold transition-all hover:-translate-y-0.5"
+              >
+                <span>{data.submitLabel}</span>
+              </button>
+
+              <div id="form-message" class="mt-2 hidden text-center font-body text-[14px]"></div>
+            </form>
+          </div>
         </div>
 
-        <div>
-          <label for="ll-time" class="font-body text-[12px] font-semibold uppercase tracking-[0.14em] text-taupe">
-            Preferred Time
-          </label>
-          <select
-            id="ll-time"
-            name="preferredTime"
-            class="contact-field mt-2 w-full cursor-pointer px-4 py-3.5 font-body text-[16px]"
-          >
-            <option value="">Select a time</option>
-            {PREFERRED_TIMES.map((t) => <option value={t}>{t}</option>)}
-          </select>
-        </div>
-
-        <button
-          type="submit"
-          class="contact-submit inline-flex h-[54px] w-full items-center justify-center rounded-full px-10 font-body text-[15px] font-semibold"
-        >
-          {data.submitLabel}
-        </button>
-
-        <p id="lead-error" class="hidden font-body text-[13px] text-red-600"></p>
-        <p class="font-body text-[12px] leading-relaxed text-taupe">
-          By submitting, you agree we may contact you about your consultation request.
-        </p>
-      </form>
+      </div>
     </div>
   </div>
 </section>
 
-<script is:inline>
-  (function () {
-    var form = document.getElementById("landing-lead-form");
-    if (!form) return;
-    var success = document.getElementById("lead-success");
-    var errorEl = document.getElementById("lead-error");
+<script>
+  const form = document.getElementById("landing-lead-form") as HTMLFormElement;
+  const messageEl = document.getElementById("form-message");
 
-    form.addEventListener("submit", function (e) {
+  if (form && messageEl) {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
-      errorEl.classList.add("hidden");
-      var btn = form.querySelector('button[type="submit"]');
-      var original = btn.textContent;
-      btn.disabled = true;
-      btn.textContent = "Sending…";
-
-      var payload = {};
-      new FormData(form).forEach(function (v, k) {
-        payload[k] = v;
-      });
-
-      fetch("/api/leads", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify(payload),
-      })
-        .then(function (r) {
-          return r.json().catch(function () {
-            return { ok: r.ok };
-          });
-        })
-        .then(function (res) {
-          if (res && res.ok) {
-            form.classList.add("hidden");
-            if (success) success.classList.remove("hidden");
-            if (typeof window.krestTrack === "function") {
-              window.krestTrack("generate_lead", { form: "landing" });
-            }
-            if (success && success.scrollIntoView) {
-              success.scrollIntoView({ behavior: "smooth", block: "center" });
-            }
-          } else {
-            throw new Error((res && res.error) || "Submission failed");
-          }
-        })
-        .catch(function (err) {
-          errorEl.textContent = err.message || "Something went wrong. Please call us instead.";
-          errorEl.classList.remove("hidden");
-          btn.disabled = false;
-          btn.textContent = original;
+      
+      const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+      const originalText = submitBtn.innerHTML;
+      
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = "<span>Sending...</span>";
+      messageEl.className = "mt-2 hidden text-center font-body text-[14px]";
+      
+      try {
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+        
+        // This assumes an API route exists at /api/leads
+        const response = await fetch("/api/leads", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
         });
+
+        if (response.ok) {
+          form.reset();
+          messageEl.textContent = "Thank you! We will contact you shortly.";
+          messageEl.className = "mt-2 text-center font-body text-[14px] text-green-600 block";
+        } else {
+          throw new Error("Failed to submit");
+        }
+      } catch (error) {
+        messageEl.textContent = "Something went wrong. Please try calling us.";
+        messageEl.className = "mt-2 text-center font-body text-[14px] text-red-600 block";
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+      }
     });
-  })();
+  }
 </script>

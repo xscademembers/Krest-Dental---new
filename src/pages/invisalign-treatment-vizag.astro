@@ -13,13 +13,12 @@ import LocationMap from "@/components/landing/LocationMap.astro";
 import ProcessTimeline from "@/components/landing/ProcessTimeline.astro";
 import StickyMobileCta from "@/components/landing/StickyMobileCta.astro";
 import WhyChoose from "@/components/landing/WhyChoose.astro";
+import { SiteHeader } from "@/components/SiteHeader";
+import { SiteFooter } from "@/components/SiteFooter";
 import { EMAIL } from "@/lib/krest-content";
 import { INVISALIGN_LANDING as C } from "@/lib/landing-content";
 
 export const prerender = true;
-
-// Standalone Google Ads landing page — intentionally NO SiteHeader/SiteFooter
-// so the page stays conversion-focused with a single path to the lead form.
 
 const faqJsonLd = {
   "@context": "https://schema.org",
@@ -70,9 +69,11 @@ const businessJsonLd = {
   <script is:inline type="application/ld+json" set:html={JSON.stringify(businessJsonLd)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
 
+  <SiteHeader client:load />
+
   <main class="flex-1 pb-16 lg:pb-0">
     <LandingHero hero={C.hero} trustBadges={C.trustBadges} />
-    <BenefitsGrid data={C.benefits} sectionBg="bg-white" cardBg="bg-cream" />
+    <BenefitsGrid data={C.benefits} sectionBg="bg-pure-white" />
     <ConditionsGrid data={C.conditions} sectionBg="bg-cream" />
     <ProcessTimeline data={C.process} sectionBg="bg-white" />
     <WhyChoose data={C.whyChoose} sectionBg="bg-cream" />
@@ -84,6 +85,7 @@ const businessJsonLd = {
     <LandingLeadForm data={C.leadForm} sectionBg="bg-cream" />
   </main>
 
+  <SiteFooter mobileWhiteBg />
   <StickyMobileCta />
   <LandingAnalytics page="invisalign_lp" />
 </Layout>

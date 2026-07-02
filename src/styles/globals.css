@@ -14,6 +14,9 @@
   --color-taupe: var(--krest-taupe);
   --color-ink: var(--krest-ink);
   --color-pink: var(--krest-pink);
+  --color-pure-white: var(--krest-pure-white);
+  --color-light-grey: var(--krest-light-grey);
+  --color-soft-copper: var(--krest-soft-copper);
 
   /* Fonts (loaded via Layout.astro Google Fonts link) */
   --font-sans: "EB Garamond", ui-serif, Georgia, serif;
@@ -73,6 +76,9 @@
   /* #000000 */
   --krest-pink: oklch(0.83 0.06 30);
   /* #F5B8AA */
+  --krest-pure-white: oklch(1 0 0);
+  --krest-light-grey: oklch(0.98 0 0);
+  --krest-soft-copper: oklch(0.96 0.02 45);
 
   /* Layout — measured at 1440px on krest.dental */
   --krest-site-max: 1425px;

@@ -6,28 +6,43 @@ import type { LandingContent } from "@/types/landing";
 interface Props {
   data: LandingContent["benefits"];
   sectionBg?: string;
-  cardBg?: string;
 }
 
-const { data, sectionBg = "bg-white", cardBg = "bg-cream" } = Astro.props;
+const { data, sectionBg = "bg-pure-white" } = Astro.props;
 ---
 
-<section class={`${sectionBg} py-16 lg:py-20`} aria-label={data.heading}>
-  <div class="krest-site">
-    <SectionHeading heading={data.heading} intro={data.intro} />
+<section class={`${sectionBg} relative`} aria-label={data.heading}>
+  <div class="krest-site py-24 lg:py-[120px]">
+    
+    <div class="flex flex-col items-center text-center">
+      <SectionHeading heading={data.heading} intro={data.intro} />
+    </div>
 
-    <ul class="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:mt-14 lg:grid-cols-3 lg:gap-6">
-      {data.cards.map((card) => (
-        <li class={`${cardBg} flex flex-col gap-4 rounded-[22px] p-7 transition hover:-translate-y-1 hover:shadow-[0_24px_50px_-30px_rgba(63,42,32,0.5)]`}>
-          <span class="flex h-12 w-12 items-center justify-center rounded-full bg-white text-copper shadow-sm">
-            <LandingIcon name={card.icon} class="h-6 w-6" />
-          </span>
-          <h3 class="font-display text-[22px] leading-tight text-ink">{card.title}</h3>
-          {card.text && (
-            <p class="font-body text-[15px] leading-relaxed text-taupe">{card.text}</p>
-          )}
-        </li>
+    <!-- Architectural Luxury Grid (No Cards, Thin Borders) -->
+    <div class="mt-20 grid grid-cols-1 border-t border-l border-border/50 md:grid-cols-2 lg:grid-cols-3" data-float-in="up">
+      {data.cards.map((card, index) => (
+        <div 
+          class="group relative border-b border-r border-border/50 p-10 transition-colors duration-500 hover:bg-copper/5 sm:p-14"
+        >
+          <!-- Subtle large number background -->
+          <div class="pointer-events-none absolute right-6 top-6 font-display text-[100px] font-bold leading-none text-copper/[0.03] transition-colors duration-500 group-hover:text-copper/[0.08]">
+            0{index + 1}
+          </div>
+
+          <div class="relative z-10 flex h-16 w-16 items-center justify-center rounded-full border border-copper/20 bg-white text-copper transition-all duration-500 group-hover:scale-110 group-hover:border-transparent group-hover:bg-copper group-hover:text-white group-hover:shadow-[0_12px_24px_-8px_rgba(159,100,73,0.5)]">
+            <LandingIcon name={card.icon} class="h-7 w-7" />
+          </div>
+          
+          <h3 class="mt-14 font-display text-[26px] font-medium leading-[1.15] text-ink transition-colors duration-500 group-hover:text-copper sm:text-[32px]">
+            {card.title}
+          </h3>
+          
+          <p class="mt-5 max-w-sm font-body text-[17px] leading-[1.7] text-taupe/80 transition-colors duration-500 group-hover:text-taupe">
+            {card.text}
+          </p>
+        </div>
       ))}
-    </ul>
+    </div>
+
   </div>
 </section>

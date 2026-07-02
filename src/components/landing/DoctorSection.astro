@@ -1,5 +1,6 @@
 ---
 import LandingIcon from "@/components/landing/LandingIcon.astro";
+import SectionHeading from "@/components/landing/SectionHeading.astro";
 import type { LandingContent } from "@/types/landing";
 
 interface Props {
@@ -7,54 +8,91 @@ interface Props {
   sectionBg?: string;
 }
 
-const { data, sectionBg = "bg-white" } = Astro.props;
+const { data, sectionBg = "bg-light-grey" } = Astro.props;
 ---
 
-<section class={`${sectionBg} py-16 lg:py-20`} aria-label={data.heading}>
-  <div class="krest-site grid grid-cols-1 items-center gap-10 lg:grid-cols-[420px_1fr] lg:gap-14">
-    <div class="order-1">
-      <div class="overflow-hidden rounded-[28px] shadow-[0_30px_70px_-30px_rgba(63,42,32,0.5)]">
-        <img
-          src={data.image}
-          alt={data.imageAlt}
-          width="640"
-          height="720"
-          loading="lazy"
-          decoding="async"
-          class="h-[380px] w-full object-cover object-top sm:h-[460px]"
-        />
+<section class={`${sectionBg} py-24 lg:py-[120px] relative overflow-hidden`} aria-label={data.heading}>
+  <!-- Background Decoration -->
+  <div class="pointer-events-none absolute -right-[20%] top-0 -z-10 h-full w-1/2 opacity-30">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,var(--krest-copper)_0%,transparent_70%)] blur-[120px]"></div>
+  </div>
+
+  <div class="krest-site">
+    <div class="grid grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-24">
+      
+      <!-- Doctor Image with Floating Badges -->
+      <div class="relative order-2 w-full lg:order-1" data-float-in="left">
+        <div class="relative z-10 overflow-hidden rounded-[32px] shadow-[0_30px_70px_-20px_rgba(63,42,32,0.2)] ring-1 ring-border/50">
+          <img
+            src={data.image}
+            alt={data.imageAlt}
+            class="h-[500px] w-full object-cover transition-transform duration-1000 hover:scale-105 sm:h-[600px] lg:h-[760px]"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- Floating Badges (mapped from highlights) -->
+        {data.highlights.length > 0 && (
+          <div class="absolute -right-4 top-16 z-20 hidden animate-fade-in sm:block lg:-right-8" style="animation-delay: 0.3s;">
+            <div class="flex items-center gap-3 rounded-2xl bg-white/95 p-3.5 shadow-xl ring-1 ring-black/5 backdrop-blur-md">
+              <div class="flex h-10 w-10 items-center justify-center rounded-full bg-cream text-copper">
+                <LandingIcon name="star" class="h-5 w-5" />
+              </div>
+              <span class="font-display text-[16px] font-semibold text-ink">{data.highlights[0]}</span>
+            </div>
+          </div>
+        )}
+
+        {data.highlights.length > 1 && (
+          <div class="absolute -left-4 bottom-24 z-20 hidden animate-fade-in sm:block lg:-left-12" style="animation-delay: 0.6s;">
+            <div class="flex items-center gap-3 rounded-2xl bg-white/95 p-3.5 shadow-xl ring-1 ring-black/5 backdrop-blur-md">
+              <div class="flex h-10 w-10 items-center justify-center rounded-full bg-cream text-copper">
+                <LandingIcon name="smile" class="h-5 w-5" />
+              </div>
+              <span class="font-display text-[16px] font-semibold text-ink">{data.highlights[1]}</span>
+            </div>
+          </div>
+        )}
       </div>
-    </div>
 
-    <div class="order-2">
-      <p class="font-accent text-[12px] uppercase tracking-[0.24em] text-copper">{data.heading}</p>
-      <h2 class="mt-3 font-display text-[30px] font-normal leading-tight text-ink sm:text-[38px]">
-        {data.name}
-      </h2>
-      <p class="mt-1.5 font-accent text-[15px] text-copper">{data.role}</p>
-      <p class="mt-5 max-w-[560px] font-body text-[15px] leading-relaxed text-taupe sm:text-[16px]">
-        {data.bio}
-      </p>
+      <!-- Doctor Content -->
+      <div class="order-1 lg:order-2" data-float-in="up">
+        <SectionHeading heading={data.heading} align="left" />
+        
+        <div class="mt-8">
+          <h3 class="font-display text-[32px] font-medium leading-tight text-ink sm:text-[42px]">
+            {data.name}
+          </h3>
+          <p class="mt-2 font-accent text-[16px] uppercase tracking-wider text-copper">
+            {data.role}
+          </p>
+          
+          <div class="mt-8 space-y-6 font-body text-[18px] leading-[1.7] text-taupe">
+            <p>{data.bio}</p>
+          </div>
 
-      <ul class="mt-7 grid grid-cols-1 gap-3 sm:grid-cols-2">
-        {data.highlights.map((h) => (
-          <li class="flex items-center gap-2.5 font-body text-[14px] text-ink">
-            <span class="flex h-6 w-6 items-center justify-center rounded-full bg-copper/10 text-copper">
-              <LandingIcon name="check" class="h-4 w-4" />
-            </span>
-            {h}
-          </li>
-        ))}
-      </ul>
+          <div class="mt-10 grid grid-cols-2 gap-y-4">
+            {data.highlights.map((highlight) => (
+              <div class="flex items-center gap-3">
+                <LandingIcon name="check" class="h-5 w-5 text-copper" />
+                <span class="font-body text-[16px] font-medium text-ink">{highlight}</span>
+              </div>
+            ))}
+          </div>
 
-      <a
-        href={data.cta.href}
-        data-track="book_click"
-        data-track-label="doctor_cta"
-        class="mt-8 inline-flex h-[52px] items-center justify-center rounded-full bg-copper px-8 font-body text-[15px] font-semibold text-white transition hover:opacity-90"
-      >
-        {data.cta.label}
-      </a>
+          <div class="mt-12">
+            <a
+              href={data.cta.href}
+              data-track="book_click"
+              data-track-label="doctor_section"
+              class="inline-flex h-[56px] items-center justify-center rounded-full bg-copper px-8 font-body text-[16px] font-semibold text-white shadow-[0_12px_28px_-10px_rgba(159,100,73,0.6)] transition-all hover:-translate-y-0.5 hover:shadow-[0_18px_40px_-10px_rgba(159,100,73,0.8)]"
+            >
+              {data.cta.label}
+            </a>
+          </div>
+        </div>
+      </div>
+      
     </div>
   </div>
 </section>

@@ -11,21 +11,90 @@ interface Props {
 const { data, sectionBg = "bg-cream" } = Astro.props;
 ---
 
-<section class={`${sectionBg} py-16 lg:py-20`} aria-label={data.heading}>
+<section class={`${sectionBg} py-24 lg:py-[120px]`} aria-label={data.heading}>
   <div class="krest-site">
+    
     <SectionHeading heading={data.heading} intro={data.intro} />
 
-    <ul class="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:mt-12 lg:gap-5">
-      {data.cards.map((card) => (
-        <li class="flex flex-col items-center gap-3 rounded-[18px] border border-copper/12 bg-white px-4 py-7 text-center transition hover:border-copper/30 hover:shadow-sm">
-          <span class="flex h-12 w-12 items-center justify-center rounded-full bg-[#F4EAE6] text-copper">
-            <LandingIcon name={card.icon} class="h-6 w-6" />
-          </span>
-          <h3 class="font-body text-[14px] font-semibold leading-snug text-ink sm:text-[15px]">
-            {card.title}
-          </h3>
-        </li>
-      ))}
-    </ul>
+    <!-- Luxury Bento Grid -->
+    <div class="mt-20 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3" data-float-in="up">
+      {data.cards.map((card, index) => {
+        let bentoClasses = "";
+        let iconBg = "";
+        let iconColor = "";
+        let titleColor = "";
+        let textColor = "";
+        
+        switch (index) {
+          case 0:
+            // Wide top card
+            bentoClasses = "col-span-1 sm:col-span-2 lg:col-span-2 bg-white ring-1 ring-border/50";
+            iconBg = "bg-copper/10"; iconColor = "text-copper";
+            titleColor = "text-ink"; textColor = "text-taupe";
+            break;
+          case 1:
+            // Highlight square card
+            bentoClasses = "col-span-1 bg-copper";
+            iconBg = "bg-white/20"; iconColor = "text-white";
+            titleColor = "text-white"; textColor = "text-white/90";
+            break;
+          case 2:
+            // Subtle square card
+            bentoClasses = "col-span-1 bg-pure-white ring-1 ring-black/5";
+            iconBg = "bg-cream"; iconColor = "text-copper";
+            titleColor = "text-ink"; textColor = "text-taupe";
+            break;
+          case 3:
+            // Standard square card
+            bentoClasses = "col-span-1 bg-white ring-1 ring-border/50";
+            iconBg = "bg-copper/5"; iconColor = "text-copper";
+            titleColor = "text-ink"; textColor = "text-taupe";
+            break;
+          case 4:
+            // Tall elegant card
+            bentoClasses = "col-span-1 sm:col-span-2 lg:col-span-1 lg:row-span-2 bg-copper/5 ring-1 ring-copper/20";
+            iconBg = "bg-white"; iconColor = "text-copper";
+            titleColor = "text-copper"; textColor = "text-ink/80";
+            break;
+          case 5:
+            // Wide bottom card
+            bentoClasses = "col-span-1 sm:col-span-2 lg:col-span-2 bg-white ring-1 ring-border/50";
+            iconBg = "bg-copper/10"; iconColor = "text-copper";
+            titleColor = "text-ink"; textColor = "text-taupe";
+            break;
+          default:
+             bentoClasses = "col-span-1 bg-white ring-1 ring-border/50";
+             iconBg = "bg-cream"; iconColor = "text-copper";
+             titleColor = "text-ink"; textColor = "text-taupe";
+        }
+
+        return (
+          <div class={`group relative overflow-hidden rounded-[40px] p-10 sm:p-12 transition-all duration-700 hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(63,42,32,0.15)] ${bentoClasses}`}>
+            
+            <!-- Massive Watermark Icon for visual texture -->
+            <div class={`pointer-events-none absolute -bottom-16 -right-16 transition-transform duration-700 ease-out group-hover:scale-110 group-hover:-rotate-6 ${iconColor === 'text-white' ? 'opacity-[0.12] text-white' : 'opacity-[0.03] text-copper'}`}>
+              <LandingIcon name={card.icon} class="h-[300px] w-[300px]" />
+            </div>
+
+            <div class="relative z-10 flex h-full flex-col">
+              <div class={`flex h-16 w-16 items-center justify-center rounded-2xl ${iconBg} ${iconColor} shadow-sm transition-transform duration-500 group-hover:-translate-y-2 group-hover:shadow-md`}>
+                <LandingIcon name={card.icon} class="h-8 w-8" />
+              </div>
+              
+              <div class="mt-auto pt-20 lg:pt-32">
+                <h3 class={`font-display text-[28px] font-medium leading-[1.1] tracking-tight sm:text-[34px] ${titleColor}`}>
+                  {card.title}
+                </h3>
+                <p class={`mt-5 font-body text-[17px] leading-[1.7] max-w-[400px] ${textColor}`}>
+                  {card.text}
+                </p>
+              </div>
+            </div>
+
+          </div>
+        );
+      })}
+    </div>
+
   </div>
 </section>

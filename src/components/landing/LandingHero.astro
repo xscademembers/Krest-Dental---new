@@ -11,72 +11,101 @@ const { hero, trustBadges } = Astro.props;
 const isTel = hero.secondaryCta.href.startsWith("tel:");
 ---
 
-<section class="relative overflow-hidden bg-cream" aria-label="Hero">
-  <div class="krest-site grid grid-cols-1 items-center gap-10 py-12 lg:grid-cols-2 lg:gap-14 lg:py-20">
-    <!-- Copy -->
-    <div class="order-2 lg:order-1">
-      {hero.eyebrow && (
-        <p class="font-accent text-[12px] uppercase tracking-[0.24em] text-copper">
+<section class="relative overflow-hidden bg-pure-white pt-32 pb-24" aria-label="Hero">
+  
+  <!-- Subtle ambient glow at the top -->
+  <div class="pointer-events-none absolute left-1/2 top-0 -z-10 -translate-x-1/2 transform">
+    <div class="h-[400px] w-[800px] rounded-full bg-copper/5 blur-[120px]"></div>
+  </div>
+
+  <!-- Top: Massive Centered Typography -->
+  <div class="krest-site flex flex-col items-center text-center" data-float-in="up">
+    {hero.eyebrow && (
+      <div class="rounded-full border border-copper/20 bg-copper/5 px-6 py-2">
+        <p class="font-accent text-[13px] font-bold uppercase tracking-[0.25em] text-copper">
           {hero.eyebrow}
         </p>
-      )}
-      <h1 class="mt-4 font-display text-[34px] font-normal leading-[1.1] text-ink sm:text-[44px] lg:text-[54px]">
-        {hero.headline}
-        {hero.headlineAccent && (
-          <span class="mt-2 block text-copper">{hero.headlineAccent}</span>
-        )}
-      </h1>
-      <p class="mt-5 max-w-[540px] font-body text-[16px] leading-relaxed text-taupe sm:text-[18px]">
-        {hero.subheading}
-      </p>
-
-      <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-        <a
-          href={hero.primaryCta.href}
-          data-track="book_click"
-          data-track-label="hero_primary"
-          class="inline-flex h-[54px] items-center justify-center rounded-full bg-copper px-8 font-body text-[15px] font-semibold text-white shadow-[0_18px_40px_-18px_rgba(159,100,73,0.9)] transition hover:opacity-90"
-        >
-          {hero.primaryCta.label}
-        </a>
-        <a
-          href={hero.secondaryCta.href}
-          data-track={isTel ? "call_click" : "book_click"}
-          data-track-label="hero_secondary"
-          class="inline-flex h-[54px] items-center justify-center gap-2 rounded-full border border-copper/40 px-8 font-body text-[15px] font-semibold text-copper transition hover:border-copper hover:bg-copper/5"
-        >
-          <LandingIcon name="phone" class="h-[18px] w-[18px]" />
-          {hero.secondaryCta.label}
-        </a>
       </div>
+    )}
+    
+    <h1 class="mt-10 font-display text-[54px] font-medium leading-[1.05] tracking-tight text-ink sm:text-[72px] lg:text-[88px]">
+      {hero.headline}
+      {hero.headlineAccent && (
+        <span class="block text-copper">{hero.headlineAccent}</span>
+      )}
+    </h1>
+    
+    <p class="mt-8 max-w-2xl font-body text-[20px] leading-[1.7] text-taupe/90 sm:text-[22px]">
+      {hero.subheading}
+    </p>
 
-      <!-- Trust badges -->
-      <ul class="mt-9 grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-4">
-        {trustBadges.map((badge) => (
-          <li class="flex flex-col items-start gap-2">
-            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-white text-copper shadow-sm">
-              <LandingIcon name={badge.icon} class="h-5 w-5" />
-            </span>
-            <span class="font-body text-[13px] font-semibold leading-tight text-ink">
-              {badge.label}
-            </span>
-          </li>
-        ))}
-      </ul>
+    <div class="mt-12 flex flex-col items-center gap-5 sm:flex-row">
+      <a
+        href={hero.primaryCta.href}
+        data-track="book_click"
+        data-track-label="hero_primary"
+        class="inline-flex h-[60px] items-center justify-center rounded-full bg-copper px-10 font-body text-[17px] font-semibold tracking-wide text-white shadow-[0_12px_32px_-10px_rgba(159,100,73,0.6)] transition-all hover:-translate-y-1 hover:shadow-[0_20px_40px_-12px_rgba(159,100,73,0.8)]"
+      >
+        {hero.primaryCta.label}
+      </a>
+      <a
+        href={hero.secondaryCta.href}
+        data-track={isTel ? "call_click" : "book_click"}
+        data-track-label="hero_secondary"
+        class="inline-flex h-[60px] items-center justify-center gap-3 rounded-full border border-border/80 bg-white px-10 font-body text-[17px] font-medium text-ink transition-all hover:border-copper/30 hover:bg-copper/5 hover:text-copper"
+      >
+        <LandingIcon name="phone" class="h-5 w-5 text-copper" />
+        {hero.secondaryCta.label}
+      </a>
     </div>
+  </div>
 
-    <!-- Image -->
-    <div class="order-1 lg:order-2">
-      <div class="relative overflow-hidden rounded-[28px] shadow-[0_30px_70px_-30px_rgba(63,42,32,0.5)]">
-        <img
-          src={hero.image}
-          alt={hero.imageAlt}
-          width="820"
-          height="720"
-          fetchpriority="high"
-          decoding="async"
-          class="h-[320px] w-full object-cover sm:h-[420px] lg:h-[520px]"
-        />
+  <!-- Bottom: The Canvas Image -->
+  <div class="krest-site mt-24 relative" data-float-in="up" style="animation-delay: 200ms;">
+    <div class="relative mx-auto max-w-[1200px] overflow-hidden rounded-[40px] shadow-[0_40px_100px_-20px_rgba(63,42,32,0.2)] ring-1 ring-border/50">
+      
+      <img
+        src={hero.image}
+        alt={hero.imageAlt}
+        width="1200"
+        height="700"
+        fetchpriority="high"
+        decoding="async"
+        class="h-[500px] w-full object-cover transition-transform duration-1000 hover:scale-105 lg:h-[720px]"
+      />
+      
+      <!-- Gradient overlay for legibility of floating elements -->
+      <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none"></div>
+
+      <!-- Floating Glassmorphic Trust Badges -->
+      <div class="absolute bottom-6 left-6 right-6 flex flex-col justify-between gap-4 sm:flex-row sm:items-end lg:bottom-10 lg:left-10 lg:right-10">
+        
+        <!-- Google Rating Badge -->
+        <div class="flex items-center gap-4 rounded-3xl bg-white/10 p-4 pr-6 backdrop-blur-xl ring-1 ring-white/20">
+          <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-copper shadow-lg">
+            <LandingIcon name="star" class="h-7 w-7" />
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="font-display text-[24px] font-semibold text-white">5.0</span>
+              <div class="flex text-[#FABB05]">★★★★★</div>
+            </div>
+            <p class="font-body text-[14px] font-medium text-white/90">Based on 500+ Reviews</p>
+          </div>
+        </div>
+
+        <!-- Dynamic Trust Badges -->
+        <div class="flex gap-3">
+          {trustBadges.slice(0, 2).map((badge) => (
+            <div class="flex items-center gap-3 rounded-full bg-white/10 px-5 py-3 backdrop-blur-xl ring-1 ring-white/20">
+              <LandingIcon name={badge.icon} class="h-4 w-4 text-white" />
+              <span class="font-body text-[15px] font-medium text-white">
+                {badge.label}
+              </span>
+            </div>
+          ))}
+        </div>
+
       </div>
     </div>
   </div>

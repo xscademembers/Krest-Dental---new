@@ -95,12 +95,36 @@ export const INVISALIGN_LANDING: LandingContent = {
     intro:
       "Invisalign corrects a wide range of alignment and bite concerns. If any of these sound familiar, you may be a great candidate.",
     cards: [
-      { title: "Crowded Teeth", icon: "teeth" },
-      { title: "Spacing / Gaps", icon: "spacing" },
-      { title: "Overbite", icon: "overbite" },
-      { title: "Crossbite", icon: "crossbite" },
-      { title: "Open Bite", icon: "openbite" },
-      { title: "Mild to Moderate Misalignment", icon: "align" },
+      { 
+        title: "Crowded Teeth", 
+        text: "When there isn't enough room in your jaw for all your teeth, Invisalign gently shifts them into perfect alignment, making cleaning easier.",
+        icon: "teeth" 
+      },
+      { 
+        title: "Spacing / Gaps", 
+        text: "Whether from missing teeth or abnormal jaw growth, clear aligners can seamlessly close unsightly gaps and prevent food impaction.",
+        icon: "spacing" 
+      },
+      { 
+        title: "Overbite", 
+        text: "When your upper front teeth overlap your lower teeth too much, clear aligners correct the bite to prevent jaw pain and excessive wear.",
+        icon: "overbite" 
+      },
+      { 
+        title: "Crossbite", 
+        text: "If some upper teeth sit inside your lower teeth, Invisalign can realign them to prevent bone loss, gum disease, and chipped teeth.",
+        icon: "crossbite" 
+      },
+      { 
+        title: "Open Bite", 
+        text: "When upper and lower front teeth don't meet, aligners precisely adjust their position to restore proper chewing and speaking functions.",
+        icon: "openbite" 
+      },
+      { 
+        title: "Moderate Misalignment", 
+        text: "General crookedness or minor relapse after childhood braces can be quickly and comfortably corrected with a short Invisalign course.",
+        icon: "align" 
+      },
     ],
   },
 
