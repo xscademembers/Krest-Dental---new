@@ -314,3 +314,250 @@ export const INVISALIGN_LANDING: LandingContent = {
     submitLabel: "Book Consultation",
   },
 };
+
+export const IMPLANTS_LANDING: LandingContent = {
+  slug: "dental-implants-vizag",
+
+  seo: {
+    title: "Dental Implants in Visakhapatnam | Permanent Tooth Replacement | Krest Dental",
+    description: "Looking for dental implants in Vizag? Replace missing teeth with permanent dental implants by experienced implant specialists at Krest Dental.",
+    canonical: `${SITE}/dental-implants-vizag`,
+    keywords: [
+      "Dental Implants Vizag",
+      "Dental Implant Clinic Vizag",
+      "Tooth Replacement",
+      "Single Tooth Implant",
+      "Implant Dentist Visakhapatnam",
+      "Permanent Teeth Replacement",
+    ],
+  },
+
+  schema: {
+    serviceName: "Dental Implants",
+    serviceType: "Prosthodontics — Dental Implants",
+  },
+
+  hero: {
+    eyebrow: "Dental Implant Experts in Visakhapatnam",
+    headline: "Permanent Dental Implants",
+    headlineAccent: "Restore Your Smile with Confidence",
+    subheading: "Natural-looking, durable dental implants using advanced technology and personalized care by experienced implantologists.",
+    image: "/images/implants-old/implants.jpg",
+    imageAlt: "Patient receiving dental implant consultation at Krest Dental, Visakhapatnam",
+    primaryCta: { label: "Book Free Consultation", href: "#lead-form" },
+    secondaryCta: { label: "Call Now", href: "tel:9573884525" },
+  },
+
+  trustBadges: [
+    { label: "20+ Years Experience", icon: "star" },
+    { label: "Advanced Implant Technology", icon: "tech" },
+    { label: "Experienced Implantologist", icon: "dentist" },
+    { label: "5000+ Happy Patients", icon: "smile" },
+  ],
+
+  conditions: {
+    heading: "Missing Teeth Problems",
+    intro: "Living with missing teeth affects more than just your smile. Dental implants are the permanent solution to these common issues.",
+    cards: [
+      {
+        title: "Difficulty Eating",
+        text: "Struggling to chew your favorite foods can lead to poor nutrition. Implants restore full bite strength.",
+        icon: "food",
+      },
+      {
+        title: "Speech Problems",
+        text: "Missing teeth can cause slurring or lisping. Implants function like natural teeth, restoring clear speech.",
+        icon: "speech",
+      },
+      {
+        title: "Jaw Bone Loss",
+        text: "When a tooth is lost, the jawbone deteriorates. Implants stimulate the bone, preventing facial collapse.",
+        icon: "shield",
+      },
+      {
+        title: "Smile Confidence",
+        text: "Gaps in your smile can make you self-conscious. Implants provide a perfectly natural-looking restoration.",
+        icon: "smile",
+      },
+      {
+        title: "Teeth Shifting",
+        text: "Adjacent teeth can drift into the empty gap, causing alignment issues and further tooth loss.",
+        icon: "shift",
+      },
+      {
+        title: "Facial Changes",
+        text: "Bone loss from missing teeth can cause your face to look prematurely aged and sunken. Implants maintain facial structure.",
+        icon: "face",
+      },
+    ],
+  },
+
+  benefits: {
+    heading: "Benefits of Dental Implants",
+    intro: "Why dental implants are considered the gold standard for tooth replacement worldwide.",
+    cards: [
+      {
+        title: "Permanent Solution",
+        text: "Unlike dentures or bridges, implants are surgically fused to your jawbone for a permanent restoration.",
+        icon: "check",
+      },
+      {
+        title: "Natural Appearance",
+        text: "Custom-crafted crowns match the exact color and shape of your surrounding natural teeth.",
+        icon: "eye",
+      },
+      {
+        title: "Comfortable",
+        text: "Implants feel exactly like natural teeth—no slipping, clicking, or discomfort like removable dentures.",
+        icon: "smile",
+      },
+      {
+        title: "Strong Bite",
+        text: "Eat apples, steak, and nuts with confidence. Implants restore 100% of your natural chewing power.",
+        icon: "eat",
+      },
+      {
+        title: "Protect Jaw Bone",
+        text: "Implants act as artificial tooth roots, actively preventing the jawbone loss that follows tooth extraction.",
+        icon: "shield",
+      },
+      {
+        title: "Long Lasting",
+        text: "With proper brushing and flossing, your dental implants are designed to last a lifetime.",
+        icon: "calendar",
+      },
+    ],
+  },
+
+  process: {
+    heading: "The Implant Process",
+    intro: "A seamless, pain-free journey to a permanent, beautiful smile.",
+    steps: [
+      {
+        title: "Consultation & Scan",
+        text: "We evaluate your jawbone health using advanced 3D CBCT scans to ensure you are a perfect candidate.",
+      },
+      {
+        title: "Digital Planning",
+        text: "Using digital software, we plan the exact angle and depth of the implant for maximum precision.",
+      },
+      {
+        title: "Implant Placement",
+        text: "The titanium implant is gently placed into the jawbone under local anesthesia—a quick and virtually painless procedure.",
+      },
+      {
+        title: "Healing & Osseointegration",
+        text: "Over the next few months, the implant permanently fuses with your natural jawbone.",
+      },
+      {
+        title: "Permanent Crown",
+        text: "We attach a custom-milled, natural-looking ceramic crown. Your new smile is ready!",
+      },
+    ],
+  },
+
+  whyChoose: {
+    heading: "Why Choose Krest Dental for Implants",
+    intro: "Visakhapatnam's premier destination for safe, precise, and long-lasting dental implant surgery.",
+    cards: [
+      {
+        title: "Experienced Implant Team",
+        text: "Highly trained surgeons specialized in complex implantology and bone grafting.",
+        icon: "dentist",
+      },
+      {
+        title: "Modern Equipment",
+        text: "In-house 3D CBCT scanners and digital surgical guides for pinpoint accuracy.",
+        icon: "tech",
+      },
+      {
+        title: "Premium Materials",
+        text: "We only use globally recognized, biocompatible titanium implant brands.",
+        icon: "star",
+      },
+      {
+        title: "Digital Planning",
+        text: "Every surgery is planned virtually before you even sit in the chair.",
+        icon: "plan",
+      },
+      {
+        title: "Comfortable Procedures",
+        text: "Advanced anesthesia and a calming environment ensure a pain-free experience.",
+        icon: "clinic",
+      },
+      {
+        title: "Personalized Care",
+        text: "From consultation to aftercare, our team is dedicated to your absolute comfort.",
+        icon: "leaf",
+      },
+    ],
+  },
+
+  doctor: INVISALIGN_LANDING.doctor,
+  
+  beforeAfter: {
+    heading: "Before & After",
+    intro: "Real implant transformations crafted at Krest Dental.",
+    items: [
+      {
+        before: "/images/invisilign-old/studio-portrait.jpg",
+        after: "/images/invisilign-old/getty-man.jpg",
+        alt: "Single tooth dental implant transformation at Krest Dental",
+        label: "Single Tooth Replacement",
+      },
+      {
+        before: "/images/invisilign-old/getty-man.jpg",
+        after: "/images/invisilign-old/studio-portrait.jpg",
+        alt: "Full mouth dental implant result at Krest Dental",
+        label: "Full Arch Restoration",
+      },
+    ],
+  },
+  
+  testimonials: INVISALIGN_LANDING.testimonials,
+
+  faq: {
+    heading: "Frequently Asked Questions",
+    items: [
+      {
+        q: "Are implants painful?",
+        a: "Not at all. The procedure is performed under local anesthesia, so you won't feel any pain. Post-surgery discomfort is usually mild and easily managed with over-the-counter medication.",
+      },
+      {
+        q: "How much do implants cost in Vizag?",
+        a: "The cost varies based on the brand of the implant and whether bone grafting is needed. We offer premium implants at accessible, transparent prices. Book a free consultation for a precise estimate.",
+      },
+      {
+        q: "How long do implants last?",
+        a: "With good oral hygiene (brushing, flossing, and regular dental checkups), dental implants are designed to last a lifetime.",
+      },
+      {
+        q: "Can diabetics get implants?",
+        a: "Yes, provided your blood sugar is well-controlled. We take special precautions and monitor your healing closely to ensure a successful outcome.",
+      },
+      {
+        q: "Is implant surgery safe?",
+        a: "Dental implant surgery is one of the safest and most predictable procedures in dentistry, especially when performed by experienced specialists using 3D guided technology like we do at Krest.",
+      },
+      {
+        q: "How long is recovery?",
+        a: "Most patients return to work the very next day. Complete bone healing (osseointegration) takes a few months, but this process happens painlessly behind the scenes.",
+      },
+      {
+        q: "Do implants look natural?",
+        a: "Absolutely. The final ceramic crown is custom-crafted to perfectly match the color, shape, and translucency of your surrounding natural teeth.",
+      },
+      {
+        q: "How many visits are required?",
+        a: "Typically, it requires a consultation, the implant placement day, and a final visit a few months later to attach the permanent crown. We also schedule quick follow-ups to monitor healing.",
+      },
+    ],
+  },
+
+  leadForm: {
+    heading: "Book Your Free Implant Consultation",
+    intro: "Take the first step toward a permanent, confident smile. Fill out the form and we'll contact you.",
+    interest: "Dental Implants — Landing Page (Vizag)",
+    submitLabel: "Book Consultation",
+  },
+};

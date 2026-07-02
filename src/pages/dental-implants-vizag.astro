@@ -1,0 +1,91 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import BeforeAfter from "@/components/landing/BeforeAfter.astro";
+import BenefitsGrid from "@/components/landing/BenefitsGrid.astro";
+import ConditionsGrid from "@/components/landing/ConditionsGrid.astro";
+import DoctorSection from "@/components/landing/DoctorSection.astro";
+import LandingAnalytics from "@/components/landing/LandingAnalytics.astro";
+import LandingFaq from "@/components/landing/LandingFaq.astro";
+import LandingHero from "@/components/landing/LandingHero.astro";
+import LandingLeadForm from "@/components/landing/LandingLeadForm.astro";
+import LandingTestimonials from "@/components/landing/LandingTestimonials.astro";
+import LocationMap from "@/components/landing/LocationMap.astro";
+import ProcessTimeline from "@/components/landing/ProcessTimeline.astro";
+import StickyMobileCta from "@/components/landing/StickyMobileCta.astro";
+import WhyChoose from "@/components/landing/WhyChoose.astro";
+import { SiteHeader } from "@/components/SiteHeader";
+import { SiteFooter } from "@/components/SiteFooter";
+import { EMAIL } from "@/lib/krest-content";
+import { IMPLANTS_LANDING as C } from "@/lib/landing-content";
+
+export const prerender = true;
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: C.faq.items.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
+
+const businessJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  name: "Krest Dental",
+  description: C.seo.description,
+  url: C.seo.canonical,
+  telephone: "+91 95738 84525",
+  email: EMAIL,
+  medicalSpecialty: "Dentistry",
+  availableService: {
+    "@type": "MedicalProcedure",
+    name: C.schema.serviceName,
+    procedureType: C.schema.serviceType,
+  },
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "3rd Floor, Door No 2-48-21, MVP Colony",
+    addressLocality: "Visakhapatnam",
+    postalCode: "530017",
+    addressCountry: "IN",
+  },
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    opens: "09:30",
+    closes: "19:30",
+  },
+};
+---
+
+<Layout
+  title={C.seo.title}
+  description={C.seo.description}
+  canonical={C.seo.canonical}
+  keywords={C.seo.keywords}
+>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(businessJsonLd)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+
+  <SiteHeader client:load />
+
+  <main class="flex-1 pb-16 lg:pb-0">
+    <LandingHero hero={C.hero} trustBadges={C.trustBadges} />
+    <BenefitsGrid data={C.benefits} sectionBg="bg-pure-white" />
+    <ConditionsGrid data={C.conditions} sectionBg="bg-cream" />
+    <ProcessTimeline data={C.process} sectionBg="bg-white" />
+    <WhyChoose data={C.whyChoose} sectionBg="bg-cream" />
+    <DoctorSection data={C.doctor} sectionBg="bg-white" />
+    <BeforeAfter data={C.beforeAfter} sectionBg="bg-cream" />
+    <LandingTestimonials data={C.testimonials} sectionBg="bg-white" />
+    <LandingFaq data={C.faq} sectionBg="bg-cream" />
+    <LocationMap sectionBg="bg-white" />
+    <LandingLeadForm data={C.leadForm} sectionBg="bg-cream" />
+  </main>
+
+  <SiteFooter mobileWhiteBg />
+  <StickyMobileCta />
+  <LandingAnalytics page="implants_lp" />
+</Layout>
