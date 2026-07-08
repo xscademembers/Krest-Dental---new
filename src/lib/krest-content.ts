@@ -683,7 +683,7 @@ export const HERO = {
 export const ADDRESS = {
   name: "KREST DENTAL CARE",
   lines: [
-    "3rd Floor, Door No 2-48-21",
+    "3rd Floor, GeV Avira",
     "Opposite To Latte",
     "Sector 11, MVP Colony",
     "MVP Double Road",

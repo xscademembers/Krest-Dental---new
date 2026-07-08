@@ -22,7 +22,7 @@ These principles are the foundation for every decision on this project:
 
 ---
 
-## Overview
+## Overviewing
 
 These pages are **completely standalone Google Ads landing pages**, not service pages. They are **conversion-first, not information-first**.
 

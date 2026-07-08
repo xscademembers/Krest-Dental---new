@@ -41,7 +41,7 @@ export const INVISALIGN_LANDING: LandingContent = {
     image: "/images/invisilign-old/invisalign-consultation.jpg",
     imageAlt:
       "Patient receiving Invisalign clear aligner consultation at Krest Dental, Visakhapatnam",
-    primaryCta: { label: "Book Free Consultation", href: "#lead-form" },
+    primaryCta: { label: "Book Consultation", href: "#lead-form" },
     secondaryCta: { label: "Call Now", href: "tel:9573884525" },
   },
 
@@ -190,7 +190,7 @@ export const INVISALIGN_LANDING: LandingContent = {
   },
 
   doctor: {
-    heading: "Meet Dr. Suneeta",
+    heading: "Meet",
     name: "Dr. Suneeta Veeramachaneni",
     role: "Cosmetic Dentist & Implantologist",
     image: "/images/dr-suneeta/hero-portrait.jpg",
@@ -307,7 +307,7 @@ export const INVISALIGN_LANDING: LandingContent = {
   },
 
   leadForm: {
-    heading: "Book Your Free Consultation",
+    heading: "Book Your Consultation",
     intro:
       "Fill in your details and our team will call you back to confirm a time that suits you.",
     interest: "Invisalign — Landing Page (Vizag)",
@@ -344,7 +344,7 @@ export const IMPLANTS_LANDING: LandingContent = {
     subheading: "Natural-looking, durable dental implants using advanced technology and personalized care by experienced implantologists.",
     image: "/images/implants-old/implants.jpg",
     imageAlt: "Patient receiving dental implant consultation at Krest Dental, Visakhapatnam",
-    primaryCta: { label: "Book Free Consultation", href: "#lead-form" },
+    primaryCta: { label: "Book Consultation", href: "#lead-form" },
     secondaryCta: { label: "Call Now", href: "tel:9573884525" },
   },
 
@@ -525,7 +525,7 @@ export const IMPLANTS_LANDING: LandingContent = {
       },
       {
         q: "How much do implants cost in Vizag?",
-        a: "The cost varies based on the brand of the implant and whether bone grafting is needed. We offer premium implants at accessible, transparent prices. Book a free consultation for a precise estimate.",
+        a: "The cost varies based on the brand of the implant and whether bone grafting is needed. We offer premium implants at accessible, transparent prices. Book a consultation for a precise estimate.",
       },
       {
         q: "How long do implants last?",
@@ -555,7 +555,7 @@ export const IMPLANTS_LANDING: LandingContent = {
   },
 
   leadForm: {
-    heading: "Book Your Free Implant Consultation",
+    heading: "Book Your Implant Consultation",
     intro: "Take the first step toward a permanent, confident smile. Fill out the form and we'll contact you.",
     interest: "Dental Implants — Landing Page (Vizag)",
     submitLabel: "Book Consultation",
