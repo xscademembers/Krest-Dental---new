@@ -1,11 +1,12 @@
 import type { SVGProps } from "react";
 import { CopperArrowButton } from "@/components/CopperArrowButton";
+import { TextWithDrSuneetaHighlight } from "@/components/TextWithDrSuneetaHighlight";
 import { HERO } from "@/lib/krest-content";
 
 export function HeroSection() {
   return (
     <section
-      aria-label="Hero — Dr. Suneeta Veramachaneni"
+      aria-label={`Hero — ${HERO.name}`}
       className="relative overflow-hidden bg-cream pb-14 pt-5 max-lg:pb-12 lg:pb-28 lg:pt-16"
     >
       <img
@@ -30,9 +31,13 @@ export function HeroSection() {
         <div className="hero-mobile relative z-10 flex flex-col items-stretch lg:hidden">
           <h1 className="hero-mobile__name">{HERO.name}</h1>
 
-          <p className="hero-mobile__title">— {HERO.title}</p>
+          <p className="hero-mobile__title">
+            — {HERO.title}
+          </p>
 
-          <p className="hero-mobile__body">{HERO.description}</p>
+          <p className="hero-mobile__body">
+            <TextWithDrSuneetaHighlight text={HERO.description} />
+          </p>
 
           <CopperArrowButton href="/contact" variant="cta" className="mt-[22px] self-start">
             Book Appointment
@@ -41,7 +46,7 @@ export function HeroSection() {
           <div className="mt-7 w-full overflow-hidden rounded-[28px]">
             <img
               src={HERO.doctorPortrait}
-              alt="Dr. Suneeta Veeramachaneni — Cosmetic Dentist & Implantologist at Krest Dental, Vizag"
+              alt={HERO.portraitAlt}
               className="aspect-[4/5] h-auto w-full object-cover"
               width={480}
               height={600}
@@ -79,9 +84,13 @@ export function HeroSection() {
                   aria-hidden="true"
                   className="block h-px w-[120px] shrink-0 bg-copper"
                 />
-                <p className="text-krest-accent tracking-wide">{HERO.title}</p>
+                <p className="text-krest-accent tracking-wide">
+                  {HERO.title}
+                </p>
               </div>
-              <p className="text-krest-body-serif mt-6">{HERO.description}</p>
+              <p className="text-krest-body-serif mt-6">
+                <TextWithDrSuneetaHighlight text={HERO.description} />
+              </p>
               <a
                 href="/contact"
                 className="mt-7 inline-flex h-11 items-center gap-3 rounded-full bg-copper pl-5 pr-1.5 font-display text-[14px] tracking-wide text-white transition-all duration-200 hover:bg-copper/90"
@@ -97,7 +106,7 @@ export function HeroSection() {
               <div className="relative z-10 aspect-[4/5] w-full overflow-hidden rounded-[36px] shadow-[0_18px_40px_-22px_rgba(0,0,0,0.35)]">
                 <img
                   src={HERO.doctorPortrait}
-                  alt="Dr. Suneeta Veeramachaneni — Cosmetic Dentist & Implantologist at Krest Dental, Vizag"
+                  alt={HERO.portraitAlt}
                   className="absolute inset-0 h-full w-full object-cover"
                   width={480}
                   height={600}

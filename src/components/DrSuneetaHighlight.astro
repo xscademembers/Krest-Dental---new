@@ -1,0 +1,16 @@
+---
+import { DR_SUNEETA_NAME_WITH_CREDENTIAL } from "@/lib/krest-content";
+import { DR_SUNEETA_HIGHLIGHT_CLASS } from "@/lib/dr-suneeta-highlight";
+
+interface Props {
+  class?: string;
+  tag?: "span" | "p";
+}
+
+const { class: className = "", tag = "span" } = Astro.props;
+const Tag = tag;
+---
+
+<Tag class:list={[DR_SUNEETA_HIGHLIGHT_CLASS, className]}>
+  {DR_SUNEETA_NAME_WITH_CREDENTIAL}
+</Tag>

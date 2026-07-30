@@ -1,6 +1,8 @@
 ---
 import LandingIcon from "@/components/landing/LandingIcon.astro";
 import SectionHeading from "@/components/landing/SectionHeading.astro";
+import DrSuneetaHighlight from "@/components/DrSuneetaHighlight.astro";
+import TextWithDrSuneetaHighlight from "@/components/TextWithDrSuneetaHighlight.astro";
 import type { LandingContent } from "@/types/landing";
 
 interface Props {
@@ -68,15 +70,12 @@ const { data, sectionBg = "bg-light-grey" } = Astro.props;
         )}
         
         <div class="mt-8">
-          <h3 class="font-display text-[32px] font-medium leading-tight text-ink sm:text-[42px]">
-            {data.name}
+          <h3 class="font-display text-[32px] font-medium leading-tight sm:text-[42px]">
+            <DrSuneetaHighlight class="font-display text-[32px] font-medium leading-tight text-copper sm:text-[42px]" />
           </h3>
-          <p class="mt-2 font-accent text-[16px] uppercase tracking-wider text-copper">
-            {data.role}
-          </p>
           
           <div class="mt-8 space-y-6 font-body text-[18px] leading-[1.7] text-taupe">
-            <p>{data.bio}</p>
+            <p><TextWithDrSuneetaHighlight text={data.bio} /></p>
           </div>
 
           <div class="mt-10 grid grid-cols-2 gap-y-4">

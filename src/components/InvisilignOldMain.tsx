@@ -1,5 +1,7 @@
 import { BookButton, InvisilignHeroMosaic } from "@/components/InvisilignHeroMosaic";
 import { JourneyUnderline, StepEllipseIcon } from "@/components/InvisilignDecorations";
+import { TextWithDrSuneetaHighlight } from "@/components/TextWithDrSuneetaHighlight";
+import { DR_SUNEETA_NAME_WITH_CREDENTIAL } from "@/lib/krest-content";
 
 const pageUrl = "https://www.krest.dental/invisilign";
 
@@ -126,7 +128,7 @@ export function WhyBand({
             introJustify ? "text-justify" : ""
           }`}
         >
-          {intro}
+          <TextWithDrSuneetaHighlight text={intro} />
         </p>
         <BookButton className="mt-[22px]" />
       </div>
@@ -149,7 +151,7 @@ export function WhyBand({
                 cardBodyJustify ? "text-justify" : ""
               }`}
             >
-              {card.body}
+              <TextWithDrSuneetaHighlight text={card.body} />
             </p>
           </article>
         ))}
@@ -206,7 +208,7 @@ export function InvisilignOldMain() {
       <section className="bg-white py-[44px]">
         <WhyBand
           heading="Why Choose Krest Dental for Invisalign?"
-          intro="Experience world-class Invisalign care at Krest Dental, led by UCSF-trained Dr. Suneeta Veeramachaneni. Our blend of advanced technology, personalized treatment, and unmatched expertise makes us the preferred choice in Visakhapatnam."
+          intro={`Experience world-class Invisalign care at Krest Dental, led by ${DR_SUNEETA_NAME_WITH_CREDENTIAL}. Our blend of advanced technology, personalized treatment, and unmatched expertise makes us the preferred choice in Visakhapatnam.`}
           cards={whyKrest}
           cardHeight={227}
           cardsBg="#F4EAE6"

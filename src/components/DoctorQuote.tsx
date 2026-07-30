@@ -1,4 +1,5 @@
-import { HERO } from "@/lib/krest-content";
+import { DrSuneetaHighlight } from "@/components/DrSuneetaHighlight";
+import { DR_SUNEETA_NAME_WITH_CREDENTIAL, HERO } from "@/lib/krest-content";
 
 export function DoctorQuote() {
   return (
@@ -10,7 +11,7 @@ export function DoctorQuote() {
         <div className="relative mx-auto aspect-[7/8] w-full max-w-[360px] overflow-hidden">
           <img
             src={HERO.doctorPortrait}
-            alt="Portrait of Dr. Suneeta Veeramachaneni"
+            alt={`Portrait of ${DR_SUNEETA_NAME_WITH_CREDENTIAL}`}
             className="absolute inset-0 h-full w-full object-cover"
             width={360}
             height={420}
@@ -24,7 +25,8 @@ export function DoctorQuote() {
               &ldquo;{HERO.quote}&rdquo;
             </p>
           </blockquote>
-          <figcaption className="mt-8">
+          <figcaption className="mt-8 space-y-3">
+            <DrSuneetaHighlight className="font-display text-[18px] text-copper" as="p" />
             <img
               src={HERO.signature}
               alt="Dr. Suneeta signature"

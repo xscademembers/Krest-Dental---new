@@ -23,6 +23,20 @@ export type SocialLink = {
   href: string;
 };
 
+export type ConnectLinkIcon =
+  | "instagram"
+  | "facebook"
+  | "youtube"
+  | "practo"
+  | "google"
+  | "globe";
+
+export type ConnectLinkItem = {
+  label: string;
+  href: string;
+  icon: ConnectLinkIcon;
+};
+
 export type NavItem = {
   label: string;
   href: string;

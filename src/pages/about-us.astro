@@ -14,16 +14,20 @@ import {
   ABOUT_EXCELLENCE,
   ABOUT_HERO,
   ABOUT_VISION_MISSION,
+  DR_SUNEETA_CREDENTIAL,
+  DR_SUNEETA_NAME,
+  DR_SUNEETA_NAME_WITH_CREDENTIAL,
   EMAIL,
   PHONE_DISPLAY,
 } from "@/lib/krest-content";
+import TextWithDrSuneetaHighlight from "@/components/TextWithDrSuneetaHighlight.astro";
 
 export const prerender = true;
 
 const canonical = "https://www.krest.dental/about-us";
 const title = "About Us | Krest Dental";
 const description =
-  "Meet Dr. Suneeta Veeramachaneni and discover Krest Dental Care in Visakhapatnam — world-class cosmetic dentistry, implants, and comprehensive care since 2014.";
+  `Meet ${DR_SUNEETA_NAME_WITH_CREDENTIAL} and discover Krest Dental Care in Visakhapatnam — world-class cosmetic dentistry, implants, and comprehensive care since 2014.`;
 const keywords = [
   "krest dental about",
   "dr suneeta veeramachaneni",
@@ -41,8 +45,8 @@ const jsonLd = {
   url: canonical,
   founder: {
     "@type": "Person",
-    name: "Dr. Suneeta Veeramachaneni",
-    jobTitle: "Cosmetic Dentist & Implantologist",
+    name: DR_SUNEETA_NAME,
+    jobTitle: DR_SUNEETA_CREDENTIAL,
   },
   foundingDate: "2014",
 };
@@ -100,7 +104,7 @@ const leafByCard = {
 
           <div class="mt-8 space-y-6 text-left">
             {ABOUT_HERO.bioParagraphs.map((text) => (
-              <p class="about-hero-mobile__text">{text}</p>
+              <p class="about-hero-mobile__text"><TextWithDrSuneetaHighlight text={text} /></p>
             ))}
           </div>
 
@@ -151,7 +155,7 @@ const leafByCard = {
               </h1>
               <div class="mt-8 space-y-6">
                 {ABOUT_HERO.bioParagraphs.map((text) => (
-                  <p class="font-display text-[18px] font-normal leading-[1.4] text-ink sm:text-[20px] lg:text-[22px]">{text}</p>
+                  <p class="font-display text-[18px] font-normal leading-[1.4] text-ink sm:text-[20px] lg:text-[22px]"><TextWithDrSuneetaHighlight text={text} /></p>
                 ))}
               </div>
             </div>
@@ -216,7 +220,7 @@ const leafByCard = {
                         {card.title}
                       </h3>
                       <p class="mt-4 w-full max-w-[550px] font-display text-[17px] leading-[1.3] text-[#26221D] sm:text-[18px] lg:text-[20px] text-justify">
-                        {card.text}
+                        <TextWithDrSuneetaHighlight text={card.text} />
                       </p>
                       <a
                         href="/contact"

@@ -1,4 +1,10 @@
 import type { LandingContent } from "@/types/landing";
+import {
+  DR_SUNEETA_CREDENTIAL,
+  DR_SUNEETA_NAME,
+  DR_SUNEETA_NAME_WITH_CREDENTIAL,
+  DR_SUNEETA_PORTRAIT_ALT,
+} from "@/lib/krest-content";
 
 const SITE = "https://www.krest.dental";
 
@@ -158,7 +164,7 @@ export const INVISALIGN_LANDING: LandingContent = {
     cards: [
       {
         title: "Experienced Cosmetic Dentist",
-        text: "Treatment led by internationally trained Dr. Suneeta Veeramachaneni.",
+        text: `Treatment led by internationally trained ${DR_SUNEETA_NAME_WITH_CREDENTIAL}.`,
         icon: "dentist",
       },
       {
@@ -191,12 +197,11 @@ export const INVISALIGN_LANDING: LandingContent = {
 
   doctor: {
     heading: "Meet",
-    name: "Dr. Suneeta Veeramachaneni",
-    role: "Cosmetic Dentist & Implantologist",
+    name: DR_SUNEETA_NAME,
+    role: DR_SUNEETA_CREDENTIAL,
     image: "/images/dr-suneeta/hero-portrait.jpg",
-    imageAlt:
-      "Dr. Suneeta Veeramachaneni, Cosmetic Dentist and Invisalign provider at Krest Dental, Visakhapatnam",
-    bio: "A top-ranked UCSF graduate who practiced in San Francisco for over 8 years before founding Krest Dental Care in Visakhapatnam. Dr. Suneeta blends global expertise with artistic precision to craft confident, natural-looking smiles.",
+    imageAlt: DR_SUNEETA_PORTRAIT_ALT,
+    bio: `A top-ranked UCSF graduate who practiced in San Francisco for over 8 years before founding Krest Dental Care in Visakhapatnam. ${DR_SUNEETA_NAME_WITH_CREDENTIAL} blends global expertise with artistic precision to craft confident, natural-looking smiles.`,
     highlights: [
       "20+ Years Experience",
       "Thousands of Smiles Transformed",

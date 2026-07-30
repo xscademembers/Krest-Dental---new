@@ -387,6 +387,33 @@
     color: var(--krest-copper);
   }
 
+  .dr-suneeta-highlight {
+    font-family: var(--font-accent);
+    color: var(--krest-copper);
+    font-weight: 500;
+  }
+
+  .dr-suneeta-highlight.text-white,
+  .text-white .dr-suneeta-highlight {
+    color: #fff;
+  }
+
+  @media (max-width: 767px) {
+    .connect-with-us-label {
+      font-family: "Roboto", var(--font-body);
+    }
+
+    .connect-with-us-btn {
+      max-width: 306px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .connect-with-us-label {
+      text-align: center;
+    }
+  }
+
   .text-krest-list {
     font-family: var(--font-display);
     font-size: var(--krest-text-list);

@@ -1,4 +1,5 @@
 
+import { DR_SUNEETA_NAME_WITH_CREDENTIAL } from "@/lib/krest-content";
 import { InvisilignHeroMosaic } from "@/components/InvisilignHeroMosaic";
 import { WhyBand } from "@/components/InvisilignOldMain";
 import { JourneyUnderline, StepEllipseIcon } from "@/components/InvisilignDecorations";
@@ -37,7 +38,7 @@ const whyKrest = [
   {
     title: "Expert-Led Care",
     body:
-      "Dr. Suneeta brings over 23 years of international experience and a meticulous approach to every implant case.",
+      `${DR_SUNEETA_NAME_WITH_CREDENTIAL} brings over 23 years of international experience and a meticulous approach to every implant case.`,
   },
   {
     title: "Customized Treatment Plans",
@@ -103,7 +104,7 @@ export function ImplantsOldMain() {
       <section className="bg-[#F4EAE6] py-[44px]">
         <WhyBand
           heading="Why Krest Dental for Implants?"
-          intro="Experience exceptional implant dentistry at Krest Dental, led by UCSF-trained Dr. Suneeta Veeramachaneni. Combining advanced technology, personalized care, and over two decades of global expertise, we deliver results that are functional, natural-looking, and designed to last."
+          intro={`Experience exceptional implant dentistry at Krest Dental, led by ${DR_SUNEETA_NAME_WITH_CREDENTIAL}. Combining advanced technology, personalized care, and over two decades of global expertise, we deliver results that are functional, natural-looking, and designed to last.`}
           cards={whyKrest}
           cardHeight={227}
           cardsBg="#FFFFFF"

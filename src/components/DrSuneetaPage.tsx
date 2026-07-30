@@ -1,8 +1,11 @@
 import {
   ABOUT_VISION_MISSION,
+  DR_SUNEETA_NAME,
   DR_SUNEETA_PAGE,
   STATS,
 } from "@/lib/krest-content";
+import { TextWithDrSuneetaHighlight } from "@/components/TextWithDrSuneetaHighlight";
+import { ConnectWithUsSection } from "@/components/ConnectWithUsSection";
 import {
   ButtonArrowCircle,
   JourneyPin,
@@ -29,7 +32,7 @@ export function DrSuneetaPage() {
   return (
     <>
       {/* ============ Hero: portrait left, name + CTA on pale-pink panel right ============ */}
-      <section aria-label="Dr. Suneeta Veramachaneni" className="bg-white">
+      <section aria-label={DR_SUNEETA_NAME} className="bg-white">
         <div className="mx-auto grid w-full max-w-[1425px] grid-cols-1 lg:h-[676px] lg:grid-cols-2">
           {/* Live: 713x676 photo, fp 0.50 0.43 */}
           <div className="relative min-h-[360px] sm:min-h-[480px] lg:min-h-0">
@@ -93,7 +96,7 @@ export function DrSuneetaPage() {
               </h2>
               {/* Live: 22px justify black, width 602 */}
               <p className="mt-[42px] max-w-[602px] text-justify font-display text-[18px] leading-[1.3] text-black sm:text-[20px] lg:text-[22px]">
-                {DR_SUNEETA_PAGE.ourStoryText}
+                <TextWithDrSuneetaHighlight text={DR_SUNEETA_PAGE.ourStoryText} />
               </p>
             </div>
           </div>
@@ -212,6 +215,8 @@ export function DrSuneetaPage() {
           </ul>
         </div>
       </section>
+
+      <ConnectWithUsSection showHeading />
     </>
   );
 }

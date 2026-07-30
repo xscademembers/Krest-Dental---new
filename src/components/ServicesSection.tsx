@@ -1,4 +1,5 @@
 import { CopperArrowButton } from "@/components/CopperArrowButton";
+import { TextWithDrSuneetaHighlight } from "@/components/TextWithDrSuneetaHighlight";
 import { SERVICES } from "@/lib/krest-content";
 import type { Service } from "@/types/krest";
 
@@ -58,7 +59,7 @@ function ServiceCard({ service }: { service: Service }) {
           {service.title}
         </h3>
         <p className="mt-[15px] font-display text-[18px] font-normal leading-[1.3] text-[#333333] text-justify max-w-2xl mx-auto lg:mx-0">
-          {service.description}
+          <TextWithDrSuneetaHighlight text={service.description} />
         </p>
         <CopperArrowButton href={service.link} className="mt-[25px]">
           Know More

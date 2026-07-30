@@ -1,6 +1,7 @@
 ---
 import LandingIcon from "@/components/landing/LandingIcon.astro";
 import SectionHeading from "@/components/landing/SectionHeading.astro";
+import TextWithDrSuneetaHighlight from "@/components/TextWithDrSuneetaHighlight.astro";
 import type { LandingContent } from "@/types/landing";
 
 interface Props {
@@ -69,7 +70,7 @@ const images = [
               </h3>
               
               <p class="mt-6 max-w-lg font-body text-[18px] leading-[1.7] text-taupe">
-                {card.text}
+                <TextWithDrSuneetaHighlight text={card.text ?? ""} />
               </p>
             </div>
           </div>

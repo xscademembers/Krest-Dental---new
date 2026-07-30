@@ -3,7 +3,8 @@ import Layout from "@/layouts/Layout.astro";
 import { FloatingCallButton } from "@/components/FloatingCallButton";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
-import { BLOG_POSTS } from "@/lib/krest-content";
+import { BLOG_POSTS, DR_SUNEETA_NAME_WITH_CREDENTIAL } from "@/lib/krest-content";
+import TextWithDrSuneetaHighlight from "@/components/TextWithDrSuneetaHighlight.astro";
 
 export const prerender = true;
 
@@ -64,7 +65,7 @@ const jsonLd = {
         <span aria-hidden="true" class="mx-auto mt-6 block h-[2px] w-[120px] bg-copper"></span>
         <p class="mx-auto mt-6 max-w-[620px] font-display text-[17px] leading-[1.7] text-ink/80 sm:text-[19px]">
           Patient guides, treatment explainers, and behind-the-scenes notes from
-          Dr.&nbsp;Suneeta and the team in Visakhapatnam.
+          <TextWithDrSuneetaHighlight text={`${DR_SUNEETA_NAME_WITH_CREDENTIAL} and the team in Visakhapatnam.`} />
         </p>
       </div>
     </section>
