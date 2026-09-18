@@ -40,10 +40,15 @@ const jsonLd = {
     "@type": "BlogPosting",
     headline: p.title,
     datePublished: p.date,
+    dateModified: p.date,
     url: `${canonical}/${p.slug}`,
-    image: p.cover.src,
-    description: p.excerpt,
-    author: { "@type": "Person", name: p.author },
+    image: new URL(p.cover.src.replace(/^\//, ""), "https://www.krest.dental/").toString(),
+    description: p.metaDescription ?? p.excerpt,
+    keywords: p.keywords?.join(", "),
+    author: {
+      "@type": p.author.startsWith("Dr.") ? "Person" : "Organization",
+      name: p.author,
+    },
   })),
 };
 ---

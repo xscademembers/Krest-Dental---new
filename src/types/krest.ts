@@ -62,6 +62,12 @@ export type BlogPost = {
   slug: string;
   title: string;
   excerpt: string;
+  /** Search-focused title kept near 60 characters */
+  seoTitle?: string;
+  /** Search-result description kept near 155 characters */
+  metaDescription?: string;
+  /** Topic phrases used for metadata and editorial planning */
+  keywords?: string[];
   date: string;
   readingTime: string;
   category: string;
@@ -74,6 +80,10 @@ export type BlogPost = {
   /** Optional pull quote rendered between sections */
   quote?: { text: string; afterSection: number };
   takeaways?: string[];
+  /** Relevant service page used as a contextual internal link */
+  relatedService?: { label: string; href: string };
+  /** Patient-focused questions rendered on-page and as FAQ schema */
+  faqs?: { question: string; answer: string }[];
 };
 
 export type OurServiceCategory = {

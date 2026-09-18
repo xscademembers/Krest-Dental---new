@@ -9,6 +9,7 @@ import type {
   Stat,
   Testimonial,
 } from "@/types/krest";
+import { BLOG_POSTS_2026 } from "@/lib/blog-posts-2026";
 
 export const DR_SUNEETA_NAME = "Dr. Suneeta Veeramachaneni";
 export const DR_SUNEETA_CREDENTIAL = "DDS, University of California, San Francisco";
@@ -232,6 +233,7 @@ export const INSTAGRAM_POSTS: GalleryImage[] = [
 ];
 
 export const BLOG_POSTS: BlogPost[] = [
+  ...BLOG_POSTS_2026,
   {
     slug: "what-to-expect-at-your-first-visit",
     title: "What to expect at your first visit to Krest Dental",

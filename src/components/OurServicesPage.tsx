@@ -32,7 +32,7 @@ export function OurServicesPage() {
         <SiteContainer variant="cards" className="mt-12 lg:mt-14">
           <ul className="flex flex-col gap-10 lg:gap-12">
             {categories.map((category, index) => (
-              <li key={category.id}>
+              <li key={category.id} id={category.id} className="scroll-mt-28">
                 <SiteCardBand>
                   <article className="rounded-[40px] bg-white px-6 pb-12 pt-12 shadow-[0_6px_28px_-10px_rgba(0,0,0,0.1)] max-lg:px-5 lg:min-h-[376px] lg:pb-[80px] lg:pl-[40px] lg:pr-[25px] lg:pt-[70px]">
                     <div className="mx-auto grid w-full max-w-[1000px] grid-cols-1 items-center gap-8 lg:grid-cols-[0.5fr_1.2fr_1.1fr] lg:gap-10 lg:gap-x-12 xl:gap-x-16">
