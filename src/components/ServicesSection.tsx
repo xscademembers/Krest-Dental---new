@@ -19,7 +19,7 @@ export function ServicesSection() {
             At Krest Dental, your well-being is our highest priority. We design
             personalized care plans tailored to each individual&apos;s needs and goals.
             Our team of skilled professionals ensures your comfort and safety at every
-            step, providing reliable, compassionate support and world-class expertise.
+            step, providing reliable, compassionate support and trained clinical expertise.
             So you feel confident and cared for, always.
           </p>
         </div>

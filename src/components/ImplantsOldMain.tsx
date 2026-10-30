@@ -31,7 +31,7 @@ const solutionCards = [
 
 const whyKrest = [
   {
-    title: "World-Class Technology",
+    title: "Advanced Technology",
     body:
       "3D CBCT imaging, digital scanners, and guided surgical tools ensure precise, safe, and predictable implant placement.",
   },

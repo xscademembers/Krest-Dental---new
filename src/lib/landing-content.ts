@@ -436,7 +436,7 @@ export const IMPLANTS_LANDING: LandingContent = {
 
   process: {
     heading: "The Implant Process",
-    intro: "A seamless, pain-free journey to a permanent, beautiful smile.",
+    intro: "A clear, step-by-step journey to a permanent, natural-looking smile.",
     steps: [
       {
         title: "Consultation & Scan",
@@ -448,7 +448,7 @@ export const IMPLANTS_LANDING: LandingContent = {
       },
       {
         title: "Implant Placement",
-        text: "The titanium implant is gently placed into the jawbone under local anesthesia—a quick and virtually painless procedure.",
+        text: "The titanium implant is gently placed into the jawbone under local anesthesia—a carefully planned clinical procedure.",
       },
       {
         title: "Healing & Osseointegration",
@@ -463,7 +463,7 @@ export const IMPLANTS_LANDING: LandingContent = {
 
   whyChoose: {
     heading: "Why Choose Krest Dental for Implants",
-    intro: "Visakhapatnam's premier destination for safe, precise, and long-lasting dental implant surgery.",
+    intro: "Dental implant surgery in Visakhapatnam focused on safety, precision, and long-lasting results.",
     cards: [
       {
         title: "Experienced Implant Team",
@@ -487,7 +487,7 @@ export const IMPLANTS_LANDING: LandingContent = {
       },
       {
         title: "Comfortable Procedures",
-        text: "Advanced anesthesia and a calming environment ensure a pain-free experience.",
+        text: "Advanced anesthesia and a calming environment support a comfortable experience.",
         icon: "clinic",
       },
       {
@@ -546,7 +546,7 @@ export const IMPLANTS_LANDING: LandingContent = {
       },
       {
         q: "How long is recovery?",
-        a: "Most patients return to work the very next day. Complete bone healing (osseointegration) takes a few months, but this process happens painlessly behind the scenes.",
+        a: "Most patients return to work the very next day. Complete bone healing (osseointegration) takes a few months, and this process continues quietly as the implant integrates with the bone.",
       },
       {
         q: "Do implants look natural?",

@@ -50,7 +50,7 @@ export function StatsBanner({
           </h2>
         ) : (
           <h2 className="text-[32px] sm:text-[44px] lg:text-[50px] leading-[1.2] text-copper text-center">
-            Crafting world-class smiles with Precision and Artistry.
+            Crafting healthy smiles with Precision and Artistry.
           </h2>
         )}
 

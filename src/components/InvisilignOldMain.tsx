@@ -61,7 +61,7 @@ const whyInvisalign = [
 
 const whyKrest = [
   {
-    title: "World-Class Technology",
+    title: "Advanced Technology",
     body:
       "Digital scanners, 3D imaging, and modern orthodontic tools ensure precise, comfortable treatment.",
   },
@@ -208,7 +208,7 @@ export function InvisilignOldMain() {
       <section className="bg-white py-[44px]">
         <WhyBand
           heading="Why Choose Krest Dental for Invisalign?"
-          intro={`Experience world-class Invisalign care at Krest Dental, led by ${DR_SUNEETA_NAME_WITH_CREDENTIAL}. Our blend of advanced technology, personalized treatment, and unmatched expertise makes us the preferred choice in Visakhapatnam.`}
+          intro={`Experience Invisalign care at Krest Dental, led by ${DR_SUNEETA_NAME_WITH_CREDENTIAL}. Our blend of advanced technology, personalized treatment, and clinical experience supports clear-aligner care in Visakhapatnam.`}
           cards={whyKrest}
           cardHeight={227}
           cardsBg="#F4EAE6"
@@ -228,7 +228,7 @@ export function InvisilignOldMain() {
               <JourneyUnderline className="absolute left-[208px] top-[49px] hidden h-[22px] w-[216px] lg:block" />
             </div>
             <p className="mt-[30px] max-w-[394px] font-body text-[18px] leading-[1.4] text-black lg:text-[20px]">
-              A Seamless, Personalized Path to Your Perfect Smile
+              A Seamless, Personalized Path to a Healthier Smile
             </p>
           </div>
 

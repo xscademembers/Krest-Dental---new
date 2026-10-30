@@ -100,7 +100,7 @@ export const SERVICES: Service[] = [
     slug: "implants",
     title: "Implants",
     description:
-      "At Krest, we redefine smiles through precision-crafted dental implants that seamlessly blend beauty and function. Our advanced implant solutions restore missing teeth with unmatched natural aesthetics and lasting durability, empowering you with renewed confidence. Guided by expertise, innovation, and an unwavering commitment to excellence, we don't just replace teeth — we create smiles that inspire for a lifetime.",
+      "At Krest, we restore missing teeth with precision-crafted dental implants that blend natural aesthetics and function. Our implant solutions are planned for durability and everyday comfort, so you can chew and smile with renewed confidence. Guided by careful diagnosis, modern techniques, and a focus on long-term oral health, we replace missing teeth with restorations designed to look and feel natural.",
     image: "/images/services/implants.png",
     link: "/implants",
     badgeBg: "bg-pink/40",
@@ -109,7 +109,7 @@ export const SERVICES: Service[] = [
     slug: "invisalign",
     title: "Invisalign",
     description:
-      `${DR_SUNEETA_NAME_WITH_CREDENTIAL} transforms smiles with Invisalign — a precise, comfortable, and virtually invisible alternative to metal braces. Say goodbye to bulky wires and hello to smooth, pain-free teeth straightening that fits effortlessly into your lifestyle. Designed for elegance and efficiency, our customized Invisalign treatment ensures flawless alignment with minimal disruption. Because at Krest, a perfect smile isn't just a dream — it's within your reach.`,
+      `${DR_SUNEETA_NAME_WITH_CREDENTIAL} provides Invisalign care — a precise, comfortable, and virtually invisible alternative to metal braces. Clear aligners straighten teeth with removable trays that fit into your daily routine. Our customized Invisalign plans focus on gradual alignment with minimal disruption to work and lifestyle. At Krest, clear aligner treatment is planned around your bite, goals, and oral health.`,
     image: "/images/services/invisalign.png",
     link: "/invisalign",
     badgeBg: "bg-pink/40",
@@ -127,7 +127,7 @@ export const SERVICES: Service[] = [
     slug: "comprehensive",
     title: "Comprehensive / General Dentistry",
     description:
-      "At Krest Dental, we provide comprehensive dental care designed to keep your smile healthy and flawless for years to come. From preventive check-ups and thorough cleanings to advanced restorative treatments, every procedure is performed with meticulous precision and gentle care. Using cutting-edge technology and a personalized approach, we deliver seamless, pain-free experiences that prioritize your long-term oral health. Because at Krest Dental, excellence isn't an option — it's our promise.",
+      "At Krest Dental, we provide comprehensive dental care designed to keep your smile healthy for years to come. From preventive check-ups and thorough cleanings to advanced restorative treatments, every procedure is performed with careful planning and gentle care. Using modern technology and a personalized approach, we focus on comfortable visits that support your long-term oral health. At Krest Dental, consistent, patient-centered care is how we work every day.",
     image: "/images/services/comprehensive.png",
     link: "/contact",
     badgeBg: "bg-pink/40",
@@ -516,13 +516,13 @@ export const ABOUT_HERO = {
   receptionAlt: "Krest Dental Care clinic reception and front desk",
   establishedHeading: "Established in 2014",
   bioParagraphs: [
-    `${DR_SUNEETA_NAME_WITH_CREDENTIAL} is a distinguished cosmetic and aesthetic dentist and implantologist with over 23 years of expertise transforming smiles. Driven by her vision to bring world-class dental care to India, she founded Krest Dental Care a center of excellence where advanced technology and compassionate care come together seamlessly.`,
+    `${DR_SUNEETA_NAME_WITH_CREDENTIAL} is a cosmetic and aesthetic dentist and implantologist with over 23 years of experience transforming smiles. Driven by her vision to bring advanced dental care to India, she founded Krest Dental Care — a clinic where modern technology and compassionate care come together seamlessly.`,
     "She completed her Bachelor of Dental Surgery (BDS) at Manipal University, before earning her Doctor of Dental Surgery (DDS) from the prestigious University of California, San Francisco (UCSF). During her time at UCSF, she was honored as the top of her class, standing out among a globally diverse group of dental professionals. Following her graduation in 2005, she practiced for over eight years in San Francisco, earning a stellar reputation as a leading cosmetic dentist and implantologist. In 2013, she returned to India with a mission to establish Krest Dental Care and elevate the standard of dental care in Visakhapatnam.",
   ],
   clinicParagraphs: [
     "At Krest Dental Care, patients benefit from a comprehensive range of dental services, including Teeth Whitening, Implants, Orthodontics & Invisalign, Cosmetic Dentistry, Smile Makeovers, Full-Mouth Reconstructions, Oral Surgery, Veneers, Crowns, Bridges & Dentures, Restorations & Root Canals, Gum Treatments, Pediatric Dentistry, and Preventive Care.",
     "Our clinic is outfitted with state-of-the-art technology, reflecting our unwavering commitment to excellence and patient safety. We maintain stringent sterilization protocols and feature plush, high-end dental chairs for ultimate comfort. Our advanced tools include precision lasers, digital orthopantomograms (OPG), digital X-rays, Zoom teeth whitening systems, 3D navigation systems for implants, and cutting-edge digital scanners for 3D impressions ensuring the highest accuracy and best outcomes.",
-    "Her dedication to continual innovation and personalized care has made Krest Dental Care a trusted destination for those seeking comprehensive, advanced, and truly world-class dental treatments in Visakhapatnam.",
+    "Her dedication to continual innovation and personalized care has made Krest Dental Care a trusted destination for those seeking comprehensive and advanced dental treatments in Visakhapatnam.",
   ],
 } as const;
 
@@ -606,7 +606,7 @@ export const ABOUT_EXCELLENCE = {
 export const ABOUT_VISION_MISSION = {
   vision: {
     title: "Our Vision",
-    text: "To transform lives by creating confident, healthy smiles through world-class, patient-centered dental care, setting new standards of excellence in Visakhapatnam and beyond.",
+    text: "To help patients achieve confident, healthy smiles through advanced, patient-centered dental care in Visakhapatnam and beyond.",
   },
   mission: {
     title: "Our Mission",
@@ -717,7 +717,7 @@ export const HERO = {
   name: DR_SUNEETA_NAME,
   title: DR_SUNEETA_CREDENTIAL,
   description:
-    `Visakhapatnam's premier multi-specialty dental clinic, led by internationally trained ${DR_SUNEETA_NAME_WITH_CREDENTIAL}. At Krest, we deliver world-class smile makeovers, implants, and comprehensive dental treatments. Unlock your best smile with advanced dentistry in a calming, state-of-the-art environment.`,
+    `Visakhapatnam's multi-specialty dental clinic, led by internationally trained ${DR_SUNEETA_NAME_WITH_CREDENTIAL}. At Krest, we provide smile makeovers, dental implants, Invisalign, and comprehensive dental treatments. Plan your smile care with advanced dentistry in a calm, modern clinic environment.`,
   quote:
     "A confident smile is a reflection of great care. At Krest Dental, we blend precision, innovation, and heartfelt compassion to create smiles that truly stand out.",
 } as const;
