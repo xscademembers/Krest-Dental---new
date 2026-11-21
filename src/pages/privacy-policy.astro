@@ -1,0 +1,202 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { FloatingCallButton } from "@/components/FloatingCallButton";
+import { SiteFooter } from "@/components/SiteFooter";
+import { SiteHeader } from "@/components/SiteHeader";
+import { ADDRESS, EMAIL, PHONE_DISPLAY, PHONE_TEL } from "@/lib/krest-content";
+
+export const prerender = true;
+
+const canonical = "https://www.krest.dental/privacy-policy";
+const title = "Privacy Policy | Krest Dental";
+const description =
+  "Privacy Policy for Krest Dental Care in Visakhapatnam — how we collect, use, and protect your personal and health information.";
+const keywords = [
+  "krest dental privacy policy",
+  "dental clinic privacy",
+  "patient data protection vizag",
+];
+
+const lastUpdated = "21 November 2026";
+
+const sections = [
+  {
+    heading: "1. Who we are",
+    paragraphs: [
+      "This Privacy Policy applies to Krest Dental Care (“Krest Dental”, “we”, “us”, or “our”), a dental clinic operating in Visakhapatnam, India. It explains how we collect, use, store, and protect personal information when you visit our website, contact us, or receive care at our clinic.",
+      `Clinic address: ${ADDRESS.name}, ${ADDRESS.lines.join(", ")}`,
+    ],
+  },
+  {
+    heading: "2. Information we collect",
+    paragraphs: [
+      "Depending on how you interact with us, we may collect:",
+    ],
+    bullets: [
+      "Identity and contact details — such as your name, phone number, email address, and postal address.",
+      "Appointment and enquiry details — including preferred visit times, treatment interest, and messages you send via our website forms, phone, WhatsApp, or email.",
+      "Clinical and health information — when you become a patient, records needed for diagnosis and treatment (for example medical history, dental history, radiographs, and treatment notes).",
+      "Technical information — such as browser type, device information, approximate location, and pages visited, collected through standard website analytics or cookies where enabled.",
+    ],
+  },
+  {
+    heading: "3. How we use your information",
+    paragraphs: [
+      "We use personal information to:",
+    ],
+    bullets: [
+      "Respond to enquiries and schedule consultations or appointments.",
+      "Provide dental care, maintain clinical records, and communicate about your treatment.",
+      "Send appointment reminders, follow-ups, and service-related updates you have requested.",
+      "Improve our website, clinic operations, and patient experience.",
+      "Comply with legal, regulatory, and professional obligations applicable to dental practice in India.",
+    ],
+  },
+  {
+    heading: "4. Legal basis and consent",
+    paragraphs: [
+      "We process personal and health information where it is necessary to provide dental services you request, to respond to your enquiries, to meet our legal and professional duties, or where you have given consent (for example for certain marketing communications). You may withdraw consent for optional communications at any time by contacting us.",
+    ],
+  },
+  {
+    heading: "5. Sharing of information",
+    paragraphs: [
+      "We do not sell your personal information. We may share information only when needed, for example with:",
+    ],
+    bullets: [
+      "Clinical and administrative staff involved in your care.",
+      "Laboratories, specialists, or referral partners when required for your treatment, with appropriate safeguards.",
+      "Service providers who help us operate our website, communications, or clinic systems (under confidentiality obligations).",
+      "Authorities or professional bodies when required by law or to protect patient safety.",
+    ],
+  },
+  {
+    heading: "6. Data retention",
+    paragraphs: [
+      "We retain personal and clinical records for as long as needed to provide care, meet legal and professional record-keeping requirements, resolve disputes, and operate our practice. Website enquiry data is kept only as long as reasonably necessary to handle your request and related follow-up.",
+    ],
+  },
+  {
+    heading: "7. Security",
+    paragraphs: [
+      "We take reasonable technical and organisational measures to protect personal information against unauthorised access, loss, misuse, or disclosure. No method of transmission or storage is completely secure; if you believe your information has been compromised in connection with our services, please contact us promptly.",
+    ],
+  },
+  {
+    heading: "8. Cookies and website analytics",
+    paragraphs: [
+      "Our website may use cookies or similar technologies to help the site function, remember preferences, and understand how visitors use our pages. You can control cookies through your browser settings. Disabling certain cookies may affect site functionality.",
+    ],
+  },
+  {
+    heading: "9. Your rights",
+    paragraphs: [
+      "Subject to applicable law, you may request access to the personal information we hold about you, ask us to correct inaccurate details, or raise questions about how your information is used. For clinical records, additional professional and legal rules may apply. To make a request, contact us using the details below.",
+    ],
+  },
+  {
+    heading: "10. Children’s privacy",
+    paragraphs: [
+      "Where we provide care for minors, we collect and use information with the involvement of a parent or legal guardian as required. Parents or guardians may contact us regarding a child’s information.",
+    ],
+  },
+  {
+    heading: "11. Third-party links",
+    paragraphs: [
+      "Our website may link to third-party sites (for example maps, social media, or review platforms). Those sites have their own privacy practices, and we are not responsible for their content or policies.",
+    ],
+  },
+  {
+    heading: "12. Changes to this policy",
+    paragraphs: [
+      "We may update this Privacy Policy from time to time. The “Last updated” date at the top of this page will reflect the latest revision. Continued use of our website or services after changes means you acknowledge the updated policy.",
+    ],
+  },
+  {
+    heading: "13. Contact us",
+    paragraphs: [
+      "If you have questions about this Privacy Policy or how Krest Dental handles your information, please contact us:",
+    ],
+  },
+] as const;
+---
+
+<Layout {title} {description} {canonical} {keywords}>
+  <SiteHeader client:load />
+  <main class="flex-1 bg-cream">
+    <article>
+      <header class="bg-[#F4EAE6] pb-12 pt-10 lg:pb-16 lg:pt-12">
+        <div class="krest-site">
+          <nav aria-label="Breadcrumb" class="flex justify-center">
+            <ol class="flex flex-wrap items-center gap-2 font-body text-[12px] uppercase tracking-[0.16em] text-ink/55">
+              <li><a href="/" class="transition-colors hover:text-copper">Home</a></li>
+              <li aria-hidden="true">›</li>
+              <li class="text-copper">Privacy Policy</li>
+            </ol>
+          </nav>
+
+          <p class="mt-7 text-center font-accent text-[11px] uppercase tracking-[0.3em] text-copper">
+            Legal
+          </p>
+          <h1 class="mx-auto mt-4 max-w-[820px] text-center font-display text-[40px] font-normal leading-[1.12] text-copper sm:text-[52px] lg:text-[58px]">
+            Privacy Policy
+          </h1>
+          <p class="mx-auto mt-5 max-w-[640px] text-center font-display text-[17px] leading-[1.65] text-ink/70 sm:text-[19px]">
+            How Krest Dental collects, uses, and protects your personal information.
+          </p>
+          <p class="mt-6 text-center font-body text-[13px] uppercase tracking-[0.14em] text-ink/50">
+            Last updated: {lastUpdated}
+          </p>
+        </div>
+      </header>
+
+      <section class="krest-site py-12 lg:py-16">
+        <div class="mx-auto max-w-[760px] space-y-10">
+          {sections.map((section) => (
+            <section>
+              <h2 class="font-display text-[24px] font-normal leading-[1.25] text-copper sm:text-[28px]">
+                {section.heading}
+              </h2>
+              {section.paragraphs.map((paragraph) => (
+                <p class="mt-4 font-display text-[17px] leading-[1.7] text-ink/80 sm:text-[18px]">
+                  {paragraph}
+                </p>
+              ))}
+              {"bullets" in section && section.bullets && (
+                <ul class="mt-4 list-disc space-y-2.5 pl-5 font-display text-[17px] leading-[1.7] text-ink/80 sm:text-[18px]">
+                  {section.bullets.map((item) => (
+                    <li>{item}</li>
+                  ))}
+                </ul>
+              )}
+            </section>
+          ))}
+
+          <div class="rounded-sm border border-copper/20 bg-white/60 px-6 py-6 sm:px-8">
+            <p class="font-display text-[17px] leading-[1.7] text-ink/80 sm:text-[18px]">
+              <span class="font-semibold text-ink">Krest Dental Care</span><br />
+              {ADDRESS.lines[0]}<br />
+              {ADDRESS.lines[1]}<br />
+              {ADDRESS.lines[2]}<br />
+              {ADDRESS.lines[3]}<br />
+              {ADDRESS.lines[4]}
+            </p>
+            <p class="mt-4 font-display text-[17px] leading-[1.7] text-ink/80 sm:text-[18px]">
+              Email:{" "}
+              <a href={`mailto:${EMAIL}`} class="text-copper underline underline-offset-2 transition-colors hover:text-ink">
+                {EMAIL}
+              </a>
+              <br />
+              Phone:{" "}
+              <a href={PHONE_TEL} class="text-copper underline underline-offset-2 transition-colors hover:text-ink">
+                {PHONE_DISPLAY}
+              </a>
+            </p>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+  <SiteFooter />
+  <FloatingCallButton client:load />
+</Layout>

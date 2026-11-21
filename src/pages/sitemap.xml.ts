@@ -15,6 +15,7 @@ const staticPages = [
   "/invisalign-treatment-vizag",
   "/blogs",
   "/contact",
+  "/privacy-policy",
 ];
 
 const escapeXml = (value: string) =>

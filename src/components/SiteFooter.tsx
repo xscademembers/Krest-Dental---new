@@ -61,7 +61,14 @@ export function SiteFooter({ mobileWhiteBg = false }: { mobileWhiteBg?: boolean 
       </div>
 
       <div className="krest-site footer-mobile__copyright mt-[15px] text-center font-display text-[15px] leading-[1.5] text-taupe lg:mt-20 lg:text-[16px]">
-        © 2025 by Krest Dental. Developed by{" "}
+        © 2025 by Krest Dental.{" "}
+        <a
+          href="/privacy-policy"
+          className="text-taupe underline decoration-taupe/70 underline-offset-2 transition-colors hover:text-copper"
+        >
+          Privacy Policy
+        </a>
+        . Developed by{" "}
         <a
           href="https://www.xscade.com/"
           target="_blank"
